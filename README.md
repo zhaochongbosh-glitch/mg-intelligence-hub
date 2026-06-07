@@ -54,6 +54,8 @@ node scripts/update-data.mjs
 
 GitHub Actions 支持手动选择更新范围：`all`、`literature`、`latest`、`feed`、`china`、`trials`。日常定时任务默认运行 `all`。
 
+自动任务还会运行 `npm run health:data` 做数据健康检查：确认关键 JSON 非空、自动来源全部成功、`update-status.json` 有输出记录、近 7 天研究摘要存在、ClinicalTrials.gov 与 ChiCTR 条目保留，并对 OpenAI 中文摘要缺失或更新过旧等情况给出 warning。`.github/workflows/health-check.yml` 会每周一单独运行一次同样的健康检查，不改写数据，只用于巡检。
+
 ## 近 7 天研究摘要
 
 `data/latest-research.json` 保存 PubMed 过去 7 天内新上线或更新的 MG 文献摘要。自动任务每天运行一次；如果在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置 `OPENAI_API_KEY`，脚本会自动生成中文摘要和中文要点。未配置密钥时，网站仍会显示新文献、英文摘要和“等待中文摘要”状态。

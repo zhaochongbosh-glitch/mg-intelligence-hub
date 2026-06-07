@@ -1,0 +1,23 @@
+name: Weekly MG data health check
+
+on:
+  schedule:
+    - cron: "36 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - name: Validate data shape
+        run: npm run validate:data
+      - name: Check data health
+        run: npm run health:data
