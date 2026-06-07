@@ -1430,6 +1430,225 @@ select:focus {
   line-height: 1.62;
 }
 
+.status-dashboard,
+.review-queue {
+  display: grid;
+  gap: 12px;
+}
+
+.status-overview,
+.source-status-grid,
+.review-principles {
+  display: grid;
+  gap: 12px;
+}
+
+.status-overview {
+  grid-template-columns: 1.1fr 1.2fr 0.8fr 1.4fr;
+}
+
+.status-overview article,
+.source-status-card,
+.status-empty,
+.status-outputs article,
+.review-principles article,
+.review-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.status-overview article {
+  min-height: 128px;
+  padding: 16px;
+  background: #fbfdfd;
+}
+
+.status-overview span,
+.review-principles span {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.status-overview strong {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.status-overview p,
+.source-status-card p,
+.status-empty p,
+.review-principles p,
+.review-card p,
+.review-meta {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.source-status-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.source-status-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-left: 5px solid var(--green);
+}
+
+.source-status-card[data-status="manual"] {
+  border-left-color: var(--amber);
+}
+
+.source-status-card[data-status="failed"] {
+  border-left-color: var(--rose);
+}
+
+.source-status-card[data-status="unknown"] {
+  border-left-color: var(--muted);
+}
+
+.source-status-card h3 {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.source-status-card strong {
+  width: fit-content;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: #e9f4f0;
+  color: var(--green);
+  font-size: 0.82rem;
+}
+
+.source-status-card[data-status="manual"] strong {
+  background: #fbf8f1;
+  color: #80510f;
+}
+
+.source-status-card[data-status="failed"] strong {
+  background: #fff8fa;
+  color: #8c3348;
+}
+
+.status-empty {
+  padding: 16px;
+  background: #fbfdfd;
+}
+
+.status-empty h3,
+.review-card h3,
+.review-principles h3 {
+  margin-bottom: 7px;
+  font-size: 1rem;
+}
+
+.status-outputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.status-outputs article {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+}
+
+.review-principles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.review-principles article {
+  padding: 16px;
+  background: #fbfdfd;
+}
+
+.review-card {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-left: 5px solid var(--amber);
+}
+
+.review-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+}
+
+.review-card__head h3 {
+  margin-bottom: 0;
+  line-height: 1.36;
+}
+
+.priority-badge {
+  flex: 0 0 auto;
+  min-width: 42px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.priority-high {
+  background: #fff8fa;
+  color: #8c3348;
+}
+
+.priority-medium {
+  background: #fbf8f1;
+  color: #80510f;
+}
+
+.priority-low {
+  background: #e9f4f0;
+  color: var(--green);
+}
+
+.review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.84rem;
+}
+
+.review-meta span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f8fbfb;
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.review-actions a,
+.review-actions span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
 .workspace-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 265px;
@@ -1529,6 +1748,10 @@ footer {
   .access-overview,
   .china-access-grid,
   .access-checklist,
+  .status-overview,
+  .source-status-grid,
+  .status-outputs,
+  .review-principles,
   .workspace-grid,
   .toolbar,
   .trial-tools,
@@ -1555,6 +1778,7 @@ footer {
   .latest-card__head,
   .safety-card__head,
   .china-access-card__head,
+  .review-card__head,
   .treatment-card__head {
     display: grid;
   }

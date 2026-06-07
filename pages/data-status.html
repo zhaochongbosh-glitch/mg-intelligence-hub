@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重症肌无力信息中枢数据更新状态与人工复核队列。" />
+    <title>数据更新状态与人工复核队列 | 重症肌无力信息中枢</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="data-status">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">Data Operations</p>
+        <h1>数据更新状态与人工复核队列</h1>
+        <p>集中查看自动更新是否运行、外部来源是否异常，以及监管批准、销售额、安全性和证据矩阵中需要人工核对的事项。</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav" aria-label="页面导航">
+        <a href="../index.html">首页</a>
+        <a href="research/">研究情报</a>
+        <a href="therapy.html">治疗与证据</a>
+        <a href="safety.html">安全监测</a>
+        <a href="china-access.html">中国准入</a>
+        <a href="trials-market.html">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+        <a href="data-status.html" aria-current="page">数据状态</a>
+      </nav>
+
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Update Monitor</p>
+            <h2>自动更新状态</h2>
+            <p>读取 `data/update-status.json`，显示各来源配置、运行结果、失败容错和下一次人工复核提示。</p>
+          </div>
+          <p data-count="update-status">正在读取状态</p>
+        </div>
+        <div data-render="update-status" class="status-dashboard"></div>
+      </section>
+
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Human Review Queue</p>
+            <h2>人工复核队列</h2>
+            <p>根据数据来源状态和各模块的复核标签自动生成，优先暴露不适合完全自动化的高风险字段。</p>
+          </div>
+          <p data-count="review-queue">正在生成队列</p>
+        </div>
+        <div class="review-principles">
+          <article>
+            <span>01</span>
+            <h3>先监管后市场</h3>
+            <p>批准日期、适应症文本、抗体分型和年龄范围优先回到监管原始来源确认。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>销售额看口径</h3>
+            <p>区分全球产品级、中国市场和 MG 单适应症，避免把财报总销售额误解为 MG 销售额。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>安全信号不等于发生率</h3>
+            <p>FAERS、自发报告和上市后案例用于发现信号，结论必须结合标签、队列研究和临床判断。</p>
+          </article>
+        </div>
+        <div data-render="review-queue" class="review-queue"></div>
+      </section>
+    </main>
+    <footer><p>仅用于科研与商业情报跟踪，不构成医疗建议。复核结果请以原始监管文件、标签、文献和企业公告为准。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>

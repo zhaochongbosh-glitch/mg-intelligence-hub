@@ -25,6 +25,7 @@ node scripts/serve.mjs
 - `pages/china-access.html`：中国准入与商业化
 - `pages/trials-market.html`：临床试验雷达、全球批准和市场
 - `pages/guidance.html`：指南与诊疗路径
+- `pages/data-status.html`：数据更新状态与人工复核队列
 
 ## 手动更新数据
 
@@ -46,6 +47,8 @@ node scripts/update-data.mjs
 - 人工复核来源：ChiCTR 中国临床试验注册中心先作为中国本土注册试验入口和重点条目保留；官网如需验证时不做强自动抓取。
 - 自动记录状态：每次运行都会写入 `data/update-status.json`，记录更新时间、更新范围、各来源成功/失败状态和输出条数。
 - 人工复核更新：全球批准、中国准入、医保/医院准入、销售额、指南路径、安全性结论等仍需人工复核后更新，避免自动脚本误改高风险字段。
+
+`pages/data-status.html` 会读取 `data/update-status.json` 展示自动更新状态，并根据各模块的 `reviewStatus`、来源类型和 ChiCTR 条目自动生成“人工复核队列”。这个页面建议作为日常质量控制入口：先看是否有数据源失败，再处理监管批准、市场销售额、安全性信号和证据矩阵等高优先级复核项。
 
 容错规则：任一外部来源失败时，脚本会保留该来源上一版数据，并在 `update-status.json` 标记失败；不会把页面对应板块清空。
 

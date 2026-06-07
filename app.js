@@ -29,7 +29,8 @@ const dataFiles = {
   market: "global-market.json",
   guidance: "guidance-pathways.json",
   matrix: "evidence-matrix.json",
-  trials: "trial-radar.json"
+  trials: "trial-radar.json",
+  updateStatus: "update-status.json"
 };
 
 const trustDefaults = {
@@ -210,6 +211,8 @@ function renderVisibleModules() {
   if (exists("trials")) renderTrials();
   if (exists("market")) renderMarket();
   if (exists("guidance")) renderGuidance();
+  if (exists("update-status")) renderUpdateStatus();
+  if (exists("review-queue")) renderReviewQueue();
 }
 
 function renderLatest() {
@@ -693,6 +696,227 @@ function renderGuidance() {
     .join("");
 }
 
+function renderUpdateStatus() {
+  const status = state.data.updateStatus || {};
+  const sources = status.sources || [];
+  const attentionCount = sources.filter((source) => /failed|error|manual|review|人工|失败|待/i.test(source.status || "")).length;
+  setCount("update-status", `${sources.length} 个来源，${attentionCount} 个需关注`);
+
+  const overview = `
+    <div class="status-overview">
+      <article>
+        <span>当前状态</span>
+        <strong>${escapeHtml(formatStatusLabel(status.status || "unknown"))}</strong>
+        <p>${escapeHtml(status.scope || "未记录更新范围")}</p>
+      </article>
+      <article>
+        <span>最近完成</span>
+        <strong>${escapeHtml(formatDateTime(status.runFinishedAt || status.updatedAt))}</strong>
+        <p>脚本运行结束时间</p>
+      </article>
+      <article>
+        <span>数据来源</span>
+        <strong>${sources.length}</strong>
+        <p>${attentionCount ? `${attentionCount} 个来源需要人工关注` : "全部来源暂无异常标记"}</p>
+      </article>
+      <article>
+        <span>输出记录</span>
+        <strong>${(status.outputs || []).length}</strong>
+        <p>${escapeHtml(status.nextReviewHint || "等待下一次自动更新")}</p>
+      </article>
+    </div>
+  `;
+
+  const sourceCards = sources
+    .map((source) => `
+      <article class="source-status-card" data-status="${escapeAttribute(sourceStatusTone(source.status))}">
+        <div>
+          <p class="section-kicker">${escapeHtml(source.frequency || "manual")}</p>
+          <h3>${escapeHtml(source.name || "未命名来源")}</h3>
+        </div>
+        <strong>${escapeHtml(formatStatusLabel(source.status || "unknown"))}</strong>
+        <p>${escapeHtml(source.fallbackPolicy || "暂无容错说明")}</p>
+      </article>
+    `)
+    .join("");
+
+  const outputs = status.outputs?.length
+    ? `<div class="status-outputs">${status.outputs.map(renderStatusOutput).join("")}</div>`
+    : `<article class="status-empty"><h3>暂无输出明细</h3><p>当前基线数据已建立；自动脚本正式运行后会在这里记录各数据文件的更新条数。</p></article>`;
+
+  targetFor("update-status").innerHTML = `
+    ${overview}
+    <div class="source-status-grid">${sourceCards}</div>
+    ${outputs}
+  `;
+}
+
+function renderStatusOutput(output = {}) {
+  return `
+    <article>
+      <strong>${escapeHtml(output.file || output.name || "未命名输出")}</strong>
+      <span>${escapeHtml(output.count ?? output.status ?? "已记录")}</span>
+    </article>
+  `;
+}
+
+function renderReviewQueue() {
+  const queue = reviewQueueItems();
+  const highCount = queue.filter((item) => item.priority === "高").length;
+  setCount("review-queue", `${queue.length} 项待复核，${highCount} 项高优先级`);
+  targetFor("review-queue").innerHTML = queue.length
+    ? queue.map(renderReviewQueueCard).join("")
+    : `<article class="review-card"><h3>暂无待复核事项</h3><p>当数据来源失败、监管/销售额/安全性字段需要人工确认时，会自动出现在这里。</p></article>`;
+}
+
+function renderReviewQueueCard(item) {
+  const link = item.url
+    ? `<a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">打开来源</a>`
+    : `<span>暂无直接来源链接</span>`;
+  return `
+    <article class="review-card">
+      <div class="review-card__head">
+        <div>
+          <p class="section-kicker">${escapeHtml(item.type)}</p>
+          <h3>${escapeHtml(item.title)}</h3>
+        </div>
+        <strong class="priority-badge priority-${escapeAttribute(priorityClass(item.priority))}">${escapeHtml(item.priority)}</strong>
+      </div>
+      <p>${escapeHtml(item.reason)}</p>
+      <div class="review-meta">
+        <span>状态：${escapeHtml(item.status || "待复核")}</span>
+        <span>建议频率：${escapeHtml(item.cadence || "按需")}</span>
+        <span>最近核查：${escapeHtml(item.lastChecked ? formatDate(item.lastChecked) : "未记录")}</span>
+      </div>
+      <div class="review-actions">${link}</div>
+    </article>
+  `;
+}
+
+function reviewQueueItems() {
+  const queue = [];
+  const add = (item) => {
+    if (!item?.title) return;
+    queue.push({
+      priority: priorityForReview(item.status, item.type),
+      cadence: "每月",
+      ...item
+    });
+  };
+
+  for (const source of state.data.updateStatus?.sources || []) {
+    if (/failed|error|manual|review|人工|失败|待/i.test(source.status || "")) {
+      add({
+        type: "数据源",
+        title: source.name,
+        status: formatStatusLabel(source.status),
+        reason: source.fallbackPolicy || "该来源需要确认自动化状态或人工处理规则。",
+        cadence: source.frequency || "按运行日志",
+        lastChecked: state.data.updateStatus?.updatedAt
+      });
+    }
+  }
+
+  for (const product of marketItems()) {
+    const meta = resolveTrustMeta(product, "market");
+    add({
+      type: "全球批准/市场",
+      title: `${product.brand || product.generic || "未命名产品"} · ${product.company || "公司待补充"}`,
+      status: meta.reviewStatus,
+      reason: "批准国家、批准时间、适应症文本和销售额口径会持续变化，需回到监管数据库、财报和公司公告复核。",
+      cadence: "每月/财报季",
+      lastChecked: meta.lastChecked,
+      url: product.sourceUrls?.[0]
+    });
+  }
+
+  for (const treatment of treatmentItems()) {
+    const meta = resolveTrustMeta(treatment, "treatments");
+    add({
+      type: "治疗证据/安全",
+      title: `${treatment.brand || treatment.generic || "未命名治疗"} · ${treatment.zhName || treatment.class || ""}`.trim(),
+      status: meta.reviewStatus,
+      reason: "机制、适应症、关键 RCT、真实世界证据和上市后风险信号应逐条对照标签、审评文件和原始文献。",
+      cadence: "每月",
+      lastChecked: meta.lastChecked,
+      url: treatment.links?.[0]?.url
+    });
+  }
+
+  for (const trial of trialItems().filter((item) => trialRegistry(item) === "ChiCTR")) {
+    const meta = resolveTrustMeta(trial, "trials");
+    add({
+      type: "ChiCTR",
+      title: trial.title || trial.nctId || trial.id,
+      status: meta.reviewStatus,
+      reason: "中国临床试验注册中心目前作为人工复核入口保留，需打开官网核对注册版本、状态和研究者信息。",
+      cadence: "每周/手动",
+      lastChecked: meta.lastChecked,
+      url: trial.url
+    });
+  }
+
+  for (const pathway of guidanceItems()) {
+    const meta = resolveTrustMeta(pathway, "guidance");
+    add({
+      type: "指南路径",
+      title: pathway.clinicalQuestion || pathway.step,
+      status: meta.reviewStatus,
+      reason: "指南、共识和中国实践路径需要按新版指南、专家共识和监管变化更新。",
+      cadence: "每季度",
+      lastChecked: meta.lastChecked,
+      url: pathway.sources?.[0]?.url
+    });
+  }
+
+  for (const item of matrixItems()) {
+    const meta = resolveTrustMeta(item, "matrix");
+    add({
+      type: "证据矩阵",
+      title: `${item.brand || "未命名药物"} · ${item.mechanism || ""}`.trim(),
+      status: meta.reviewStatus,
+      reason: "横向比较依赖关键 RCT、长期随访和真实世界研究，新增证据后需要同步调整证据层级。",
+      cadence: "每月/文献更新后",
+      lastChecked: meta.lastChecked
+    });
+  }
+
+  return queue.sort((a, b) => priorityRank(b.priority) - priorityRank(a.priority) || a.type.localeCompare(b.type, "zh-CN"));
+}
+
+function sourceStatusTone(status = "") {
+  if (/failed|error|失败/i.test(status)) return "failed";
+  if (/manual|review|人工|待/i.test(status)) return "manual";
+  if (/configured|success|ok|成功|已配置/i.test(status)) return "ok";
+  return "unknown";
+}
+
+function formatStatusLabel(status = "") {
+  const map = {
+    "strategy-defined": "策略已定义",
+    configured: "已配置",
+    "manual-review": "人工复核",
+    failed: "失败",
+    success: "成功"
+  };
+  return map[status] || status || "未记录";
+}
+
+function priorityForReview(status = "", type = "") {
+  const text = `${status} ${type}`;
+  if (/failed|error|失败|全球批准|市场|ChiCTR|数据源|需|待/i.test(text)) return "高";
+  if (/部分|人工|指南|证据/i.test(text)) return "中";
+  return "低";
+}
+
+function priorityRank(priority = "") {
+  return { 高: 3, 中: 2, 低: 1 }[priority] || 0;
+}
+
+function priorityClass(priority = "") {
+  return { 高: "high", 中: "medium", 低: "low" }[priority] || "low";
+}
+
 function renderTrustMeta(item = {}, moduleName) {
   const meta = resolveTrustMeta(item, moduleName);
   const parts = [
@@ -883,6 +1107,19 @@ function formatDate(value) {
     year: "numeric",
     month: "2-digit",
     day: "2-digit"
+  }).format(date);
+}
+
+function formatDateTime(value) {
+  if (!value) return "未知";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
   }).format(date);
 }
 
