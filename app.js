@@ -56,6 +56,12 @@ const trustDefaults = {
     reviewStatus: "部分核查",
     reviewNote: "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。"
   },
+  safety: {
+    sourceType: "标签/openFDA/上市后报告",
+    evidenceLevel: "安全性信号",
+    reviewStatus: "部分核查",
+    reviewNote: "自发报告用于发现信号，不能直接证明发生率或因果关系；请回到标签、监管文件和原始报告复核。"
+  },
   matrix: {
     sourceType: "RCT/OLE/RWE 文献",
     evidenceLevel: "人工证据矩阵",
@@ -186,6 +192,7 @@ function renderVisibleModules() {
   if (exists("matrix")) renderMatrix();
   if (exists("treatments")) renderTreatments();
   if (exists("supportive")) renderSupportive();
+  if (exists("safety")) renderSafety();
   if (exists("trials")) renderTrials();
   if (exists("market")) renderMarket();
   if (exists("guidance")) renderGuidance();
@@ -373,6 +380,86 @@ function renderSupportive() {
   targetFor("supportive").innerHTML = (state.data.treatments?.offLabelOrSupportive || [])
     .map((item) => `<p><strong>${escapeHtml(item.name)}</strong>：${escapeHtml(item.note)}</p>`)
     .join("");
+}
+
+function renderSafety() {
+  const items = treatmentItems();
+  setScope("safety", "按药物整理重点安全信号、上市后监测说明和原始数据入口；自发报告信号不等同于因果关系。");
+  setCount("safety", `${items.length} 个治疗项`);
+  const summary = targetFor("safety-summary", false);
+  if (summary) summary.innerHTML = renderSafetySummary(items);
+  targetFor("safety").innerHTML = items.map(renderSafetyCard).join("");
+}
+
+function renderSafetySummary(items) {
+  const signalCounts = new Map();
+  for (const item of items) {
+    for (const signal of item.safetySignals || []) {
+      signalCounts.set(signal, (signalCounts.get(signal) || 0) + 1);
+    }
+  }
+  const topSignals = [...signalCounts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "zh-CN"))
+    .slice(0, 8)
+    .map(([signal, count]) => `<span>${escapeHtml(signal)} <strong>${count}</strong></span>`)
+    .join("");
+  const classes = [...new Set(items.map((item) => item.class).filter(Boolean))]
+    .map((name) => `<span>${escapeHtml(name)}</span>`)
+    .join("");
+  return `
+    <div class="safety-overview">
+      <article>
+        <p>监测药物</p>
+        <strong>${items.length}</strong>
+        <span>来自获批治疗图谱</span>
+      </article>
+      <article>
+        <p>重点信号</p>
+        <div class="safety-signal-cloud">${topSignals}</div>
+      </article>
+      <article>
+        <p>机制类别</p>
+        <div class="safety-signal-cloud">${classes}</div>
+      </article>
+    </div>
+  `;
+}
+
+function renderSafetyCard(item) {
+  const signals = (item.safetySignals || []).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
+  const links = safetyLinks(item)
+    .map((link) => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
+    .join("");
+  return `
+    <article class="safety-card">
+      <div class="safety-card__head">
+        <div>
+          <p class="eyebrow-dark">${escapeHtml(item.class || "治疗药物")}</p>
+          <h3>${escapeHtml(item.brand)} <span>${escapeHtml(item.generic || "")}</span></h3>
+          <p>${escapeHtml(item.zhName || "")}</p>
+        </div>
+        <strong>${escapeHtml(item.route || "给药待补充")}</strong>
+      </div>
+      ${renderTrustMeta(item, "safety")}
+      <div class="safety-alert">
+        <span>上市后监测重点</span>
+        <p>${escapeHtml(item.postMarketing || "待补充上市后安全性监测说明。")}</p>
+      </div>
+      <div class="safety-tags">${signals}</div>
+      <dl class="safety-detail">
+        <div><dt>适用人群</dt><dd>${escapeHtml(item.approvedUse || "待补充")}</dd></div>
+        <div><dt>抗体/标志物</dt><dd>${escapeHtml(item.biomarker || "待补充")}</dd></div>
+        <div><dt>风险阅读提示</dt><dd>自发报告数据库适合发现潜在信号，不能直接估计发生率，也不能单独证明药物因果关系。</dd></div>
+      </dl>
+      <div class="safety-links">${links}</div>
+    </article>
+  `;
+}
+
+function safetyLinks(item) {
+  const links = item.links || [];
+  const preferred = links.filter((link) => /openFDA|FAERS|Label|标签|DailyMed|FDA/i.test(link.label || link.url || ""));
+  return (preferred.length ? preferred : links).slice(0, 4);
 }
 
 function renderTrials() {

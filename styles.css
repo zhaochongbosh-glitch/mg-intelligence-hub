@@ -258,7 +258,7 @@ main {
 
 .portal-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 12px;
 }
 
@@ -1025,6 +1025,209 @@ select:focus {
   margin-bottom: 0;
 }
 
+.safety-summary {
+  margin-bottom: 14px;
+}
+
+.safety-overview {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.safety-overview article {
+  min-height: 116px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.safety-overview p {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.safety-overview > article > strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--rose);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.safety-overview article > span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.safety-signal-cloud,
+.safety-cards,
+.monitoring-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.safety-signal-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.safety-signal-cloud span {
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f7ebef;
+  color: #8c3348;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.safety-card {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--rose);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.safety-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.safety-card__head h3 {
+  margin: 0 0 5px;
+  font-size: 1.16rem;
+  line-height: 1.35;
+}
+
+.safety-card__head h3 span,
+.safety-card__head p {
+  color: var(--muted);
+}
+
+.safety-card__head h3 span {
+  font-size: 0.92rem;
+  font-weight: 550;
+}
+
+.safety-card__head p {
+  margin-bottom: 0;
+}
+
+.safety-card__head strong {
+  flex: 0 0 auto;
+  max-width: 170px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #f7ebef;
+  color: #8c3348;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.safety-alert {
+  padding: 13px 14px;
+  border: 1px solid #ead1d8;
+  border-radius: 8px;
+  background: #fff8fa;
+}
+
+.safety-alert span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8c3348;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.safety-alert p {
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+.safety-detail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.safety-detail div {
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.safety-detail dt {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.safety-detail dd {
+  margin: 0;
+  line-height: 1.58;
+}
+
+.safety-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.safety-links a {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.monitoring-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.monitoring-grid article {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.monitoring-grid span {
+  color: var(--rose);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.monitoring-grid h3 {
+  margin: 7px 0 8px;
+  font-size: 1rem;
+}
+
+.monitoring-grid p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
 .workspace-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 265px;
@@ -1118,6 +1321,9 @@ footer {
   .portal-grid,
   .guidance-cards,
   .market-cards,
+  .safety-overview,
+  .safety-detail,
+  .monitoring-grid,
   .workspace-grid,
   .toolbar,
   .trial-tools,
@@ -1142,6 +1348,7 @@ footer {
   .section-heading,
   .trial-card__head,
   .latest-card__head,
+  .safety-card__head,
   .treatment-card__head {
     display: grid;
   }

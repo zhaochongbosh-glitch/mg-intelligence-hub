@@ -21,6 +21,7 @@ node scripts/serve.mjs
 - `index.html`：首页仪表盘
 - `pages/research/index.html`：最新研究、中国研究者和信息流
 - `pages/therapy.html`：治疗图谱和药物证据矩阵
+- `pages/safety.html`：安全性与上市后监测
 - `pages/trials-market.html`：临床试验雷达、全球批准和市场
 - `pages/guidance.html`：指南与诊疗路径
 
@@ -55,6 +56,10 @@ node scripts/update-data.mjs
 ## 治疗图谱
 
 `data/treatments.json` 保存已获批 MG/gMG 治疗药物、作用机制、关键证据、真实世界研究状态和上市后安全性监测入口。当前第一版以 FDA 可核验批准药物为核心，并预留 EMA、NMPA/CDE 字段。
+
+## 安全性与上市后监测
+
+`pages/safety.html` 会从 `data/treatments.json` 自动读取 `postMarketing`、`safetySignals` 和药品标签/openFDA/FAERS 链接，形成独立的安全监测页。该页面用于信号追踪和人工复核，不把自发报告数据库中的报告数量解释为发生率，也不单独判断药物因果关系。
 
 ## 中国研究者发表研究
 
