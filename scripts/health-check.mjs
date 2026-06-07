@@ -9,6 +9,7 @@ const requiredFiles = [
   "data/evidence-matrix.json",
   "data/global-market.json",
   "data/guidance-pathways.json",
+  "data/manual-review-log.json",
   "data/update-status.json"
 ];
 
@@ -35,6 +36,7 @@ async function main() {
 
   checkMinimums(data);
   checkUpdateStatus(data["data/update-status.json"]);
+  checkManualReviewLog(data["data/manual-review-log.json"]);
   checkLatestResearch(data["data/latest-research.json"]);
   checkClinicalTrials(data["data/trial-radar.json"]);
 
@@ -125,6 +127,30 @@ function checkLatestResearch(latest = {}) {
   }
   if (pending.length && translated.length === 0) {
     warnings.push("latest-research: no translated summaries found; check OPENAI_API_KEY if this persists");
+  }
+}
+
+function checkManualReviewLog(log = {}) {
+  if (log.schemaVersion !== 1) {
+    errors.push("manual-review-log: schemaVersion must be 1");
+  }
+  if (!Array.isArray(log.items)) {
+    errors.push("manual-review-log: items must be an array");
+    return;
+  }
+  if (!Array.isArray(log.modules) || !log.modules.length) {
+    errors.push("manual-review-log: modules must be a non-empty array");
+  }
+  if (!Array.isArray(log.decisionTypes) || !log.decisionTypes.length) {
+    errors.push("manual-review-log: decisionTypes must be a non-empty array");
+  }
+  if (!Array.isArray(log.riskLevels) || !log.riskLevels.length) {
+    errors.push("manual-review-log: riskLevels must be a non-empty array");
+  }
+
+  summary.push(`manual-review-log: ${log.items.length} review records`);
+  if (log.items.length === 0) {
+    warnings.push("manual-review-log: no review records yet; add entries after the first formal manual review");
   }
 }
 

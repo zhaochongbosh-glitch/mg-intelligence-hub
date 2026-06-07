@@ -8,7 +8,8 @@ const requiredFiles = [
   "data/treatments.json",
   "data/evidence-matrix.json",
   "data/global-market.json",
-  "data/guidance-pathways.json"
+  "data/guidance-pathways.json",
+  "data/manual-review-log.json"
 ];
 
 const arrayKeys = {
@@ -19,7 +20,8 @@ const arrayKeys = {
   "data/treatments.json": "treatments",
   "data/evidence-matrix.json": "items",
   "data/global-market.json": "products",
-  "data/guidance-pathways.json": "pathways"
+  "data/guidance-pathways.json": "pathways",
+  "data/manual-review-log.json": "items"
 };
 
 async function main() {
@@ -40,10 +42,38 @@ function validateFile(file, data) {
   if (!data.provenance) throw new Error(`${file}: missing provenance`);
   const key = arrayKeys[file];
   if (!Array.isArray(data[key])) throw new Error(`${file}: ${key} must be an array`);
+  if (file === "data/manual-review-log.json") validateManualReviewLog(file, data);
 }
 
 function countRecords(file, data) {
   return data[arrayKeys[file]].length;
+}
+
+function validateManualReviewLog(file, data) {
+  if (data.schemaVersion !== 1) throw new Error(`${file}: schemaVersion must be 1`);
+  if (!Array.isArray(data.modules) || !data.modules.length) {
+    throw new Error(`${file}: modules must be a non-empty array`);
+  }
+  if (!Array.isArray(data.decisionTypes) || !data.decisionTypes.length) {
+    throw new Error(`${file}: decisionTypes must be a non-empty array`);
+  }
+  if (!Array.isArray(data.riskLevels) || !data.riskLevels.length) {
+    throw new Error(`${file}: riskLevels must be a non-empty array`);
+  }
+  if (!data.itemTemplate || typeof data.itemTemplate !== "object") {
+    throw new Error(`${file}: missing itemTemplate`);
+  }
+
+  const decisions = new Set(data.decisionTypes);
+  const risks = new Set(data.riskLevels);
+  const modules = new Set(data.modules);
+  for (const item of data.items) {
+    if (!item.id) throw new Error(`${file}: review item missing id`);
+    if (!decisions.has(item.decision)) throw new Error(`${file}: ${item.id} has unknown decision ${item.decision}`);
+    if (!risks.has(item.riskLevel)) throw new Error(`${file}: ${item.id} has unknown riskLevel ${item.riskLevel}`);
+    if (item.module && !modules.has(item.module)) throw new Error(`${file}: ${item.id} has unknown module ${item.module}`);
+    if (!Array.isArray(item.sourceUrls)) throw new Error(`${file}: ${item.id} sourceUrls must be an array`);
+  }
 }
 
 main().catch((error) => {

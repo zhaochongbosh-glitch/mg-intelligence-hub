@@ -1,0 +1,50 @@
+{
+  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "provenance": {
+    "sourceType": "Manual review",
+    "evidenceLevel": "人工复核记录",
+    "reviewStatus": "模板已建立",
+    "lastChecked": "2026-06-07",
+    "reviewNote": "用于记录监管、市场、安全性、指南、试验和文献情报的人工复核过程；不直接作为临床结论。"
+  },
+  "schemaVersion": 1,
+  "scopeNote": "人工复核记录模板。正式复核后在 items 中追加记录，并同步更新被复核数据文件的 trust/provenance 字段。",
+  "decisionTypes": [
+    "confirmed",
+    "updated",
+    "needs-follow-up",
+    "no-change"
+  ],
+  "riskLevels": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "modules": [
+    "latest-research",
+    "china-research",
+    "therapy",
+    "safety",
+    "china-access",
+    "trials-market",
+    "guidance",
+    "market",
+    "matrix"
+  ],
+  "itemTemplate": {
+    "id": "review-YYYY-MM-DD-module-item",
+    "date": "YYYY-MM-DD",
+    "reviewer": "",
+    "module": "",
+    "itemId": "",
+    "topic": "",
+    "sourceUrls": [],
+    "decision": "needs-follow-up",
+    "summary": "",
+    "changesMade": [],
+    "nextReviewDate": "",
+    "riskLevel": "medium",
+    "notes": ""
+  },
+  "items": []
+}
