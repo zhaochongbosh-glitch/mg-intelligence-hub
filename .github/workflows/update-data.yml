@@ -4,6 +4,22 @@ on:
   schedule:
     - cron: "18 1 * * *"
   workflow_dispatch:
+    inputs:
+      update_scope:
+        description: "选择更新范围"
+        type: choice
+        default: "all"
+        options:
+          - all
+          - literature
+          - latest
+          - feed
+          - china
+          - trials
+
+concurrency:
+  group: mg-intelligence-data-update
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -11,17 +27,23 @@ permissions:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: npm run update:data
+      - name: Update source data
+        run: npm run update:data -- --scope="${UPDATE_SCOPE}"
         env:
+          UPDATE_SCOPE: ${{ github.event.inputs.update_scope || 'all' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_SUMMARY_MODEL: gpt-4.1-mini
+      - name: Validate generated data
+        run: npm run validate:data
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update MG intelligence data"
+          file_pattern: "data/*.json"
       - name: Sync published branch
         run: git push origin HEAD:gh-pages

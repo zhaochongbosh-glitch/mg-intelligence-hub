@@ -1,4 +1,9 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { dirname } from "node:path";
+
+const runStartedAt = new Date().toISOString();
+const updateScope = parseUpdateScope();
+const sourceRuns = [];
 
 const KEYWORDS = [
   "myasthenia gravis",
@@ -102,75 +107,272 @@ const MANUAL_ITEMS = [
 ];
 
 async function main() {
-  const pubmedItems = await fetchPubMed();
-  await sleep(400);
-  const latestResearch = await fetchLatestResearch();
-  await sleep(400);
-  const chinaResearch = await fetchChinaResearch();
-  const trialRadar = await fetchTrialRadar();
-  const rssItems = await fetchRssSources();
+  console.log(`MG data update started: scope=${updateScope}`);
+  const previous = await loadPreviousData();
+  const writes = [];
 
-  const feedData = {
+  if (shouldUpdate("feed")) {
+    const [pubmedResult, rssResult] = await Promise.all([
+      runSource("pubmed-feed", fetchPubMed),
+      runSource("fda-rss", fetchRssSources)
+    ]);
+    const feedItems = buildFeedItems({
+      pubmedItems: pubmedResult.ok ? pubmedResult.data : previousFeedItems(previous.feed, "PubMed"),
+      rssItems: rssResult.ok ? rssResult.data : previousFeedItems(previous.feed, "FDA"),
+      manualItems: MANUAL_ITEMS
+    });
+    writes.push(["data/items.json", buildFeedData(feedItems, pubmedResult, rssResult)]);
+  } else {
+    recordSkipped("feed", "范围未选择 feed/literature/all");
+  }
+
+  if (shouldUpdate("latest")) {
+    await sleep(400);
+    const result = await runSource("latest-research", fetchLatestResearch);
+    const items = result.ok ? result.data.sort(sortByDateDesc) : previous.latest.items || [];
+    writes.push(["data/latest-research.json", buildLatestData(items, result)]);
+  } else {
+    recordSkipped("latest-research", "范围未选择 latest/literature/all");
+  }
+
+  if (shouldUpdate("china")) {
+    await sleep(400);
+    const result = await runSource("china-research", fetchChinaResearch);
+    const items = result.ok ? dedupe(result.data).sort(sortByDateDesc) : previous.china.items || [];
+    writes.push(["data/china-research.json", buildChinaData(items, result)]);
+  } else {
+    recordSkipped("china-research", "范围未选择 china/literature/all");
+  }
+
+  if (shouldUpdate("trials")) {
+    const result = await runSource("clinical-trials", fetchTrialRadar);
+    const items = result.ok ? result.data : previous.trials.items || [];
+    writes.push(["data/trial-radar.json", buildTrialData(items, result)]);
+  } else {
+    recordSkipped("clinical-trials", "范围未选择 trials/all");
+  }
+
+  for (const [file, data] of writes) {
+    validateDataShape(file, data);
+    await writeJsonAtomic(file, data);
+    console.log(`Wrote ${countItems(data)} records to ${file}`);
+  }
+
+  await writeUpdateStatus(writes);
+  const failed = sourceRuns.filter((item) => item.status === "failed");
+  if (failed.length) {
+    console.warn(`Completed with ${failed.length} failed source(s); previous data was preserved where available.`);
+  }
+}
+
+async function loadPreviousData() {
+  return {
+    feed: await readJson("data/items.json", { items: [] }),
+    latest: await readJson("data/latest-research.json", { items: [] }),
+    china: await readJson("data/china-research.json", { items: [] }),
+    trials: await readJson("data/trial-radar.json", { items: [] })
+  };
+}
+
+async function runSource(name, task) {
+  const startedAt = new Date().toISOString();
+  try {
+    const data = await task();
+    const count = Array.isArray(data) ? data.length : 0;
+    const record = {
+      name,
+      status: "success",
+      startedAt,
+      finishedAt: new Date().toISOString(),
+      count
+    };
+    sourceRuns.push(record);
+    return { ok: true, data, record };
+  } catch (error) {
+    const record = {
+      name,
+      status: "failed",
+      startedAt,
+      finishedAt: new Date().toISOString(),
+      error: error.message
+    };
+    sourceRuns.push(record);
+    console.warn(`[${name}] ${error.message}`);
+    return { ok: false, data: [], record };
+  }
+}
+
+function recordSkipped(name, reason) {
+  sourceRuns.push({
+    name,
+    status: "skipped",
+    startedAt: runStartedAt,
+    finishedAt: new Date().toISOString(),
+    reason
+  });
+}
+
+function buildFeedItems({ pubmedItems, rssItems, manualItems }) {
+  return dedupe([...pubmedItems, ...rssItems, ...manualItems]).sort(sortByDateDesc);
+}
+
+function buildFeedData(items, pubmedResult, rssResult) {
+  return withUpdateMeta({
     updatedAt: new Date().toISOString(),
     provenance: trustMeta({
       sourceType: "PubMed/FDA RSS/官方入口",
       evidenceLevel: "信息线索",
-      reviewStatus: "自动更新",
+      reviewStatus: sourceStatus(pubmedResult, rssResult),
       reviewNote: "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。"
     }),
-    items: dedupe([...pubmedItems, ...rssItems, ...MANUAL_ITEMS]).sort(sortByDateDesc)
-  };
+    updatePolicy: updatePolicy("daily", "PubMed 或 FDA RSS 失败时保留对应来源的上一版条目。"),
+    items
+  }, pubmedResult, rssResult);
+}
 
-  const chinaData = {
-    updatedAt: new Date().toISOString(),
-    provenance: trustMeta({
-      sourceType: "PubMed Affiliation",
-      evidenceLevel: "文献索引",
-      reviewStatus: "自动更新",
-      reviewNote: "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
-    }),
-    scopeNote: "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
-    query: '("myasthenia gravis"[Title/Abstract] OR "generalized myasthenia gravis"[Title/Abstract] OR "ocular myasthenia"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])',
-    items: dedupe(chinaResearch).sort(sortByDateDesc)
-  };
-
-  const latestData = {
+function buildLatestData(items, result) {
+  return withUpdateMeta({
     updatedAt: new Date().toISOString(),
     windowHours: 24,
     translationStatus: process.env.OPENAI_API_KEY ? "translated" : "pending",
     provenance: trustMeta({
       sourceType: "PubMed",
       evidenceLevel: "文献摘要",
-      reviewStatus: "自动更新",
+      reviewStatus: result.ok ? "自动更新" : "沿用旧数据",
       reviewNote: "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
     }),
+    updatePolicy: updatePolicy("daily", "PubMed 近 24 小时检索失败时保留上一版最新摘要。"),
     scopeNote: "展示 PubMed 过去 24 小时内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
-    items: latestResearch.sort(sortByDateDesc)
-  };
+    items
+  }, result);
+}
 
-  const trialData = {
+function buildChinaData(items, result) {
+  return withUpdateMeta({
+    updatedAt: new Date().toISOString(),
+    provenance: trustMeta({
+      sourceType: "PubMed Affiliation",
+      evidenceLevel: "文献索引",
+      reviewStatus: result.ok ? "自动更新" : "沿用旧数据",
+      reviewNote: "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
+    }),
+    updatePolicy: updatePolicy("daily", "中国机构检索失败时保留上一版中国研究列表。"),
+    scopeNote: "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
+    query: '("myasthenia gravis"[Title/Abstract] OR "generalized myasthenia gravis"[Title/Abstract] OR "ocular myasthenia"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])',
+    items
+  }, result);
+}
+
+function buildTrialData(items, result) {
+  return withUpdateMeta({
     updatedAt: new Date().toISOString(),
     provenance: trustMeta({
       sourceType: "ClinicalTrials.gov",
       evidenceLevel: "试验登记",
-      reviewStatus: "自动更新",
+      reviewStatus: result.ok ? "自动更新" : "沿用旧数据",
       reviewNote: "登记状态、入组地区和完成日期可能变化；疗效结论需等待结果披露或论文发表。"
     }),
+    updatePolicy: updatePolicy("daily", "ClinicalTrials.gov API 失败时保留上一版试验雷达。"),
     scopeNote: "自动检索 ClinicalTrials.gov 中 Myasthenia Gravis 相关研究，按机制和状态组织；用于研发情报和入组动态跟踪。",
-    items: trialRadar
+    items
+  }, result);
+}
+
+function withUpdateMeta(data, ...results) {
+  const failed = results.filter((result) => result && !result.ok).map((result) => result.record.name);
+  return {
+    ...data,
+    updateRun: {
+      runStartedAt,
+      runFinishedAt: new Date().toISOString(),
+      scope: updateScope,
+      status: failed.length ? "partial" : "success",
+      failedSources: failed
+    }
   };
+}
 
-  await Promise.all([
-    writeFile("data/items.json", `${JSON.stringify(feedData, null, 2)}\n`, "utf8"),
-    writeFile("data/china-research.json", `${JSON.stringify(chinaData, null, 2)}\n`, "utf8"),
-    writeFile("data/latest-research.json", `${JSON.stringify(latestData, null, 2)}\n`, "utf8"),
-    writeFile("data/trial-radar.json", `${JSON.stringify(trialData, null, 2)}\n`, "utf8")
-  ]);
+function updatePolicy(frequency, fallbackPolicy) {
+  return {
+    frequency,
+    fallbackPolicy,
+    manualReview: "监管批准、商业化、医保和指南类静态数据不由本脚本自动改写，需人工复核后更新。"
+  };
+}
 
-  console.log(`Wrote ${feedData.items.length} feed items to data/items.json`);
-  console.log(`Wrote ${chinaData.items.length} China research items to data/china-research.json`);
-  console.log(`Wrote ${latestData.items.length} latest research items to data/latest-research.json`);
-  console.log(`Wrote ${trialData.items.length} clinical trial items to data/trial-radar.json`);
+function sourceStatus(...results) {
+  return results.every((result) => result?.ok) ? "自动更新" : "部分沿用旧数据";
+}
+
+function previousFeedItems(feed, source) {
+  const manualIds = new Set(MANUAL_ITEMS.map((item) => item.id));
+  return (feed.items || []).filter((item) => item.source === source && !manualIds.has(item.id));
+}
+
+async function writeUpdateStatus(writes) {
+  const status = {
+    updatedAt: new Date().toISOString(),
+    runStartedAt,
+    runFinishedAt: new Date().toISOString(),
+    scope: updateScope,
+    status: sourceRuns.some((item) => item.status === "failed") ? "partial" : "success",
+    sources: sourceRuns,
+    outputs: writes.map(([file, data]) => ({
+      file,
+      count: countItems(data),
+      status: data.updateRun?.status || "success"
+    })),
+    nextReviewHint: "自动数据每日更新；监管批准、医保准入、销售额和安全性结论建议至少每月人工复核一次。"
+  };
+  await writeJsonAtomic("data/update-status.json", status);
+}
+
+async function readJson(file, fallback) {
+  try {
+    return JSON.parse(await readFile(file, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+async function writeJsonAtomic(file, data) {
+  await mkdir(dirname(file), { recursive: true });
+  const temp = `${file}.tmp`;
+  await writeFile(temp, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+  await rename(temp, file);
+}
+
+function validateDataShape(file, data) {
+  if (!data || typeof data !== "object") throw new Error(`${file}: data must be an object`);
+  if (!data.updatedAt) throw new Error(`${file}: missing updatedAt`);
+  if (!data.provenance) throw new Error(`${file}: missing provenance`);
+  if (file.endsWith("items.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
+  if (file.endsWith("latest-research.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
+  if (file.endsWith("china-research.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
+  if (file.endsWith("trial-radar.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
+}
+
+function countItems(data) {
+  return Array.isArray(data.items) ? data.items.length : 0;
+}
+
+function shouldUpdate(target) {
+  const groups = {
+    all: ["feed", "latest", "china", "trials"],
+    literature: ["feed", "latest", "china"],
+    feed: ["feed"],
+    latest: ["latest"],
+    china: ["china"],
+    trials: ["trials"]
+  };
+  return (groups[updateScope] || groups.all).includes(target);
+}
+
+function parseUpdateScope() {
+  const cliScope = process.argv.find((arg) => arg.startsWith("--scope="))?.split("=")[1];
+  const scope = cliScope || process.env.UPDATE_SCOPE || "all";
+  const allowed = new Set(["all", "literature", "feed", "latest", "china", "trials"]);
+  return allowed.has(scope) ? scope : "all";
 }
 
 async function fetchPubMed() {
@@ -536,10 +738,14 @@ async function getText(url) {
 
 async function fetchWithRetry(url, options, attempts = 4) {
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
-    const response = await fetch(url, options);
-    if (response.ok) return response;
-    if (![429, 500, 502, 503, 504].includes(response.status) || attempt === attempts) {
-      throw new Error(`${response.status} ${url}`);
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) return response;
+      if (![429, 500, 502, 503, 504].includes(response.status) || attempt === attempts) {
+        throw new Error(`${response.status} ${url}`);
+      }
+    } catch (error) {
+      if (attempt === attempts) throw error;
     }
     await sleep(750 * attempt);
   }

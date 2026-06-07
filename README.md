@@ -38,6 +38,18 @@ node scripts/update-data.mjs
 
 脚本会从 PubMed 和 FDA RSS 拉取公开数据，并保留 CDE/NMPA、ClinicalTrials.gov、会议摘要等核心入口。发布到 GitHub 后，`.github/workflows/update-data.yml` 会每天自动运行一次。
 
+### 自动更新策略
+
+当前自动更新分成三层：
+
+- 每日自动更新：PubMed 信息流、近 24 小时研究摘要、中国机构相关研究、FDA RSS 命中条目、ClinicalTrials.gov 试验雷达。
+- 自动记录状态：每次运行都会写入 `data/update-status.json`，记录更新时间、更新范围、各来源成功/失败状态和输出条数。
+- 人工复核更新：全球批准、中国准入、医保/医院准入、销售额、指南路径、安全性结论等仍需人工复核后更新，避免自动脚本误改高风险字段。
+
+容错规则：任一外部来源失败时，脚本会保留该来源上一版数据，并在 `update-status.json` 标记失败；不会把页面对应板块清空。
+
+GitHub Actions 支持手动选择更新范围：`all`、`literature`、`latest`、`feed`、`china`、`trials`。日常定时任务默认运行 `all`。
+
 ## 近 24 小时研究摘要
 
 `data/latest-research.json` 保存 PubMed 过去 24 小时内新上线或更新的 MG 文献摘要。自动任务每天运行一次；如果在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置 `OPENAI_API_KEY`，脚本会自动生成中文摘要和中文要点。未配置密钥时，网站仍会显示新文献、英文摘要和“等待中文摘要”状态。

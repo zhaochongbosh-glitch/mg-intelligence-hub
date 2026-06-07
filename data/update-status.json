@@ -1,0 +1,41 @@
+{
+  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "runStartedAt": "2026-06-07T00:00:00.000Z",
+  "runFinishedAt": "2026-06-07T00:00:00.000Z",
+  "scope": "manual-baseline",
+  "status": "strategy-defined",
+  "sources": [
+    {
+      "name": "pubmed-feed",
+      "status": "configured",
+      "frequency": "daily",
+      "fallbackPolicy": "失败时保留上一版 PubMed 文献信息流。"
+    },
+    {
+      "name": "latest-research",
+      "status": "configured",
+      "frequency": "daily",
+      "fallbackPolicy": "失败时保留上一版近 24 小时研究摘要。"
+    },
+    {
+      "name": "china-research",
+      "status": "configured",
+      "frequency": "daily",
+      "fallbackPolicy": "失败时保留上一版中国研究列表。"
+    },
+    {
+      "name": "clinical-trials",
+      "status": "configured",
+      "frequency": "daily",
+      "fallbackPolicy": "失败时保留上一版临床试验雷达。"
+    },
+    {
+      "name": "fda-rss",
+      "status": "configured",
+      "frequency": "daily",
+      "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。"
+    }
+  ],
+  "outputs": [],
+  "nextReviewHint": "自动数据每日更新；监管批准、医保准入、销售额和安全性结论建议至少每月人工复核一次。"
+}
