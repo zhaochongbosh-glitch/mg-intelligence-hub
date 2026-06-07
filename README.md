@@ -19,7 +19,7 @@ node scripts/serve.mjs
 网站已拆成多页面，便于后续维护：
 
 - `index.html`：首页仪表盘
-- `pages/research.html`：最新研究、中国研究者和信息流
+- `pages/research/index.html`：最新研究、中国研究者和信息流
 - `pages/therapy.html`：治疗图谱和药物证据矩阵
 - `pages/trials-market.html`：临床试验雷达、全球批准和市场
 - `pages/guidance.html`：指南与诊疗路径
@@ -39,6 +39,18 @@ node scripts/update-data.mjs
 ## 近 24 小时研究摘要
 
 `data/latest-research.json` 保存 PubMed 过去 24 小时内新上线或更新的 MG 文献摘要。自动任务每天运行一次；如果在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置 `OPENAI_API_KEY`，脚本会自动生成中文摘要和中文要点。未配置密钥时，网站仍会显示新文献、英文摘要和“等待中文摘要”状态。
+
+## 数据来源与人工复核标签
+
+每个主要数据文件都带有 `provenance` 字段，页面会把它显示成小标签：
+
+- `sourceType`：数据来源类型，例如 PubMed、ClinicalTrials.gov、监管文件、财报或人工整理。
+- `evidenceLevel`：证据层级或信息性质，例如文献摘要、试验登记、人工证据矩阵、市场情报。
+- `reviewStatus`：复核状态，例如自动更新、部分核查、人工整理、需定期复核。
+- `lastChecked`：最近核查日期。
+- `reviewNote`：复核备注，用来提醒哪些结论必须回到原始链接确认。
+
+建议人工复核优先级：监管批准和适应症文本 > 销售额/财报口径 > 上市后安全性信号 > 会议摘要和媒体转载。每次人工核查后，更新对应 JSON 文件里的 `provenance.lastChecked` 和 `reviewStatus`。
 
 ## 治疗图谱
 
@@ -71,7 +83,7 @@ AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR T
 
 1. 新建一个 GitHub 仓库，或使用 GitHub CLI 创建仓库。
 2. 把本文件夹推送到 GitHub。
-3. 仓库会通过 `.github/workflows/pages.yml` 自动部署到 GitHub Pages。
+3. 在 GitHub Pages 中选择从 `gh-pages` 分支 `/root` 发布。
 4. 若需要中文摘要自动生成，在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中添加 `OPENAI_API_KEY`。
 
 ## 后续可扩展

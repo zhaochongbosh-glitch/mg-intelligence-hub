@@ -40,6 +40,12 @@ const MANUAL_ITEMS = [
     title: "FDA: What's New: Drugs RSS",
     summary: "FDA 药品相关更新源。自动脚本会筛选 myasthenia gravis、neuromuscular、FcRn、complement 等关键词；有命中时会新增具体新闻卡片。",
     url: "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml",
+    trust: trustMeta({
+      sourceType: "FDA RSS",
+      evidenceLevel: "官方入口",
+      reviewStatus: "自动更新",
+      reviewNote: "入口卡片用于持续监测，具体结论需打开 FDA 原始页面确认。"
+    }),
     tags: ["FDA", "regulatory", "RSS"]
   },
   {
@@ -51,6 +57,12 @@ const MANUAL_ITEMS = [
     title: "ClinicalTrials.gov: Myasthenia Gravis 试验登记入口",
     summary: "用于追踪 MG 相关药物、抗体、细胞治疗和观察性研究的招募状态、研究设计与申办方信息。",
     url: "https://clinicaltrials.gov/search?cond=Myasthenia%20Gravis",
+    trust: trustMeta({
+      sourceType: "ClinicalTrials.gov",
+      evidenceLevel: "官方入口",
+      reviewStatus: "自动更新",
+      reviewNote: "试验登记信息不等同于已发表疗效或安全性证据。"
+    }),
     tags: ["clinical trial", "drug development"]
   },
   {
@@ -62,6 +74,12 @@ const MANUAL_ITEMS = [
     title: "CDE 药审中心全站检索入口",
     summary: "可检索重症肌无力、适应症、药物名称、突破性治疗、优先审评、临床试验默示许可等信息。",
     url: "https://www.cde.org.cn/main/fullsearch/fullsearchpage",
+    trust: trustMeta({
+      sourceType: "CDE/NMPA",
+      evidenceLevel: "官方入口",
+      reviewStatus: "人工复核入口",
+      reviewNote: "CDE 站内结果需要人工检索并核对发布日期、受理号和适应症描述。"
+    }),
     tags: ["CDE", "NMPA", "中国监管"]
   },
   {
@@ -73,6 +91,12 @@ const MANUAL_ITEMS = [
     title: "会议摘要追踪清单",
     summary: "建议后续纳入 AAN、MGFA、EAN、AANEM、EULAR 等会议摘要页面，并按会议开放程度选择自动抓取或人工录入。",
     url: "https://www.aan.com/events/annual-meeting",
+    trust: trustMeta({
+      sourceType: "会议官网",
+      evidenceLevel: "会议线索",
+      reviewStatus: "待复核",
+      reviewNote: "会议摘要通常未经过完整同行评议，需等待全文发表或官方资料更新。"
+    }),
     tags: ["conference", "abstract"]
   }
 ];
@@ -88,11 +112,23 @@ async function main() {
 
   const feedData = {
     updatedAt: new Date().toISOString(),
+    provenance: trustMeta({
+      sourceType: "PubMed/FDA RSS/官方入口",
+      evidenceLevel: "信息线索",
+      reviewStatus: "自动更新",
+      reviewNote: "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。"
+    }),
     items: dedupe([...pubmedItems, ...rssItems, ...MANUAL_ITEMS]).sort(sortByDateDesc)
   };
 
   const chinaData = {
     updatedAt: new Date().toISOString(),
+    provenance: trustMeta({
+      sourceType: "PubMed Affiliation",
+      evidenceLevel: "文献索引",
+      reviewStatus: "自动更新",
+      reviewNote: "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
+    }),
     scopeNote: "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
     query: '("myasthenia gravis"[Title/Abstract] OR "generalized myasthenia gravis"[Title/Abstract] OR "ocular myasthenia"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])',
     items: dedupe(chinaResearch).sort(sortByDateDesc)
@@ -102,12 +138,24 @@ async function main() {
     updatedAt: new Date().toISOString(),
     windowHours: 24,
     translationStatus: process.env.OPENAI_API_KEY ? "translated" : "pending",
+    provenance: trustMeta({
+      sourceType: "PubMed",
+      evidenceLevel: "文献摘要",
+      reviewStatus: "自动更新",
+      reviewNote: "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
+    }),
     scopeNote: "展示 PubMed 过去 24 小时内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
     items: latestResearch.sort(sortByDateDesc)
   };
 
   const trialData = {
     updatedAt: new Date().toISOString(),
+    provenance: trustMeta({
+      sourceType: "ClinicalTrials.gov",
+      evidenceLevel: "试验登记",
+      reviewStatus: "自动更新",
+      reviewNote: "登记状态、入组地区和完成日期可能变化；疗效结论需等待结果披露或论文发表。"
+    }),
     scopeNote: "自动检索 ClinicalTrials.gov 中 Myasthenia Gravis 相关研究，按机制和状态组织；用于研发情报和入组动态跟踪。",
     items: trialRadar
   };
@@ -162,6 +210,12 @@ async function fetchChinaResearch() {
     topic: classifyResearchTopic(item.title),
     institutionHint: "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
     summary: item.summary,
+    trust: trustMeta({
+      sourceType: "PubMed Affiliation",
+      evidenceLevel: "文献索引",
+      reviewStatus: "自动更新",
+      reviewNote: "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+    }),
     tags: ["中国研究", "PubMed", classifyResearchTopic(item.title)]
   }));
 }
@@ -202,6 +256,12 @@ function mapClinicalTrial(study) {
     startDate: status.startDateStruct?.date || "",
     completionDate: status.completionDateStruct?.date || "",
     lastUpdate: status.lastUpdatePostDateStruct?.date || "",
+    trust: trustMeta({
+      sourceType: "ClinicalTrials.gov",
+      evidenceLevel: "试验登记",
+      reviewStatus: "自动更新",
+      reviewNote: "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+    }),
     url: `https://clinicaltrials.gov/study/${identification.nctId}`
   };
 }
@@ -231,6 +291,12 @@ async function enrichLatestArticle(article) {
     keyPoints: [],
     translationStatus: "pending",
     url: `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/`,
+    trust: trustMeta({
+      sourceType: "PubMed",
+      evidenceLevel: "文献摘要",
+      reviewStatus: "自动更新",
+      reviewNote: "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
+    }),
     tags: ["latest", "PubMed", classifyResearchTopic(article.title)]
   };
 
@@ -372,6 +438,12 @@ async function summarizePubMed(ids, category) {
       journal: article.fulljournalname || "",
       summary: summarizeAuthors(article.authors, article.fulljournalname),
       url: `https://pubmed.ncbi.nlm.nih.gov/${article.uid}/`,
+      trust: trustMeta({
+        sourceType: "PubMed",
+        evidenceLevel: "文献索引",
+        reviewStatus: "自动更新",
+        reviewNote: "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      }),
       tags: ["PubMed", "literature", article.fulljournalname].filter(Boolean)
     }));
 }
@@ -399,6 +471,12 @@ async function fetchRss(source) {
         title,
         summary,
         url,
+        trust: trustMeta({
+          sourceType: `${source.source} RSS`,
+          evidenceLevel: "监管动态",
+          reviewStatus: "自动更新",
+          reviewNote: "RSS 摘要为自动筛选结果，需打开原始监管页面核对完整信息。"
+        }),
         tags: ["FDA", "regulatory", "RSS"]
       };
     })
@@ -523,6 +601,16 @@ function monthNumber(month) {
 
 function today() {
   return new Date().toISOString().slice(0, 10);
+}
+
+function trustMeta({ sourceType, evidenceLevel, reviewStatus, reviewNote = "" }) {
+  return {
+    sourceType,
+    evidenceLevel,
+    reviewStatus,
+    lastChecked: today(),
+    reviewNote
+  };
 }
 
 function sleep(ms) {

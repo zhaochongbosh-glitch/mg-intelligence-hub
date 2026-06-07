@@ -1,5 +1,12 @@
 {
   "updatedAt": "2026-06-07T02:27:49.617Z",
+  "provenance": {
+    "sourceType": "PubMed",
+    "evidenceLevel": "文献摘要",
+    "reviewStatus": "自动更新",
+    "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
+    "lastChecked": "2026-06-07"
+  },
   "windowHours": 24,
   "translationStatus": "pending",
   "scopeNote": "展示 PubMed 过去 24 小时内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
@@ -24,7 +31,14 @@
         "latest",
         "PubMed",
         "免疫机制"
-      ]
+      ],
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献摘要",
+        "reviewStatus": "自动更新",
+        "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "latest-42244451",
@@ -46,7 +60,14 @@
         "latest",
         "PubMed",
         "免疫机制"
-      ]
+      ],
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献摘要",
+        "reviewStatus": "自动更新",
+        "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "latest-42242900",
@@ -68,7 +89,14 @@
         "latest",
         "PubMed",
         "治疗与真实世界"
-      ]
+      ],
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献摘要",
+        "reviewStatus": "自动更新",
+        "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
+        "lastChecked": "2026-06-07"
+      }
     }
   ]
 }

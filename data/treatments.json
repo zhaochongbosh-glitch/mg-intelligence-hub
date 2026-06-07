@@ -1,5 +1,12 @@
 {
   "updatedAt": "2026-06-07T00:00:00.000Z",
+  "provenance": {
+    "sourceType": "标签/文献/监管文件",
+    "evidenceLevel": "人工证据汇总",
+    "reviewStatus": "部分核查",
+    "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+    "lastChecked": "2026-06-07"
+  },
   "scopeNote": "第一版以 FDA 已批准用于 MG/gMG 的药物和制剂为核心；EMA、NMPA/CDE 批准状态预留字段，后续可继续扩展。",
   "treatments": [
     {
@@ -21,7 +28,11 @@
       "pivotalEvidence": "历史批准，缺少按现代标准设计的关键 III 期 RCT；临床使用经验长期积累。",
       "realWorldEvidence": "临床实践基础药物；可后续补充队列研究和指南引用。",
       "postMarketing": "关注胆碱能不良反应、心动过缓、腹痛、腹泻、分泌物增加和过量相关胆碱能危象。",
-      "safetySignals": ["胆碱能反应", "胃肠道反应", "心动过缓"],
+      "safetySignals": [
+        "胆碱能反应",
+        "胃肠道反应",
+        "心动过缓"
+      ],
       "evidenceGrade": "历史临床使用",
       "links": [
         {
@@ -32,7 +43,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:%22PYRIDOSTIGMINE%20BROMIDE%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "eculizumab",
@@ -53,7 +71,11 @@
       "pivotalEvidence": "REGAIN 随机、双盲、安慰剂对照研究及开放标签延长期。",
       "realWorldEvidence": "已有多中心真实世界队列和长期随访；后续可按 PubMed 自动补充。",
       "postMarketing": "带有严重脑膜炎球菌感染风险管理要求；上市后重点关注严重感染、输注反应和免疫相关安全事件。",
-      "safetySignals": ["脑膜炎球菌感染", "严重感染", "输注反应"],
+      "safetySignals": [
+        "脑膜炎球菌感染",
+        "严重感染",
+        "输注反应"
+      ],
       "evidenceGrade": "关键 RCT + OLE + RWE",
       "links": [
         {
@@ -68,7 +90,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22SOLIRIS%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "ravulizumab",
@@ -89,7 +118,11 @@
       "pivotalEvidence": "CHAMPION-MG III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "真实世界证据正在积累，重点关注从 eculizumab 转换、长期维持和给药便利性。",
       "postMarketing": "与 C5 抑制相关的脑膜炎球菌感染风险是上市后监测重点。",
-      "safetySignals": ["脑膜炎球菌感染", "严重感染", "输注反应"],
+      "safetySignals": [
+        "脑膜炎球菌感染",
+        "严重感染",
+        "输注反应"
+      ],
       "evidenceGrade": "关键 RCT + 延长期/转换数据",
       "links": [
         {
@@ -104,7 +137,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22ULTOMIRIS%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "zilucoplan",
@@ -125,7 +165,11 @@
       "pivotalEvidence": "RAISE III 期随机、双盲、安慰剂对照研究；FDA Drug Trials Snapshot 提到 174 例成人 gMG 患者。",
       "realWorldEvidence": "上市时间较短，真实世界证据仍在早期积累。",
       "postMarketing": "关注脑膜炎球菌感染、其他感染、胰腺酶/胰腺炎相关信号和注射部位反应。",
-      "safetySignals": ["脑膜炎球菌感染", "感染", "注射部位反应"],
+      "safetySignals": [
+        "脑膜炎球菌感染",
+        "感染",
+        "注射部位反应"
+      ],
       "evidenceGrade": "关键 RCT + 早期 RWE",
       "links": [
         {
@@ -140,7 +184,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22ZILBRYSQ%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "efgartigimod-iv",
@@ -161,7 +212,11 @@
       "pivotalEvidence": "ADAPT III 期随机、双盲、安慰剂对照研究；ADAPT+ 开放标签延长期。",
       "realWorldEvidence": "已有多个真实世界队列，重点关注快速起效、循环给药、激素减量和转换治疗。",
       "postMarketing": "关注感染、头痛、输注/超敏反应及 IgG 降低相关风险。",
-      "safetySignals": ["感染", "头痛", "超敏反应"],
+      "safetySignals": [
+        "感染",
+        "头痛",
+        "超敏反应"
+      ],
       "evidenceGrade": "关键 RCT + OLE + RWE",
       "links": [
         {
@@ -176,7 +231,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22VYVGART%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "efgartigimod-hytrulo",
@@ -197,7 +259,11 @@
       "pivotalEvidence": "ADAPT-SC 等研究支持皮下制剂批准；与 IV 制剂共同构成 FcRn 证据体系。",
       "realWorldEvidence": "真实世界证据正在积累，重点关注居家/门诊给药便利性和循环治疗体验。",
       "postMarketing": "关注感染、超敏反应、注射部位反应和 IgG 降低相关风险。",
-      "safetySignals": ["感染", "注射部位反应", "超敏反应"],
+      "safetySignals": [
+        "感染",
+        "注射部位反应",
+        "超敏反应"
+      ],
       "evidenceGrade": "桥接/制剂研究 + RWE 积累中",
       "links": [
         {
@@ -212,7 +278,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22VYVGART%20HYTRULO%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "rozanolixizumab",
@@ -233,7 +306,11 @@
       "pivotalEvidence": "MycarinG III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "上市时间较短，真实世界证据早期积累；MuSK 阳性人群值得单独追踪。",
       "postMarketing": "关注感染、无菌性脑膜炎、头痛、腹泻、发热和超敏反应。",
-      "safetySignals": ["感染", "无菌性脑膜炎", "头痛"],
+      "safetySignals": [
+        "感染",
+        "无菌性脑膜炎",
+        "头痛"
+      ],
       "evidenceGrade": "关键 RCT + 早期 RWE",
       "links": [
         {
@@ -248,7 +325,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22RYSTIGGO%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "nipocalimab",
@@ -269,7 +353,11 @@
       "pivotalEvidence": "VIVACITY-MG3 III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "获批较新，真实世界证据有限；需持续追踪长期维持、青少年使用和感染风险。",
       "postMarketing": "关注感染、外周水肿、超敏反应和 IgG 降低相关风险。",
-      "safetySignals": ["感染", "外周水肿", "超敏反应"],
+      "safetySignals": [
+        "感染",
+        "外周水肿",
+        "超敏反应"
+      ],
       "evidenceGrade": "关键 RCT + RWE 待积累",
       "links": [
         {
@@ -284,7 +372,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22IMAAVY%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     },
     {
       "id": "inebilizumab",
@@ -305,7 +400,11 @@
       "pivotalEvidence": "MINT III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "gMG 获批较新，真实世界证据有限；可借鉴 NMOSD/IgG4-RD 长期安全性但需区分适应症。",
       "postMarketing": "关注输注反应、感染、免疫球蛋白降低、乙肝再激活风险和进行性多灶性白质脑病等 B 细胞耗竭相关风险。",
-      "safetySignals": ["感染", "输注反应", "免疫球蛋白降低"],
+      "safetySignals": [
+        "感染",
+        "输注反应",
+        "免疫球蛋白降低"
+      ],
       "evidenceGrade": "关键 RCT + RWE 待积累",
       "links": [
         {
@@ -320,7 +419,14 @@
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22UPLIZNA%22&limit=10"
         }
-      ]
+      ],
+      "trust": {
+        "sourceType": "标签/文献/监管文件",
+        "evidenceLevel": "人工证据汇总",
+        "reviewStatus": "部分核查",
+        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
+        "lastChecked": "2026-06-07"
+      }
     }
   ],
   "offLabelOrSupportive": [

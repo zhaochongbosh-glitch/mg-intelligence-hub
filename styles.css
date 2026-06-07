@@ -494,6 +494,54 @@ select:focus {
   font-weight: 800;
 }
 
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 10px;
+}
+
+.trust-pill {
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid #dfe8e7;
+  border-radius: 999px;
+  background: #f8fbfb;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 780;
+  line-height: 1.25;
+}
+
+.trust-pill--auto {
+  border-color: #d5e7e2;
+  background: #eef8f4;
+  color: #245b58;
+}
+
+.trust-pill--review {
+  border-color: #d8e1f3;
+  background: #f1f5fb;
+  color: var(--blue);
+}
+
+.trust-pill--warning {
+  border-color: #ead9ba;
+  background: #fbf8f1;
+  color: #80510f;
+}
+
+.review-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
 .trial-tools {
   display: grid;
   grid-template-columns: 220px 220px;

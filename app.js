@@ -31,6 +31,57 @@ const dataFiles = {
   trials: "trial-radar.json"
 };
 
+const trustDefaults = {
+  feed: {
+    sourceType: "聚合来源",
+    evidenceLevel: "信息线索",
+    reviewStatus: "自动更新",
+    reviewNote: "自动聚合条目用于情报线索，临床或监管结论需回到原始链接复核。"
+  },
+  latest: {
+    sourceType: "PubMed",
+    evidenceLevel: "文献摘要",
+    reviewStatus: "自动更新",
+    reviewNote: "每 24 小时抓取 PubMed 新上线记录；中文摘要仅作阅读辅助。"
+  },
+  china: {
+    sourceType: "PubMed Affiliation",
+    evidenceLevel: "文献索引",
+    reviewStatus: "自动更新",
+    reviewNote: "通过机构字段近似识别中国研究者/机构，仍需打开 PubMed 原文确认。"
+  },
+  treatments: {
+    sourceType: "标签/文献/监管文件",
+    evidenceLevel: "人工证据汇总",
+    reviewStatus: "部分核查",
+    reviewNote: "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。"
+  },
+  matrix: {
+    sourceType: "RCT/OLE/RWE 文献",
+    evidenceLevel: "人工证据矩阵",
+    reviewStatus: "部分核查",
+    reviewNote: "用于横向比较证据层级，不替代原始研究和正式指南。"
+  },
+  trials: {
+    sourceType: "ClinicalTrials.gov",
+    evidenceLevel: "试验登记",
+    reviewStatus: "自动更新",
+    reviewNote: "登记信息反映试验状态，不等同于已发表疗效或安全性证据。"
+  },
+  market: {
+    sourceType: "监管/财报/公司公告",
+    evidenceLevel: "市场情报",
+    reviewStatus: "需定期复核",
+    reviewNote: "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。"
+  },
+  guidance: {
+    sourceType: "指南/共识/监管文件",
+    evidenceLevel: "专家路径",
+    reviewStatus: "人工整理",
+    reviewNote: "路径用于形成临床问题和情报框架，具体决策应结合最新版指南与患者情况。"
+  }
+};
+
 boot();
 
 async function boot() {
@@ -170,6 +221,7 @@ function renderLatestCard(item) {
         </div>
         <span>${escapeHtml(statusLabel)}</span>
       </div>
+      ${renderTrustMeta(item, "latest")}
       <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
       ${points ? `<ul class="latest-points">${points}</ul>` : ""}
       <details>
@@ -202,6 +254,7 @@ function renderChinaCard(item) {
           <span>${escapeHtml(item.topic || "研究")}</span>
           <span>${escapeHtml(item.journal || "PubMed")}</span>
         </div>
+        ${renderTrustMeta(item, "china")}
         <h3>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.summary || item.authors || "")}</p>
         <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 原文")}</p>
@@ -231,6 +284,7 @@ function renderFeedItem(item) {
         <span>${escapeHtml(item.source || "未知来源")}</span>
         <span>${formatDate(item.date)}</span>
       </div>
+      ${renderTrustMeta(item, "feed")}
       <h3>${escapeHtml(item.title || "未命名条目")}</h3>
       <p>${escapeHtml(item.summary || "")}</p>
       <div class="item__actions">
@@ -255,7 +309,10 @@ function renderMatrix() {
         <td>${escapeHtml(item.realWorldEvidence)}</td>
         <td>${escapeHtml(item.safetyFocus)}</td>
         <td>${escapeHtml(item.chinaAccess)}</td>
-        <td><span class="evidence-badge">${escapeHtml(item.evidenceLevel)}</span></td>
+        <td>
+          <span class="evidence-badge">${escapeHtml(item.evidenceLevel)}</span>
+          ${renderReviewNote(item, "matrix")}
+        </td>
       </tr>
     `)
     .join("");
@@ -295,6 +352,7 @@ function renderTreatmentCard(item) {
         </div>
         <strong>${escapeHtml(item.evidenceGrade || "证据待补充")}</strong>
       </div>
+      ${renderTrustMeta(item, "treatments")}
       <dl class="treatment-grid">
         <div><dt>机制</dt><dd>${escapeHtml(item.mechanism)}</dd></div>
         <div><dt>适用人群</dt><dd>${escapeHtml(item.approvedUse)}</dd></div>
@@ -341,6 +399,7 @@ function renderTrialCard(item) {
         <span>更新: ${escapeHtml(item.lastUpdate || "未知")}</span>
         <span>完成: ${escapeHtml(item.completionDate || "未知")}</span>
       </div>
+      ${renderTrustMeta(item, "trials")}
       <div class="trial-tags">${interventions}</div>
       <p>${escapeHtml((item.countries || []).join(", ") || "国家/地区待补充")}</p>
       <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看 ClinicalTrials.gov</a>
@@ -380,6 +439,7 @@ function renderMarketCard(product) {
         </div>
         <strong>${escapeHtml(String(product.approvalCount || (product.approvals || []).length))} 个市场</strong>
       </div>
+      ${renderTrustMeta(product, "market")}
       <div class="sales-box">
         <span>${escapeHtml(sales.year || "最新")} 销售额</span>
         <strong>${escapeHtml(sales.value || "未披露")}</strong>
@@ -405,6 +465,7 @@ function renderGuidance() {
         <article class="guidance-card">
           <p class="section-kicker">${escapeHtml(item.step)}</p>
           <h3>${escapeHtml(item.clinicalQuestion)}</h3>
+          ${renderTrustMeta(item, "guidance")}
           <dl>
             <div><dt>共识方向</dt><dd>${escapeHtml(item.consensus)}</dd></div>
             <div><dt>中国实践关注</dt><dd>${escapeHtml(item.chinaPractice)}</dd></div>
@@ -415,6 +476,54 @@ function renderGuidance() {
       `;
     })
     .join("");
+}
+
+function renderTrustMeta(item = {}, moduleName) {
+  const meta = resolveTrustMeta(item, moduleName);
+  const parts = [
+    ["来源", meta.sourceType],
+    ["证据", meta.evidenceLevel],
+    ["复核", meta.reviewStatus],
+    ["核查", meta.lastChecked ? formatDate(meta.lastChecked) : ""]
+  ].filter(([, value]) => value);
+
+  if (!parts.length) return "";
+
+  const note = meta.reviewNote ? ` title="${escapeAttribute(meta.reviewNote)}"` : "";
+  const pills = parts
+    .map(([label, value]) => `<span class="trust-pill ${trustPillClass(label, value)}"${label === "复核" ? note : ""}>${label}: ${escapeHtml(value)}</span>`)
+    .join("");
+  return `<div class="trust-row" aria-label="数据来源与人工复核">${pills}</div>`;
+}
+
+function renderReviewNote(item = {}, moduleName) {
+  const meta = resolveTrustMeta(item, moduleName);
+  const status = meta.reviewStatus || "待复核";
+  const checked = meta.lastChecked ? ` · ${formatDate(meta.lastChecked)}` : "";
+  return `<small class="review-note">${escapeHtml(status)}${escapeHtml(checked)}</small>`;
+}
+
+function resolveTrustMeta(item = {}, moduleName) {
+  const moduleData = state.data[moduleName] || {};
+  const fallback = trustDefaults[moduleName] || {};
+  const root = moduleData.provenance || moduleData.trust || {};
+  const itemTrust = item.trust || item.provenance || {};
+  const sourceType = itemTrust.sourceType || item.sourceType || item.source || root.sourceType || fallback.sourceType;
+  const evidenceLevel =
+    itemTrust.evidenceLevel || item.evidenceLevel || item.evidenceGrade || root.evidenceLevel || fallback.evidenceLevel;
+  const reviewStatus = itemTrust.reviewStatus || item.reviewStatus || root.reviewStatus || fallback.reviewStatus;
+  const lastChecked =
+    itemTrust.lastChecked || item.lastChecked || root.lastChecked || moduleData.updatedAt || item.lastUpdate || item.date || fallback.lastChecked;
+  const reviewNote = itemTrust.reviewNote || item.reviewNote || root.reviewNote || fallback.reviewNote;
+  return { sourceType, evidenceLevel, reviewStatus, lastChecked, reviewNote };
+}
+
+function trustPillClass(label, value = "") {
+  const text = `${label} ${value}`;
+  if (/待|需|部分/.test(text)) return "trust-pill--warning";
+  if (/自动/.test(text)) return "trust-pill--auto";
+  if (/已核查|人工/.test(text)) return "trust-pill--review";
+  return "";
 }
 
 function matchesFeed(item) {
