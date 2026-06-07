@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重症肌无力治疗与证据：治疗图谱、药物证据矩阵和安全性重点。" />
+    <title>治疗与证据 | 重症肌无力信息中枢</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="therapy">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">Therapy & Evidence</p>
+        <h1>治疗与证据</h1>
+        <p>比较已获批治疗药物、关键临床证据、真实世界研究和上市后安全性。</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav">
+        <a href="../index.html">首页</a>
+        <a href="research.html">研究情报</a>
+        <a href="therapy.html" aria-current="page">治疗与证据</a>
+        <a href="trials-market.html">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+      </nav>
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Evidence Matrix</p>
+            <h2>药物证据矩阵</h2>
+            <p data-scope="matrix">正在读取证据矩阵</p>
+          </div>
+          <p data-count="matrix">0 个药物</p>
+        </div>
+        <div data-render="matrix" class="matrix-table"></div>
+      </section>
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Approved Therapy Map</p>
+            <h2>获批治疗图谱</h2>
+            <p data-scope="treatments">正在读取药物数据库</p>
+          </div>
+          <p data-count="treatments">0 个治疗项</p>
+        </div>
+        <div class="treatment-tools">
+          <label>
+            <span>治疗分类</span>
+            <select data-control="treatment-class"><option value="all">全部</option></select>
+          </label>
+          <label>
+            <span>抗体/人群</span>
+            <select data-control="biomarker"><option value="all">全部</option></select>
+          </label>
+          <label class="search">
+            <span>药物搜索</span>
+            <input data-control="treatment-search" type="search" placeholder="商品名、通用名、机制、证据..." />
+          </label>
+        </div>
+        <div data-render="treatments" class="treatments"></div>
+        <div data-render="supportive" class="supportive-note"></div>
+      </section>
+    </main>
+    <footer><p>仅用于科研与商业情报跟踪，不构成医疗建议。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>

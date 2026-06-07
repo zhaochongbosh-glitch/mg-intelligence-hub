@@ -1,471 +1,253 @@
-const categoryLabels = ["文献", "研发动态", "会议摘要", "监管动态", "入口"];
+const DATA_ROOT = document.body.dataset.page === "home" ? "data" : "../data";
 
 const state = {
-  items: [],
-  treatments: [],
-  supportiveTreatments: [],
-  chinaResearch: [],
-  marketProducts: [],
-  latestResearch: [],
-  guidancePathways: [],
-  evidenceMatrix: [],
-  trialRadar: [],
-  query: "",
-  category: "all",
-  source: "all",
-  language: "all",
-  treatmentQuery: "",
-  treatmentClass: "all",
-  biomarker: "all",
-  chinaQuery: "",
-  chinaTopic: "all",
-  trialMechanism: "all",
-  trialStatus: "all"
+  data: {},
+  filters: {
+    feedQuery: "",
+    feedCategory: "all",
+    feedSource: "all",
+    feedLanguage: "all",
+    chinaQuery: "",
+    chinaTopic: "all",
+    treatmentQuery: "",
+    treatmentClass: "all",
+    biomarker: "all",
+    trialMechanism: "all",
+    trialStatus: "all"
+  }
 };
 
-const els = {
-  feed: document.querySelector("#feed"),
-  empty: document.querySelector("#emptyState"),
-  search: document.querySelector("#searchInput"),
-  category: document.querySelector("#categoryFilter"),
-  source: document.querySelector("#sourceFilter"),
-  language: document.querySelector("#languageFilter"),
-  totalCount: document.querySelector("#totalCount"),
-  sourceCount: document.querySelector("#sourceCount"),
-  updatedAt: document.querySelector("#updatedAt"),
-  resultCount: document.querySelector("#resultCount"),
-  chinaCount: document.querySelector("#chinaCount"),
-  treatmentTotal: document.querySelector("#treatmentTotal"),
-  overviewChina: document.querySelector("#overviewChina"),
-  overviewTreatment: document.querySelector("#overviewTreatment"),
-  overviewLatest: document.querySelector("#overviewLatest"),
-  overviewTrials: document.querySelector("#overviewTrials")
+const categoryLabels = ["文献", "研发动态", "会议摘要", "监管动态", "入口", "中国研究"];
+
+const dataFiles = {
+  feed: "items.json",
+  latest: "latest-research.json",
+  china: "china-research.json",
+  treatments: "treatments.json",
+  market: "global-market.json",
+  guidance: "guidance-pathways.json",
+  matrix: "evidence-matrix.json",
+  trials: "trial-radar.json"
 };
 
-const treatmentEls = {
-  container: document.querySelector("#treatments"),
-  scope: document.querySelector("#treatmentScope"),
-  count: document.querySelector("#treatmentCount"),
-  classFilter: document.querySelector("#treatmentClassFilter"),
-  biomarkerFilter: document.querySelector("#biomarkerFilter"),
-  search: document.querySelector("#treatmentSearchInput"),
-  supportive: document.querySelector("#supportiveTreatments")
-};
-
-const chinaEls = {
-  container: document.querySelector("#chinaResearchList"),
-  scope: document.querySelector("#chinaScope"),
-  search: document.querySelector("#chinaSearchInput"),
-  topic: document.querySelector("#chinaTopicFilter")
-};
-
-const marketEls = {
-  container: document.querySelector("#marketCards"),
-  scope: document.querySelector("#marketScope"),
-  count: document.querySelector("#marketCount")
-};
-
-const latestEls = {
-  container: document.querySelector("#latestResearchList"),
-  scope: document.querySelector("#latestScope"),
-  count: document.querySelector("#latestCount")
-};
-
-const guidanceEls = {
-  container: document.querySelector("#guidanceCards"),
-  scope: document.querySelector("#guidanceScope"),
-  count: document.querySelector("#guidanceCount")
-};
-
-const matrixEls = {
-  container: document.querySelector("#matrixTable"),
-  scope: document.querySelector("#matrixScope"),
-  count: document.querySelector("#matrixCount")
-};
-
-const trialEls = {
-  container: document.querySelector("#trialCards"),
-  scope: document.querySelector("#trialScope"),
-  count: document.querySelector("#trialCount"),
-  mechanism: document.querySelector("#trialMechanismFilter"),
-  status: document.querySelector("#trialStatusFilter")
-};
+boot();
 
 async function boot() {
   try {
-    const [
-      feedResponse,
-      treatmentResponse,
-      chinaResponse,
-      marketResponse,
-      latestResponse,
-      guidanceResponse,
-      matrixResponse,
-      trialResponse
-    ] = await Promise.all([
-      fetch(`data/items.json?ts=${Date.now()}`),
-      fetch(`data/treatments.json?ts=${Date.now()}`),
-      fetch(`data/china-research.json?ts=${Date.now()}`),
-      fetch(`data/global-market.json?ts=${Date.now()}`),
-      fetch(`data/latest-research.json?ts=${Date.now()}`),
-      fetch(`data/guidance-pathways.json?ts=${Date.now()}`),
-      fetch(`data/evidence-matrix.json?ts=${Date.now()}`),
-      fetch(`data/trial-radar.json?ts=${Date.now()}`)
-    ]);
-    if (!feedResponse.ok) throw new Error(`Feed HTTP ${feedResponse.status}`);
-    if (!treatmentResponse.ok) throw new Error(`Treatments HTTP ${treatmentResponse.status}`);
-    if (!chinaResponse.ok) throw new Error(`China research HTTP ${chinaResponse.status}`);
-    if (!marketResponse.ok) throw new Error(`Global market HTTP ${marketResponse.status}`);
-    if (!latestResponse.ok) throw new Error(`Latest research HTTP ${latestResponse.status}`);
-    if (!guidanceResponse.ok) throw new Error(`Guidance HTTP ${guidanceResponse.status}`);
-    if (!matrixResponse.ok) throw new Error(`Matrix HTTP ${matrixResponse.status}`);
-    if (!trialResponse.ok) throw new Error(`Trial radar HTTP ${trialResponse.status}`);
-
-    const data = await feedResponse.json();
-    const treatmentData = await treatmentResponse.json();
-    const chinaData = await chinaResponse.json();
-    const marketData = await marketResponse.json();
-    const latestData = await latestResponse.json();
-    const guidanceData = await guidanceResponse.json();
-    const matrixData = await matrixResponse.json();
-    const trialData = await trialResponse.json();
-
-    state.items = Array.isArray(data.items) ? data.items : [];
-    state.treatments = Array.isArray(treatmentData.treatments) ? treatmentData.treatments : [];
-    state.supportiveTreatments = Array.isArray(treatmentData.offLabelOrSupportive) ? treatmentData.offLabelOrSupportive : [];
-    state.chinaResearch = Array.isArray(chinaData.items) ? chinaData.items : [];
-    state.marketProducts = Array.isArray(marketData.products) ? marketData.products : [];
-    state.latestResearch = Array.isArray(latestData.items) ? latestData.items : [];
-    state.guidancePathways = Array.isArray(guidanceData.pathways) ? guidanceData.pathways : [];
-    state.evidenceMatrix = Array.isArray(matrixData.items) ? matrixData.items : [];
-    state.trialRadar = Array.isArray(trialData.items) ? trialData.items : [];
-
-    hydrateMeta(data, chinaData);
-    hydrateFilters();
-    hydrateTreatmentMeta(treatmentData);
-    hydrateTreatmentFilters();
-    hydrateChinaMeta(chinaData);
-    hydrateChinaFilters();
-    hydrateMarketMeta(marketData);
-    hydrateLatestMeta(latestData);
-    hydrateGuidanceMeta(guidanceData);
-    hydrateMatrixMeta(matrixData);
-    hydrateTrialMeta(trialData);
-    hydrateTrialFilters();
-    bindEvents();
-    render();
-    renderLatestResearch();
-    renderGuidance();
-    renderMatrix();
-    renderTrials();
-    renderMarket();
-    renderTreatments();
-    renderChinaResearch();
+    state.data = await loadAllData();
+    hydrateStats();
+    hydrateControls();
+    bindControls();
+    renderVisibleModules();
   } catch (error) {
-    els.resultCount.textContent = "数据读取失败";
-    els.feed.innerHTML = `<article class="item"><h3>无法读取数据文件</h3><p>请确认本地服务器正在运行，或稍后重试。</p></article>`;
     console.error(error);
+    for (const target of document.querySelectorAll("[data-render]")) {
+      target.innerHTML = `<article class="item"><h3>数据读取失败</h3><p>请稍后刷新页面，或检查 data 文件是否存在。</p></article>`;
+    }
   }
 }
 
-function hydrateMeta(data) {
-  const sources = new Set(state.items.map((item) => item.source).filter(Boolean));
-  els.totalCount.textContent = state.items.length;
-  els.sourceCount.textContent = sources.size;
-  els.updatedAt.textContent = formatDate(data.updatedAt);
-  els.chinaCount.textContent = state.chinaResearch.length;
-  els.treatmentTotal.textContent = state.treatments.length;
-  els.overviewChina.textContent = state.chinaResearch.length;
-  els.overviewTreatment.textContent = state.treatments.length;
-  els.overviewLatest.textContent = state.latestResearch.length;
-  els.overviewTrials.textContent = state.trialRadar.length;
+async function loadAllData() {
+  const entries = await Promise.all(
+    Object.entries(dataFiles).map(async ([key, file]) => {
+      const response = await fetch(`${DATA_ROOT}/${file}?ts=${Date.now()}`);
+      if (!response.ok) throw new Error(`${file} HTTP ${response.status}`);
+      return [key, await response.json()];
+    })
+  );
+  return Object.fromEntries(entries);
 }
 
-function hydrateFilters() {
-  for (const label of categoryLabels) {
-    els.category.append(new Option(label, label));
-  }
-
-  const sources = [...new Set(state.items.map((item) => item.source).filter(Boolean))].sort();
-  for (const source of sources) {
-    els.source.append(new Option(source, source));
-  }
+function hydrateStats() {
+  setAll("[data-stat='latest']", latestItems().length);
+  setAll("[data-stat='china']", chinaItems().length);
+  setAll("[data-stat='treatments']", treatmentItems().length);
+  setAll("[data-stat='trials']", trialItems().length);
+  setAll("[data-stat='updated']", formatDate(state.data.feed?.updatedAt));
 }
 
-function hydrateTreatmentMeta(data) {
-  treatmentEls.scope.textContent = data.scopeNote || "按官方标签和关键证据整理";
-  treatmentEls.count.textContent = `${state.treatments.length} 个治疗项`;
+function hydrateControls() {
+  fillSelect("feed-category", categoryLabels);
+  fillSelect("feed-source", [...new Set(feedItems().map((item) => item.source).filter(Boolean))].sort());
+  fillSelect("china-topic", [...new Set(chinaItems().map((item) => item.topic).filter(Boolean))].sort());
+  fillSelect("treatment-class", [...new Set(treatmentItems().map((item) => item.class).filter(Boolean))].sort());
+  fillSelect("biomarker", [...new Set(treatmentItems().map((item) => item.biomarker).filter(Boolean))].sort());
+  fillSelect("trial-mechanism", [...new Set(trialItems().map((item) => item.mechanism).filter(Boolean))].sort());
+  fillSelect(
+    "trial-status",
+    [...new Set(trialItems().map((item) => item.status).filter(Boolean))].sort(),
+    formatTrialStatus
+  );
 }
 
-function hydrateTreatmentFilters() {
-  const classes = [...new Set(state.treatments.map((item) => item.class).filter(Boolean))].sort();
-  for (const value of classes) {
-    treatmentEls.classFilter.append(new Option(value, value));
-  }
-
-  const biomarkers = [...new Set(state.treatments.map((item) => item.biomarker).filter(Boolean))].sort();
-  for (const value of biomarkers) {
-    treatmentEls.biomarkerFilter.append(new Option(value, value));
-  }
-}
-
-function hydrateChinaMeta(data) {
-  chinaEls.scope.textContent = data.scopeNote || "基于 PubMed 机构字段自动识别中国相关研究";
-}
-
-function hydrateChinaFilters() {
-  const topics = [...new Set(state.chinaResearch.map((item) => item.topic).filter(Boolean))].sort();
-  for (const topic of topics) {
-    chinaEls.topic.append(new Option(topic, topic));
-  }
-}
-
-function hydrateMarketMeta(data) {
-  marketEls.scope.textContent = data.scopeNote || "按主要监管地区和公开财报整理";
-  marketEls.count.textContent = `${state.marketProducts.length} 个产品`;
-}
-
-function hydrateLatestMeta(data) {
-  latestEls.scope.textContent = data.scopeNote || "展示 PubMed 过去 24 小时内新上线或更新的 MG 研究。";
-  latestEls.count.textContent = `${state.latestResearch.length} 篇新研究`;
-}
-
-function hydrateGuidanceMeta(data) {
-  guidanceEls.scope.textContent = data.scopeNote || "按指南和正式来源整理 MG 诊疗路径。";
-  guidanceEls.count.textContent = `${state.guidancePathways.length} 个路径节点`;
-}
-
-function hydrateMatrixMeta(data) {
-  matrixEls.scope.textContent = data.scopeNote || "横向比较核心 MG 治疗药物证据。";
-  matrixEls.count.textContent = `${state.evidenceMatrix.length} 个药物`;
-}
-
-function hydrateTrialMeta(data) {
-  trialEls.scope.textContent = data.scopeNote || "自动检索 ClinicalTrials.gov 中 MG 相关研究。";
-  trialEls.count.textContent = `${state.trialRadar.length} 项试验`;
-}
-
-function hydrateTrialFilters() {
-  const mechanisms = [...new Set(state.trialRadar.map((item) => item.mechanism).filter(Boolean))].sort();
-  for (const mechanism of mechanisms) {
-    trialEls.mechanism.append(new Option(mechanism, mechanism));
-  }
-
-  const statuses = [...new Set(state.trialRadar.map((item) => item.status).filter(Boolean))].sort();
-  for (const status of statuses) {
-    trialEls.status.append(new Option(formatTrialStatus(status), status));
-  }
-}
-
-function bindEvents() {
-  els.search.addEventListener("input", (event) => {
-    state.query = event.target.value.trim().toLowerCase();
-    render();
+function bindControls() {
+  onInput("feed-search", (value) => {
+    state.filters.feedQuery = value.toLowerCase();
+    renderFeed();
   });
-
-  els.category.addEventListener("change", (event) => {
-    state.category = event.target.value;
-    render();
+  onChange("feed-category", (value) => {
+    state.filters.feedCategory = value;
+    renderFeed();
   });
-
-  els.source.addEventListener("change", (event) => {
-    state.source = event.target.value;
-    render();
+  onChange("feed-source", (value) => {
+    state.filters.feedSource = value;
+    renderFeed();
   });
-
-  els.language.addEventListener("change", (event) => {
-    state.language = event.target.value;
-    render();
+  onChange("feed-language", (value) => {
+    state.filters.feedLanguage = value;
+    renderFeed();
   });
-
-  treatmentEls.search.addEventListener("input", (event) => {
-    state.treatmentQuery = event.target.value.trim().toLowerCase();
+  onInput("china-search", (value) => {
+    state.filters.chinaQuery = value.toLowerCase();
+    renderChina();
+  });
+  onChange("china-topic", (value) => {
+    state.filters.chinaTopic = value;
+    renderChina();
+  });
+  onInput("treatment-search", (value) => {
+    state.filters.treatmentQuery = value.toLowerCase();
     renderTreatments();
   });
-
-  treatmentEls.classFilter.addEventListener("change", (event) => {
-    state.treatmentClass = event.target.value;
+  onChange("treatment-class", (value) => {
+    state.filters.treatmentClass = value;
     renderTreatments();
   });
-
-  treatmentEls.biomarkerFilter.addEventListener("change", (event) => {
-    state.biomarker = event.target.value;
+  onChange("biomarker", (value) => {
+    state.filters.biomarker = value;
     renderTreatments();
   });
-
-  chinaEls.search.addEventListener("input", (event) => {
-    state.chinaQuery = event.target.value.trim().toLowerCase();
-    renderChinaResearch();
-  });
-
-  chinaEls.topic.addEventListener("change", (event) => {
-    state.chinaTopic = event.target.value;
-    renderChinaResearch();
-  });
-
-  trialEls.mechanism.addEventListener("change", (event) => {
-    state.trialMechanism = event.target.value;
+  onChange("trial-mechanism", (value) => {
+    state.filters.trialMechanism = value;
     renderTrials();
   });
-
-  trialEls.status.addEventListener("change", (event) => {
-    state.trialStatus = event.target.value;
+  onChange("trial-status", (value) => {
+    state.filters.trialStatus = value;
     renderTrials();
   });
 }
 
-function render() {
-  const items = state.items.filter(matchesFilters).sort(sortByDateDesc);
-  els.feed.innerHTML = "";
-  els.empty.hidden = items.length > 0;
-  els.resultCount.textContent = `${items.length} 条匹配信息`;
-
-  for (const item of items) {
-    els.feed.append(renderItem(item));
-  }
+function renderVisibleModules() {
+  if (exists("latest")) renderLatest();
+  if (exists("china")) renderChina();
+  if (exists("feed")) renderFeed();
+  if (exists("matrix")) renderMatrix();
+  if (exists("treatments")) renderTreatments();
+  if (exists("supportive")) renderSupportive();
+  if (exists("trials")) renderTrials();
+  if (exists("market")) renderMarket();
+  if (exists("guidance")) renderGuidance();
 }
 
-function matchesFilters(item) {
-  const text = [item.title, item.summary, item.source, item.category, ...(item.tags || [])]
-    .join(" ")
-    .toLowerCase();
-  const matchesQuery = !state.query || text.includes(state.query);
-  const matchesCategory = state.category === "all" || item.category === state.category;
-  const matchesSource = state.source === "all" || item.source === state.source;
-  const matchesLanguage = state.language === "all" || item.language === state.language;
-  return matchesQuery && matchesCategory && matchesSource && matchesLanguage;
-}
-
-function renderItem(item) {
-  const article = document.createElement("article");
-  article.className = "item";
-  article.dataset.category = item.category || "";
-
-  const tags = (item.tags || [])
-    .map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`)
-    .join("");
-
-  article.innerHTML = `
-    <div class="item__top">
-      <span class="pill">${escapeHtml(item.category || "信息")}</span>
-      <span>${escapeHtml(item.source || "未知来源")}</span>
-      <span>${formatDate(item.date)}</span>
-    </div>
-    <h3>${escapeHtml(item.title || "未命名条目")}</h3>
-    <p>${escapeHtml(item.summary || "")}</p>
-    <div class="item__actions">
-      <div class="tags">${tags}</div>
-      <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看原文</a>
-    </div>
-  `;
-
-  return article;
-}
-
-function renderChinaResearch() {
-  const items = state.chinaResearch.filter(matchesChinaFilters).sort(sortByDateDesc);
-  chinaEls.container.innerHTML = "";
-
-  for (const item of items) {
-    chinaEls.container.append(renderChinaItem(item));
-  }
-
+function renderLatest() {
+  const items = latestItems().sort(sortByDateDesc);
+  setScope("latest", state.data.latest?.scopeNote);
+  setCount("latest", `${items.length} 篇新研究`);
+  const target = targetFor("latest");
   if (!items.length) {
-    chinaEls.container.innerHTML = `<article class="china-card"><h3>没有找到匹配研究</h3><p>可以换一个作者、机构或主题关键词。</p></article>`;
-  }
-}
-
-function renderMarket() {
-  marketEls.container.innerHTML = "";
-  for (const product of state.marketProducts) {
-    marketEls.container.append(renderMarketCard(product));
-  }
-}
-
-function renderLatestResearch() {
-  latestEls.container.innerHTML = "";
-  const items = state.latestResearch.sort(sortByDateDesc);
-  if (!items.length) {
-    latestEls.container.innerHTML = `
-      <article class="latest-empty">
-        <h3>过去 24 小时暂未抓取到新摘要</h3>
-        <p>PubMed 未必每天都有新上线的 MG 摘要；自动任务仍会每 24 小时检查一次。</p>
-      </article>
-    `;
+    target.innerHTML = `<article class="latest-empty"><h3>过去 24 小时暂未抓取到新摘要</h3><p>PubMed 未必每天都有新上线的 MG 摘要；自动任务仍会每 24 小时检查一次。</p></article>`;
     return;
   }
-
-  for (const item of items) {
-    latestEls.container.append(renderLatestItem(item));
-  }
+  target.innerHTML = items.map(renderLatestCard).join("");
 }
 
-function renderLatestItem(item) {
-  const article = document.createElement("article");
-  article.className = "latest-card";
-  const keyPoints = (item.keyPoints || [])
-    .map((point) => `<li>${escapeHtml(point)}</li>`)
-    .join("");
+function renderLatestCard(item) {
   const statusLabel = {
     translated: "中文摘要已生成",
     pending: "等待中文摘要",
     "no-abstract": "暂无摘要",
     error: "摘要生成失败"
   }[item.translationStatus] || "待处理";
-
-  article.innerHTML = `
-    <div class="latest-card__head">
-      <div>
-        <p class="section-kicker">PMID ${escapeHtml(item.pmid || "")}</p>
-        <h3>${escapeHtml(item.title || "未命名研究")}</h3>
-        <p>${escapeHtml([item.journal, item.authors].filter(Boolean).join(" | "))}</p>
+  const points = (item.keyPoints || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+  return `
+    <article class="latest-card">
+      <div class="latest-card__head">
+        <div>
+          <p class="section-kicker">PMID ${escapeHtml(item.pmid || "")}</p>
+          <h3>${escapeHtml(item.title || "未命名研究")}</h3>
+          <p>${escapeHtml([item.journal, item.authors].filter(Boolean).join(" | "))}</p>
+        </div>
+        <span>${escapeHtml(statusLabel)}</span>
       </div>
-      <span>${escapeHtml(statusLabel)}</span>
-    </div>
-    <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
-    ${keyPoints ? `<ul class="latest-points">${keyPoints}</ul>` : ""}
-    <details>
-      <summary>查看英文摘要</summary>
-      <p>${escapeHtml(item.abstract || "PubMed 暂未提供摘要。")}</p>
-    </details>
-    <div class="latest-actions">
-      <span>${formatDate(item.date)}</span>
-      <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
-    </div>
+      <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
+      ${points ? `<ul class="latest-points">${points}</ul>` : ""}
+      <details>
+        <summary>查看英文摘要</summary>
+        <p>${escapeHtml(item.abstract || "PubMed 暂未提供摘要。")}</p>
+      </details>
+      <div class="latest-actions">
+        <span>${formatDate(item.date)}</span>
+        <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
+      </div>
+    </article>
   `;
-  return article;
 }
 
-function renderGuidance() {
-  guidanceEls.container.innerHTML = "";
-  for (const item of state.guidancePathways) {
-    const article = document.createElement("article");
-    article.className = "guidance-card";
-    const links = (item.sources || [])
-      .map((source) => `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)}</a>`)
-      .join("");
-    article.innerHTML = `
-      <p class="section-kicker">${escapeHtml(item.step)}</p>
-      <h3>${escapeHtml(item.clinicalQuestion)}</h3>
-      <dl>
-        <div><dt>共识方向</dt><dd>${escapeHtml(item.consensus)}</dd></div>
-        <div><dt>中国实践关注</dt><dd>${escapeHtml(item.chinaPractice)}</dd></div>
-        <div><dt>情报用途</dt><dd>${escapeHtml(item.intelligenceUse)}</dd></div>
-      </dl>
-      <div class="guidance-links">${links}</div>
-    `;
-    guidanceEls.container.append(article);
-  }
+function renderChina() {
+  const items = chinaItems().filter(matchesChina).sort(sortByDateDesc);
+  setScope("china", state.data.china?.scopeNote);
+  targetFor("china").innerHTML = items.length
+    ? items.map(renderChinaCard).join("")
+    : `<article class="china-card"><h3>没有找到匹配研究</h3><p>可以换一个作者、机构或主题关键词。</p></article>`;
+}
+
+function renderChinaCard(item) {
+  const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+  return `
+    <article class="china-card">
+      <div class="china-card__date">${formatDate(item.date)}</div>
+      <div>
+        <div class="china-card__meta">
+          <span>${escapeHtml(item.topic || "研究")}</span>
+          <span>${escapeHtml(item.journal || "PubMed")}</span>
+        </div>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.summary || item.authors || "")}</p>
+        <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 原文")}</p>
+        <div class="china-card__footer">
+          <div class="china-tags">${tags}</div>
+          <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderFeed() {
+  const items = feedItems().filter(matchesFeed).sort(sortByDateDesc);
+  setCount("feed", `${items.length} 条匹配信息`);
+  targetFor("feed").innerHTML = items.length
+    ? items.map(renderFeedItem).join("")
+    : `<article class="item"><h3>没有找到匹配条目</h3><p>可以调整关键词、类型或来源筛选。</p></article>`;
+}
+
+function renderFeedItem(item) {
+  const tags = (item.tags || []).map((tag) => `<span class="tag">#${escapeHtml(tag)}</span>`).join("");
+  return `
+    <article class="item" data-category="${escapeAttribute(item.category || "")}">
+      <div class="item__top">
+        <span class="pill">${escapeHtml(item.category || "信息")}</span>
+        <span>${escapeHtml(item.source || "未知来源")}</span>
+        <span>${formatDate(item.date)}</span>
+      </div>
+      <h3>${escapeHtml(item.title || "未命名条目")}</h3>
+      <p>${escapeHtml(item.summary || "")}</p>
+      <div class="item__actions">
+        <div class="tags">${tags}</div>
+        <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看原文</a>
+      </div>
+    </article>
+  `;
 }
 
 function renderMatrix() {
-  const rows = state.evidenceMatrix
+  const items = matrixItems();
+  setScope("matrix", state.data.matrix?.scopeNote);
+  setCount("matrix", `${items.length} 个药物`);
+  const rows = items
     .map((item) => `
       <tr>
-        <th>
-          <strong>${escapeHtml(item.brand)}</strong>
-          <span>${escapeHtml(item.mechanism)}</span>
-        </th>
+        <th><strong>${escapeHtml(item.brand)}</strong><span>${escapeHtml(item.mechanism)}</span></th>
         <td>${escapeHtml(item.population)}</td>
         <td>${escapeHtml(item.pivotalTrial)}</td>
         <td>${escapeHtml(item.longTermEvidence)}</td>
@@ -476,19 +258,12 @@ function renderMatrix() {
       </tr>
     `)
     .join("");
-
-  matrixEls.container.innerHTML = `
+  targetFor("matrix").innerHTML = `
     <table>
       <thead>
         <tr>
-          <th>药物/机制</th>
-          <th>适用人群</th>
-          <th>关键 RCT</th>
-          <th>长期数据</th>
-          <th>真实世界</th>
-          <th>安全性重点</th>
-          <th>中国可及性</th>
-          <th>证据层级</th>
+          <th>药物/机制</th><th>适用人群</th><th>关键 RCT</th><th>长期数据</th>
+          <th>真实世界</th><th>安全性重点</th><th>中国可及性</th><th>证据层级</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -496,60 +271,90 @@ function renderMatrix() {
   `;
 }
 
+function renderTreatments() {
+  const items = treatmentItems().filter(matchesTreatment);
+  setScope("treatments", state.data.treatments?.scopeNote);
+  setCount("treatments", `${items.length} / ${treatmentItems().length} 个治疗项`);
+  targetFor("treatments").innerHTML = items.map(renderTreatmentCard).join("");
+}
+
+function renderTreatmentCard(item) {
+  const approval = item.approval || {};
+  const signals = (item.safetySignals || []).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
+  const links = (item.links || [])
+    .map((link) => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
+    .join("");
+  return `
+    <article class="treatment-card">
+      <div class="treatment-card__head">
+        <div>
+          <p class="eyebrow-dark">${escapeHtml(item.class || "治疗")}</p>
+          <h3>${escapeHtml(item.brand)} <span>${escapeHtml(item.generic)}</span></h3>
+          <p>${escapeHtml(item.zhName || "")}</p>
+        </div>
+        <strong>${escapeHtml(item.evidenceGrade || "证据待补充")}</strong>
+      </div>
+      <dl class="treatment-grid">
+        <div><dt>机制</dt><dd>${escapeHtml(item.mechanism)}</dd></div>
+        <div><dt>适用人群</dt><dd>${escapeHtml(item.approvedUse)}</dd></div>
+        <div><dt>抗体/标志物</dt><dd>${escapeHtml(item.biomarker)}</dd></div>
+        <div><dt>给药</dt><dd>${escapeHtml(item.route)}</dd></div>
+        <div><dt>关键证据</dt><dd>${escapeHtml(item.pivotalEvidence)}</dd></div>
+        <div><dt>真实世界证据</dt><dd>${escapeHtml(item.realWorldEvidence)}</dd></div>
+        <div><dt>上市后安全</dt><dd>${escapeHtml(item.postMarketing)}</dd></div>
+        <div><dt>批准状态</dt><dd>FDA: ${escapeHtml(approval.fda || "需补充")}；EMA: ${escapeHtml(approval.ema || "需补充")}；NMPA: ${escapeHtml(approval.nmpa || "需补充")}</dd></div>
+      </dl>
+      <div class="safety-tags">${signals}</div>
+      <div class="treatment-links">${links}</div>
+    </article>
+  `;
+}
+
+function renderSupportive() {
+  targetFor("supportive").innerHTML = (state.data.treatments?.offLabelOrSupportive || [])
+    .map((item) => `<p><strong>${escapeHtml(item.name)}</strong>：${escapeHtml(item.note)}</p>`)
+    .join("");
+}
+
 function renderTrials() {
-  const items = state.trialRadar.filter((item) => {
-    const mechanismOk = state.trialMechanism === "all" || item.mechanism === state.trialMechanism;
-    const statusOk = state.trialStatus === "all" || item.status === state.trialStatus;
-    return mechanismOk && statusOk;
-  });
-  trialEls.container.innerHTML = "";
-  trialEls.count.textContent = `${items.length} / ${state.trialRadar.length} 项试验`;
-  for (const item of items) {
-    trialEls.container.append(renderTrialCard(item));
-  }
+  const items = trialItems().filter(matchesTrial);
+  setScope("trials", state.data.trials?.scopeNote);
+  setCount("trials", `${items.length} / ${trialItems().length} 项试验`);
+  targetFor("trials").innerHTML = items.map(renderTrialCard).join("");
 }
 
 function renderTrialCard(item) {
-  const article = document.createElement("article");
-  article.className = "trial-card";
   const interventions = (item.interventions || []).map((name) => `<span>${escapeHtml(name)}</span>`).join("");
-  article.innerHTML = `
-    <div class="trial-card__head">
-      <div>
-        <p class="section-kicker">${escapeHtml(item.mechanism || "机制待分类")}</p>
-        <h3>${escapeHtml(item.title || item.nctId)}</h3>
-        <p>${escapeHtml([item.sponsor, item.phase].filter(Boolean).join(" | "))}</p>
+  return `
+    <article class="trial-card">
+      <div class="trial-card__head">
+        <div>
+          <p class="section-kicker">${escapeHtml(item.mechanism || "机制待分类")}</p>
+          <h3>${escapeHtml(item.title || item.nctId)}</h3>
+          <p>${escapeHtml([item.sponsor, item.phase].filter(Boolean).join(" | "))}</p>
+        </div>
+        <strong>${escapeHtml(formatTrialStatus(item.status))}</strong>
       </div>
-      <strong>${escapeHtml(formatTrialStatus(item.status))}</strong>
-    </div>
-    <div class="trial-meta">
-      <span>NCT: ${escapeHtml(item.nctId)}</span>
-      <span>更新: ${escapeHtml(item.lastUpdate || "未知")}</span>
-      <span>完成: ${escapeHtml(item.completionDate || "未知")}</span>
-    </div>
-    <div class="trial-tags">${interventions}</div>
-    <p>${escapeHtml((item.countries || []).join(", ") || "国家/地区待补充")}</p>
-    <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看 ClinicalTrials.gov</a>
+      <div class="trial-meta">
+        <span>NCT: ${escapeHtml(item.nctId)}</span>
+        <span>更新: ${escapeHtml(item.lastUpdate || "未知")}</span>
+        <span>完成: ${escapeHtml(item.completionDate || "未知")}</span>
+      </div>
+      <div class="trial-tags">${interventions}</div>
+      <p>${escapeHtml((item.countries || []).join(", ") || "国家/地区待补充")}</p>
+      <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看 ClinicalTrials.gov</a>
+    </article>
   `;
-  return article;
 }
 
-function formatTrialStatus(status = "") {
-  const map = {
-    RECRUITING: "招募中",
-    NOT_YET_RECRUITING: "尚未招募",
-    ACTIVE_NOT_RECRUITING: "进行中不招募",
-    COMPLETED: "已完成",
-    TERMINATED: "已终止",
-    WITHDRAWN: "已撤回",
-    SUSPENDED: "暂停"
-  };
-  return map[status] || status || "未知";
+function renderMarket() {
+  const items = marketItems();
+  setScope("market", state.data.market?.scopeNote);
+  setCount("market", `${items.length} 个产品`);
+  targetFor("market").innerHTML = items.map(renderMarketCard).join("");
 }
 
 function renderMarketCard(product) {
-  const article = document.createElement("article");
-  article.className = "market-card";
   const approvals = (product.approvals || [])
     .map((approval) => `
       <li>
@@ -564,86 +369,74 @@ function renderMarketCard(product) {
     .map((url, index) => `<a href="${escapeAttribute(url)}" target="_blank" rel="noreferrer">来源 ${index + 1}</a>`)
     .join("");
   const sales = product.sales || {};
-
-  article.innerHTML = `
-    <div class="market-card__head">
-      <div>
-        <p class="eyebrow-dark">${escapeHtml(product.class || "治疗药物")}</p>
-        <h3>${escapeHtml(product.brand)} <span>${escapeHtml(product.generic || "")}</span></h3>
-        <p>${escapeHtml(product.company || "")}</p>
+  return `
+    <article class="market-card">
+      <div class="market-card__head">
+        <div>
+          <p class="eyebrow-dark">${escapeHtml(product.class || "治疗药物")}</p>
+          <h3>${escapeHtml(product.brand)} <span>${escapeHtml(product.generic || "")}</span></h3>
+          <p>${escapeHtml(product.company || "")}</p>
+        </div>
+        <strong>${escapeHtml(String(product.approvalCount || (product.approvals || []).length))} 个市场</strong>
       </div>
-      <strong>${escapeHtml(String(product.approvalCount || (product.approvals || []).length))} 个市场</strong>
-    </div>
-    <div class="sales-box">
-      <span>${escapeHtml(sales.year || "最新")} 销售额</span>
-      <strong>${escapeHtml(sales.value || "未披露")}</strong>
-      <p>${escapeHtml(sales.scope || "")}</p>
-      <small>${escapeHtml(sales.trend || "")}</small>
-    </div>
-    <ul class="approval-list">${approvals}</ul>
-    <div class="market-links">${sources}</div>
+      <div class="sales-box">
+        <span>${escapeHtml(sales.year || "最新")} 销售额</span>
+        <strong>${escapeHtml(sales.value || "未披露")}</strong>
+        <p>${escapeHtml(sales.scope || "")}</p>
+        <small>${escapeHtml(sales.trend || "")}</small>
+      </div>
+      <ul class="approval-list">${approvals}</ul>
+      <div class="market-links">${sources}</div>
+    </article>
   `;
-
-  return article;
 }
 
-function matchesChinaFilters(item) {
-  const text = [
-    item.title,
-    item.journal,
-    item.authors,
-    item.institutionHint,
-    item.topic,
-    item.summary,
-    ...(item.tags || [])
-  ]
-    .join(" ")
-    .toLowerCase();
-  const matchesQuery = !state.chinaQuery || text.includes(state.chinaQuery);
-  const matchesTopic = state.chinaTopic === "all" || item.topic === state.chinaTopic;
-  return matchesQuery && matchesTopic;
-}
-
-function renderChinaItem(item) {
-  const article = document.createElement("article");
-  article.className = "china-card";
-  const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
-
-  article.innerHTML = `
-    <div class="china-card__date">${formatDate(item.date)}</div>
-    <div>
-      <div class="china-card__meta">
-        <span>${escapeHtml(item.topic || "研究")}</span>
-        <span>${escapeHtml(item.journal || "PubMed")}</span>
-      </div>
-      <h3>${escapeHtml(item.title)}</h3>
-      <p>${escapeHtml(item.summary || item.authors || "")}</p>
-      <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 原文")}</p>
-      <div class="china-card__footer">
-        <div class="china-tags">${tags}</div>
-        <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
-      </div>
-    </div>
-  `;
-
-  return article;
-}
-
-function renderTreatments() {
-  const treatments = state.treatments.filter(matchesTreatmentFilters);
-  treatmentEls.container.innerHTML = "";
-  treatmentEls.count.textContent = `${treatments.length} / ${state.treatments.length} 个治疗项`;
-
-  for (const treatment of treatments) {
-    treatmentEls.container.append(renderTreatment(treatment));
-  }
-
-  treatmentEls.supportive.innerHTML = state.supportiveTreatments
-    .map((item) => `<p><strong>${escapeHtml(item.name)}</strong>：${escapeHtml(item.note)}</p>`)
+function renderGuidance() {
+  const items = guidanceItems();
+  setScope("guidance", state.data.guidance?.scopeNote);
+  setCount("guidance", `${items.length} 个路径节点`);
+  targetFor("guidance").innerHTML = items
+    .map((item) => {
+      const links = (item.sources || [])
+        .map((source) => `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)}</a>`)
+        .join("");
+      return `
+        <article class="guidance-card">
+          <p class="section-kicker">${escapeHtml(item.step)}</p>
+          <h3>${escapeHtml(item.clinicalQuestion)}</h3>
+          <dl>
+            <div><dt>共识方向</dt><dd>${escapeHtml(item.consensus)}</dd></div>
+            <div><dt>中国实践关注</dt><dd>${escapeHtml(item.chinaPractice)}</dd></div>
+            <div><dt>情报用途</dt><dd>${escapeHtml(item.intelligenceUse)}</dd></div>
+          </dl>
+          <div class="guidance-links">${links}</div>
+        </article>
+      `;
+    })
     .join("");
 }
 
-function matchesTreatmentFilters(item) {
+function matchesFeed(item) {
+  const text = [item.title, item.summary, item.source, item.category, ...(item.tags || [])].join(" ").toLowerCase();
+  return (
+    (!state.filters.feedQuery || text.includes(state.filters.feedQuery)) &&
+    (state.filters.feedCategory === "all" || item.category === state.filters.feedCategory) &&
+    (state.filters.feedSource === "all" || item.source === state.filters.feedSource) &&
+    (state.filters.feedLanguage === "all" || item.language === state.filters.feedLanguage)
+  );
+}
+
+function matchesChina(item) {
+  const text = [item.title, item.journal, item.authors, item.institutionHint, item.topic, item.summary, ...(item.tags || [])]
+    .join(" ")
+    .toLowerCase();
+  return (
+    (!state.filters.chinaQuery || text.includes(state.filters.chinaQuery)) &&
+    (state.filters.chinaTopic === "all" || item.topic === state.filters.chinaTopic)
+  );
+}
+
+function matchesTreatment(item) {
   const text = [
     item.brand,
     item.generic,
@@ -660,51 +453,96 @@ function matchesTreatmentFilters(item) {
   ]
     .join(" ")
     .toLowerCase();
-
-  const matchesQuery = !state.treatmentQuery || text.includes(state.treatmentQuery);
-  const matchesClass = state.treatmentClass === "all" || item.class === state.treatmentClass;
-  const matchesBiomarker = state.biomarker === "all" || item.biomarker === state.biomarker;
-  return matchesQuery && matchesClass && matchesBiomarker;
+  return (
+    (!state.filters.treatmentQuery || text.includes(state.filters.treatmentQuery)) &&
+    (state.filters.treatmentClass === "all" || item.class === state.filters.treatmentClass) &&
+    (state.filters.biomarker === "all" || item.biomarker === state.filters.biomarker)
+  );
 }
 
-function renderTreatment(item) {
-  const article = document.createElement("article");
-  article.className = "treatment-card";
+function matchesTrial(item) {
+  return (
+    (state.filters.trialMechanism === "all" || item.mechanism === state.filters.trialMechanism) &&
+    (state.filters.trialStatus === "all" || item.status === state.filters.trialStatus)
+  );
+}
 
-  const approval = item.approval || {};
-  const signals = (item.safetySignals || []).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
-  const links = (item.links || [])
-    .map((link) => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
-    .join("");
+function feedItems() {
+  return state.data.feed?.items || [];
+}
 
-  article.innerHTML = `
-    <div class="treatment-card__head">
-      <div>
-        <p class="eyebrow-dark">${escapeHtml(item.class || "治疗")}</p>
-        <h3>${escapeHtml(item.brand)} <span>${escapeHtml(item.generic)}</span></h3>
-        <p>${escapeHtml(item.zhName || "")}</p>
-      </div>
-      <strong>${escapeHtml(item.evidenceGrade || "证据待补充")}</strong>
-    </div>
-    <dl class="treatment-grid">
-      <div><dt>机制</dt><dd>${escapeHtml(item.mechanism)}</dd></div>
-      <div><dt>适用人群</dt><dd>${escapeHtml(item.approvedUse)}</dd></div>
-      <div><dt>抗体/标志物</dt><dd>${escapeHtml(item.biomarker)}</dd></div>
-      <div><dt>给药</dt><dd>${escapeHtml(item.route)}</dd></div>
-      <div><dt>关键证据</dt><dd>${escapeHtml(item.pivotalEvidence)}</dd></div>
-      <div><dt>真实世界证据</dt><dd>${escapeHtml(item.realWorldEvidence)}</dd></div>
-      <div><dt>上市后安全</dt><dd>${escapeHtml(item.postMarketing)}</dd></div>
-      <div><dt>批准状态</dt><dd>FDA: ${escapeHtml(approval.fda || "需补充")}；EMA: ${escapeHtml(approval.ema || "需补充")}；NMPA: ${escapeHtml(approval.nmpa || "需补充")}</dd></div>
-    </dl>
-    <div class="safety-tags">${signals}</div>
-    <div class="treatment-links">${links}</div>
-  `;
+function latestItems() {
+  return state.data.latest?.items || [];
+}
 
-  return article;
+function chinaItems() {
+  return state.data.china?.items || [];
+}
+
+function treatmentItems() {
+  return state.data.treatments?.treatments || [];
+}
+
+function marketItems() {
+  return state.data.market?.products || [];
+}
+
+function guidanceItems() {
+  return state.data.guidance?.pathways || [];
+}
+
+function matrixItems() {
+  return state.data.matrix?.items || [];
+}
+
+function trialItems() {
+  return state.data.trials?.items || [];
+}
+
+function fillSelect(name, values, labeler = (value) => value) {
+  const select = document.querySelector(`[data-control="${name}"]`);
+  if (!select) return;
+  for (const value of values) {
+    select.append(new Option(labeler(value), value));
+  }
+}
+
+function onInput(name, handler) {
+  const input = document.querySelector(`[data-control="${name}"]`);
+  if (input) input.addEventListener("input", (event) => handler(event.target.value.trim()));
+}
+
+function onChange(name, handler) {
+  const select = document.querySelector(`[data-control="${name}"]`);
+  if (select) select.addEventListener("change", (event) => handler(event.target.value));
+}
+
+function exists(name) {
+  return Boolean(targetFor(name, false));
+}
+
+function targetFor(name, required = true) {
+  const target = document.querySelector(`[data-render="${name}"]`);
+  if (!target && required) throw new Error(`Missing render target ${name}`);
+  return target;
+}
+
+function setCount(name, value) {
+  setAll(`[data-count="${name}"]`, value);
+}
+
+function setScope(name, value) {
+  setAll(`[data-scope="${name}"]`, value || "");
+}
+
+function setAll(selector, value) {
+  for (const element of document.querySelectorAll(selector)) {
+    element.textContent = value ?? "";
+  }
 }
 
 function sortByDateDesc(a, b) {
-  return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
+  return new Date(b.date || b.lastUpdate || 0).getTime() - new Date(a.date || a.lastUpdate || 0).getTime();
 }
 
 function formatDate(value) {
@@ -718,8 +556,21 @@ function formatDate(value) {
   }).format(date);
 }
 
+function formatTrialStatus(status = "") {
+  const map = {
+    RECRUITING: "招募中",
+    NOT_YET_RECRUITING: "尚未招募",
+    ACTIVE_NOT_RECRUITING: "进行中不招募",
+    COMPLETED: "已完成",
+    TERMINATED: "已终止",
+    WITHDRAWN: "已撤回",
+    SUSPENDED: "暂停"
+  };
+  return map[status] || status || "未知";
+}
+
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -730,5 +581,3 @@ function escapeHtml(value) {
 function escapeAttribute(value) {
   return escapeHtml(value || "#");
 }
-
-boot();

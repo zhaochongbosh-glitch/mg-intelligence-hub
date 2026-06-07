@@ -14,6 +14,16 @@ node scripts/serve.mjs
 
 打开输出里的地址，通常是 `http://localhost:4173`。
 
+## 页面结构
+
+网站已拆成多页面，便于后续维护：
+
+- `index.html`：首页仪表盘
+- `pages/research.html`：最新研究、中国研究者和信息流
+- `pages/therapy.html`：治疗图谱和药物证据矩阵
+- `pages/trials-market.html`：临床试验雷达、全球批准和市场
+- `pages/guidance.html`：指南与诊疗路径
+
 ## 手动更新数据
 
 Windows 用户可以直接双击 `update-data.bat`。

@@ -3,258 +3,99 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="重症肌无力信息中枢：汇总 PubMed 文献、中国研究者成果、研发动态、会议摘要、FDA 与 CDE/NMPA 相关信息源。"
-    />
+    <meta name="description" content="重症肌无力信息中枢：研究、治疗、临床试验、市场和指南的专题情报仪表盘。" />
     <title>重症肌无力信息中枢</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <header class="hero">
       <div class="hero__content">
         <p class="eyebrow">Myasthenia Gravis Intelligence Hub</p>
         <h1>重症肌无力信息中枢</h1>
-        <p class="hero__text">
-          面向科研、医学事务和产业情报的 MG 专题工作台：追踪文献、中国研究者成果、治疗图谱、研发新闻、会议摘要与监管动态。
-        </p>
+        <p class="hero__text">面向科研、医学事务和产业情报的 MG 专题工作台，聚合最新研究、治疗证据、临床试验、全球批准和指南路径。</p>
         <div class="hero__meta" aria-label="站点概览">
-          <span><strong id="totalCount">0</strong> 条信息</span>
-          <span><strong id="chinaCount">0</strong> 篇中国研究</span>
-          <span><strong id="treatmentTotal">0</strong> 个获批治疗项</span>
-          <span>更新于 <strong id="updatedAt">读取中</strong></span>
+          <span><strong data-stat="latest">0</strong> 篇 24h 文献</span>
+          <span><strong data-stat="trials">0</strong> 项试验</span>
+          <span><strong data-stat="treatments">0</strong> 个治疗项</span>
+          <span>更新于 <strong data-stat="updated">读取中</strong></span>
         </div>
       </div>
     </header>
 
     <main>
       <nav class="section-nav" aria-label="页面导航">
-        <a href="#latestResearch">最新研究速递</a>
-        <a href="#guidancePathways">诊疗路径</a>
-        <a href="#evidenceMatrix">证据矩阵</a>
-        <a href="#trialRadar">临床试验</a>
-        <a href="#chinaResearch">中国研究</a>
-        <a href="#globalMarket">全球批准与市场</a>
-        <a href="#treatmentsTitle">治疗图谱</a>
-        <a href="#feedTitle">信息流</a>
-        <a href="#sourcesTitle">核心入口</a>
+        <a href="index.html" aria-current="page">首页</a>
+        <a href="pages/research.html">研究情报</a>
+        <a href="pages/therapy.html">治疗与证据</a>
+        <a href="pages/trials-market.html">试验与市场</a>
+        <a href="pages/guidance.html">指南路径</a>
       </nav>
 
       <section class="overview" aria-label="核心概览">
         <article>
           <span>Latest 24h</span>
-          <strong id="overviewLatest">0</strong>
+          <strong data-stat="latest">0</strong>
           <p>过去 24 小时 PubMed 新上线或更新的 MG 研究摘要。</p>
         </article>
         <article>
-          <span>Research</span>
-          <strong id="overviewChina">0</strong>
+          <span>China Research</span>
+          <strong data-stat="china">0</strong>
           <p>中国机构相关 MG 研究，按发表时间自动更新。</p>
         </article>
         <article>
           <span>Therapy</span>
-          <strong id="overviewTreatment">0</strong>
+          <strong data-stat="treatments">0</strong>
           <p>获批治疗药物、机制、循证证据和上市后安全监测。</p>
         </article>
         <article>
-          <span>Signals</span>
-          <strong id="sourceCount">0</strong>
-          <p>PubMed、FDA、ClinicalTrials.gov、CDE/NMPA 等信息源。</p>
-        </article>
-        <article>
           <span>Trials</span>
-          <strong id="overviewTrials">0</strong>
-          <p>全球 MG 临床试验雷达，按机制和招募状态持续追踪。</p>
+          <strong data-stat="trials">0</strong>
+          <p>全球 MG 临床试验雷达，按机制和状态持续追踪。</p>
         </article>
       </section>
 
-      <section class="latest-section" id="latestResearch" aria-labelledby="latestTitle">
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Dashboard</p>
+            <h2>今日速览</h2>
+            <p>首页只保留关键摘要和模块入口；深入内容已拆到独立页面。</p>
+          </div>
+        </div>
+        <div class="portal-grid">
+          <a class="portal-card" href="pages/research.html">
+            <span>Research</span>
+            <strong>研究情报</strong>
+            <p>近 24 小时研究摘要、中国研究者发表研究和实时信息流。</p>
+          </a>
+          <a class="portal-card" href="pages/therapy.html">
+            <span>Therapy</span>
+            <strong>治疗与证据</strong>
+            <p>获批治疗图谱、药物证据矩阵和安全性重点。</p>
+          </a>
+          <a class="portal-card" href="pages/trials-market.html">
+            <span>Development</span>
+            <strong>试验与市场</strong>
+            <p>ClinicalTrials.gov 试验雷达、全球批准和市场销售额。</p>
+          </a>
+          <a class="portal-card" href="pages/guidance.html">
+            <span>Guidance</span>
+            <strong>指南路径</strong>
+            <p>指南、诊疗路径、危象救援和准入可及性对照。</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="module-section" aria-labelledby="latestTitle">
         <div class="section-heading">
           <div>
             <p class="section-kicker">Latest Research Digest</p>
             <h2 id="latestTitle">近 24 小时研究摘要</h2>
-            <p id="latestScope">正在读取最新研究摘要</p>
+            <p data-scope="latest">正在读取最新研究摘要</p>
           </div>
-          <p id="latestCount">0 篇新研究</p>
+          <p data-count="latest">0 篇新研究</p>
         </div>
-        <div id="latestResearchList" class="latest-list" aria-live="polite"></div>
-      </section>
-
-      <section class="guidance-section" id="guidancePathways" aria-labelledby="guidanceTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Guidance Pathway</p>
-            <h2 id="guidanceTitle">指南与诊疗路径对照</h2>
-            <p id="guidanceScope">正在读取诊疗路径数据</p>
-          </div>
-          <p id="guidanceCount">0 个路径节点</p>
-        </div>
-        <div id="guidanceCards" class="guidance-cards" aria-live="polite"></div>
-      </section>
-
-      <section class="matrix-section" id="evidenceMatrix" aria-labelledby="matrixTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Evidence Matrix</p>
-            <h2 id="matrixTitle">药物证据矩阵</h2>
-            <p id="matrixScope">正在读取证据矩阵</p>
-          </div>
-          <p id="matrixCount">0 个药物</p>
-        </div>
-        <div id="matrixTable" class="matrix-table" aria-live="polite"></div>
-      </section>
-
-      <section class="trial-section" id="trialRadar" aria-labelledby="trialTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Clinical Trial Radar</p>
-            <h2 id="trialTitle">临床试验雷达</h2>
-            <p id="trialScope">正在读取 ClinicalTrials.gov 数据</p>
-          </div>
-          <p id="trialCount">0 项试验</p>
-        </div>
-        <div class="trial-tools" aria-label="临床试验筛选">
-          <label>
-            <span>机制</span>
-            <select id="trialMechanismFilter">
-              <option value="all">全部</option>
-            </select>
-          </label>
-          <label>
-            <span>状态</span>
-            <select id="trialStatusFilter">
-              <option value="all">全部</option>
-            </select>
-          </label>
-        </div>
-        <div id="trialCards" class="trial-cards" aria-live="polite"></div>
-      </section>
-
-      <section class="market-section" id="globalMarket" aria-labelledby="marketTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Global Access & Market</p>
-            <h2 id="marketTitle">全球批准与市场概览</h2>
-            <p id="marketScope">正在读取全球批准和销售额数据</p>
-          </div>
-          <p id="marketCount">0 个产品</p>
-        </div>
-        <div id="marketCards" class="market-cards" aria-live="polite"></div>
-      </section>
-
-      <section class="china-section" id="chinaResearch" aria-labelledby="chinaTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">China Scholar Watch</p>
-            <h2 id="chinaTitle">中国研究者发表研究</h2>
-            <p id="chinaScope">正在读取中国研究数据</p>
-          </div>
-          <a
-            class="ghost-link"
-            href="https://pubmed.ncbi.nlm.nih.gov/?term=%28%22myasthenia+gravis%22%5BTitle%2FAbstract%5D+OR+%22generalized+myasthenia+gravis%22%5BTitle%2FAbstract%5D+OR+%22ocular+myasthenia%22%5BTitle%2FAbstract%5D%29+AND+%28China%5BAffiliation%5D+OR+Chinese%5BAffiliation%5D+OR+%22Hong+Kong%22%5BAffiliation%5D+OR+Taiwan%5BAffiliation%5D+OR+Macau%5BAffiliation%5D%29&sort=date"
-            target="_blank"
-            rel="noreferrer"
-          >打开 PubMed 检索</a>
-        </div>
-
-        <div class="china-tools" aria-label="中国研究筛选">
-          <label class="search">
-            <span>研究搜索</span>
-            <input id="chinaSearchInput" type="search" placeholder="作者、机构、期刊、主题、药物..." />
-          </label>
-          <label>
-            <span>研究主题</span>
-            <select id="chinaTopicFilter">
-              <option value="all">全部</option>
-            </select>
-          </label>
-        </div>
-        <div id="chinaResearchList" class="china-list" aria-live="polite"></div>
-      </section>
-
-      <section class="treatment-section" aria-labelledby="treatmentsTitle">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Approved Therapy Map</p>
-            <h2 id="treatmentsTitle">获批治疗图谱</h2>
-            <p id="treatmentScope">正在读取药物数据库</p>
-          </div>
-          <p id="treatmentCount">0 个治疗项</p>
-        </div>
-
-        <div class="treatment-tools" aria-label="治疗药物筛选">
-          <label>
-            <span>治疗分类</span>
-            <select id="treatmentClassFilter">
-              <option value="all">全部</option>
-            </select>
-          </label>
-          <label>
-            <span>抗体/人群</span>
-            <select id="biomarkerFilter">
-              <option value="all">全部</option>
-            </select>
-          </label>
-          <label class="search">
-            <span>药物搜索</span>
-            <input id="treatmentSearchInput" type="search" placeholder="商品名、通用名、机制、证据..." />
-          </label>
-        </div>
-
-        <div id="treatments" class="treatments" aria-live="polite"></div>
-        <div id="supportiveTreatments" class="supportive-note"></div>
-      </section>
-
-      <section class="workspace-grid">
-        <section class="feed-section" aria-labelledby="feedTitle">
-          <div class="section-heading compact">
-            <div>
-              <p class="section-kicker">Live Intelligence</p>
-              <h2 id="feedTitle">信息流</h2>
-            </div>
-            <p id="resultCount">正在读取数据</p>
-          </div>
-
-          <section class="toolbar" aria-label="信息筛选">
-            <label class="search">
-              <span>搜索</span>
-              <input id="searchInput" type="search" placeholder="关键词、药物、公司、PMID..." />
-            </label>
-            <label>
-              <span>类型</span>
-              <select id="categoryFilter">
-                <option value="all">全部</option>
-              </select>
-            </label>
-            <label>
-              <span>来源</span>
-              <select id="sourceFilter">
-                <option value="all">全部</option>
-              </select>
-            </label>
-            <label>
-              <span>语言</span>
-              <select id="languageFilter">
-                <option value="all">全部</option>
-                <option value="en">英文</option>
-                <option value="zh">中文</option>
-              </select>
-            </label>
-          </section>
-
-          <div id="feed" class="feed" aria-live="polite"></div>
-          <p id="emptyState" class="empty" hidden>没有找到匹配条目。</p>
-        </section>
-
-        <aside class="source-panel" id="sourcesTitle" aria-label="核心入口">
-          <h2>核心入口</h2>
-          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22myasthenia+gravis%22&sort=date" target="_blank" rel="noreferrer">PubMed MG 最新文献</a>
-          <a href="https://clinicaltrials.gov/search?cond=Myasthenia%20Gravis" target="_blank" rel="noreferrer">ClinicalTrials.gov</a>
-          <a href="https://www.fda.gov/about-fda/contact-fda/subscribe-podcasts-and-news-feeds" target="_blank" rel="noreferrer">FDA RSS 订阅</a>
-          <a href="https://www.cde.org.cn/main/fullsearch/fullsearchpage" target="_blank" rel="noreferrer">CDE 全站检索</a>
-          <a href="https://www.nmpa.gov.cn/" target="_blank" rel="noreferrer">NMPA 官网</a>
-          <a href="https://api.fda.gov/drug/event.json?search=myasthenia%20gravis&limit=10" target="_blank" rel="noreferrer">openFDA FAERS</a>
-        </aside>
+        <div data-render="latest" class="latest-list" aria-live="polite"></div>
       </section>
     </main>
 

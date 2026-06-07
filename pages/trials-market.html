@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重症肌无力临床试验与市场：ClinicalTrials.gov 雷达、全球批准和销售额。" />
+    <title>试验与市场 | 重症肌无力信息中枢</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="trials-market">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">Trials & Market</p>
+        <h1>试验与市场</h1>
+        <p>追踪 MG 临床试验、全球批准状态、适应症和公开销售额。</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav">
+        <a href="../index.html">首页</a>
+        <a href="research.html">研究情报</a>
+        <a href="therapy.html">治疗与证据</a>
+        <a href="trials-market.html" aria-current="page">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+      </nav>
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Clinical Trial Radar</p>
+            <h2>临床试验雷达</h2>
+            <p data-scope="trials">正在读取 ClinicalTrials.gov 数据</p>
+          </div>
+          <p data-count="trials">0 项试验</p>
+        </div>
+        <div class="trial-tools">
+          <label>
+            <span>机制</span>
+            <select data-control="trial-mechanism"><option value="all">全部</option></select>
+          </label>
+          <label>
+            <span>状态</span>
+            <select data-control="trial-status"><option value="all">全部</option></select>
+          </label>
+        </div>
+        <div data-render="trials" class="trial-cards"></div>
+      </section>
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Global Access & Market</p>
+            <h2>全球批准与市场概览</h2>
+            <p data-scope="market">正在读取全球批准和销售额数据</p>
+          </div>
+          <p data-count="market">0 个产品</p>
+        </div>
+        <div data-render="market" class="market-cards"></div>
+      </section>
+    </main>
+    <footer><p>仅用于科研与商业情报跟踪，不构成医疗建议。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>

@@ -23,3 +23,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update MG intelligence data"
+      - name: Sync published branch
+        run: git push origin HEAD:gh-pages

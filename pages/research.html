@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重症肌无力研究情报：最新研究摘要、中国研究者发表研究和信息流。" />
+    <title>研究情报 | 重症肌无力信息中枢</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="research">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">Research Intelligence</p>
+        <h1>研究情报</h1>
+        <p>追踪 MG 最新文献、中国研究者成果和多来源情报流。</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav" aria-label="页面导航">
+        <a href="../index.html">首页</a>
+        <a href="research.html" aria-current="page">研究情报</a>
+        <a href="therapy.html">治疗与证据</a>
+        <a href="trials-market.html">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+      </nav>
+
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Latest Research Digest</p>
+            <h2>近 24 小时研究摘要</h2>
+            <p data-scope="latest">正在读取最新研究摘要</p>
+          </div>
+          <p data-count="latest">0 篇新研究</p>
+        </div>
+        <div data-render="latest" class="latest-list"></div>
+      </section>
+
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">China Scholar Watch</p>
+            <h2>中国研究者发表研究</h2>
+            <p data-scope="china">正在读取中国研究数据</p>
+          </div>
+          <a class="ghost-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%28%22myasthenia+gravis%22%5BTitle%2FAbstract%5D+OR+%22generalized+myasthenia+gravis%22%5BTitle%2FAbstract%5D+OR+%22ocular+myasthenia%22%5BTitle%2FAbstract%5D%29+AND+%28China%5BAffiliation%5D+OR+Chinese%5BAffiliation%5D+OR+%22Hong+Kong%22%5BAffiliation%5D+OR+Taiwan%5BAffiliation%5D+OR+Macau%5BAffiliation%5D%29&sort=date" target="_blank" rel="noreferrer">打开 PubMed 检索</a>
+        </div>
+        <div class="china-tools">
+          <label class="search">
+            <span>研究搜索</span>
+            <input data-control="china-search" type="search" placeholder="作者、机构、期刊、主题、药物..." />
+          </label>
+          <label>
+            <span>研究主题</span>
+            <select data-control="china-topic">
+              <option value="all">全部</option>
+            </select>
+          </label>
+        </div>
+        <div data-render="china" class="china-list"></div>
+      </section>
+
+      <section class="workspace-grid">
+        <section class="module-section">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Live Intelligence</p>
+              <h2>信息流</h2>
+            </div>
+            <p data-count="feed">正在读取数据</p>
+          </div>
+          <section class="toolbar">
+            <label class="search">
+              <span>搜索</span>
+              <input data-control="feed-search" type="search" placeholder="关键词、药物、公司、PMID..." />
+            </label>
+            <label>
+              <span>类型</span>
+              <select data-control="feed-category"><option value="all">全部</option></select>
+            </label>
+            <label>
+              <span>来源</span>
+              <select data-control="feed-source"><option value="all">全部</option></select>
+            </label>
+            <label>
+              <span>语言</span>
+              <select data-control="feed-language">
+                <option value="all">全部</option>
+                <option value="en">英文</option>
+                <option value="zh">中文</option>
+              </select>
+            </label>
+          </section>
+          <div data-render="feed" class="feed"></div>
+        </section>
+        <aside class="source-panel">
+          <h2>核心入口</h2>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22myasthenia+gravis%22&sort=date" target="_blank" rel="noreferrer">PubMed MG 最新文献</a>
+          <a href="https://clinicaltrials.gov/search?cond=Myasthenia%20Gravis" target="_blank" rel="noreferrer">ClinicalTrials.gov</a>
+          <a href="https://www.fda.gov/about-fda/contact-fda/subscribe-podcasts-and-news-feeds" target="_blank" rel="noreferrer">FDA RSS 订阅</a>
+          <a href="https://www.cde.org.cn/main/fullsearch/fullsearchpage" target="_blank" rel="noreferrer">CDE 全站检索</a>
+          <a href="https://www.nmpa.gov.cn/" target="_blank" rel="noreferrer">NMPA 官网</a>
+        </aside>
+      </section>
+    </main>
+    <footer><p>仅用于科研与商业情报跟踪，不构成医疗建议。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>
