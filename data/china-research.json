@@ -1,11 +1,16 @@
 {
-  "updatedAt": "2026-06-07T02:27:49.617Z",
+  "updatedAt": "2026-06-07T11:20:38.567Z",
   "provenance": {
     "sourceType": "PubMed Affiliation",
     "evidenceLevel": "文献索引",
     "reviewStatus": "自动更新",
-    "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-    "lastChecked": "2026-06-07"
+    "lastChecked": "2026-06-07",
+    "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
+  },
+  "updatePolicy": {
+    "frequency": "daily",
+    "fallbackPolicy": "中国机构检索失败时保留上一版中国研究列表。",
+    "manualReview": "监管批准、商业化、医保和指南类静态数据不由本脚本自动改写，需人工复核后更新。"
   },
   "scopeNote": "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
   "query": "(\"myasthenia gravis\"[Title/Abstract] OR \"generalized myasthenia gravis\"[Title/Abstract] OR \"ocular myasthenia\"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR \"Hong Kong\"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])",
@@ -21,20 +26,20 @@
       "journal": "Autoimmunity",
       "summary": "Wang Z, Luo T, Peng D et al. | Autoimmunity",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41588655/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42127467",
@@ -47,20 +52,20 @@
       "journal": "Clinical neurology and neurosurgery",
       "summary": "Xu XN, Jiang F, Li JM et al. | Clinical neurology and neurosurgery",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42127467/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42048741",
@@ -73,20 +78,20 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Lv J, Liu J, Zhang L et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42048741/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "综合研究"
       ],
       "topic": "综合研究",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41169211",
@@ -99,20 +104,46 @@
       "journal": "Neural regeneration research",
       "summary": "Luo Y, Ren Y, Wen Z et al. | Neural regeneration research",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41169211/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
+    },
+    {
+      "id": "pubmed-42251496",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-06-06",
+      "title": "Regarding: Myasthenia gravis following the initiation of statin therapy.",
+      "authors": "Zeng S, Shi Z",
+      "journal": "Journal of internal medicine",
+      "summary": "Zeng S, Shi Z | Journal of internal medicine",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251496/",
       "trust": {
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "治疗与真实世界"
+      ],
+      "topic": "治疗与真实世界",
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42244451",
@@ -125,20 +156,20 @@
       "journal": "Clinical pharmacology and therapeutics",
       "summary": "Yuan M, Xu XS | Clinical pharmacology and therapeutics",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42244451/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41147199",
@@ -151,20 +182,20 @@
       "journal": "Brain : a journal of neurology",
       "summary": "Masi G, Chen K, Bayer AC et al. | Brain : a journal of neurology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41147199/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42223343",
@@ -177,20 +208,20 @@
       "journal": "CNS neuroscience & therapeutics",
       "summary": "Geng Z, Jiang Y, Xie N et al. | CNS neuroscience & therapeutics",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42223343/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42132748",
@@ -203,20 +234,20 @@
       "journal": "Journal of immunotherapy (Hagerstown, Md. : 1997)",
       "summary": "Liu M, Sun W, Pan Y et al. | Journal of immunotherapy (Hagerstown, Md. : 1997)",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42132748/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42004615",
@@ -229,20 +260,20 @@
       "journal": "IBRO neuroscience reports",
       "summary": "Ou Y, Wen Y, Liu Y et al. | IBRO neuroscience reports",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42004615/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41974154",
@@ -255,20 +286,20 @@
       "journal": "Pediatric neurology",
       "summary": "Dong H, Li M, Ma M et al. | Pediatric neurology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41974154/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "队列与预后"
       ],
       "topic": "队列与预后",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41795502",
@@ -281,20 +312,20 @@
       "journal": "Pathology, research and practice",
       "summary": "Xu L, Li Y, He Z et al. | Pathology, research and practice",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41795502/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41795178",
@@ -307,20 +338,20 @@
       "journal": "Muscle & nerve",
       "summary": "Lin J, Qi G, Luo S et al. | Muscle & nerve",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41795178/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41786016",
@@ -333,20 +364,20 @@
       "journal": "Clinical immunology (Orlando, Fla.)",
       "summary": "Xiao X, Zeng Q, Ouyang S et al. | Clinical immunology (Orlando, Fla.)",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41786016/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-41730437",
@@ -359,20 +390,20 @@
       "journal": "Immunology letters",
       "summary": "Zhao W, Yan G, Wei B et al. | Immunology letters",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41730437/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42216051",
@@ -385,20 +416,20 @@
       "journal": "Cell & bioscience",
       "summary": "Zheng L, Wang J, Tang S et al. | Cell & bioscience",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42216051/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42224956",
@@ -411,20 +442,20 @@
       "journal": "Immunobiology",
       "summary": "Meng H, Chen X, Zhu Z et al. | Immunobiology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42224956/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     },
     {
       "id": "pubmed-42161616",
@@ -437,46 +468,27 @@
       "journal": "Zhonghua yi xue za zhi",
       "summary": "Lin JB, Zhuang RZ, Zhuo Y et al. | Zhonghua yi xue za zhi",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42161616/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
       "tags": [
         "中国研究",
         "PubMed",
         "胸腺相关"
       ],
       "topic": "胸腺相关",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
-    },
-    {
-      "id": "pubmed-42171932",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-05-22",
-      "title": "Hsa_circ_0065149 mediates the ceRNA network pathway: Research on the mechanism regulating myasthenia gravis.",
-      "authors": "Liu S, Tian Q, Liu Z, Ren Y, Yu A, Chen B, Zhou T, Li X",
-      "journal": "Journal of molecular neuroscience : MN",
-      "summary": "Liu S, Tian Q, Liu Z et al. | Journal of molecular neuroscience : MN",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42171932/",
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "免疫机制"
-      ],
-      "topic": "免疫机制",
-      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。",
-        "lastChecked": "2026-06-07"
-      }
+      "institutionHint": "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
     }
-  ]
+  ],
+  "updateRun": {
+    "runStartedAt": "2026-06-07T11:20:34.295Z",
+    "runFinishedAt": "2026-06-07T11:20:38.567Z",
+    "scope": "all",
+    "status": "success",
+    "failedSources": []
+  }
 }

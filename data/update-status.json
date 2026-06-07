@@ -1,47 +1,67 @@
 {
-  "updatedAt": "2026-06-07T00:00:00.000Z",
-  "runStartedAt": "2026-06-07T00:00:00.000Z",
-  "runFinishedAt": "2026-06-07T00:00:00.000Z",
-  "scope": "manual-baseline",
-  "status": "strategy-defined",
+  "updatedAt": "2026-06-07T11:20:38.853Z",
+  "runStartedAt": "2026-06-07T11:20:34.295Z",
+  "runFinishedAt": "2026-06-07T11:20:38.853Z",
+  "scope": "all",
+  "status": "success",
   "sources": [
     {
+      "name": "fda-rss",
+      "status": "success",
+      "startedAt": "2026-06-07T11:20:34.300Z",
+      "finishedAt": "2026-06-07T11:20:34.413Z",
+      "count": 0
+    },
+    {
       "name": "pubmed-feed",
-      "status": "configured",
-      "frequency": "daily",
-      "fallbackPolicy": "失败时保留上一版 PubMed 文献信息流。"
+      "status": "success",
+      "startedAt": "2026-06-07T11:20:34.300Z",
+      "finishedAt": "2026-06-07T11:20:35.252Z",
+      "count": 16
     },
     {
       "name": "latest-research",
-      "status": "configured",
-      "frequency": "daily",
-      "fallbackPolicy": "失败时保留上一版近 24 小时研究摘要。"
+      "status": "success",
+      "startedAt": "2026-06-07T11:20:35.652Z",
+      "finishedAt": "2026-06-07T11:20:37.272Z",
+      "count": 3
     },
     {
       "name": "china-research",
-      "status": "configured",
-      "frequency": "daily",
-      "fallbackPolicy": "失败时保留上一版中国研究列表。"
+      "status": "success",
+      "startedAt": "2026-06-07T11:20:37.672Z",
+      "finishedAt": "2026-06-07T11:20:38.567Z",
+      "count": 18
     },
     {
       "name": "clinical-trials",
-      "status": "configured",
-      "frequency": "daily",
-      "fallbackPolicy": "失败时保留上一版临床试验雷达。"
-    },
-    {
-      "name": "fda-rss",
-      "status": "configured",
-      "frequency": "daily",
-      "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。"
-    },
-    {
-      "name": "chictr",
-      "status": "manual-review",
-      "frequency": "weekly/manual",
-      "fallbackPolicy": "ChiCTR 当前作为人工复核入口与重点条目保留；官网如需验证，不纳入强自动抓取。"
+      "status": "success",
+      "startedAt": "2026-06-07T11:20:38.567Z",
+      "finishedAt": "2026-06-07T11:20:38.850Z",
+      "count": 30
     }
   ],
-  "outputs": [],
+  "outputs": [
+    {
+      "file": "data/items.json",
+      "count": 20,
+      "status": "success"
+    },
+    {
+      "file": "data/latest-research.json",
+      "count": 3,
+      "status": "success"
+    },
+    {
+      "file": "data/china-research.json",
+      "count": 18,
+      "status": "success"
+    },
+    {
+      "file": "data/trial-radar.json",
+      "count": 32,
+      "status": "success"
+    }
+  ],
   "nextReviewHint": "自动数据每日更新；监管批准、医保准入、销售额和安全性结论建议至少每月人工复核一次。"
 }

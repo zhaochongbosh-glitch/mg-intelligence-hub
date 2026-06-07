@@ -1,11 +1,16 @@
 {
-  "updatedAt": "2026-06-07T02:27:49.617Z",
+  "updatedAt": "2026-06-07T11:20:35.252Z",
   "provenance": {
     "sourceType": "PubMed/FDA RSS/官方入口",
     "evidenceLevel": "信息线索",
     "reviewStatus": "自动更新",
-    "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-    "lastChecked": "2026-06-07"
+    "lastChecked": "2026-06-07",
+    "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。"
+  },
+  "updatePolicy": {
+    "frequency": "daily",
+    "fallbackPolicy": "PubMed 或 FDA RSS 失败时保留对应来源的上一版条目。",
+    "manualReview": "监管批准、商业化、医保和指南类静态数据不由本脚本自动改写，需人工复核后更新。"
   },
   "items": [
     {
@@ -19,18 +24,18 @@
       "journal": "International journal of circumpolar health",
       "summary": "Hjaltason H, Ólafsson H, Jakobsson F et al. | International journal of circumpolar health",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41919672/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "International journal of circumpolar health"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-41588655",
@@ -43,18 +48,18 @@
       "journal": "Autoimmunity",
       "summary": "Wang Z, Luo T, Peng D et al. | Autoimmunity",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41588655/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Autoimmunity"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42084498",
@@ -67,18 +72,18 @@
       "journal": "Human vaccines & immunotherapeutics",
       "summary": "Yu F, Myshkin E, Nguyen B et al. | Human vaccines & immunotherapeutics",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42084498/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Human vaccines & immunotherapeutics"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42202556",
@@ -91,18 +96,18 @@
       "journal": "Clinical neurology and neurosurgery",
       "summary": "Azarmi Ajirlou E | Clinical neurology and neurosurgery",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42202556/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Clinical neurology and neurosurgery"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42127467",
@@ -115,18 +120,18 @@
       "journal": "Clinical neurology and neurosurgery",
       "summary": "Xu XN, Jiang F, Li JM et al. | Clinical neurology and neurosurgery",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42127467/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Clinical neurology and neurosurgery"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42134213",
@@ -139,18 +144,18 @@
       "journal": "Journal of the neurological sciences",
       "summary": "Luo JJ, Wang S, Si X | Journal of the neurological sciences",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42134213/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of the neurological sciences"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42143506",
@@ -163,18 +168,18 @@
       "journal": "International immunopharmacology",
       "summary": "Abd El-Fattah EE, Hamdy R, Soliman SSM et al. | International immunopharmacology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42143506/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "International immunopharmacology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42070450",
@@ -187,18 +192,18 @@
       "journal": "Sleep medicine",
       "summary": "Tchoudnovski D, Yang D, Ntale I et al. | Sleep medicine",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42070450/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Sleep medicine"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42048741",
@@ -211,18 +216,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Lv J, Liu J, Zhang L et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42048741/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42035597",
@@ -235,18 +240,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Karaman B, Gören G, Tuncel R et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42035597/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42030590",
@@ -259,18 +264,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Irie KI, Imai T, Koga T et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42030590/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42025269",
@@ -283,18 +288,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Miguet L, De Merlier M, Claeys KG | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42025269/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-41936334",
@@ -307,18 +312,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Pitter D, Trahair E, Ayele F et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41936334/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-41936333",
@@ -331,18 +336,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Chung HY, Shin HY, Park HJ et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41936333/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-41926836",
@@ -355,18 +360,18 @@
       "journal": "Journal of neuroimmunology",
       "summary": "Handa H, Uzawa A, Shibuya K et al. | Journal of neuroimmunology",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41926836/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Journal of neuroimmunology"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "pubmed-42142527",
@@ -379,18 +384,18 @@
       "journal": "Vaccine",
       "summary": "Xu Y, Nyberg F, Marking U et al. | Vaccine",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42142527/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 索引信息，研究设计和结论需打开原文确认。"
+      },
       "tags": [
         "PubMed",
         "literature",
         "Vaccine"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "fda-drugs-rss",
@@ -401,18 +406,18 @@
       "title": "FDA: What's New: Drugs RSS",
       "summary": "FDA 药品相关更新源。自动脚本会筛选 myasthenia gravis、neuromuscular、FcRn、complement 等关键词；有命中时会新增具体新闻卡片。",
       "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml",
+      "trust": {
+        "sourceType": "FDA RSS",
+        "evidenceLevel": "官方入口",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "入口卡片用于持续监测，具体结论需打开 FDA 原始页面确认。"
+      },
       "tags": [
         "FDA",
         "regulatory",
         "RSS"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "clinicaltrials-search-mg",
@@ -423,17 +428,17 @@
       "title": "ClinicalTrials.gov: Myasthenia Gravis 试验登记入口",
       "summary": "用于追踪 MG 相关药物、抗体、细胞治疗和观察性研究的招募状态、研究设计与申办方信息。",
       "url": "https://clinicaltrials.gov/search?cond=Myasthenia%20Gravis",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "官方入口",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "试验登记信息不等同于已发表疗效或安全性证据。"
+      },
       "tags": [
         "clinical trial",
         "drug development"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "cde-search-mg",
@@ -444,18 +449,18 @@
       "title": "CDE 药审中心全站检索入口",
       "summary": "可检索重症肌无力、适应症、药物名称、突破性治疗、优先审评、临床试验默示许可等信息。",
       "url": "https://www.cde.org.cn/main/fullsearch/fullsearchpage",
+      "trust": {
+        "sourceType": "CDE/NMPA",
+        "evidenceLevel": "官方入口",
+        "reviewStatus": "人工复核入口",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "CDE 站内结果需要人工检索并核对发布日期、受理号和适应症描述。"
+      },
       "tags": [
         "CDE",
         "NMPA",
         "中国监管"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     },
     {
       "id": "conference-watchlist",
@@ -466,17 +471,24 @@
       "title": "会议摘要追踪清单",
       "summary": "建议后续纳入 AAN、MGFA、EAN、AANEM、EULAR 等会议摘要页面，并按会议开放程度选择自动抓取或人工录入。",
       "url": "https://www.aan.com/events/annual-meeting",
+      "trust": {
+        "sourceType": "会议官网",
+        "evidenceLevel": "会议线索",
+        "reviewStatus": "待复核",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "会议摘要通常未经过完整同行评议，需等待全文发表或官方资料更新。"
+      },
       "tags": [
         "conference",
         "abstract"
-      ],
-      "trust": {
-        "sourceType": "PubMed/FDA RSS/官方入口",
-        "evidenceLevel": "信息线索",
-        "reviewStatus": "自动更新",
-        "reviewNote": "聚合条目帮助快速发现信息，任何临床、监管或市场判断都应回到原始链接复核。",
-        "lastChecked": "2026-06-07"
-      }
+      ]
     }
-  ]
+  ],
+  "updateRun": {
+    "runStartedAt": "2026-06-07T11:20:34.295Z",
+    "runFinishedAt": "2026-06-07T11:20:35.252Z",
+    "scope": "all",
+    "status": "success",
+    "failedSources": []
+  }
 }

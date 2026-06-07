@@ -1,102 +1,106 @@
 {
-  "updatedAt": "2026-06-07T02:27:49.617Z",
+  "updatedAt": "2026-06-07T11:20:37.272Z",
+  "windowHours": 24,
+  "translationStatus": "pending",
   "provenance": {
     "sourceType": "PubMed",
     "evidenceLevel": "文献摘要",
     "reviewStatus": "自动更新",
-    "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
-    "lastChecked": "2026-06-07"
+    "lastChecked": "2026-06-07",
+    "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
   },
-  "windowHours": 24,
-  "translationStatus": "pending",
+  "updatePolicy": {
+    "frequency": "daily",
+    "fallbackPolicy": "PubMed 近 24 小时检索失败时保留上一版最新摘要。",
+    "manualReview": "监管批准、商业化、医保和指南类静态数据不由本脚本自动改写，需人工复核后更新。"
+  },
   "scopeNote": "展示 PubMed 过去 24 小时内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
   "items": [
     {
-      "id": "latest-42247725",
-      "pmid": "42247725",
-      "title": "Complement C3 inhibition restores myasthenia gravis AChR antibody-mediated muscle pathophysiology.",
-      "journal": "EBioMedicine",
-      "authors": "Yu-Fang Huang, Amol Keshavasa Bhandage, Miriam L Fichtner, Anna Rostedt Punga",
-      "date": "2026-06-05",
-      "abstract": "In the autoimmune disorder myasthenia gravis (MG), the nicotinic acetylcholine receptors (nAChRs) are the primary targets of pathogenic antibodies. While MG mechanisms have been extensively studied in animal models, functional insights into how antibody binding disrupts nAChR-dependent calcium signaling and the effects of complement inhibition in human muscle cells remain limited. We used real-time live-cell calcium imaging to assess the effects of cholinergic stimulation or inhibition on human muscle cells with pharmacological agents, sera from patients with acetylcholine receptor antibody seropositive (AChR+) MG, purified recombinant antibodies targeting &#x3b1;- and &#x3b2;-subunits, and a complement C3 inhibitor. Transcriptional changes in nAChR subunits, muscle markers, voltage-gated calcium channels (VGCCs), and complement-related genes were analysed by RT-qPCR. Immunocytochemistry and quantitative image analysis were performed to assess nAChR distribution and membrane attack complex (MAC) deposition. Cholinergic stimulation of human muscle cells activated nAChRs, resulting in membrane depolarisation, which in turn led to VGCC opening and calcium transients. MG-associated pathogenic antibodies, particularly those present in sera from patients with AChR + MG and pure recombinant AChR &#x3b1;-subunit-specific monoclonal antibody (mAb), but not &#x3b2;-subunit-specific, abolished choline-induced calcium responses in myotubes. &#x3b1;-subunit-specific mAb also induced transcriptional upregulation of nAChR subunits, muscle structural proteins, and complement components, and were associated with nAChR loss and MAC formation. Importantly, pharmacological inhibition of C3 activation restored calcium signaling, preserved nAChR distribution, and reduced MAC formation induced by &#x3b1;-subunit-specific mAb, implicating complement activation as a key driver of pathogenic effects. These findings indicate that targeting the &#x3b1;-subunit impairs nAChR-dependent calcium signaling and can induce complement activation. Disrupted signaling and reduced nAChR levels were effectively restored by C3 inhibition, which blocks multiple downstream pathways; thus, terminal complement activation leading to MAC formation is a suggested, but it may not be the only mechanism. Overall, the results highlight C3 as a promising upstream therapeutic target and support combining subunit-specific interventions with proximal complement blockade in MG. This work was supported by Familjen Erling-Perssons Stiftelse (grant # 2022_0030 to ARP), the Myasthenia Gravis Foundation of America, and the Swedish Research Council (grant # 2025-02779 to ARP). MLF part of the work was supported by a grant from the Deutsche Gesellschaft f&#xfc;r Muskelkranke e.V. (DGM).",
-      "zhSummary": "已抓取英文摘要；尚未配置 OPENAI_API_KEY，因此中文摘要待自动生成。",
-      "keyPoints": [
-        "In the autoimmune disorder myasthenia gravis (MG), the nicotinic acetylcholine receptors (nAChRs) are the primary targets of pathogenic antibodies.",
-        "While MG mechanisms have been extensively studied in animal models, functional insights into how antibody binding disrupts nAChR-dependent calcium signaling and the effects of complement inhibition in human muscle cells remain limited.",
-        "We used real-time live-cell calcium imaging to assess the effects of cholinergic stimulation or inhibition on human muscle cells with pharmacological agents, sera from patients with acetylcholine receptor antibody seropositive (AChR+) MG, purified recombinant antibodies targeting &#x3b1;- and &#x3b2;-subunits, and a complement C3 inhibitor."
-      ],
-      "translationStatus": "pending",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42247725/",
-      "tags": [
-        "latest",
-        "PubMed",
-        "免疫机制"
-      ],
+      "id": "latest-42251496",
+      "pmid": "42251496",
+      "title": "Regarding: Myasthenia gravis following the initiation of statin therapy.",
+      "journal": "Journal of internal medicine",
+      "authors": "Sha Zeng, ZhengRong Shi",
+      "date": "2026-06-06",
+      "abstract": "",
+      "zhSummary": "PubMed 记录暂未提供摘要。请打开原文查看全文或出版商页面。",
+      "keyPoints": [],
+      "translationStatus": "no-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251496/",
       "trust": {
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
-        "lastChecked": "2026-06-07"
-      }
-    },
-    {
-      "id": "latest-42244451",
-      "pmid": "42244451",
-      "title": "Translating B-Cell and Plasma-Cell Targeting from Oncology to Autoimmunity: Modalities, Quantitative Bridging, and a Development Roadmap.",
-      "journal": "Clinical pharmacology and therapeutics",
-      "authors": "Min Yuan, Xu Steven Xu",
-      "date": "2026-06-05",
-      "abstract": "B cells drive B-cell malignancies and diverse autoimmune diseases through autoantibody production, antigen presentation, and cytokine dysregulation, and persistence of pathogenic B-cell or plasma-cell compartments. Across autoimmune diseases, the dominant pathogenic compartment varies, ranging from precursor-dependent states to tissue-compartment inflammation and long-lived plasma cell-weighted autoantibody production. This review synthesizes the biological rationale for B-cell-axis targeting across oncology and autoimmunity and proposes a pathobiological framework spanning precursor-dependent, compartment-dominant, and long-lived plasma cell-weighted archetypes. We outline the mechanisms, lineage coverage, depletion depth, durability, and tolerability of CD20-, CD19-, CD38-, and BCMA-directed antibodies, bispecific T-cell engagers, and chimeric antigen receptor (CAR) T cells, and map these modalities onto biologically defined autoimmune archetypes. We also compare dosing paradigms, pharmacokinetics/pharmacodynamics (PK/PD), exposure-response relationships, and safety trade-offs between oncology-style induction and chronic maintenance in autoimmunity, emphasizing biomarker-guided retreatment, infection-risk mitigation, and regimen adaptation for non-malignant disease. Clinically, therapies developed for lymphoma and myeloma have transformed B-cell cancer care and are now being repurposed for rheumatoid arthritis, multiple sclerosis, neuromyelitis optica spectrum disorder, IgG4-related disease, myasthenia gravis, systemic lupus erythematosus, and related disorders. We summarize pivotal translational inflection points, from rituximab extension beyond lymphoma to approvals of ocrelizumab, ofatumumab, ublituximab, and inebilizumab in neuroimmunology. We further review plasma cell-directed and T-cell-engaging strategies for deep immune resets in refractory disease, while clarifying implications for trial design, long-term safety, and implementation. Finally, we introduce a model-informed roadmap integrating population PK/PD, exposure-response, and quantitative systems pharmacology to optimize indication selection, patient enrichment, and dose/regimen design-supporting confident extrapolation rather than empiricism.",
-      "zhSummary": "已抓取英文摘要；尚未配置 OPENAI_API_KEY，因此中文摘要待自动生成。",
-      "keyPoints": [
-        "B cells drive B-cell malignancies and diverse autoimmune diseases through autoantibody production, antigen presentation, and cytokine dysregulation, and persistence of pathogenic B-cell or plasma-cell compartments.",
-        "Across autoimmune diseases, the dominant pathogenic compartment varies, ranging from precursor-dependent states to tissue-compartment inflammation and long-lived plasma cell-weighted autoantibody production.",
-        "This review synthesizes the biological rationale for B-cell-axis targeting across oncology and autoimmunity and proposes a pathobiological framework spanning precursor-dependent, compartment-dominant, and long-lived plasma cell-weighted archetypes."
-      ],
-      "translationStatus": "pending",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42244451/",
-      "tags": [
-        "latest",
-        "PubMed",
-        "免疫机制"
-      ],
-      "trust": {
-        "sourceType": "PubMed",
-        "evidenceLevel": "文献摘要",
-        "reviewStatus": "自动更新",
-        "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
-        "lastChecked": "2026-06-07"
-      }
-    },
-    {
-      "id": "latest-42242900",
-      "pmid": "42242900",
-      "title": "Pathogenic properties of myasthenia gravis AChR autoantibodies associate with clinical response to efgartigimod.",
-      "journal": "Journal of neurology, neurosurgery, and psychiatry",
-      "authors": "Fatemeh Khani-Habibabadi, Fien M Verhamme, Mahan Moshir, Tine Casneuf, Vijayaraghava T S Rao, Sophie Steeland",
-      "date": "2026-06-04",
-      "abstract": "Efgartigimod, a neonatal Fc receptor (FcRn) blocker, effectively reduces total IgG, including pathogenic acetylcholine receptor (AChR) autoantibodies in myasthenia gravis (MG); however, clinical responses vary. To investigate this variability, we studied how efgartigimod impacts AChR-specific autoantibody profiles and associated pathogenic mechanisms, including complement activation, AChR internalisation and ACh-binding site blockade. Serum samples (N=150) were sourced from 50 AChR autoantibody-positive generalised MG patients participating in the phase 3 ADAPT study, randomised to receive efgartigimod (N=40) or placebo (N=10) in cycles of 4-weekly infusions. Samples were collected at baseline, day 29 and day 57 during the first cycle. Live cell-based assays quantified AChR-specific IgG subclasses and isotypes and assessed their capacity to mediate pathomechanisms. Efgartigimod decreased all detectable AChR-specific IgG subclasses. At baseline, AChR autoantibody-mediated C3b deposition, AChR internalisation and ACh-binding site blockade were detected in 42 (84%), 41 (82%) and 10 (20%) patients, respectively. After 4-weekly infusions of efgartigimod, the magnitude of all three pathomechanisms was significantly decreased. However, the extent of this reduction varied across individuals. Double responders on both MG-activities of daily living and quantitative MG scores demonstrated a greater reduction in complement activity and AChR internalisation compared with patients who responded on only one score or were double non-responders. In addition, efgartigimod reduced IgG-dependent IgM binding to AChR. These findings suggest that clinical efficacy may be more closely associated with functional modulation of the AChR-specific autoantibodies than with their absolute quantity alone. These results support the evaluation of mechanistic pathway monitoring as a potential strategy to predict or guide efgartigimod treatment response.",
-      "zhSummary": "已抓取英文摘要；尚未配置 OPENAI_API_KEY，因此中文摘要待自动生成。",
-      "keyPoints": [
-        "Efgartigimod, a neonatal Fc receptor (FcRn) blocker, effectively reduces total IgG, including pathogenic acetylcholine receptor (AChR) autoantibodies in myasthenia gravis (MG); however, clinical responses vary.",
-        "To investigate this variability, we studied how efgartigimod impacts AChR-specific autoantibody profiles and associated pathogenic mechanisms, including complement activation, AChR internalisation and ACh-binding site blockade.",
-        "Serum samples (N=150) were sourced from 50 AChR autoantibody-positive generalised MG patients participating in the phase 3 ADAPT study, randomised to receive efgartigimod (N=40) or placebo (N=10) in cycles of 4-weekly infusions."
-      ],
-      "translationStatus": "pending",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42242900/",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
+      },
       "tags": [
         "latest",
         "PubMed",
         "治疗与真实世界"
+      ]
+    },
+    {
+      "id": "latest-42251157",
+      "pmid": "42251157",
+      "title": "The neurological adverse events of immune check point inhibitors in the treatment of cancer.",
+      "journal": "Journal of neurology",
+      "authors": "Ahmad A Toubasi, Thuraya N Al-Sayegh",
+      "date": "2026-06-06",
+      "abstract": "Immune checkpoint inhibitors (ICIs) have revolutionized cancer treatment with significant improvements in survival rates. With the increase in ICI use in the clinical setting, several case reports and series have described neurological adverse events associated with it. We conducted this systematic review and meta-analysis to estimate the incidence of neurological adverse events among ICI clinical trials. We searched PubMed, Embase, Scopus, and the Cochrane Central Register of Controlled Trials (CENTRAL) on November 25, 2025, using ICI and clinical trial as keywords along with their related MeSH terms. The inclusion criteria involved clinical trials investigating the efficacy or safety of any ICI as the only systemic therapy among never treated patients with cancer. To eliminate the impact of other systemic therapies, trials that used ICIs as an adjuvant to another systemic treatment or included patients previously treated with any systemic therapies were excluded. The incidence and its 95% confidence interval (95%CI) were used as the effect measures in the analysis. Subgroup analyses were conducted based on the type of cancer and number of ICIs used in the trial. We included a total of 8,826 patients with cancer from 31 clinical trials. The pooled incidence of neurological adverse events was 1.78&#x2009;&#xd7;&#x2009;10 -3 % (95%CI 1.06&#x2009;&#xd7;&#x2009;10 -3 %-2.78&#x2009;&#xd7;&#x2009;10 -3 %). There was no difference (p&#x2009;=&#x2009;0.481) in the incidence of neurological side effects between trials that used one ICI (1.83&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.81&#x2009;&#xd7;&#x2009;10 -3 %-3.22&#x2009;&#xd7;&#x2009;10 -3 %) compared to those that used two ICIs (0.90&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.01&#x2009;&#xd7;&#x2009;10 -3 %-2.64&#x2009;&#xd7;&#x2009;10 -3 %). There was also no significant difference (p&#x2009;>&#x2009;0.622) in the incidence among patients with hepatocellular carcinoma (HCC) (1.20&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.01&#x2009;&#xd7;&#x2009;10 -3 %-3.67&#x2009;&#xd7;&#x2009;10 -3 %), non-small cell lung carcinoma (NSCLC) (1.83&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.01&#x2009;&#xd7;&#x2009;10 -3 %-6.0&#x2009;&#xd7;&#x2009;10 -3 %), and melanoma (1.16&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.22&#x2009;&#xd7;&#x2009;10 -3 %-2.71&#x2009;&#xd7;&#x2009;10 -3 %). The most common neurological adverse events were peripheral neuropathy (1.34&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.61&#x2009;&#xd7;&#x2009;10 -3 %-2.3&#x2009;&#xd7;&#x2009;10 -3 %), myositis (0.78&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.29&#x2009;&#xd7;&#x2009;10 -3 %-1.49&#x2009;&#xd7;&#x2009;10 -3 %), aseptic meningitis (0.71&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.25&#x2009;&#xd7;&#x2009;10 -3 %-1.40&#x2009;&#xd7;&#x2009;10 -3 %), autoimmune demyelinating polyneuropathy (0.66&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.21&#x2009;&#xd7;&#x2009;10 -3 %-1.32&#x2009;&#xd7;&#x2009;10 -3 %), epilepsy (0.66&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.21&#x2009;&#xd7;&#x2009;10 -3 %-1.32&#x2009;&#xd7;&#x2009;10 -3 %), and myasthenia gravis (0.66&#x2009;&#xd7;&#x2009;10 -3 %; 95%CI 0.21&#x2009;&#xd7;&#x2009;10 -3 %-1.32&#x2009;&#xd7;&#x2009;10 -3 %). Taken all together, the incidence of ICI-related neurological adverse events among patients with cancer is low and estimated at 1 in 5000 patients. Individual data analysis of ICI clinical trials is needed to examine the factors associated with ICI-related neurological adverse events.",
+      "zhSummary": "已抓取英文摘要；尚未配置 OPENAI_API_KEY，因此中文摘要待自动生成。",
+      "keyPoints": [
+        "Immune checkpoint inhibitors (ICIs) have revolutionized cancer treatment with significant improvements in survival rates.",
+        "With the increase in ICI use in the clinical setting, several case reports and series have described neurological adverse events associated with it.",
+        "We conducted this systematic review and meta-analysis to estimate the incidence of neurological adverse events among ICI clinical trials."
       ],
+      "translationStatus": "pending",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42251157/",
       "trust": {
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。",
-        "lastChecked": "2026-06-07"
-      }
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
+      },
+      "tags": [
+        "latest",
+        "PubMed",
+        "治疗与真实世界"
+      ]
+    },
+    {
+      "id": "latest-42250887",
+      "pmid": "42250887",
+      "title": "Acute Liver Failure in a Patient with Myasthenia Gravis.",
+      "journal": "Gastroenterology",
+      "authors": "Tianzhi Tang, Dhanpat Jain, Peter D Block",
+      "date": "2026-06-05",
+      "abstract": "",
+      "zhSummary": "PubMed 记录暂未提供摘要。请打开原文查看全文或出版商页面。",
+      "keyPoints": [],
+      "translationStatus": "no-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42250887/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献摘要",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
+      },
+      "tags": [
+        "latest",
+        "PubMed",
+        "综合研究"
+      ]
     }
-  ]
+  ],
+  "updateRun": {
+    "runStartedAt": "2026-06-07T11:20:34.295Z",
+    "runFinishedAt": "2026-06-07T11:20:37.272Z",
+    "scope": "all",
+    "status": "success",
+    "failedSources": []
+  }
 }
