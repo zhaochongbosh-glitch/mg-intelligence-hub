@@ -322,7 +322,6 @@ main {
 
 .china-tools,
 .treatment-tools,
-.latest-tools,
 .toolbar {
   display: grid;
   gap: 12px;
@@ -339,10 +338,6 @@ main {
 
 .treatment-tools {
   grid-template-columns: 210px 270px minmax(260px, 1fr);
-}
-
-.latest-tools {
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
 }
 
 .toolbar {
@@ -638,15 +633,7 @@ select:focus {
   line-height: 1.55;
 }
 
-.latest-card__badges {
-  flex: 0 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-.latest-card__badges span {
+.latest-card__head span {
   flex: 0 0 auto;
   padding: 6px 9px;
   border-radius: 8px;
@@ -654,21 +641,6 @@ select:focus {
   color: var(--green);
   font-size: 0.8rem;
   font-weight: 800;
-}
-
-.latest-card__badges .latest-priority--high {
-  background: #fff8fa;
-  color: #8c3348;
-}
-
-.latest-card__badges .latest-priority--medium {
-  background: #fbf8f1;
-  color: #80510f;
-}
-
-.latest-card__badges .latest-priority--low {
-  background: #f1f5fb;
-  color: var(--blue);
 }
 
 .zh-abstract {
@@ -1871,7 +1843,6 @@ footer {
   .review-principles,
   .workspace-grid,
   .toolbar,
-  .latest-tools,
   .trial-tools,
   .treatment-tools {
     grid-template-columns: 1fr;
