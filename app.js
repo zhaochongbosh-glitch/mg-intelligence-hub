@@ -698,9 +698,10 @@ function renderGuidance() {
 
 function renderUpdateStatus() {
   const status = state.data.updateStatus || {};
-  const sources = status.sources || [];
-  const attentionCount = sources.filter((source) => /failed|error|manual|review|人工|失败|待/i.test(source.status || "")).length;
-  setCount("update-status", `${sources.length} 个来源，${attentionCount} 个需关注`);
+  const automaticSources = status.sources || [];
+  const manualSources = manualReviewSources();
+  const attentionCount = automaticSources.filter((source) => /failed|error|失败/i.test(source.status || "")).length;
+  setCount("update-status", `${automaticSources.length} 个自动来源，${manualSources.length} 个人工复核来源，${attentionCount} 个异常`);
 
   const overview = `
     <div class="status-overview">
@@ -715,30 +716,20 @@ function renderUpdateStatus() {
         <p>脚本运行结束时间</p>
       </article>
       <article>
-        <span>数据来源</span>
-        <strong>${sources.length}</strong>
-        <p>${attentionCount ? `${attentionCount} 个来源需要人工关注` : "全部来源暂无异常标记"}</p>
+        <span>自动来源</span>
+        <strong>${automaticSources.length}</strong>
+        <p>${attentionCount ? `${attentionCount} 个自动来源异常` : "本次自动来源暂无异常标记"}</p>
       </article>
       <article>
-        <span>输出记录</span>
-        <strong>${(status.outputs || []).length}</strong>
-        <p>${escapeHtml(status.nextReviewHint || "等待下一次自动更新")}</p>
+        <span>人工复核来源</span>
+        <strong>${manualSources.length}</strong>
+        <p>${escapeHtml(status.nextReviewHint || "监管、市场、安全和指南类数据保持人工复核。")}</p>
       </article>
     </div>
   `;
 
-  const sourceCards = sources
-    .map((source) => `
-      <article class="source-status-card" data-status="${escapeAttribute(sourceStatusTone(source.status))}">
-        <div>
-          <p class="section-kicker">${escapeHtml(source.frequency || "manual")}</p>
-          <h3>${escapeHtml(source.name || "未命名来源")}</h3>
-        </div>
-        <strong>${escapeHtml(formatStatusLabel(source.status || "unknown"))}</strong>
-        <p>${escapeHtml(source.fallbackPolicy || "暂无容错说明")}</p>
-      </article>
-    `)
-    .join("");
+  const automaticCards = automaticSources.map((source) => renderSourceStatusCard(source, "auto")).join("");
+  const manualCards = manualSources.map((source) => renderSourceStatusCard(source, "manual")).join("");
 
   const outputs = status.outputs?.length
     ? `<div class="status-outputs">${status.outputs.map(renderStatusOutput).join("")}</div>`
@@ -746,9 +737,65 @@ function renderUpdateStatus() {
 
   targetFor("update-status").innerHTML = `
     ${overview}
-    <div class="source-status-grid">${sourceCards}</div>
-    ${outputs}
+    <section class="status-block">
+      <div class="status-block__head">
+        <div>
+          <p class="section-kicker">Automatic Sources</p>
+          <h3>自动更新来源</h3>
+        </div>
+        <span>${automaticSources.length} 个来源</span>
+      </div>
+      <div class="source-status-grid">${automaticCards || renderEmptyStatusCard("暂无自动来源记录", "请先运行 GitHub Actions 自动更新任务。")}</div>
+    </section>
+    <section class="status-block">
+      <div class="status-block__head">
+        <div>
+          <p class="section-kicker">Manual Review Sources</p>
+          <h3>人工复核来源</h3>
+        </div>
+        <span>${manualSources.length} 个来源</span>
+      </div>
+      <div class="source-status-grid">${manualCards}</div>
+    </section>
+    <section class="status-block">
+      <div class="status-block__head">
+        <div>
+          <p class="section-kicker">Generated Outputs</p>
+          <h3>本次输出记录</h3>
+        </div>
+        <span>${(status.outputs || []).length} 个文件</span>
+      </div>
+      ${outputs}
+    </section>
   `;
+}
+
+function renderSourceStatusCard(source = {}, mode = "auto") {
+  const isManual = mode === "manual";
+  const tone = isManual ? "manual" : sourceStatusTone(source.status);
+  const timing = source.finishedAt ? `完成：${formatDateTime(source.finishedAt)}` : source.lastChecked ? `核查：${formatDate(source.lastChecked)}` : "";
+  const count = Number.isFinite(source.count) ? `${source.count} 条` : source.countLabel || "";
+  const link = source.url
+    ? `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">打开来源</a>`
+    : "";
+  return `
+    <article class="source-status-card" data-status="${escapeAttribute(tone)}">
+      <div>
+        <p class="section-kicker">${escapeHtml(source.frequency || (isManual ? "MANUAL REVIEW" : "AUTO RUN"))}</p>
+        <h3>${escapeHtml(source.name || "未命名来源")}</h3>
+      </div>
+      <div class="source-status-card__badges">
+        <strong>${escapeHtml(formatStatusLabel(source.status || (isManual ? "manual-review" : "unknown")))}</strong>
+        ${count ? `<span>${escapeHtml(count)}</span>` : ""}
+      </div>
+      <p>${escapeHtml(source.fallbackPolicy || source.reason || "暂无容错说明")}</p>
+      ${timing || link ? `<div class="source-status-card__meta">${timing ? `<span>${escapeHtml(timing)}</span>` : ""}${link}</div>` : ""}
+    </article>
+  `;
+}
+
+function renderEmptyStatusCard(title, body) {
+  return `<article class="status-empty"><h3>${escapeHtml(title)}</h3><p>${escapeHtml(body)}</p></article>`;
 }
 
 function renderStatusOutput(output = {}) {
@@ -884,6 +931,59 @@ function reviewQueueItems() {
   return queue.sort((a, b) => priorityRank(b.priority) - priorityRank(a.priority) || a.type.localeCompare(b.type, "zh-CN"));
 }
 
+function manualReviewSources() {
+  return [
+    {
+      name: "CDE/NMPA",
+      status: "manual-review",
+      frequency: "WEEKLY / MANUAL",
+      countLabel: "官方入口",
+      reason: "CDE/NMPA 站内检索、受理号、审评进度、批准日期和适应症文本需要打开官方页面逐条确认。",
+      url: "https://www.cde.org.cn/main/fullsearch/fullsearchpage"
+    },
+    {
+      name: "ChiCTR",
+      status: "manual-review",
+      frequency: "WEEKLY / MANUAL",
+      countLabel: `${trialItems().filter((item) => trialRegistry(item) === "ChiCTR").length} 条`,
+      reason: "中国临床试验注册中心作为本土注册试验入口保留；注册号、版本、状态和研究者信息需人工核对。",
+      url: "https://www.chictr.org.cn/"
+    },
+    {
+      name: "全球批准与销售额",
+      status: "needs-review",
+      frequency: "MONTHLY / QUARTERLY",
+      countLabel: `${marketItems().length} 个产品`,
+      reason: "批准国家、批准机构、适应症和销售额口径会变化，需按监管数据库、财报和公司公告复核。",
+      url: "trials-market.html"
+    },
+    {
+      name: "中国准入与商业化",
+      status: "needs-review",
+      frequency: "MONTHLY",
+      countLabel: `${chinaAccessItems().length} 个中国获批产品`,
+      reason: "NMPA 批准、医保谈判、医院准入、患者援助和中国销售口径属于高变化字段，不能完全自动改写。",
+      url: "china-access.html"
+    },
+    {
+      name: "安全性与上市后监测",
+      status: "partial-review",
+      frequency: "MONTHLY",
+      countLabel: `${treatmentItems().length} 个治疗项`,
+      reason: "标签、FAERS/openFDA 信号、真实世界研究和风险管理结论需人工解释；自发报告不能直接代表发生率。",
+      url: "safety.html"
+    },
+    {
+      name: "指南路径与证据矩阵",
+      status: "manual-curation",
+      frequency: "QUARTERLY",
+      countLabel: `${guidanceItems().length + matrixItems().length} 个节点`,
+      reason: "指南、共识、证据等级和真实世界研究更新需要人工判断临床意义后再调整页面内容。",
+      url: "guidance.html"
+    }
+  ];
+}
+
 function sourceStatusTone(status = "") {
   if (/failed|error|失败/i.test(status)) return "failed";
   if (/manual|review|人工|待/i.test(status)) return "manual";
@@ -896,6 +996,11 @@ function formatStatusLabel(status = "") {
     "strategy-defined": "策略已定义",
     configured: "已配置",
     "manual-review": "人工复核",
+    "needs-review": "需定期复核",
+    "partial-review": "部分核查",
+    "manual-curation": "人工整理",
+    skipped: "跳过",
+    partial: "部分成功",
     failed: "失败",
     success: "成功"
   };

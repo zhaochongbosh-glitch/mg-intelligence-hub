@@ -155,6 +155,34 @@ const MANUAL_TRIAL_ITEMS = [
   }
 ];
 
+const SOURCE_CONFIG = {
+  "pubmed-feed": {
+    type: "automatic",
+    frequency: "DAILY",
+    fallbackPolicy: "失败时保留上一版 PubMed 文献信息流。"
+  },
+  "latest-research": {
+    type: "automatic",
+    frequency: "DAILY",
+    fallbackPolicy: "失败时保留上一版近 24 小时研究摘要。"
+  },
+  "china-research": {
+    type: "automatic",
+    frequency: "DAILY",
+    fallbackPolicy: "失败时保留上一版中国研究列表。"
+  },
+  "clinical-trials": {
+    type: "automatic",
+    frequency: "DAILY",
+    fallbackPolicy: "失败时保留上一版临床试验雷达。"
+  },
+  "fda-rss": {
+    type: "automatic",
+    frequency: "DAILY",
+    fallbackPolicy: "失败时保留上一版 FDA RSS 命中条目。"
+  }
+};
+
 async function main() {
   console.log(`MG data update started: scope=${updateScope}`);
   const previous = await loadPreviousData();
@@ -225,11 +253,13 @@ async function loadPreviousData() {
 
 async function runSource(name, task) {
   const startedAt = new Date().toISOString();
+  const config = SOURCE_CONFIG[name] || {};
   try {
     const data = await task();
     const count = Array.isArray(data) ? data.length : 0;
     const record = {
       name,
+      ...config,
       status: "success",
       startedAt,
       finishedAt: new Date().toISOString(),
@@ -240,6 +270,7 @@ async function runSource(name, task) {
   } catch (error) {
     const record = {
       name,
+      ...config,
       status: "failed",
       startedAt,
       finishedAt: new Date().toISOString(),
@@ -252,8 +283,10 @@ async function runSource(name, task) {
 }
 
 function recordSkipped(name, reason) {
+  const config = SOURCE_CONFIG[name] || {};
   sourceRuns.push({
     name,
+    ...config,
     status: "skipped",
     startedAt: runStartedAt,
     finishedAt: new Date().toISOString(),
