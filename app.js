@@ -235,6 +235,7 @@ function renderLatestCard(item) {
     error: "摘要生成失败"
   }[item.translationStatus] || "待处理";
   const points = (item.keyPoints || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+  const intelligence = renderLatestIntelligence(item);
   return `
     <article class="latest-card">
       <div class="latest-card__head">
@@ -247,6 +248,7 @@ function renderLatestCard(item) {
       </div>
       ${renderTrustMeta(item, "latest")}
       <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
+      ${intelligence}
       ${points ? `<ul class="latest-points">${points}</ul>` : ""}
       <details>
         <summary>查看英文摘要</summary>
@@ -257,6 +259,25 @@ function renderLatestCard(item) {
         <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
       </div>
     </article>
+  `;
+}
+
+function renderLatestIntelligence(item = {}) {
+  const intelligence = item.intelligence || {};
+  const rows = [
+    ["研究类型", intelligence.studyType],
+    ["研究对象", intelligence.population],
+    ["关键发现", intelligence.keyFinding],
+    ["情报意义", intelligence.clinicalImplication],
+    ["复核重点", intelligence.reviewFocus]
+  ].filter(([, value]) => value);
+
+  if (!rows.length) return "";
+
+  return `
+    <dl class="latest-intel-grid">
+      ${rows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}
+    </dl>
   `;
 }
 

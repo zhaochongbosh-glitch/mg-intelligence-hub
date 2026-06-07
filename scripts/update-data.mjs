@@ -581,6 +581,13 @@ async function enrichLatestArticle(article) {
     abstract: article.abstract,
     zhSummary: "",
     keyPoints: [],
+    intelligence: {
+      studyType: "",
+      population: "",
+      keyFinding: "",
+      clinicalImplication: "",
+      reviewFocus: ""
+    },
     translationStatus: "pending",
     url: `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/`,
     trust: trustMeta({
@@ -596,6 +603,11 @@ async function enrichLatestArticle(article) {
     return {
       ...base,
       zhSummary: "PubMed 记录暂未提供摘要。请打开原文查看全文或出版商页面。",
+      intelligence: {
+        ...base.intelligence,
+        studyType: "PubMed 记录无摘要",
+        reviewFocus: "打开 PubMed 原文或出版商页面，确认题目、文章类型和全文内容。"
+      },
       translationStatus: "no-abstract"
     };
   }
@@ -605,6 +617,7 @@ async function enrichLatestArticle(article) {
       ...base,
       zhSummary: "已抓取英文摘要；尚未配置 OPENAI_API_KEY，因此中文摘要待自动生成。",
       keyPoints: fallbackKeyPoints(article.abstract),
+      intelligence: fallbackIntelligence(article),
       translationStatus: "pending"
     };
   }
@@ -615,6 +628,7 @@ async function enrichLatestArticle(article) {
       ...base,
       zhSummary: ai.summary || base.zhSummary,
       keyPoints: Array.isArray(ai.keyPoints) ? ai.keyPoints.slice(0, 4) : [],
+      intelligence: normalizeLatestIntelligence(ai, article),
       translationStatus: "translated"
     };
   } catch (error) {
@@ -622,6 +636,7 @@ async function enrichLatestArticle(article) {
       ...base,
       zhSummary: "中文摘要生成失败，已保留英文摘要。请检查 OpenAI API 配置或稍后重试。",
       keyPoints: fallbackKeyPoints(article.abstract),
+      intelligence: fallbackIntelligence(article),
       translationStatus: "error"
     };
   }
@@ -639,11 +654,11 @@ async function summarizeInChinese(article) {
       input: [
         {
           role: "system",
-          content: "你是医学文献情报分析员。请用准确、克制的中文总结 PubMed 研究摘要，不夸大结论，不添加摘要之外的信息。"
+          content: "你是重症肌无力领域的医学文献情报分析员。请用准确、克制的中文解读 PubMed 摘要，只基于摘要内容，不夸大因果、疗效、安全性或指南意义；不添加摘要之外的信息。"
         },
         {
           role: "user",
-          content: `题目：${article.title}\n期刊：${article.journal}\n英文摘要：${article.abstract}\n\n请输出 JSON：{\"summary\":\"120-180字中文摘要\",\"keyPoints\":[\"要点1\",\"要点2\",\"要点3\"]}`
+          content: `题目：${article.title}\n期刊：${article.journal}\n英文摘要：${article.abstract}\n\n请输出严格 JSON，不要 Markdown：{\n  \"summary\":\"120-180字中文摘要，说明研究问题、方法/数据来源、主要结果和限制；不能超过摘要证据\",\n  \"keyPoints\":[\"3-4条中文要点，每条不超过45字\"],\n  \"intelligence\":{\n    \"studyType\":\"研究类型，如系统综述/Meta分析、RCT、队列研究、病例报告、机制研究、综述、评论等；不确定则写不明确\",\n    \"population\":\"研究对象/疾病场景；不明确则写摘要未说明\",\n    \"keyFinding\":\"最重要发现，保留关键数字或方向性结果；不夸大\",\n    \"clinicalImplication\":\"对MG临床、药物研发、安全监测或准入情报的意义；若非MG核心研究，说明其间接相关性\",\n    \"reviewFocus\":\"人工复核重点，例如全文、研究设计、终点、亚组、MG定义、安全事件或适用人群\"\n  }\n}`
         }
       ],
       text: {
@@ -656,6 +671,46 @@ async function summarizeInChinese(article) {
   const data = await response.json();
   const text = data.output_text || data.output?.flatMap((item) => item.content || []).map((part) => part.text || "").join("") || "{}";
   return JSON.parse(text);
+}
+
+function normalizeLatestIntelligence(ai = {}, article = {}) {
+  const source = ai.intelligence && typeof ai.intelligence === "object" ? ai.intelligence : {};
+  return {
+    studyType: cleanAiField(source.studyType) || "不明确",
+    population: cleanAiField(source.population) || "摘要未说明",
+    keyFinding: cleanAiField(source.keyFinding) || firstSentence(ai.summary) || firstSentence(article.abstract),
+    clinicalImplication: cleanAiField(source.clinicalImplication) || "需结合全文判断对 MG 临床或研发情报的意义。",
+    reviewFocus: cleanAiField(source.reviewFocus) || "复核全文、研究设计、终点定义、统计方法和适用人群。"
+  };
+}
+
+function fallbackIntelligence(article = {}) {
+  return {
+    studyType: classifyFallbackStudyType(article.title, article.abstract),
+    population: "摘要待中文结构化解读",
+    keyFinding: firstSentence(article.abstract) || "英文摘要已抓取，等待中文情报解读。",
+    clinicalImplication: "需配置或检查 OpenAI 摘要生成后判断其对 MG 临床、研发或安全监测的意义。",
+    reviewFocus: "打开 PubMed 原文，复核全文、研究设计、终点和 MG 相关性。"
+  };
+}
+
+function classifyFallbackStudyType(title = "", abstract = "") {
+  const text = `${title} ${abstract}`.toLowerCase();
+  if (/meta-analysis|systematic review/.test(text)) return "系统综述/Meta分析";
+  if (/randomized|randomised|trial/.test(text)) return "临床试验";
+  if (/cohort|registry|real-world|real world/.test(text)) return "队列/真实世界研究";
+  if (/case report|case series/.test(text)) return "病例报告/病例系列";
+  if (/review/.test(text)) return "综述";
+  if (/comment|letter|regarding/.test(text)) return "评论/通信";
+  return "不明确";
+}
+
+function cleanAiField(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function firstSentence(value = "") {
+  return String(value || "").split(/(?<=[.!?。！？])\s+/).find((sentence) => sentence.trim().length > 12)?.trim() || "";
 }
 
 function parsePubMedArticles(xml) {

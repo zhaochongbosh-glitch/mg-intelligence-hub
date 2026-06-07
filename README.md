@@ -58,6 +58,8 @@ GitHub Actions 支持手动选择更新范围：`all`、`literature`、`latest`�
 
 `data/latest-research.json` 保存 PubMed 过去 24 小时内新上线或更新的 MG 文献摘要。自动任务每天运行一次；如果在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置 `OPENAI_API_KEY`，脚本会自动生成中文摘要和中文要点。未配置密钥时，网站仍会显示新文献、英文摘要和“等待中文摘要”状态。
 
+配置 `OPENAI_API_KEY` 后，近 24 小时研究会按医学情报格式结构化：中文摘要、3-4 条要点、研究类型、研究对象、关键发现、对 MG 临床/研发/安全监测/准入的意义，以及需要人工复核的重点。中文内容仅作为阅读辅助，正式判断仍需回到英文摘要、全文和原始来源。
+
 ## 数据来源与人工复核标签
 
 每个主要数据文件都带有 `provenance` 字段，页面会把它显示成小标签：
