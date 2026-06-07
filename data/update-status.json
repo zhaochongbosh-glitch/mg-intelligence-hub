@@ -1,43 +1,58 @@
 {
-  "updatedAt": "2026-06-07T11:20:38.853Z",
-  "runStartedAt": "2026-06-07T11:20:34.295Z",
-  "runFinishedAt": "2026-06-07T11:20:38.853Z",
+  "updatedAt": "2026-06-07T11:55:33.529Z",
+  "runStartedAt": "2026-06-07T11:55:29.187Z",
+  "runFinishedAt": "2026-06-07T11:55:33.529Z",
   "scope": "all",
   "status": "success",
   "sources": [
     {
       "name": "fda-rss",
+      "type": "automatic",
+      "frequency": "DAILY",
+      "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。",
       "status": "success",
-      "startedAt": "2026-06-07T11:20:34.300Z",
-      "finishedAt": "2026-06-07T11:20:34.413Z",
+      "startedAt": "2026-06-07T11:55:29.193Z",
+      "finishedAt": "2026-06-07T11:55:29.556Z",
       "count": 0
     },
     {
       "name": "pubmed-feed",
+      "type": "automatic",
+      "frequency": "DAILY",
+      "fallbackPolicy": "失败时保留上一版 PubMed 文献信息流。",
       "status": "success",
-      "startedAt": "2026-06-07T11:20:34.300Z",
-      "finishedAt": "2026-06-07T11:20:35.252Z",
+      "startedAt": "2026-06-07T11:55:29.193Z",
+      "finishedAt": "2026-06-07T11:55:30.136Z",
       "count": 16
     },
     {
       "name": "latest-research",
+      "type": "automatic",
+      "frequency": "DAILY",
+      "fallbackPolicy": "失败时保留上一版近 24 小时研究摘要。",
       "status": "success",
-      "startedAt": "2026-06-07T11:20:35.652Z",
-      "finishedAt": "2026-06-07T11:20:37.272Z",
+      "startedAt": "2026-06-07T11:55:30.536Z",
+      "finishedAt": "2026-06-07T11:55:32.124Z",
       "count": 3
     },
     {
       "name": "china-research",
+      "type": "automatic",
+      "frequency": "DAILY",
+      "fallbackPolicy": "失败时保留上一版中国研究列表。",
       "status": "success",
-      "startedAt": "2026-06-07T11:20:37.672Z",
-      "finishedAt": "2026-06-07T11:20:38.567Z",
+      "startedAt": "2026-06-07T11:55:32.525Z",
+      "finishedAt": "2026-06-07T11:55:33.441Z",
       "count": 18
     },
     {
       "name": "clinical-trials",
+      "type": "automatic",
+      "frequency": "DAILY",
+      "fallbackPolicy": "失败时保留上一版临床试验雷达。",
       "status": "success",
-      "startedAt": "2026-06-07T11:20:38.567Z",
-      "finishedAt": "2026-06-07T11:20:38.850Z",
+      "startedAt": "2026-06-07T11:55:33.441Z",
+      "finishedAt": "2026-06-07T11:55:33.525Z",
       "count": 30
     }
   ],
