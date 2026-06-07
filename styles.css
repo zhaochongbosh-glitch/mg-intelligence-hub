@@ -1228,6 +1228,139 @@ select:focus {
   font-weight: 750;
 }
 
+.faers-loading,
+.faers-empty,
+.faers-panel,
+.faers-kpis article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.faers-loading,
+.faers-empty,
+.faers-panel {
+  padding: 18px;
+}
+
+.faers-empty p,
+.faers-panel p,
+.faers-kpis p,
+.muted {
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.faers-disclaimer {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 14px;
+  padding: 13px 14px;
+  border: 1px solid #ead1d8;
+  border-radius: 8px;
+  background: #fff8fa;
+}
+
+.faers-disclaimer strong {
+  flex: 0 0 auto;
+  color: #8c3348;
+  font-size: 0.86rem;
+}
+
+.faers-disclaimer span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.faers-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.faers-kpis article {
+  min-height: 126px;
+  padding: 14px;
+}
+
+.faers-kpis span {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.faers-kpis strong {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.08;
+}
+
+.faers-kpis p {
+  margin-bottom: 0;
+  font-size: 0.84rem;
+}
+
+.faers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.faers-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.faers-bar {
+  display: grid;
+  grid-template-columns: minmax(105px, 1fr) minmax(120px, 1.5fr) 42px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.faers-bar span {
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+.faers-bar div {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--soft);
+}
+
+.faers-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--rose);
+}
+
+.faers-bar--country i {
+  background: var(--blue);
+}
+
+.faers-bar--outcome i {
+  background: var(--amber);
+}
+
+.faers-bar strong {
+  color: var(--ink);
+  text-align: right;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
 .monitoring-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -1833,6 +1966,8 @@ footer {
   .market-cards,
   .safety-overview,
   .safety-detail,
+  .faers-kpis,
+  .faers-grid,
   .monitoring-grid,
   .access-overview,
   .china-access-grid,
@@ -1875,9 +2010,18 @@ footer {
 
   .china-tools,
   .china-card,
+  .faers-bar,
   .latest-intel-grid,
   .treatment-grid {
     grid-template-columns: 1fr;
+  }
+
+  .faers-disclaimer {
+    display: grid;
+  }
+
+  .faers-bar strong {
+    text-align: left;
   }
 
   .china-card__date {

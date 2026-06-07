@@ -213,6 +213,7 @@ function renderVisibleModules() {
   if (exists("guidance")) renderGuidance();
   if (exists("update-status")) renderUpdateStatus();
   if (exists("review-queue")) renderReviewQueue();
+  if (exists("faers")) renderFaersExplorer();
 }
 
 function renderLatest() {
@@ -385,6 +386,7 @@ function renderTreatmentCard(item) {
   const approval = item.approval || {};
   const signals = (item.safetySignals || []).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
   const links = (item.links || [])
+    .map((link) => normalizeSourceLink(link, item))
     .map((link) => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
     .join("");
   return `
@@ -497,7 +499,233 @@ function renderSafetyCard(item) {
 function safetyLinks(item) {
   const links = item.links || [];
   const preferred = links.filter((link) => /openFDA|FAERS|Label|标签|DailyMed|FDA/i.test(link.label || link.url || ""));
-  return (preferred.length ? preferred : links).slice(0, 4);
+  return (preferred.length ? preferred : links).slice(0, 4).map((link) => normalizeSourceLink(link, item));
+}
+
+function normalizeSourceLink(link = {}, item = {}) {
+  if (!/openFDA|FAERS|api\.fda\.gov\/drug\/event/i.test(`${link.label || ""} ${link.url || ""}`)) return link;
+  const url = new URL("pages/faers.html", APP_ROOT);
+  if (item.id) url.searchParams.set("drug", item.id);
+  if (item.brand) url.searchParams.set("brand", item.brand);
+  if (item.generic) url.searchParams.set("generic", item.generic);
+  if (link.url) url.searchParams.set("api", link.url);
+  return {
+    ...link,
+    label: "FAERS 可视化",
+    url: url.href
+  };
+}
+
+async function renderFaersExplorer() {
+  const target = targetFor("faers");
+  const params = new URLSearchParams(window.location.search);
+  const treatment = findFaersTreatment(params);
+  const title = treatment ? `${treatment.brand} (${treatment.generic})` : params.get("brand") || params.get("generic") || "FAERS";
+  setAll("[data-faers-title]", title);
+  setAll("[data-faers-subtitle]", treatment?.zhName || "openFDA FAERS 药品不良事件报告");
+  target.innerHTML = `<article class="faers-loading"><h3>正在读取 openFDA FAERS 数据</h3><p>请稍候。</p></article>`;
+
+  try {
+    const apiUrl = buildFaersApiUrl(params, treatment);
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error(`openFDA HTTP ${response.status}`);
+    const data = await response.json();
+    target.innerHTML = renderFaersDashboard(data, treatment, apiUrl);
+  } catch (error) {
+    target.innerHTML = `
+      <article class="faers-empty">
+        <h3>暂时无法读取 FAERS 数据</h3>
+        <p>${escapeHtml(error.message || "openFDA 请求失败。")}</p>
+        <a href="safety.html">返回安全监测</a>
+      </article>
+    `;
+  }
+}
+
+function findFaersTreatment(params) {
+  const drug = params.get("drug");
+  const brand = params.get("brand");
+  const generic = params.get("generic");
+  return treatmentItems().find((item) =>
+    (drug && item.id === drug) ||
+    (brand && item.brand?.toLowerCase() === brand.toLowerCase()) ||
+    (generic && item.generic?.toLowerCase() === generic.toLowerCase())
+  );
+}
+
+function buildFaersApiUrl(params, treatment) {
+  const existing = params.get("api");
+  if (existing) {
+    const url = new URL(existing);
+    url.searchParams.set("sort", "receivedate:desc");
+    url.searchParams.set("limit", "100");
+    return url.href;
+  }
+
+  const brand = params.get("brand") || treatment?.brand;
+  const generic = params.get("generic") || treatment?.generic;
+  const search = brand
+    ? `patient.drug.openfda.brand_name:"${brand}"`
+    : `patient.drug.openfda.generic_name:"${generic || ""}"`;
+  const url = new URL("https://api.fda.gov/drug/event.json");
+  url.searchParams.set("search", search);
+  url.searchParams.set("sort", "receivedate:desc");
+  url.searchParams.set("limit", "100");
+  return url.href;
+}
+
+function renderFaersDashboard(data = {}, treatment, apiUrl) {
+  const reports = Array.isArray(data.results) ? data.results : [];
+  const total = data.meta?.results?.total ?? reports.length;
+  const serious = reports.filter((report) => report.serious === "1").length;
+  const deaths = reports.filter((report) => report.seriousnessdeath === "1").length;
+  const latestDate = reports.map(reportDate).filter(Boolean).sort().at(-1);
+  const reactionBars = renderFaersBars(countFaersValues(reports, reactionTerms), "reaction");
+  const countryBars = renderFaersBars(countFaersValues(reports, (report) => [report.primarysourcecountry || report.primarysource?.reportercountry]), "country");
+  const outcomeBars = renderFaersBars(countFaersValues(reports, outcomeTerms), "outcome");
+  const tableRows = reports.slice(0, 12).map(renderFaersReportRow).join("");
+  const labelSignals = (treatment?.safetySignals || []).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
+
+  return `
+    <div class="faers-disclaimer">
+      <strong>解读边界</strong>
+      <span>FAERS 是自发报告系统。报告数可用于发现潜在信号，不能直接代表发生率、风险比或药物因果关系。</span>
+    </div>
+    <div class="faers-kpis">
+      <article><span>openFDA 命中</span><strong>${formatNumber(total)}</strong><p>当前查询的报告总数</p></article>
+      <article><span>本页样本</span><strong>${reports.length}</strong><p>最多展示最近 100 条</p></article>
+      <article><span>严重报告</span><strong>${serious}</strong><p>本页样本内 serious=1</p></article>
+      <article><span>死亡结局</span><strong>${deaths}</strong><p>本页样本内 death=1</p></article>
+      <article><span>最近接收</span><strong>${latestDate ? formatFaersDate(latestDate) : "未显示"}</strong><p>按 receivedate 估算</p></article>
+    </div>
+    ${treatment ? `
+      <section class="faers-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">Label Context</p>
+            <h2>标签/人工整理的重点风险</h2>
+          </div>
+        </div>
+        <p>${escapeHtml(treatment.postMarketing || "暂无人工整理的上市后监测说明。")}</p>
+        <div class="safety-tags">${labelSignals}</div>
+      </section>
+    ` : ""}
+    <section class="faers-grid">
+      <article class="faers-panel">
+        <h2>常见报告反应</h2>
+        ${reactionBars || `<p class="muted">暂无 reaction 字段。</p>`}
+      </article>
+      <article class="faers-panel">
+        <h2>报告来源国家/地区</h2>
+        ${countryBars || `<p class="muted">暂无国家字段。</p>`}
+      </article>
+      <article class="faers-panel">
+        <h2>严重性结局标记</h2>
+        ${outcomeBars || `<p class="muted">暂无严重性结局字段。</p>`}
+      </article>
+    </section>
+    <section class="faers-panel">
+      <div class="section-heading compact">
+        <div>
+          <p class="section-kicker">Recent Reports</p>
+          <h2>最近报告样本</h2>
+        </div>
+        <a class="ghost-link" href="${escapeAttribute(apiUrl)}" target="_blank" rel="noreferrer">查看原始 JSON</a>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>接收日期</th><th>国家</th><th>性别/年龄</th><th>报告反应</th><th>疑似药物</th><th>严重性</th></tr>
+          </thead>
+          <tbody>${tableRows || `<tr><td colspan="6">暂无报告样本。</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function countFaersValues(reports, getter) {
+  const counts = new Map();
+  for (const report of reports) {
+    for (const value of getter(report).filter(Boolean)) {
+      counts.set(value, (counts.get(value) || 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 10);
+}
+
+function reactionTerms(report) {
+  return (report.patient?.reaction || []).map((item) => item.reactionmeddrapt);
+}
+
+function outcomeTerms(report) {
+  const map = [
+    ["seriousnessdeath", "Death"],
+    ["seriousnesslifethreatening", "Life-threatening"],
+    ["seriousnesshospitalization", "Hospitalization"],
+    ["seriousnessdisabling", "Disabling"],
+    ["seriousnesscongenitalanomali", "Congenital anomaly"],
+    ["seriousnessother", "Other serious"]
+  ];
+  return map.filter(([key]) => report[key] === "1").map(([, label]) => label);
+}
+
+function renderFaersBars(entries, type) {
+  const max = Math.max(...entries.map(([, count]) => count), 1);
+  return entries
+    .map(([label, count]) => `
+      <div class="faers-bar faers-bar--${type}">
+        <span>${escapeHtml(label)}</span>
+        <div><i style="width: ${Math.max(4, Math.round((count / max) * 100))}%"></i></div>
+        <strong>${count}</strong>
+      </div>
+    `)
+    .join("");
+}
+
+function renderFaersReportRow(report) {
+  const reactions = reactionTerms(report).slice(0, 4).join("; ");
+  const drugs = (report.patient?.drug || [])
+    .filter((drug) => drug.drugcharacterization === "1" || drug.drugcharacterization === "2")
+    .map((drug) => drug.medicinalproduct || drug.openfda?.brand_name?.[0] || drug.openfda?.generic_name?.[0])
+    .filter(Boolean)
+    .slice(0, 4)
+    .join("; ");
+  const patient = [
+    formatFaersSex(report.patient?.patientsex),
+    report.patient?.patientonsetage ? `${report.patient.patientonsetage}${formatFaersAgeUnit(report.patient.patientonsetageunit)}` : ""
+  ].filter(Boolean).join(" / ");
+  return `
+    <tr>
+      <td>${escapeHtml(formatFaersDate(reportDate(report)) || "未显示")}</td>
+      <td>${escapeHtml(report.primarysourcecountry || report.primarysource?.reportercountry || "未显示")}</td>
+      <td>${escapeHtml(patient || "未显示")}</td>
+      <td>${escapeHtml(reactions || "未显示")}</td>
+      <td>${escapeHtml(drugs || "未显示")}</td>
+      <td>${escapeHtml(report.serious === "1" ? outcomeTerms(report).join("; ") || "Serious" : "Non-serious/未标记")}</td>
+    </tr>
+  `;
+}
+
+function reportDate(report) {
+  return report.receivedate || report.receiptdate || report.transmissiondate || "";
+}
+
+function formatFaersDate(value = "") {
+  if (!/^\d{8}$/.test(value)) return value;
+  return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
+}
+
+function formatFaersSex(value) {
+  return { 1: "男", 2: "女", 0: "未知" }[value] || "";
+}
+
+function formatFaersAgeUnit(value) {
+  return { 800: "十年", 801: "年", 802: "月", 803: "周", 804: "日", 805: "小时" }[value] || "";
+}
+
+function formatNumber(value) {
+  return new Intl.NumberFormat("zh-CN").format(Number(value) || 0);
 }
 
 function renderChinaAccess() {

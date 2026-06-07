@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="openFDA FAERS 药品不良事件报告可视化：报告数、严重性标记、常见反应和最近报告样本。" />
+    <title>FAERS 可视化 | 重症肌无力信息中枢</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="faers">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">openFDA FAERS</p>
+        <h1 data-faers-title>FAERS 可视化</h1>
+        <p data-faers-subtitle>药品不良事件报告信号概览</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav">
+        <a href="../index.html">首页</a>
+        <a href="research/">研究情报</a>
+        <a href="therapy.html">治疗与证据</a>
+        <a href="safety.html" aria-current="page">安全监测</a>
+        <a href="china-access.html">中国准入</a>
+        <a href="trials-market.html">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+        <a href="data-status.html">数据状态</a>
+      </nav>
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Pharmacovigilance</p>
+            <h2>FAERS 报告概览</h2>
+            <p>实时读取 openFDA drug/event API，并将原始报告整理为可读的安全性信号看板。</p>
+          </div>
+          <a class="ghost-link" href="safety.html">返回安全监测</a>
+        </div>
+        <div data-render="faers"></div>
+      </section>
+    </main>
+    <footer><p>FAERS 为自发报告系统，存在漏报、重复报告、选择性报告和混杂因素；本页仅用于药物警戒信号追踪，不构成发生率或因果结论。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>
