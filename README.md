@@ -43,7 +43,7 @@ node scripts/update-data.mjs
 
 当前自动更新分成三层：
 
-- 每日自动更新：PubMed 信息流、近 24 小时研究摘要、中国机构相关研究、FDA RSS 命中条目、ClinicalTrials.gov 试验雷达。
+- 每日自动更新：PubMed 信息流、近 7 天研究摘要、中国机构相关研究、FDA RSS 命中条目、ClinicalTrials.gov 试验雷达。
 - 人工复核来源：ChiCTR 中国临床试验注册中心先作为中国本土注册试验入口和重点条目保留；官网如需验证时不做强自动抓取。
 - 自动记录状态：每次运行都会写入 `data/update-status.json`，记录更新时间、更新范围、各来源成功/失败状态和输出条数。
 - 人工复核更新：全球批准、中国准入、医保/医院准入、销售额、指南路径、安全性结论等仍需人工复核后更新，避免自动脚本误改高风险字段。
@@ -54,11 +54,11 @@ node scripts/update-data.mjs
 
 GitHub Actions 支持手动选择更新范围：`all`、`literature`、`latest`、`feed`、`china`、`trials`。日常定时任务默认运行 `all`。
 
-## 近 24 小时研究摘要
+## 近 7 天研究摘要
 
-`data/latest-research.json` 保存 PubMed 过去 24 小时内新上线或更新的 MG 文献摘要。自动任务每天运行一次；如果在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置 `OPENAI_API_KEY`，脚本会自动生成中文摘要和中文要点。未配置密钥时，网站仍会显示新文献、英文摘要和“等待中文摘要”状态。
+`data/latest-research.json` 保存 PubMed 过去 7 天内新上线或更新的 MG 文献摘要。自动任务每天运行一次；如果在 GitHub 仓库 Settings -> Secrets and variables -> Actions 中配置 `OPENAI_API_KEY`，脚本会自动生成中文摘要和中文要点。未配置密钥时，网站仍会显示新文献、英文摘要和“等待中文摘要”状态。
 
-配置 `OPENAI_API_KEY` 后，近 24 小时研究会按医学情报格式结构化：中文摘要、3-4 条要点、研究类型、研究对象、关键发现、对 MG 临床/研发/安全监测/准入的意义，以及需要人工复核的重点。中文内容仅作为阅读辅助，正式判断仍需回到英文摘要、全文和原始来源。
+配置 `OPENAI_API_KEY` 后，近 7 天研究会按医学情报格式结构化：中文摘要、3-4 条要点、研究类型、研究对象、关键发现、对 MG 临床/研发/安全监测/准入的意义，以及需要人工复核的重点。中文内容仅作为阅读辅助，正式判断仍需回到英文摘要、全文和原始来源。
 
 ## 数据来源与人工复核标签
 

@@ -164,7 +164,7 @@ const SOURCE_CONFIG = {
   "latest-research": {
     type: "automatic",
     frequency: "DAILY",
-    fallbackPolicy: "失败时保留上一版近 24 小时研究摘要。"
+    fallbackPolicy: "失败时保留上一版近 7 天研究摘要。"
   },
   "china-research": {
     type: "automatic",
@@ -315,7 +315,8 @@ function buildFeedData(items, pubmedResult, rssResult) {
 function buildLatestData(items, result) {
   return withUpdateMeta({
     updatedAt: new Date().toISOString(),
-    windowHours: 24,
+    windowHours: 168,
+    windowDays: 7,
     translationStatus: process.env.OPENAI_API_KEY ? "translated" : "pending",
     provenance: trustMeta({
       sourceType: "PubMed",
@@ -323,8 +324,8 @@ function buildLatestData(items, result) {
       reviewStatus: result.ok ? "自动更新" : "沿用旧数据",
       reviewNote: "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
     }),
-    updatePolicy: updatePolicy("daily", "PubMed 近 24 小时检索失败时保留上一版最新摘要。"),
-    scopeNote: "展示 PubMed 过去 24 小时内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
+    updatePolicy: updatePolicy("daily", "PubMed 近 7 天检索失败时保留上一版最新摘要。"),
+    scopeNote: "展示 PubMed 过去 7 天内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
     items
   }, result);
 }
@@ -472,7 +473,7 @@ async function fetchPubMed() {
 
 async function fetchLatestResearch() {
   const term = encodeURIComponent('"myasthenia gravis" OR "ocular myasthenia" OR "generalized myasthenia gravis"');
-  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&sort=pub+date&retmax=12&datetype=edat&reldate=1&term=${term}`;
+  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&sort=pub+date&retmax=25&datetype=edat&reldate=7&term=${term}`;
   await sleep(350);
   const search = await getJson(searchUrl);
   const ids = search?.esearchresult?.idlist || [];

@@ -44,7 +44,7 @@ const trustDefaults = {
     sourceType: "PubMed",
     evidenceLevel: "文献摘要",
     reviewStatus: "自动更新",
-    reviewNote: "每 24 小时抓取 PubMed 新上线记录；中文摘要仅作阅读辅助。"
+    reviewNote: "每日抓取 PubMed 近 7 天新上线或更新记录；中文摘要仅作阅读辅助。"
   },
   china: {
     sourceType: "PubMed Affiliation",
@@ -221,7 +221,7 @@ function renderLatest() {
   setCount("latest", `${items.length} 篇新研究`);
   const target = targetFor("latest");
   if (!items.length) {
-    target.innerHTML = `<article class="latest-empty"><h3>过去 24 小时暂未抓取到新摘要</h3><p>PubMed 未必每天都有新上线的 MG 摘要；自动任务仍会每 24 小时检查一次。</p></article>`;
+    target.innerHTML = `<article class="latest-empty"><h3>近 7 天暂未抓取到新摘要</h3><p>PubMed 未必每周都有新上线的 MG 摘要；自动任务仍会每日检查一次。</p></article>`;
     return;
   }
   target.innerHTML = items.map(renderLatestCard).join("");
