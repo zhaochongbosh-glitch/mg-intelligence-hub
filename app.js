@@ -1,4 +1,5 @@
-const DATA_ROOT = document.body.dataset.page === "home" ? "data" : "../data";
+const APP_ROOT = new URL(".", document.currentScript.src);
+const DATA_ROOT = new URL("data/", APP_ROOT);
 
 const state = {
   data: {},
@@ -50,7 +51,7 @@ async function boot() {
 async function loadAllData() {
   const entries = await Promise.all(
     Object.entries(dataFiles).map(async ([key, file]) => {
-      const response = await fetch(`${DATA_ROOT}/${file}?ts=${Date.now()}`);
+      const response = await fetch(new URL(`${file}?ts=${Date.now()}`, DATA_ROOT));
       if (!response.ok) throw new Error(`${file} HTTP ${response.status}`);
       return [key, await response.json()];
     })
