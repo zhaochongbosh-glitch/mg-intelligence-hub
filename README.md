@@ -22,6 +22,7 @@ node scripts/serve.mjs
 - `pages/research/index.html`：最新研究、中国研究者和信息流
 - `pages/therapy.html`：治疗图谱和药物证据矩阵
 - `pages/safety.html`：安全性与上市后监测
+- `pages/china-access.html`：中国准入与商业化
 - `pages/trials-market.html`：临床试验雷达、全球批准和市场
 - `pages/guidance.html`：指南与诊疗路径
 
@@ -60,6 +61,10 @@ node scripts/update-data.mjs
 ## 安全性与上市后监测
 
 `pages/safety.html` 会从 `data/treatments.json` 自动读取 `postMarketing`、`safetySignals` 和药品标签/openFDA/FAERS 链接，形成独立的安全监测页。该页面用于信号追踪和人工复核，不把自发报告数据库中的报告数量解释为发生率，也不单独判断药物因果关系。
+
+## 中国准入与商业化
+
+`pages/china-access.html` 会从 `data/global-market.json` 中筛选中国/NMPA 批准记录，并联动 `data/evidence-matrix.json` 的 `chinaAccess` 字段，形成中国获批产品、适应症文本、企业、销售口径和准入复核清单。销售额需区分全球产品级、中国市场和 MG 单适应症口径。
 
 ## 中国研究者发表研究
 

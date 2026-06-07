@@ -62,6 +62,12 @@ const trustDefaults = {
     reviewStatus: "部分核查",
     reviewNote: "自发报告用于发现信号，不能直接证明发生率或因果关系；请回到标签、监管文件和原始报告复核。"
   },
+  "china-access": {
+    sourceType: "NMPA/财报/公司公告",
+    evidenceLevel: "中国准入与商业化",
+    reviewStatus: "需定期复核",
+    reviewNote: "中国批准、医保、医院准入和销售口径会持续变化；请按 NMPA、医保局、企业公告和财报逐条复核。"
+  },
   matrix: {
     sourceType: "RCT/OLE/RWE 文献",
     evidenceLevel: "人工证据矩阵",
@@ -193,6 +199,7 @@ function renderVisibleModules() {
   if (exists("treatments")) renderTreatments();
   if (exists("supportive")) renderSupportive();
   if (exists("safety")) renderSafety();
+  if (exists("china-access")) renderChinaAccess();
   if (exists("trials")) renderTrials();
   if (exists("market")) renderMarket();
   if (exists("guidance")) renderGuidance();
@@ -460,6 +467,111 @@ function safetyLinks(item) {
   const links = item.links || [];
   const preferred = links.filter((link) => /openFDA|FAERS|Label|标签|DailyMed|FDA/i.test(link.label || link.url || ""));
   return (preferred.length ? preferred : links).slice(0, 4);
+}
+
+function renderChinaAccess() {
+  const items = chinaAccessItems();
+  setScope("china-access", "从全球批准与市场数据中单列中国 NMPA 记录，并补充证据矩阵中的中国可及性说明。");
+  setCount("china-access", `${items.length} 个中国获批产品`);
+  const summary = targetFor("china-access-summary", false);
+  if (summary) summary.innerHTML = renderChinaAccessSummary(items);
+  targetFor("china-access").innerHTML = items.length
+    ? items.map(renderChinaAccessCard).join("")
+    : `<article class="china-access-card"><h3>暂无中国准入记录</h3><p>请检查 global-market.json 中是否已录入中国/NMPA 批准信息。</p></article>`;
+}
+
+function renderChinaAccessSummary(items) {
+  const classes = [...new Set(items.map((item) => item.product.class).filter(Boolean))];
+  const companies = [...new Set(items.map((item) => item.product.company).filter(Boolean))];
+  const latest = items[0];
+  return `
+    <div class="access-overview">
+      <article>
+        <p>中国获批产品</p>
+        <strong>${items.length}</strong>
+        <span>NMPA 记录</span>
+      </article>
+      <article>
+        <p>覆盖机制</p>
+        <div class="access-cloud">${classes.map((name) => `<span>${escapeHtml(name)}</span>`).join("")}</div>
+      </article>
+      <article>
+        <p>涉及企业</p>
+        <div class="access-cloud">${companies.map((name) => `<span>${escapeHtml(name)}</span>`).join("")}</div>
+      </article>
+      <article>
+        <p>最新记录</p>
+        <strong>${escapeHtml(latest?.approval.approvalDate || "待补充")}</strong>
+        <span>${escapeHtml(latest?.product.brand || "")}</span>
+      </article>
+    </div>
+  `;
+}
+
+function renderChinaAccessCard(item) {
+  const { product, approval, matrix } = item;
+  const sales = product.sales || {};
+  const sources = (product.sourceUrls || [])
+    .slice(0, 4)
+    .map((url, index) => `<a href="${escapeAttribute(url)}" target="_blank" rel="noreferrer">来源 ${index + 1}</a>`)
+    .join("");
+  return `
+    <article class="china-access-card">
+      <div class="china-access-card__head">
+        <div>
+          <p class="eyebrow-dark">${escapeHtml(product.class || "治疗药物")}</p>
+          <h3>${escapeHtml(product.brand)} <span>${escapeHtml(product.generic || "")}</span></h3>
+          <p>${escapeHtml(product.company || "公司待补充")}</p>
+        </div>
+        <strong>${escapeHtml(approval.approvalDate || "日期待补充")}</strong>
+      </div>
+      ${renderTrustMeta(product, "china-access")}
+      <div class="approval-highlight">
+        <span>${escapeHtml(approval.agency || "NMPA")}</span>
+        <p>${escapeHtml(approval.indication || "适应症文本待补充")}</p>
+      </div>
+      <dl class="china-access-grid">
+        <div><dt>中国可及性</dt><dd>${escapeHtml(matrix?.chinaAccess || "需补充医保、医院准入和真实世界使用信息。")}</dd></div>
+        <div><dt>证据层级</dt><dd>${escapeHtml(matrix?.evidenceLevel || "证据层级待补充")}</dd></div>
+        <div><dt>商业化口径</dt><dd>${escapeHtml(sales.scope || "销售口径待补充")}</dd></div>
+        <div><dt>公开销售额</dt><dd>${escapeHtml([sales.year, sales.value].filter(Boolean).join("：") || "未单独披露")} ${sales.trend ? `（${escapeHtml(sales.trend)}）` : ""}</dd></div>
+      </dl>
+      <div class="access-links">${sources}</div>
+    </article>
+  `;
+}
+
+function chinaAccessItems() {
+  return marketItems()
+    .map((product) => ({
+      product,
+      approval: chinaApproval(product),
+      matrix: matrixForProduct(product)
+    }))
+    .filter((item) => item.approval)
+    .sort((a, b) => approvalTimestamp(b.approval.approvalDate) - approvalTimestamp(a.approval.approvalDate));
+}
+
+function chinaApproval(product) {
+  return (product.approvals || []).find((approval) => /中国|China/i.test(approval.countryOrRegion || "") || /NMPA|CDE/i.test(approval.agency || ""));
+}
+
+function matrixForProduct(product) {
+  const text = `${product.id || ""} ${product.brand || ""} ${product.generic || ""}`.toLowerCase();
+  return matrixItems().find((item) => text.includes(String(item.id || "").toLowerCase()) || textIncludesAny(text, item.brand));
+}
+
+function textIncludesAny(text, value = "") {
+  return String(value)
+    .toLowerCase()
+    .split(/\s+|\/|,|，/)
+    .filter((part) => part.length > 3)
+    .some((part) => text.includes(part));
+}
+
+function approvalTimestamp(value = "") {
+  const match = String(value).match(/\d{4}(?:-\d{1,2})?/);
+  return match ? new Date(`${match[0]}-01`).getTime() : 0;
 }
 
 function renderTrials() {
