@@ -1,0 +1,332 @@
+{
+  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "scopeNote": "第一版以 FDA 已批准用于 MG/gMG 的药物和制剂为核心；EMA、NMPA/CDE 批准状态预留字段，后续可继续扩展。",
+  "treatments": [
+    {
+      "id": "pyridostigmine",
+      "brand": "Mestinon",
+      "generic": "pyridostigmine bromide",
+      "zhName": "溴吡斯的明",
+      "class": "对症治疗",
+      "target": "乙酰胆碱酯酶",
+      "mechanism": "抑制乙酰胆碱酯酶，延长神经肌肉接头处乙酰胆碱作用时间，改善肌力症状。",
+      "approvedUse": "Myasthenia gravis；历史批准药物，适用于症状控制。",
+      "biomarker": "不依赖抗体分型",
+      "route": "口服",
+      "approval": {
+        "fda": "1955",
+        "ema": "需补充",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "历史批准，缺少按现代标准设计的关键 III 期 RCT；临床使用经验长期积累。",
+      "realWorldEvidence": "临床实践基础药物；可后续补充队列研究和指南引用。",
+      "postMarketing": "关注胆碱能不良反应、心动过缓、腹痛、腹泻、分泌物增加和过量相关胆碱能危象。",
+      "safetySignals": ["胆碱能反应", "胃肠道反应", "心动过缓"],
+      "evidenceGrade": "历史临床使用",
+      "links": [
+        {
+          "label": "FDA Rystiggo 风险评估中的既有治疗表",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/216834Orig1s000RiskR.pdf"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.generic_name:%22PYRIDOSTIGMINE%20BROMIDE%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "eculizumab",
+      "brand": "Soliris",
+      "generic": "eculizumab",
+      "zhName": "依库珠单抗",
+      "class": "补体 C5 抑制剂",
+      "target": "Complement C5",
+      "mechanism": "结合 C5，抑制末端补体通路和膜攻击复合物形成，减少 AChR 抗体相关神经肌肉接头损伤。",
+      "approvedUse": "成人全身型重症肌无力，AChR 抗体阳性。",
+      "biomarker": "AChR 抗体阳性",
+      "route": "静脉输注",
+      "approval": {
+        "fda": "2017",
+        "ema": "已批准，需补充地区细节",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "REGAIN 随机、双盲、安慰剂对照研究及开放标签延长期。",
+      "realWorldEvidence": "已有多中心真实世界队列和长期随访；后续可按 PubMed 自动补充。",
+      "postMarketing": "带有严重脑膜炎球菌感染风险管理要求；上市后重点关注严重感染、输注反应和免疫相关安全事件。",
+      "safetySignals": ["脑膜炎球菌感染", "严重感染", "输注反应"],
+      "evidenceGrade": "关键 RCT + OLE + RWE",
+      "links": [
+        {
+          "label": "FDA 既有治疗表",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/216834Orig1s000RiskR.pdf"
+        },
+        {
+          "label": "PubMed: eculizumab gMG real-world",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=eculizumab+myasthenia+gravis+real+world"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22SOLIRIS%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "ravulizumab",
+      "brand": "Ultomiris",
+      "generic": "ravulizumab-cwvz",
+      "zhName": "拉夫利珠单抗",
+      "class": "长效补体 C5 抑制剂",
+      "target": "Complement C5",
+      "mechanism": "长效 C5 抑制剂，抑制末端补体激活，给药间隔较 eculizumab 更长。",
+      "approvedUse": "成人全身型重症肌无力，AChR 抗体阳性。",
+      "biomarker": "AChR 抗体阳性",
+      "route": "静脉输注",
+      "approval": {
+        "fda": "2022",
+        "ema": "已批准，需补充地区细节",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "CHAMPION-MG III 期随机、双盲、安慰剂对照研究。",
+      "realWorldEvidence": "真实世界证据正在积累，重点关注从 eculizumab 转换、长期维持和给药便利性。",
+      "postMarketing": "与 C5 抑制相关的脑膜炎球菌感染风险是上市后监测重点。",
+      "safetySignals": ["脑膜炎球菌感染", "严重感染", "输注反应"],
+      "evidenceGrade": "关键 RCT + 延长期/转换数据",
+      "links": [
+        {
+          "label": "FDA 既有治疗表",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/216834Orig1s000RiskR.pdf"
+        },
+        {
+          "label": "PubMed: CHAMPION-MG",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=ravulizumab+CHAMPION-MG+myasthenia+gravis"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22ULTOMIRIS%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "zilucoplan",
+      "brand": "Zilbrysq",
+      "generic": "zilucoplan",
+      "zhName": "齐鲁考普仑",
+      "class": "补体 C5 抑制剂",
+      "target": "Complement C5",
+      "mechanism": "皮下注射环肽 C5 抑制剂，阻断 C5 裂解和膜攻击复合物形成。",
+      "approvedUse": "成人全身型重症肌无力，AChR 抗体阳性。",
+      "biomarker": "AChR 抗体阳性",
+      "route": "每日皮下注射",
+      "approval": {
+        "fda": "2023",
+        "ema": "已批准，需补充地区细节",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "RAISE III 期随机、双盲、安慰剂对照研究；FDA Drug Trials Snapshot 提到 174 例成人 gMG 患者。",
+      "realWorldEvidence": "上市时间较短，真实世界证据仍在早期积累。",
+      "postMarketing": "关注脑膜炎球菌感染、其他感染、胰腺酶/胰腺炎相关信号和注射部位反应。",
+      "safetySignals": ["脑膜炎球菌感染", "感染", "注射部位反应"],
+      "evidenceGrade": "关键 RCT + 早期 RWE",
+      "links": [
+        {
+          "label": "FDA Drug Trials Snapshot",
+          "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-zilbrysq"
+        },
+        {
+          "label": "PubMed: zilucoplan RAISE",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=zilucoplan+RAISE+myasthenia+gravis"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22ZILBRYSQ%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "efgartigimod-iv",
+      "brand": "Vyvgart",
+      "generic": "efgartigimod alfa-fcab",
+      "zhName": "艾加莫德 alfa",
+      "class": "FcRn 阻断剂",
+      "target": "Neonatal Fc receptor (FcRn)",
+      "mechanism": "阻断 FcRn 介导的 IgG 回收，加速致病性 IgG 抗体降解，降低循环 IgG 水平。",
+      "approvedUse": "成人全身型重症肌无力；初始批准为 AChR 抗体阳性，2026 年美国标签扩展至所有成人 gMG 血清型。",
+      "biomarker": "成人 gMG；AChR/MuSK/LRP4/三阴性标签状态需按最新地区标签核对",
+      "route": "静脉输注",
+      "approval": {
+        "fda": "2021；2026 标签扩展",
+        "ema": "已批准，需补充地区细节",
+        "nmpa": "已在中国获批，需补充具体适应症文本"
+      },
+      "pivotalEvidence": "ADAPT III 期随机、双盲、安慰剂对照研究；ADAPT+ 开放标签延长期。",
+      "realWorldEvidence": "已有多个真实世界队列，重点关注快速起效、循环给药、激素减量和转换治疗。",
+      "postMarketing": "关注感染、头痛、输注/超敏反应及 IgG 降低相关风险。",
+      "safetySignals": ["感染", "头痛", "超敏反应"],
+      "evidenceGrade": "关键 RCT + OLE + RWE",
+      "links": [
+        {
+          "label": "FDA 批准新闻",
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-treatment-myasthenia-gravis"
+        },
+        {
+          "label": "PubMed: efgartigimod real-world",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+myasthenia+gravis+real+world"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22VYVGART%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "efgartigimod-hytrulo",
+      "brand": "Vyvgart Hytrulo",
+      "generic": "efgartigimod alfa and hyaluronidase-qvfc",
+      "zhName": "艾加莫德 alfa/透明质酸酶",
+      "class": "FcRn 阻断剂皮下制剂",
+      "target": "Neonatal Fc receptor (FcRn)",
+      "mechanism": "与 IV efgartigimod 相同，通过 FcRn 阻断降低 IgG；透明质酸酶用于促进皮下给药吸收。",
+      "approvedUse": "成人全身型重症肌无力；美国标签于 2026 年扩展至所有成人 gMG 血清型。",
+      "biomarker": "成人 gMG；地区标签需核对",
+      "route": "皮下注射",
+      "approval": {
+        "fda": "2023；2026 标签扩展",
+        "ema": "需补充",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "ADAPT-SC 等研究支持皮下制剂批准；与 IV 制剂共同构成 FcRn 证据体系。",
+      "realWorldEvidence": "真实世界证据正在积累，重点关注居家/门诊给药便利性和循环治疗体验。",
+      "postMarketing": "关注感染、超敏反应、注射部位反应和 IgG 降低相关风险。",
+      "safetySignals": ["感染", "注射部位反应", "超敏反应"],
+      "evidenceGrade": "桥接/制剂研究 + RWE 积累中",
+      "links": [
+        {
+          "label": "FDA 标签扩展新闻检索",
+          "url": "https://www.drugs.com/news/fda-approves-label-expansion-vyvgart-vyvgart-hytrulo-130039.html"
+        },
+        {
+          "label": "PubMed: ADAPT-SC",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+hyaluronidase+ADAPT-SC+myasthenia+gravis"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22VYVGART%20HYTRULO%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "rozanolixizumab",
+      "brand": "Rystiggo",
+      "generic": "rozanolixizumab-noli",
+      "zhName": "罗扎利昔珠单抗",
+      "class": "FcRn 阻断剂",
+      "target": "Neonatal Fc receptor (FcRn)",
+      "mechanism": "结合 FcRn，降低 IgG 回收并减少致病性 IgG 抗体水平。",
+      "approvedUse": "成人全身型重症肌无力，AChR 或 MuSK 抗体阳性。",
+      "biomarker": "AChR 抗体阳性或 MuSK 抗体阳性",
+      "route": "皮下输注，周期治疗",
+      "approval": {
+        "fda": "2023",
+        "ema": "已批准，需补充地区细节",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "MycarinG III 期随机、双盲、安慰剂对照研究。",
+      "realWorldEvidence": "上市时间较短，真实世界证据早期积累；MuSK 阳性人群值得单独追踪。",
+      "postMarketing": "关注感染、无菌性脑膜炎、头痛、腹泻、发热和超敏反应。",
+      "safetySignals": ["感染", "无菌性脑膜炎", "头痛"],
+      "evidenceGrade": "关键 RCT + 早期 RWE",
+      "links": [
+        {
+          "label": "FDA Rystiggo 风险评估",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/216834Orig1s000RiskR.pdf"
+        },
+        {
+          "label": "PubMed: MycarinG",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=rozanolixizumab+MycarinG+myasthenia+gravis"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22RYSTIGGO%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "nipocalimab",
+      "brand": "Imaavy",
+      "generic": "nipocalimab-aahu",
+      "zhName": "尼泊卡利单抗",
+      "class": "FcRn 阻断剂",
+      "target": "Neonatal Fc receptor (FcRn)",
+      "mechanism": "阻断 FcRn，降低循环 IgG 和致病性自身抗体水平。",
+      "approvedUse": "12 岁及以上成人和儿童全身型重症肌无力，AChR 或 MuSK 抗体阳性。",
+      "biomarker": "AChR 抗体阳性或 MuSK 抗体阳性",
+      "route": "静脉输注，每 2 周",
+      "approval": {
+        "fda": "2025",
+        "ema": "需补充",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "VIVACITY-MG3 III 期随机、双盲、安慰剂对照研究。",
+      "realWorldEvidence": "获批较新，真实世界证据有限；需持续追踪长期维持、青少年使用和感染风险。",
+      "postMarketing": "关注感染、外周水肿、超敏反应和 IgG 降低相关风险。",
+      "safetySignals": ["感染", "外周水肿", "超敏反应"],
+      "evidenceGrade": "关键 RCT + RWE 待积累",
+      "links": [
+        {
+          "label": "FDA Drug Trials Snapshot",
+          "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshot-imaavy"
+        },
+        {
+          "label": "FDA Prescribing Information",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761430s000lbl.pdf"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22IMAAVY%22&limit=10"
+        }
+      ]
+    },
+    {
+      "id": "inebilizumab",
+      "brand": "Uplizna",
+      "generic": "inebilizumab-cdon",
+      "zhName": "伊奈利珠单抗",
+      "class": "CD19 B 细胞耗竭抗体",
+      "target": "CD19",
+      "mechanism": "靶向 CD19 阳性 B 细胞，包括浆母细胞，降低自身抗体产生相关免疫活动。",
+      "approvedUse": "成人全身型重症肌无力，AChR 或 MuSK 抗体阳性。",
+      "biomarker": "AChR 抗体阳性或 MuSK 抗体阳性",
+      "route": "静脉输注，维持期约每 6 个月",
+      "approval": {
+        "fda": "2025",
+        "ema": "需补充",
+        "nmpa": "需补充"
+      },
+      "pivotalEvidence": "MINT III 期随机、双盲、安慰剂对照研究。",
+      "realWorldEvidence": "gMG 获批较新，真实世界证据有限；可借鉴 NMOSD/IgG4-RD 长期安全性但需区分适应症。",
+      "postMarketing": "关注输注反应、感染、免疫球蛋白降低、乙肝再激活风险和进行性多灶性白质脑病等 B 细胞耗竭相关风险。",
+      "safetySignals": ["感染", "输注反应", "免疫球蛋白降低"],
+      "evidenceGrade": "关键 RCT + RWE 待积累",
+      "links": [
+        {
+          "label": "DailyMed Label",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=human&query=Inebilizumab"
+        },
+        {
+          "label": "FDA Label PDF",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761142s004lbl.pdf"
+        },
+        {
+          "label": "openFDA FAERS 查询",
+          "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22UPLIZNA%22&limit=10"
+        }
+      ]
+    }
+  ],
+  "offLabelOrSupportive": [
+    {
+      "name": "糖皮质激素、硫唑嘌呤、吗替麦考酚酯、环孢素、他克莫司、利妥昔单抗、IVIG、血浆置换等",
+      "note": "这些治疗在 MG 临床实践和指南中常见，但具体是否为 MG 适应症批准取决于国家/地区和制剂标签；建议单独做“指南推荐/标签外使用”页面，避免与正式获批适应症混淆。"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "scopeNote": "药物证据矩阵将已获批或重点关注的 MG/gMG 药物按机制、适用人群、关键 RCT、长期数据、真实世界证据、安全性和中国可及性横向比较。",
+  "items": [
+    {
+      "id": "efgartigimod",
+      "brand": "Vyvgart / Vyvgart Hytrulo",
+      "mechanism": "FcRn 阻断，降低循环 IgG",
+      "population": "成人 gMG；不同地区标签对抗体分型要求不同",
+      "pivotalTrial": "ADAPT；ADAPT-SC",
+      "longTermEvidence": "ADAPT+ 开放标签延长期",
+      "realWorldEvidence": "已有多国真实世界队列，重点关注快速起效、循环给药和激素减量",
+      "safetyFocus": "感染、头痛、超敏反应、IgG 降低相关风险",
+      "chinaAccess": "中国已获批；需继续追踪医保、医院准入和真实世界使用",
+      "evidenceLevel": "RCT + OLE + RWE",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+ADAPT+myasthenia+gravis",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+myasthenia+gravis+real+world"
+      ]
+    },
+    {
+      "id": "rozanolixizumab",
+      "brand": "Rystiggo / 优迪革",
+      "mechanism": "FcRn 阻断，降低循环 IgG",
+      "population": "成人 gMG，AChR 或 MuSK 抗体阳性",
+      "pivotalTrial": "MycarinG",
+      "longTermEvidence": "开放标签延长期和上市后数据积累中",
+      "realWorldEvidence": "上市时间较短，MuSK 阳性人群是重点观察对象",
+      "safetyFocus": "头痛、感染、腹泻、无菌性脑膜炎信号",
+      "chinaAccess": "中国 NMPA 已批准，覆盖 AChR 或 MuSK 抗体阳性成人 gMG",
+      "evidenceLevel": "RCT + 早期 RWE",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=rozanolixizumab+MycarinG+myasthenia+gravis"
+      ]
+    },
+    {
+      "id": "nipocalimab",
+      "brand": "Imaavy / 安力威",
+      "mechanism": "FcRn 阻断，降低致病性 IgG",
+      "population": "AChR 或 MuSK 抗体阳性 gMG；美国/中国覆盖青少年人群",
+      "pivotalTrial": "VIVACITY-MG3",
+      "longTermEvidence": "OLE 数据持续披露",
+      "realWorldEvidence": "获批较新，真实世界证据待积累",
+      "safetyFocus": "感染、外周水肿、超敏反应、IgG 降低相关风险",
+      "chinaAccess": "中国 NMPA 已批准，用于成人和 12 岁及以上青少年 gMG",
+      "evidenceLevel": "RCT + OLE 初期",
+      "links": [
+        "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshot-imaavy",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=nipocalimab+VIVACITY-MG3"
+      ]
+    },
+    {
+      "id": "eculizumab",
+      "brand": "Soliris / 舒立瑞",
+      "mechanism": "补体 C5 抑制，阻断末端补体损伤",
+      "population": "AChR 抗体阳性 gMG；中国含难治性成人及儿童扩展",
+      "pivotalTrial": "REGAIN",
+      "longTermEvidence": "REGAIN OLE 和长期随访",
+      "realWorldEvidence": "真实世界证据较多，适合长期安全性和转换研究对照",
+      "safetyFocus": "脑膜炎球菌感染、严重感染、疫苗和风险管理",
+      "chinaAccess": "中国已批准成人难治性 gMG，并扩展至 6 岁及以上儿童难治性 gMG",
+      "evidenceLevel": "RCT + OLE + RWE",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=eculizumab+REGAIN+myasthenia+gravis",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=eculizumab+myasthenia+gravis+real+world"
+      ]
+    },
+    {
+      "id": "ravulizumab",
+      "brand": "Ultomiris / 伟立瑞",
+      "mechanism": "长效补体 C5 抑制",
+      "population": "AChR 抗体阳性成人 gMG",
+      "pivotalTrial": "CHAMPION-MG",
+      "longTermEvidence": "长期延伸和 eculizumab 转换数据",
+      "realWorldEvidence": "重点关注给药间隔、转换治疗和长期感染风险",
+      "safetyFocus": "脑膜炎球菌感染、严重感染、输注反应",
+      "chinaAccess": "中国 NMPA 已批准，与常规治疗联合用于 AChR 抗体阳性成人 gMG",
+      "evidenceLevel": "RCT + OLE/转换数据",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ravulizumab+CHAMPION-MG+myasthenia+gravis"
+      ]
+    },
+    {
+      "id": "zilucoplan",
+      "brand": "Zilbrysq / 卓倍可",
+      "mechanism": "皮下注射补体 C5 抑制剂",
+      "population": "AChR 抗体阳性成人 gMG",
+      "pivotalTrial": "RAISE",
+      "longTermEvidence": "RAISE-XT 长期延伸数据持续披露",
+      "realWorldEvidence": "上市后真实世界证据早期积累",
+      "safetyFocus": "脑膜炎球菌感染、感染、注射部位反应、胰腺相关信号",
+      "chinaAccess": "中国 NMPA 已批准，与常规治疗联合用于 AChR 抗体阳性成人 gMG",
+      "evidenceLevel": "RCT + OLE 初期",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=zilucoplan+RAISE+myasthenia+gravis"
+      ]
+    },
+    {
+      "id": "inebilizumab",
+      "brand": "Uplizna / 昕越",
+      "mechanism": "CD19 阳性 B 细胞耗竭",
+      "population": "AChR 或 MuSK 抗体阳性成人 gMG",
+      "pivotalTrial": "MINT",
+      "longTermEvidence": "gMG 长期数据待进一步积累；可参考其他适应症安全性但需区分人群",
+      "realWorldEvidence": "gMG 获批较新，RWE 待积累",
+      "safetyFocus": "感染、输注反应、低免疫球蛋白、HBV 再激活、PML 风险提示",
+      "chinaAccess": "中国 NMPA 已批准，联合常规治疗用于 AChR 或 MuSK 抗体阳性成人 gMG",
+      "evidenceLevel": "RCT + RWE 待积累",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=inebilizumab+MINT+myasthenia+gravis"
+      ]
+    },
+    {
+      "id": "telitacicept",
+      "brand": "泰爱 / telitacicept",
+      "mechanism": "BLyS/APRIL 双靶点融合蛋白，调节 B 细胞相关免疫通路",
+      "population": "中国：AChR 抗体阳性成人 gMG",
+      "pivotalTrial": "中国 III 期研究",
+      "longTermEvidence": "长期和全球多中心数据持续跟踪",
+      "realWorldEvidence": "中国上市后真实世界证据待积累",
+      "safetyFocus": "感染、注射相关反应、B 细胞/免疫调节相关安全性",
+      "chinaAccess": "中国 NMPA 已批准，是中国本土创新药重要代表",
+      "evidenceLevel": "中国 III 期 + RWE 待积累",
+      "links": [
+        "https://pubmed.ncbi.nlm.nih.gov/?term=telitacicept+myasthenia+gravis"
+      ]
+    }
+  ]
+}

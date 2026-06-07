@@ -1,0 +1,340 @@
+{
+  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "scopeNote": "覆盖 MG/gMG 领域可公开核验的核心获批靶向/生物制剂与主要监管市场，已重点纳入美国、欧盟、日本、中国等记录。批准状态和销售额会随监管决定、标签扩展和公司财报变化；销售额优先采用公司最新公开财报，若未披露 MG 单适应症，则标注为产品级或未单独披露。",
+  "products": [
+    {
+      "id": "vyvgart",
+      "brand": "Vyvgart / Vyvgart Hytrulo",
+      "generic": "efgartigimod alfa / efgartigimod alfa + hyaluronidase",
+      "company": "argenx",
+      "class": "FcRn 阻断剂",
+      "approvalCount": 4,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2021-12",
+          "indication": "成人 gMG；初始为 AChR 抗体阳性，后续标签扩展需按最新 FDA 标签核对"
+        },
+        {
+          "countryOrRegion": "日本",
+          "agency": "MHLW/PMDA",
+          "approvalDate": "2022-01",
+          "indication": "成人 gMG，对激素或非甾体免疫抑制治疗反应不足"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2022-08",
+          "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2023-06",
+          "indication": "成人 gMG，作为标准治疗附加治疗；具体抗体分型按中国标签核对"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "约 42 亿美元",
+        "currency": "USD",
+        "scope": "VYVGART 全球产品净销售额，包含多个适应症/剂型，不等同于 MG 单适应症销售额",
+        "trend": "+90% YoY"
+      },
+      "sourceUrls": [
+        "https://www.fda.gov/news-events/press-announcements/fda-approves-new-treatment-myasthenia-gravis",
+        "https://www.ema.europa.eu/en/medicines/human/EPAR/vyvgart",
+        "https://reports.argenx.com/2025/"
+      ]
+    },
+    {
+      "id": "rystiggo",
+      "brand": "Rystiggo",
+      "generic": "rozanolixizumab-noli",
+      "company": "UCB",
+      "class": "FcRn 阻断剂",
+      "approvalCount": 4,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2023-06",
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2024-01",
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+        },
+        {
+          "countryOrRegion": "日本",
+          "agency": "MHLW/PMDA",
+          "approvalDate": "2024",
+          "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2025-03",
+          "indication": "与常规治疗药物联合用于 AChR 或 MuSK 抗体阳性的成人 gMG 患者"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "3.32 亿欧元",
+        "currency": "EUR",
+        "scope": "UCB 披露的 RYSTIGGO 产品净销售额",
+        "trend": "+65% YoY"
+      },
+      "sourceUrls": [
+        "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-rystiggo",
+        "https://www.ema.europa.eu/en/medicines/human/EPAR/rystiggo",
+        "https://yp.gmw.cn/2025-03/31/content_37939943.htm",
+        "https://reports.ucb.com/IAR_2025_WEB.pdf"
+      ]
+    },
+    {
+      "id": "zilbrysq",
+      "brand": "Zilbrysq",
+      "generic": "zilucoplan",
+      "company": "UCB",
+      "class": "补体 C5 抑制剂",
+      "approvalCount": 5,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2023-10",
+          "indication": "成人 gMG，AChR 抗体阳性"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2023-12",
+          "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗"
+        },
+        {
+          "countryOrRegion": "日本",
+          "agency": "MHLW/PMDA",
+          "approvalDate": "2024",
+          "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对"
+        },
+        {
+          "countryOrRegion": "澳大利亚",
+          "agency": "TGA",
+          "approvalDate": "2024-07",
+          "indication": "gMG；具体标签需核对"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2025-10",
+          "indication": "与常规治疗药物联合用于 AChR 抗体阳性的成人 gMG 患者"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "2.17 亿欧元",
+        "currency": "EUR",
+        "scope": "UCB 披露的 ZILBRYSQ 产品净销售额",
+        "trend": ">100% YoY"
+      },
+      "sourceUrls": [
+        "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-zilbrysq",
+        "https://www.ema.europa.eu/en/medicines/human/EPAR/zilbrysq",
+        "https://www.vcbeatglobal.com/article/1892",
+        "https://reports.ucb.com/IAR_2025_WEB.pdf"
+      ]
+    },
+    {
+      "id": "ultomiris",
+      "brand": "Ultomiris",
+      "generic": "ravulizumab-cwvz",
+      "company": "AstraZeneca / Alexion",
+      "class": "长效补体 C5 抑制剂",
+      "approvalCount": 3,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2022-04",
+          "indication": "成人 gMG，AChR 抗体阳性"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2022",
+          "indication": "成人 gMG，AChR 抗体阳性，作为其他治疗附加治疗"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2025-04",
+          "indication": "与常规治疗药物联合用于 AChR 抗体阳性的成人 gMG 患者"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "约 47.2 亿美元",
+        "currency": "USD",
+        "scope": "ULTOMIRIS 产品级销售额，覆盖 PNH、aHUS、gMG、NMOSD 等，不等同于 MG 单适应症销售额",
+        "trend": "+19% YoY"
+      },
+      "sourceUrls": [
+        "https://www.ema.europa.eu/en/medicines/human/EPAR/ultomiris",
+        "https://finance.sina.com.cn/jjxw/2025-04-22/doc-inetzraw0885347.shtml",
+        "https://www.businesswire.com/news/home/20260209280778/en/AstraZeneca-results-FY-and-Q4-2025"
+      ]
+    },
+    {
+      "id": "soliris",
+      "brand": "Soliris",
+      "generic": "eculizumab",
+      "company": "AstraZeneca / Alexion",
+      "class": "补体 C5 抑制剂",
+      "approvalCount": 3,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2017-10",
+          "indication": "成人 gMG，AChR 抗体阳性"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2017",
+          "indication": "难治性 gMG，AChR 抗体阳性"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2023-06；2026-01 儿童适应症扩展",
+          "indication": "成人难治性 gMG，AChR 抗体阳性；2026 年扩展至 6 岁及以上 AChR 抗体阳性难治性 gMG 儿童患者"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "未在本板块拆分全球总额；美国销售约 10.92 亿美元",
+        "currency": "USD",
+        "scope": "SOLIRIS 产品级销售额，覆盖多个适应症；受 Ultomiris 转换、竞争和生物类似药影响",
+        "trend": "下降"
+      },
+      "sourceUrls": [
+        "https://www.ema.europa.eu/en/medicines/human/EPAR/soliris",
+        "https://www.prnasia.com/story/407699-1.shtml",
+        "https://www.nbd.com.cn/articles/2026-01-26/4234807.html",
+        "https://www.sec.gov/Archives/edgar/data/901832/000110465926019130/azn-20251231x20f.htm"
+      ]
+    },
+    {
+      "id": "imaavy",
+      "brand": "Imaavy",
+      "generic": "nipocalimab-aahu",
+      "company": "Johnson & Johnson",
+      "class": "FcRn 阻断剂",
+      "approvalCount": 3,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2025-04",
+          "indication": "12 岁及以上 gMG，AChR 或 MuSK 抗体阳性"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2025-12",
+          "indication": "gMG，作为标准治疗附加治疗；具体年龄和抗体分型按欧盟标签核对"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2026-05",
+          "indication": "与常规治疗药物联合用于 AChR 或 MuSK 抗体阳性的成人和 12 岁及以上青少年 gMG 患者"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "未单独披露",
+        "currency": "USD",
+        "scope": "新近获批，J&J 未在公开财报中单独披露 Imaavy 销售额",
+        "trend": "上市早期"
+      },
+      "sourceUrls": [
+        "https://www.investor.jnj.com/investor-news/news-details/2025/Johnson--Johnson-receives-FDA-approval-for-IMAAVY-nipocalimab-aahu-a-new-FcRn-blocker-offering-long-lasting-disease-control-in-the-broadest-population-of-people-living-with-generalized-myasthenia-gravis-gMG/default.aspx",
+        "https://www.globenewswire.com/news-release/2025/12/01/3196985/0/en/Johnson-Johnson-receives-European-Commission-approval-of-IMAAVY-nipocalimab-a-new-FcRn-blocker-offering-sustained-disease-control-in-a-broad-population-of-people-living-with-genera.html",
+        "https://m.cnpharm.com/c/2026-05-21/1097812.shtml"
+      ]
+    },
+    {
+      "id": "uplizna",
+      "brand": "Uplizna",
+      "generic": "inebilizumab-cdon",
+      "company": "Amgen",
+      "class": "CD19 B 细胞耗竭抗体",
+      "approvalCount": 3,
+      "approvals": [
+        {
+          "countryOrRegion": "美国",
+          "agency": "FDA",
+          "approvalDate": "2025-12",
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+        },
+        {
+          "countryOrRegion": "欧盟",
+          "agency": "European Commission / EMA",
+          "approvalDate": "2026-02",
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性，作为标准治疗附加治疗"
+        },
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2026-03",
+          "indication": "与常规治疗药物联合用于 AChR 或 MuSK 抗体阳性的成人 gMG 患者"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "未披露 MG 适应症销售额",
+        "currency": "USD",
+        "scope": "Uplizna 已有 NMOSD/IgG4-RD 等适应症，gMG 为新近获批；MG 销售额尚未单独披露",
+        "trend": "上市早期"
+      },
+      "sourceUrls": [
+        "https://www.amgen.com/newsroom/press-releases/2025/12/fda-approves-uplizna-for-adults-with-generalized-myasthenia-gravis",
+        "https://wwwext.amgen.com/newsroom/press-releases/2026/02/european-commission-approves-amgens-uplizna-for-generalized-myasthenia-gravis",
+        "https://cn.hspharm.com/news/news-detail-513437.htm"
+      ]
+    },
+    {
+      "id": "telitacicept",
+      "brand": "泰爱",
+      "generic": "telitacicept",
+      "company": "荣昌生物 RemeGen",
+      "class": "BLyS/APRIL 双靶点融合蛋白",
+      "approvalCount": 1,
+      "approvals": [
+        {
+          "countryOrRegion": "中国",
+          "agency": "NMPA",
+          "approvalDate": "2025-05",
+          "indication": "AChR 抗体阳性成人 gMG"
+        }
+      ],
+      "sales": {
+        "year": "2025",
+        "value": "泰它西普销量 225.5 万支；MG 单适应症销售额未单独披露",
+        "currency": "CNY",
+        "scope": "泰它西普产品覆盖 SLE、RA、MG；公司披露产品销量和商业化收入，但 MG 单适应症销售额需后续跟踪",
+        "trend": "销量 +47.92% YoY"
+      },
+      "sourceUrls": [
+        "https://www.nasdaq.com/press-release/remegen-telitacicept-treatment-generalized-myasthenia-gravis-approved-china-2025-05",
+        "https://www.remegen.com/uploadfile/2026/03/30/08a840c35a823bfa35e2e77da6bfc8e469ca19c03328d.pdf"
+      ]
+    }
+  ]
+}

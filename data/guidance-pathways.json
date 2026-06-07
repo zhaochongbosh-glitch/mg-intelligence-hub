@@ -1,0 +1,102 @@
+{
+  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "scopeNote": "指南/诊疗路径对照板块用于快速比较国际共识、患者组织资源和各国/地区决策对 MG 诊疗环节的推荐方向；不替代正式指南原文。",
+  "pathways": [
+    {
+      "id": "initial-assessment",
+      "step": "初诊与分型",
+      "clinicalQuestion": "确诊后应如何分型和评估疾病负担？",
+      "consensus": "记录眼肌型/全身型、MGFA 分级、抗体谱、胸腺影像、合并用药和危象风险；建议使用 MG-ADL、QMG、MG-QoL15r 等量表建立基线。",
+      "chinaPractice": "建议单列 AChR、MuSK、LRP4/三阴性、胸腺瘤相关、儿童/青少年、妊娠和老年患者，便于匹配中国可及治疗和临床试验。",
+      "intelligenceUse": "作为所有药物、试验和文献筛选的基础标签。",
+      "sources": [
+        {
+          "label": "International Consensus Guidance 2020",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7884987/"
+        },
+        {
+          "label": "MGFA Treatment Overview",
+          "url": "https://myasthenia.org/Treatments/Treatment-Overview/"
+        }
+      ]
+    },
+    {
+      "id": "symptomatic-treatment",
+      "step": "对症治疗",
+      "clinicalQuestion": "胆碱酯酶抑制剂在治疗路径中的位置？",
+      "consensus": "吡啶斯的明通常作为多数患者的初始对症治疗，但不能替代免疫治疗；需关注胆碱能不良反应和特殊人群禁忌。",
+      "chinaPractice": "在中国可及性较高，适合作为治疗路径中的基础层；需与新型靶向药物区分目标：症状改善 vs 免疫机制控制。",
+      "intelligenceUse": "用于患者旅程和传统治疗背景描述。",
+      "sources": [
+        {
+          "label": "International Consensus Guidance 2020",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7884987/"
+        }
+      ]
+    },
+    {
+      "id": "immunosuppression",
+      "step": "传统免疫治疗",
+      "clinicalQuestion": "激素和免疫抑制剂何时进入？",
+      "consensus": "糖皮质激素和非甾体免疫抑制剂仍是核心长期治疗选择；应平衡起效速度、减量目标、合并症和不良反应。",
+      "chinaPractice": "仍是中国临床实践主体，靶向药物多作为反应不足、难治、激素减量困难或特定抗体分型人群的升级选择。",
+      "intelligenceUse": "作为靶向药物疗效、激素减量和真实世界研究的比较背景。",
+      "sources": [
+        {
+          "label": "International Consensus Guidance 2020",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7884987/"
+        }
+      ]
+    },
+    {
+      "id": "targeted-biologics",
+      "step": "靶向/生物制剂升级",
+      "clinicalQuestion": "FcRn、C5/CD19/BLyS-APRIL 等新疗法如何比较？",
+      "consensus": "应按抗体分型、疾病活动度、既往治疗反应、起效需求、给药便利性、感染风险和长期安全性选择。",
+      "chinaPractice": "中国已进入多机制并存阶段：FcRn、C5、CD19、BLyS/APRIL 均有获批或接近可及药物，建议以机制和患者分型组织信息。",
+      "intelligenceUse": "连接治疗图谱、证据矩阵、全球获批和临床试验雷达。",
+      "sources": [
+        {
+          "label": "FDA Drug Approvals",
+          "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots"
+        },
+        {
+          "label": "EMA EPAR",
+          "url": "https://www.ema.europa.eu/en/medicines"
+        }
+      ]
+    },
+    {
+      "id": "crisis-rescue",
+      "step": "危象与快速救援",
+      "clinicalQuestion": "危象或显著加重时应关注什么？",
+      "consensus": "危象需紧急评估呼吸、吞咽和诱因；IVIG、血浆置换和 ICU 支持是关键救援路径。避免将慢病维持治疗误用为危象处理。",
+      "chinaPractice": "建议单独建设危象资源页，列出禁用/慎用药物、疫苗/感染、围手术期和胸腺瘤相关风险。",
+      "intelligenceUse": "作为患者安全与医生教育内容入口，严禁替代急诊判断。",
+      "sources": [
+        {
+          "label": "MGFA MG Emergencies",
+          "url": "https://myasthenia.org/living-with-mg/mg-emergency-preparedness/mg-emergencies/"
+        }
+      ]
+    },
+    {
+      "id": "access-reimbursement",
+      "step": "准入与可及性",
+      "clinicalQuestion": "获批后如何评估市场可及性？",
+      "consensus": "监管批准不等于临床可及；还需关注医保、商保、医院准入、真实世界安全性和长期治疗成本。",
+      "chinaPractice": "中国市场应持续追踪 NMPA、医保谈判、医院准入、真实世界队列和国产创新药竞争格局。",
+      "intelligenceUse": "连接全球批准与市场板块、销售额和中国生态图谱。",
+      "sources": [
+        {
+          "label": "NMPA",
+          "url": "https://www.nmpa.gov.cn/"
+        },
+        {
+          "label": "NHSA",
+          "url": "https://www.nhsa.gov.cn/"
+        }
+      ]
+    }
+  ]
+}
