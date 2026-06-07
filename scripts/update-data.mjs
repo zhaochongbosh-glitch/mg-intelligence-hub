@@ -106,6 +106,55 @@ const MANUAL_ITEMS = [
   }
 ];
 
+const MANUAL_TRIAL_ITEMS = [
+  {
+    id: "chictr-mg-search",
+    nctId: "ChiCTR",
+    registry: "ChiCTR",
+    title: "ChiCTR 中国临床试验注册中心：重症肌无力检索入口",
+    status: "MANUAL_REVIEW",
+    phase: "Registry",
+    mechanism: "中国注册入口",
+    sponsor: "Chinese Clinical Trial Registry",
+    interventions: ["重症肌无力", "myasthenia gravis", "gMG"],
+    conditions: ["Myasthenia Gravis", "Generalized Myasthenia Gravis"],
+    countries: ["China"],
+    startDate: "",
+    completionDate: "",
+    lastUpdate: today(),
+    trust: trustMeta({
+      sourceType: "ChiCTR",
+      evidenceLevel: "中国试验注册入口",
+      reviewStatus: "人工复核入口",
+      reviewNote: "ChiCTR 页面可能需要验证，当前作为人工检索入口；命中试验需逐条核对注册号、版本、研究状态和入排标准。"
+    }),
+    url: "https://www.chictr.org.cn/"
+  },
+  {
+    id: "chictr2100050903",
+    nctId: "ChiCTR2100050903",
+    registry: "ChiCTR",
+    title: "HBM9161 皮下注射治疗全身型重症肌无力患者的有效性、安全性的多中心随机双盲研究",
+    status: "MANUAL_REVIEW",
+    phase: "PHASE2, PHASE3",
+    mechanism: "FcRn",
+    sponsor: "Harbour BioMed / HBM9161",
+    interventions: ["HBM9161", "Batoclimab"],
+    conditions: ["Generalized Myasthenia Gravis", "Myasthenia Gravis"],
+    countries: ["China"],
+    startDate: "",
+    completionDate: "",
+    lastUpdate: "2022-03-28",
+    trust: trustMeta({
+      sourceType: "ChiCTR",
+      evidenceLevel: "中国试验注册",
+      reviewStatus: "待复核",
+      reviewNote: "来自 ChiCTR 公开索引线索；因官网可能触发访问验证，需人工打开原始记录核对版本和状态。"
+    }),
+    url: "https://www.chictr.org.cn/hvshowproject.html?id=156285&v=1.5"
+  }
+];
+
 async function main() {
   console.log(`MG data update started: scope=${updateScope}`);
   const previous = await loadPreviousData();
@@ -264,6 +313,7 @@ function buildChinaData(items, result) {
 }
 
 function buildTrialData(items, result) {
+  const mergedItems = mergeManualTrials(items);
   return withUpdateMeta({
     updatedAt: new Date().toISOString(),
     provenance: trustMeta({
@@ -273,8 +323,8 @@ function buildTrialData(items, result) {
       reviewNote: "登记状态、入组地区和完成日期可能变化；疗效结论需等待结果披露或论文发表。"
     }),
     updatePolicy: updatePolicy("daily", "ClinicalTrials.gov API 失败时保留上一版试验雷达。"),
-    scopeNote: "自动检索 ClinicalTrials.gov 中 Myasthenia Gravis 相关研究，按机制和状态组织；用于研发情报和入组动态跟踪。",
-    items
+    scopeNote: "自动检索 ClinicalTrials.gov 中 Myasthenia Gravis 相关研究，并保留 ChiCTR 中国注册入口/人工复核条目；用于全球和中国本土研发情报跟踪。",
+    items: mergedItems
   }, result);
 }
 
@@ -354,6 +404,12 @@ function validateDataShape(file, data) {
 
 function countItems(data) {
   return Array.isArray(data.items) ? data.items.length : 0;
+}
+
+function mergeManualTrials(items) {
+  const manualIds = new Set(MANUAL_TRIAL_ITEMS.map((item) => item.id));
+  const automaticItems = items.filter((item) => !manualIds.has(item.id));
+  return dedupe([...MANUAL_TRIAL_ITEMS, ...automaticItems]);
 }
 
 function shouldUpdate(target) {
@@ -447,6 +503,7 @@ function mapClinicalTrial(study) {
   return {
     id: identification.nctId,
     nctId: identification.nctId,
+    registry: "ClinicalTrials.gov",
     title,
     status: status.overallStatus || "UNKNOWN",
     phase: (design.phases || []).join(", ") || "Not specified",

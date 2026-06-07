@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重症肌无力临床试验与市场：ClinicalTrials.gov 雷达、全球批准和销售额。" />
+    <meta name="description" content="重症肌无力临床试验与市场：ClinicalTrials.gov、ChiCTR 雷达、全球批准和销售额。" />
     <title>试验与市场 | 重症肌无力信息中枢</title>
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -12,7 +12,7 @@
       <div>
         <p class="eyebrow">Trials & Market</p>
         <h1>试验与市场</h1>
-        <p>追踪 MG 临床试验、全球批准状态、适应症和公开销售额。</p>
+        <p>追踪 MG 临床试验、ChiCTR 中国注册入口、全球批准状态、适应症和公开销售额。</p>
       </div>
     </header>
     <main>
@@ -30,7 +30,7 @@
           <div>
             <p class="section-kicker">Clinical Trial Radar</p>
             <h2>临床试验雷达</h2>
-            <p data-scope="trials">正在读取 ClinicalTrials.gov 数据</p>
+            <p data-scope="trials">正在读取临床试验注册数据</p>
           </div>
           <p data-count="trials">0 项试验</p>
         </div>
@@ -42,6 +42,10 @@
           <label>
             <span>状态</span>
             <select data-control="trial-status"><option value="all">全部</option></select>
+          </label>
+          <label>
+            <span>来源</span>
+            <select data-control="trial-source"><option value="all">全部</option></select>
           </label>
         </div>
         <div data-render="trials" class="trial-cards"></div>

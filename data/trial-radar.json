@@ -7,9 +7,75 @@
     "reviewNote": "登记状态、入组地区和完成日期可能变化；疗效结论需等待结果披露或论文发表。",
     "lastChecked": "2026-06-07"
   },
-  "scopeNote": "自动检索 ClinicalTrials.gov 中 Myasthenia Gravis 相关研究，按机制和状态组织；用于研发情报和入组动态跟踪。",
+  "scopeNote": "自动检索 ClinicalTrials.gov 中 Myasthenia Gravis 相关研究，并保留 ChiCTR 中国注册入口/人工复核条目；用于全球和中国本土研发情报跟踪。",
   "items": [
     {
+      "id": "chictr-mg-search",
+      "nctId": "ChiCTR",
+      "registry": "ChiCTR",
+      "title": "ChiCTR 中国临床试验注册中心：重症肌无力检索入口",
+      "status": "MANUAL_REVIEW",
+      "phase": "Registry",
+      "mechanism": "中国注册入口",
+      "sponsor": "Chinese Clinical Trial Registry",
+      "interventions": [
+        "重症肌无力",
+        "myasthenia gravis",
+        "gMG"
+      ],
+      "conditions": [
+        "Myasthenia Gravis",
+        "Generalized Myasthenia Gravis"
+      ],
+      "countries": [
+        "China"
+      ],
+      "startDate": "",
+      "completionDate": "",
+      "lastUpdate": "2026-06-07",
+      "trust": {
+        "sourceType": "ChiCTR",
+        "evidenceLevel": "中国试验注册入口",
+        "reviewStatus": "人工复核入口",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "ChiCTR 页面可能需要验证，当前作为人工检索入口；命中试验需逐条核对注册号、版本、研究状态和入排标准。"
+      },
+      "url": "https://www.chictr.org.cn/"
+    },
+    {
+      "id": "chictr2100050903",
+      "nctId": "ChiCTR2100050903",
+      "registry": "ChiCTR",
+      "title": "HBM9161 皮下注射治疗全身型重症肌无力患者的有效性、安全性的多中心随机双盲研究",
+      "status": "MANUAL_REVIEW",
+      "phase": "PHASE2, PHASE3",
+      "mechanism": "FcRn",
+      "sponsor": "Harbour BioMed / HBM9161",
+      "interventions": [
+        "HBM9161",
+        "Batoclimab"
+      ],
+      "conditions": [
+        "Generalized Myasthenia Gravis",
+        "Myasthenia Gravis"
+      ],
+      "countries": [
+        "China"
+      ],
+      "startDate": "",
+      "completionDate": "",
+      "lastUpdate": "2022-03-28",
+      "trust": {
+        "sourceType": "ChiCTR",
+        "evidenceLevel": "中国试验注册",
+        "reviewStatus": "待复核",
+        "lastChecked": "2026-06-07",
+        "reviewNote": "来自 ChiCTR 公开索引线索；因官网可能触发访问验证，需人工打开原始记录核对版本和状态。"
+      },
+      "url": "https://www.chictr.org.cn/hvshowproject.html?id=156285&v=1.5"
+    },
+    {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT05403541",
       "nctId": "NCT05403541",
       "title": "Phase 3 Study to Assess the Efficacy and Safety of Batoclimab as Induction and Maintenance Therapy in Adult Participants With Generalized Myasthenia Gravis",
@@ -49,6 +115,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07217587",
       "nctId": "NCT07217587",
       "title": "Comparative Efficacy of Nipocalimab and Efgartigimod in Participants With Generalized Myasthenia Gravis",
@@ -81,6 +148,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06392386",
       "nctId": "NCT06392386",
       "title": "A Study of Efgartigimod PH20 SC in Children Between 2 and Less Than 18 Years of Age With Generalized Myasthenia Gravis",
@@ -117,6 +185,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07622342",
       "nctId": "NCT07622342",
       "title": "A Phase II Study of SHR-2173 Injection in Patients With Myasthenia Gravis",
@@ -148,6 +217,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07284420",
       "nctId": "NCT07284420",
       "title": "ADAPT Forward 1 - ISA1 - a Study to Evaluate Empasiprubart IV as add-on Therapy to Efgartigimod IV in Participants With AChR-Ab Seropositive Generalized Myasthenia Gravis With a Partial Clinical Response to Efgartigimod",
@@ -187,6 +257,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07294170",
       "nctId": "NCT07294170",
       "title": "ADAPT Forward - Master Protocol of a Platform Study to Evaluate the Safety and Efficacy of Multiple Regimens in Participants With Myasthenia Gravis",
@@ -226,6 +297,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06744920",
       "nctId": "NCT06744920",
       "title": "A Study to Investigate the Efficacy, Safety and Tolerability of Remibrutinib Versus Placebo in Adult Patients With Generalized Myasthenia Gravis",
@@ -264,6 +336,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06987539",
       "nctId": "NCT06987539",
       "title": "A Study to Evaluate the Pharmacokinetics, Pharmacodynamics, Safety and Tolerability of Inebilizumab in Children With Generalized Myasthenia Gravis (gMG)",
@@ -295,6 +368,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06517758",
       "nctId": "NCT06517758",
       "title": "A Phase III Study to Investigate Efficacy, Safety and Tolerability of Iptacopan Compared With Placebo in Participants Aged 18 to 85 Years With gMG.",
@@ -332,6 +406,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT04302103",
       "nctId": "NCT04302103",
       "title": "A Study of TACI（Transmembrane Activator and Calcium-modulator and Cyclophilin Ligand (CAML) Interactor）-Antibody Fusion Protein Injection (RC18) in Subjects With Systemic Myasthenia Gravis",
@@ -362,6 +437,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06958939",
       "nctId": "NCT06958939",
       "title": "The Safety and Efficacy of S103 in the Treatment of Refractory Generalized Myasthenia Gravis",
@@ -394,6 +470,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT04980495",
       "nctId": "NCT04980495",
       "title": "An Open-label Study to Investigate the Clinical Efficacy of Different Dosing Regimens of Efgartigimod IV in Patients With Generalized Myasthenia Gravis",
@@ -432,6 +509,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07039916",
       "nctId": "NCT07039916",
       "title": "Study to Assess the Efficacy and Safety of IMVT-1402 in Participants With Mild to Severe Generalized Myasthenia Gravis",
@@ -471,6 +549,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07246564",
       "nctId": "NCT07246564",
       "title": "Phase 4 Study Evaluating Efficacy and Safety of Rozanolixizumab in Adult Chinese Participants With Generalized Myasthenia Gravis",
@@ -500,6 +579,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06463587",
       "nctId": "NCT06463587",
       "title": "Efficacy and Safety of a New Formulation of Oral Cladribine Compared With Placebo in Participants With Generalized Myasthenia Gravis (MyClad)",
@@ -538,6 +618,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07596784",
       "nctId": "NCT07596784",
       "title": "Efficacy and Safety of Ravulizumab in Chinese Adults Participants With Generalized Myasthenia Gravis (gMG)",
@@ -566,6 +647,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07596901",
       "nctId": "NCT07596901",
       "title": "Study of Aritinercept in Patients With Generalized Myasthenia Gravis",
@@ -596,6 +678,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07595653",
       "nctId": "NCT07595653",
       "title": "A Study to Evaluate the Impact of Efgartigimod on Overall Disease Experience of People Suffering From Generalized Myasthenia Gravis (gMG) in Italy",
@@ -624,6 +707,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06359041",
       "nctId": "NCT06359041",
       "title": "RESET-MG: A Study to Evaluate the Safety and Efficacy of CABA-201 in Participants With Generalized Myasthenia Gravis",
@@ -653,6 +737,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07593911",
       "nctId": "NCT07593911",
       "title": "A Study to Evaluate MTM-H-001 Injection in Adult Patients With B-Cell-Related Autoimmune Diseases",
@@ -687,6 +772,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07501702",
       "nctId": "NCT07501702",
       "title": "A Phase 2 Study to Evaluate Povetacicept in Adults With Generalized Myasthenia Gravis",
@@ -717,6 +803,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06680037",
       "nctId": "NCT06680037",
       "title": "A Study to Assess the Safety and Clinical Activity of Azer-cel in Participants With B-cell Mediated Autoimmune Disorders",
@@ -746,6 +833,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT00704626",
       "nctId": "NCT00704626",
       "title": "Serum Auto-Antibodies in Neurological Diseases",
@@ -778,6 +866,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06909253",
       "nctId": "NCT06909253",
       "title": "Ravulizumab Treatment Outcomes in Patients With Generalized Myasthenia Gravis",
@@ -807,6 +896,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT04524273",
       "nctId": "NCT04524273",
       "title": "Myasthenia Gravis Inebilizumab Trial",
@@ -844,6 +934,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT06193889",
       "nctId": "NCT06193889",
       "title": "KYSA-6: A Study of Anti-CD19 Chimeric Antigen Receptor T-Cell Therapy, in Patients With Generalized Myasthenia Gravis",
@@ -879,6 +970,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07247279",
       "nctId": "NCT07247279",
       "title": "Epidemiological Study of Treatment Approaches in AChR-Antibody Positive Generalized Myasthenia Gravis in Russia",
@@ -907,6 +999,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07583030",
       "nctId": "NCT07583030",
       "title": "A Clinical Study to Evaluate LVIVO-TaVec400 for the Treatment of Relapsed/Refractory Autoimmune Diseases",
@@ -939,6 +1032,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07526493",
       "nctId": "NCT07526493",
       "title": "Safety and Pharmacodynamics of QH103 Cell Injection in the Treatment of Patients With Relapsed/Refractory Antibody-Mediated Neurological Autoimmune Diseases.",
@@ -975,6 +1069,7 @@
       }
     },
     {
+      "registry": "ClinicalTrials.gov",
       "id": "NCT07337785",
       "nctId": "NCT07337785",
       "title": "CD19/BCMA-Targeted UCAR-T for Patients With Neurological Autoimmune Diseases",

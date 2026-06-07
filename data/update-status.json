@@ -34,6 +34,12 @@
       "status": "configured",
       "frequency": "daily",
       "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。"
+    },
+    {
+      "name": "chictr",
+      "status": "manual-review",
+      "frequency": "weekly/manual",
+      "fallbackPolicy": "ChiCTR 当前作为人工复核入口与重点条目保留；官网如需验证，不纳入强自动抓取。"
     }
   ],
   "outputs": [],

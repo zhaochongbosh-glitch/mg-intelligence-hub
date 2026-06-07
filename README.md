@@ -43,6 +43,7 @@ node scripts/update-data.mjs
 当前自动更新分成三层：
 
 - 每日自动更新：PubMed 信息流、近 24 小时研究摘要、中国机构相关研究、FDA RSS 命中条目、ClinicalTrials.gov 试验雷达。
+- 人工复核来源：ChiCTR 中国临床试验注册中心先作为中国本土注册试验入口和重点条目保留；官网如需验证时不做强自动抓取。
 - 自动记录状态：每次运行都会写入 `data/update-status.json`，记录更新时间、更新范围、各来源成功/失败状态和输出条数。
 - 人工复核更新：全球批准、中国准入、医保/医院准入、销售额、指南路径、安全性结论等仍需人工复核后更新，避免自动脚本误改高风险字段。
 
@@ -99,7 +100,7 @@ AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR T
 
 `data/evidence-matrix.json` 保存药物证据矩阵，用于横向比较关键 RCT、长期数据、真实世界证据、安全性重点和中国可及性。
 
-`data/trial-radar.json` 保存 ClinicalTrials.gov 自动抓取的 MG 临床试验雷达。`scripts/update-data.mjs` 每次运行都会从 ClinicalTrials.gov v2 API 刷新最新 30 项研究，并按机制分类。
+`data/trial-radar.json` 保存 ClinicalTrials.gov 自动抓取的 MG 临床试验雷达，并保留 ChiCTR 中国临床试验注册中心入口/人工复核条目。`scripts/update-data.mjs` 每次运行都会从 ClinicalTrials.gov v2 API 刷新最新 30 项研究，并合并保留 ChiCTR 条目，按机制和来源分类。
 
 ## 发布到全网
 

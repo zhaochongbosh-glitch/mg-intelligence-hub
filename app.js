@@ -14,7 +14,8 @@ const state = {
     treatmentClass: "all",
     biomarker: "all",
     trialMechanism: "all",
-    trialStatus: "all"
+    trialStatus: "all",
+    trialSource: "all"
   }
 };
 
@@ -137,6 +138,7 @@ function hydrateControls() {
   fillSelect("treatment-class", [...new Set(treatmentItems().map((item) => item.class).filter(Boolean))].sort());
   fillSelect("biomarker", [...new Set(treatmentItems().map((item) => item.biomarker).filter(Boolean))].sort());
   fillSelect("trial-mechanism", [...new Set(trialItems().map((item) => item.mechanism).filter(Boolean))].sort());
+  fillSelect("trial-source", [...new Set(trialItems().map(trialRegistry).filter(Boolean))].sort());
   fillSelect(
     "trial-status",
     [...new Set(trialItems().map((item) => item.status).filter(Boolean))].sort(),
@@ -189,6 +191,10 @@ function bindControls() {
     state.filters.trialStatus = value;
     renderTrials();
   });
+  onChange("trial-source", (value) => {
+    state.filters.trialSource = value;
+    renderTrials();
+  });
 }
 
 function renderVisibleModules() {
@@ -200,6 +206,7 @@ function renderVisibleModules() {
   if (exists("supportive")) renderSupportive();
   if (exists("safety")) renderSafety();
   if (exists("china-access")) renderChinaAccess();
+  if (exists("china-registered-trials")) renderChinaRegisteredTrials();
   if (exists("trials")) renderTrials();
   if (exists("market")) renderMarket();
   if (exists("guidance")) renderGuidance();
@@ -583,27 +590,36 @@ function renderTrials() {
 
 function renderTrialCard(item) {
   const interventions = (item.interventions || []).map((name) => `<span>${escapeHtml(name)}</span>`).join("");
+  const registry = trialRegistry(item);
   return `
     <article class="trial-card">
       <div class="trial-card__head">
         <div>
-          <p class="section-kicker">${escapeHtml(item.mechanism || "机制待分类")}</p>
+          <p class="section-kicker">${escapeHtml(registry)} · ${escapeHtml(item.mechanism || "机制待分类")}</p>
           <h3>${escapeHtml(item.title || item.nctId)}</h3>
           <p>${escapeHtml([item.sponsor, item.phase].filter(Boolean).join(" | "))}</p>
         </div>
         <strong>${escapeHtml(formatTrialStatus(item.status))}</strong>
       </div>
       <div class="trial-meta">
-        <span>NCT: ${escapeHtml(item.nctId)}</span>
+        <span>注册号: ${escapeHtml(item.nctId || item.id || "待补充")}</span>
         <span>更新: ${escapeHtml(item.lastUpdate || "未知")}</span>
         <span>完成: ${escapeHtml(item.completionDate || "未知")}</span>
       </div>
       ${renderTrustMeta(item, "trials")}
       <div class="trial-tags">${interventions}</div>
       <p>${escapeHtml((item.countries || []).join(", ") || "国家/地区待补充")}</p>
-      <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看 ClinicalTrials.gov</a>
+      <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">查看 ${escapeHtml(registry)}</a>
     </article>
   `;
+}
+
+function renderChinaRegisteredTrials() {
+  const items = trialItems().filter((item) => trialRegistry(item) === "ChiCTR");
+  setCount("china-registered-trials", `${items.length} 个 ChiCTR 入口/条目`);
+  targetFor("china-registered-trials").innerHTML = items.length
+    ? items.map(renderTrialCard).join("")
+    : `<article class="trial-card"><h3>暂无 ChiCTR 条目</h3><p>建议在 ChiCTR 官网以“重症肌无力 / myasthenia gravis / gMG”等关键词人工复核。</p></article>`;
 }
 
 function renderMarket() {
@@ -772,8 +788,13 @@ function matchesTreatment(item) {
 function matchesTrial(item) {
   return (
     (state.filters.trialMechanism === "all" || item.mechanism === state.filters.trialMechanism) &&
-    (state.filters.trialStatus === "all" || item.status === state.filters.trialStatus)
+    (state.filters.trialStatus === "all" || item.status === state.filters.trialStatus) &&
+    (state.filters.trialSource === "all" || trialRegistry(item) === state.filters.trialSource)
   );
+}
+
+function trialRegistry(item = {}) {
+  return item.registry || item.source || item.trust?.sourceType || "ClinicalTrials.gov";
 }
 
 function feedItems() {
@@ -873,7 +894,8 @@ function formatTrialStatus(status = "") {
     COMPLETED: "已完成",
     TERMINATED: "已终止",
     WITHDRAWN: "已撤回",
-    SUSPENDED: "暂停"
+    SUSPENDED: "暂停",
+    MANUAL_REVIEW: "人工复核入口"
   };
   return map[status] || status || "未知";
 }
