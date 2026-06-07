@@ -29,10 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: "22"
+          node-version: "24"
       - name: Update source data
         run: npm run update:data -- --scope="${UPDATE_SCOPE}"
         env:
@@ -41,7 +41,7 @@ jobs:
           OPENAI_SUMMARY_MODEL: gpt-4.1-mini
       - name: Validate generated data
         run: npm run validate:data
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update MG intelligence data"
           file_pattern: "data/*.json"
