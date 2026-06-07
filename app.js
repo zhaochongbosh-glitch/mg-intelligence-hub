@@ -1,4 +1,4 @@
-const APP_ROOT = new URL(".", document.currentScript.src);
+const APP_ROOT = new URL(".", import.meta.url);
 const DATA_ROOT = new URL("data/", APP_ROOT);
 
 const state = {
