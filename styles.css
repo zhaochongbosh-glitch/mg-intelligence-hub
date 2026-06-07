@@ -1959,6 +1959,19 @@ footer {
   font-size: 0.85rem;
 }
 
+.footer-record {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer-record img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
 @media (max-width: 960px) {
   .overview,
   .portal-grid,
