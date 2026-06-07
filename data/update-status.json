@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-07T12:23:48.126Z",
-  "runStartedAt": "2026-06-07T12:23:37.021Z",
-  "runFinishedAt": "2026-06-07T12:23:48.126Z",
+  "updatedAt": "2026-06-07T12:41:31.556Z",
+  "runStartedAt": "2026-06-07T12:39:22.666Z",
+  "runFinishedAt": "2026-06-07T12:41:31.556Z",
   "scope": "all",
   "status": "success",
   "sources": [
@@ -11,8 +11,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。",
       "status": "success",
-      "startedAt": "2026-06-07T12:23:37.028Z",
-      "finishedAt": "2026-06-07T12:23:37.254Z",
+      "startedAt": "2026-06-07T12:39:22.673Z",
+      "finishedAt": "2026-06-07T12:39:23.012Z",
       "count": 0
     },
     {
@@ -21,19 +21,19 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版 PubMed 文献信息流。",
       "status": "success",
-      "startedAt": "2026-06-07T12:23:37.028Z",
-      "finishedAt": "2026-06-07T12:23:38.273Z",
+      "startedAt": "2026-06-07T12:39:22.673Z",
+      "finishedAt": "2026-06-07T12:39:23.610Z",
       "count": 16
     },
     {
       "name": "latest-research",
       "type": "automatic",
       "frequency": "DAILY",
-      "fallbackPolicy": "失败时保留上一版近 24 小时研究摘要。",
+      "fallbackPolicy": "失败时保留上一版近 7 天研究摘要。",
       "status": "success",
-      "startedAt": "2026-06-07T12:23:38.674Z",
-      "finishedAt": "2026-06-07T12:23:46.142Z",
-      "count": 3
+      "startedAt": "2026-06-07T12:39:24.010Z",
+      "finishedAt": "2026-06-07T12:41:30.071Z",
+      "count": 20
     },
     {
       "name": "china-research",
@@ -41,8 +41,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版中国研究列表。",
       "status": "success",
-      "startedAt": "2026-06-07T12:23:46.543Z",
-      "finishedAt": "2026-06-07T12:23:47.796Z",
+      "startedAt": "2026-06-07T12:41:30.471Z",
+      "finishedAt": "2026-06-07T12:41:31.411Z",
       "count": 18
     },
     {
@@ -51,8 +51,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版临床试验雷达。",
       "status": "success",
-      "startedAt": "2026-06-07T12:23:47.796Z",
-      "finishedAt": "2026-06-07T12:23:48.122Z",
+      "startedAt": "2026-06-07T12:41:31.411Z",
+      "finishedAt": "2026-06-07T12:41:31.546Z",
       "count": 30
     }
   ],
@@ -64,7 +64,7 @@
     },
     {
       "file": "data/latest-research.json",
-      "count": 3,
+      "count": 20,
       "status": "success"
     },
     {
