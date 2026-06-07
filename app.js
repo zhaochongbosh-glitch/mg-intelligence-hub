@@ -13,6 +13,10 @@ const state = {
     treatmentQuery: "",
     treatmentClass: "all",
     biomarker: "all",
+    latestStudyType: "all",
+    latestTopic: "all",
+    latestPriority: "all",
+    latestSummaryStatus: "all",
     trialMechanism: "all",
     trialStatus: "all",
     trialSource: "all"
@@ -133,6 +137,9 @@ function hydrateStats() {
 }
 
 function hydrateControls() {
+  fillSelect("latest-study-type", [...new Set(latestItems().map(latestStudyType).filter(Boolean))].sort());
+  fillSelect("latest-topic", [...new Set(latestItems().map(latestTopic).filter(Boolean))].sort());
+  fillSelect("latest-priority", ["高", "中", "低"], latestPriorityLabel);
   fillSelect("feed-category", categoryLabels);
   fillSelect("feed-source", [...new Set(feedItems().map((item) => item.source).filter(Boolean))].sort());
   fillSelect("china-topic", [...new Set(chinaItems().map((item) => item.topic).filter(Boolean))].sort());
@@ -184,6 +191,22 @@ function bindControls() {
     state.filters.biomarker = value;
     renderTreatments();
   });
+  onChange("latest-study-type", (value) => {
+    state.filters.latestStudyType = value;
+    renderLatest();
+  });
+  onChange("latest-topic", (value) => {
+    state.filters.latestTopic = value;
+    renderLatest();
+  });
+  onChange("latest-priority", (value) => {
+    state.filters.latestPriority = value;
+    renderLatest();
+  });
+  onChange("latest-summary-status", (value) => {
+    state.filters.latestSummaryStatus = value;
+    renderLatest();
+  });
   onChange("trial-mechanism", (value) => {
     state.filters.trialMechanism = value;
     renderTrials();
@@ -216,12 +239,13 @@ function renderVisibleModules() {
 }
 
 function renderLatest() {
-  const items = latestItems().sort(sortByDateDesc);
+  const allItems = latestItems().sort(sortByDateDesc);
+  const items = allItems.filter(matchesLatest);
   setScope("latest", state.data.latest?.scopeNote);
-  setCount("latest", `${items.length} 篇新研究`);
+  setCount("latest", `${items.length} / ${allItems.length} 篇研究`);
   const target = targetFor("latest");
   if (!items.length) {
-    target.innerHTML = `<article class="latest-empty"><h3>近 7 天暂未抓取到新摘要</h3><p>PubMed 未必每周都有新上线的 MG 摘要；自动任务仍会每日检查一次。</p></article>`;
+    target.innerHTML = `<article class="latest-empty"><h3>没有匹配的研究摘要</h3><p>可以调整研究类型、主题、优先级或摘要状态筛选。</p></article>`;
     return;
   }
   target.innerHTML = items.map(renderLatestCard).join("");
@@ -236,6 +260,7 @@ function renderLatestCard(item) {
   }[item.translationStatus] || "待处理";
   const points = (item.keyPoints || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
   const intelligence = renderLatestIntelligence(item);
+  const priority = latestPriority(item);
   return `
     <article class="latest-card">
       <div class="latest-card__head">
@@ -244,7 +269,10 @@ function renderLatestCard(item) {
           <h3>${escapeHtml(item.title || "未命名研究")}</h3>
           <p>${escapeHtml([item.journal, item.authors].filter(Boolean).join(" | "))}</p>
         </div>
-        <span>${escapeHtml(statusLabel)}</span>
+        <div class="latest-card__badges">
+          <span>${escapeHtml(statusLabel)}</span>
+          <span class="latest-priority latest-priority--${escapeAttribute(priorityClass(priority))}">${escapeHtml(latestPriorityLabel(priority))}</span>
+        </div>
       </div>
       ${renderTrustMeta(item, "latest")}
       <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
@@ -260,6 +288,64 @@ function renderLatestCard(item) {
       </div>
     </article>
   `;
+}
+
+function matchesLatest(item) {
+  return (
+    (state.filters.latestStudyType === "all" || latestStudyType(item) === state.filters.latestStudyType) &&
+    (state.filters.latestTopic === "all" || latestTopic(item) === state.filters.latestTopic) &&
+    (state.filters.latestPriority === "all" || latestPriority(item) === state.filters.latestPriority) &&
+    (state.filters.latestSummaryStatus === "all" || latestSummaryStatus(item) === state.filters.latestSummaryStatus)
+  );
+}
+
+function latestStudyType(item = {}) {
+  const text = [item.intelligence?.studyType, item.title, item.abstract].join(" ").toLowerCase();
+  if (/meta|系统综述|systematic/.test(text)) return "系统综述/Meta分析";
+  if (/random|trial|随机|临床试验|rct/.test(text)) return "临床试验";
+  if (/cohort|registry|real-world|real world|队列|真实世界/.test(text)) return "队列/真实世界";
+  if (/case report|case series|病例/.test(text)) return "病例报告/病例系列";
+  if (/review|综述/.test(text)) return "综述";
+  if (/comment|letter|通信|评论|regarding/.test(text)) return "评论/通信";
+  return item.intelligence?.studyType || "其他/不明确";
+}
+
+function latestTopic(item = {}) {
+  const text = [item.title, item.abstract, item.zhSummary, item.intelligence?.clinicalImplication, ...(item.tags || [])]
+    .join(" ")
+    .toLowerCase();
+  if (/(safety|adverse|toxicity|myositis|hepatotoxic|liver|不良|安全|风险|faers|post-marketing)/.test(text)) return "安全性";
+  if (/(efgartigimod|rozanolixizumab|ravulizumab|zilucoplan|nipocalimab|inebilizumab|treatment|therapy|drug|治疗|药物|fcrn|complement|补体)/.test(text)) return "治疗/药物";
+  if (/(antibody|achr|musk|lrp4|immun|pathogenesis|mechanism|免疫|机制|抗体)/.test(text)) return "机制/免疫";
+  if (/(diagnos|biomarker|scale|score|electrophysiolog|诊断|评估|标志物)/.test(text)) return "诊断/评估";
+  if (/(thym|胸腺|thymoma|thymectomy)/.test(text)) return "胸腺相关";
+  if (/(cohort|epidemiolog|registry|prognos|mortality|quality of life|流行病|队列|预后)/.test(text)) return "流行病学/预后";
+  return "其他";
+}
+
+function latestPriority(item = {}) {
+  const type = latestStudyType(item);
+  const topic = latestTopic(item);
+  const text = [item.title, item.abstract, item.zhSummary, item.intelligence?.keyFinding, item.intelligence?.clinicalImplication].join(" ").toLowerCase();
+  if (
+    /clinical trial|random|phase|meta-analysis|systematic review|rct|fda|nmpa|ema|approval|approved|label|black box|临床试验|系统综述|meta|批准|监管/.test(text) ||
+    ["系统综述/Meta分析", "临床试验"].includes(type) ||
+    topic === "安全性"
+  ) {
+    return "高";
+  }
+  if (["队列/真实世界", "机制/免疫", "诊断/评估", "治疗/药物"].includes(type) || ["治疗/药物", "机制/免疫", "诊断/评估", "流行病学/预后"].includes(topic)) {
+    return "中";
+  }
+  return "低";
+}
+
+function latestSummaryStatus(item = {}) {
+  return item.translationStatus === "translated" ? "translated" : "not-translated";
+}
+
+function latestPriorityLabel(priority = "") {
+  return { 高: "高优先级", 中: "中优先级", 低: "低优先级" }[priority] || priority;
 }
 
 function renderLatestIntelligence(item = {}) {
