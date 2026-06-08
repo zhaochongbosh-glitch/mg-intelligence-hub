@@ -2144,6 +2144,110 @@ footer {
   line-height: 1.5;
 }
 
+.site-share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.site-share__label {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.site-share__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--brand);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.share-button:hover,
+.share-button:focus-visible {
+  border-color: rgba(42, 95, 114, 0.45);
+  background: var(--soft);
+  color: var(--brand-dark);
+}
+
+.share-button--compact {
+  min-height: 30px;
+  padding: 5px 10px;
+}
+
+.share-copy-status {
+  min-height: 1.2em;
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.share-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 28, 35, 0.5);
+}
+
+.share-modal[hidden] {
+  display: none;
+}
+
+.share-modal__panel {
+  width: min(360px, 100%);
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(18, 28, 35, 0.22);
+  text-align: center;
+}
+
+.share-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.share-modal__qr {
+  width: 188px;
+  height: 188px;
+  display: block;
+  margin: 0 auto 14px;
+  border: 1px solid var(--line);
+}
+
+.share-modal__panel p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 @media (max-width: 960px) {
   .overview,
   .portal-grid,

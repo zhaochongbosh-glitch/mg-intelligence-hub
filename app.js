@@ -112,6 +112,7 @@ async function boot() {
     hydrateControls();
     bindControls();
     renderVisibleModules();
+    hydrateShareTools();
   } catch (error) {
     console.error(error);
     for (const target of document.querySelectorAll("[data-render]")) {
@@ -222,6 +223,103 @@ function renderVisibleModules() {
   if (exists("update-status")) renderUpdateStatus();
   if (exists("review-queue")) renderReviewQueue();
   if (exists("faers")) renderFaersExplorer();
+}
+
+function hydrateShareTools() {
+  const footer = document.querySelector("footer");
+  if (!footer || footer.querySelector(".site-share")) return;
+
+  const title = document.title || "重症肌无力信息港";
+  const url = window.location.href;
+  const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(title);
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=188x188&data=${encodedUrl}`;
+
+  const share = document.createElement("section");
+  share.className = "site-share";
+  share.setAttribute("aria-label", "页面分享");
+  share.innerHTML = `
+    <span class="site-share__label">分享本页</span>
+    <div class="site-share__actions">
+      <button class="share-button" type="button" data-share="native">系统分享</button>
+      <button class="share-button" type="button" data-share="wechat">微信</button>
+      <a class="share-button" href="https://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}" target="_blank" rel="noreferrer">微博</a>
+      <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noreferrer">LinkedIn</a>
+      <button class="share-button" type="button" data-share="copy">复制链接</button>
+    </div>
+    <span class="share-copy-status" aria-live="polite"></span>
+  `;
+
+  const modal = document.createElement("div");
+  modal.className = "share-modal";
+  modal.hidden = true;
+  modal.innerHTML = `
+    <div class="share-modal__panel" role="dialog" aria-modal="true" aria-label="微信分享二维码">
+      <div class="share-modal__head">
+        <strong>微信分享</strong>
+        <button class="share-button share-button--compact" type="button" data-share="close">关闭</button>
+      </div>
+      <img class="share-modal__qr" src="${escapeAttribute(qrUrl)}" alt="当前页面二维码">
+      <p>${escapeHtml(title)}</p>
+      <button class="share-button" type="button" data-share="copy">复制链接</button>
+    </div>
+  `;
+
+  footer.append(share);
+  document.body.append(modal);
+
+  const status = share.querySelector(".share-copy-status");
+  const setStatus = (message) => {
+    status.textContent = message;
+    window.setTimeout(() => {
+      status.textContent = "";
+    }, 2200);
+  };
+  const copyUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setStatus("已复制");
+    } catch {
+      window.prompt("复制本页链接", url);
+    }
+  };
+  const openModal = () => {
+    modal.hidden = false;
+    modal.querySelector("[data-share='close']")?.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+  };
+
+  share.addEventListener("click", async (event) => {
+    const target = event.target.closest("[data-share]");
+    if (!target) return;
+    const action = target.dataset.share;
+    if (action === "native") {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, url });
+        } catch {
+          // User canceled native share.
+        }
+      } else {
+        await copyUrl();
+      }
+    }
+    if (action === "wechat") openModal();
+    if (action === "copy") await copyUrl();
+  });
+
+  modal.addEventListener("click", async (event) => {
+    if (event.target === modal || event.target.closest("[data-share='close']")) {
+      closeModal();
+      return;
+    }
+    if (event.target.closest("[data-share='copy']")) await copyUrl();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) closeModal();
+  });
 }
 
 function renderLatest() {
