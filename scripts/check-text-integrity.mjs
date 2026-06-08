@@ -8,11 +8,12 @@ const skipFiles = new Set(["scripts/check-text-integrity.mjs"]);
 const findings = [];
 
 const suspiciousPatterns = [
-  { name: "连续问号", regex: /\?{4,}/g },
-  { name: "Unicode 替换字符", regex: /\uFFFD/g },
-  { name: "锟斤拷乱码", regex: /锟斤拷/g },
-  { name: "UTF-8/Latin-1 错读", regex: /(?:Ã.|Â.|â€.|â€™|â€œ|â€�|â€“|â€”)/g },
-  { name: "中文 UTF-8 错读片段", regex: /(?:鐮|浜哄|鏂|鍏ュ|鍥㈤|鍗庡|绱㈠|閲嶇|乣|€\?)/g }
+  { name: "repeated question marks", regex: /\?{4,}/g },
+  { name: "unicode replacement character", regex: /\uFFFD/g },
+  { name: "common mojibake marker", regex: /\u951f\u65a4\u62f7/g },
+  { name: "latin1-decoded utf8", regex: /(?:\u00c3.|\u00c2.|\u00e2\u20ac.|\u00e2\u20ac\u2122|\u00e2\u20ac\u0153|\u00e2\u20ac\ufffd|\u00e2\u20ac\u201c|\u00e2\u20ac\u201d)/g },
+  { name: "gbk-decoded utf8 fragments", regex: /(?:\u9431|\u6d5c|\u6d93|\u95b2|\u9365|\u7ef1|\u95c2|\u4e68|\u20ac\?)/g },
+  { name: "site-specific mojibake fragments", regex: /(?:\u942e|\u95c7|\u95c1|\u6d94|\u9350|\u7f01|\u93b4|\u9418|\u6957|\u8e47|\u8f70)/g }
 ];
 
 await scan(root);
