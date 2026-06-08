@@ -19,5 +19,7 @@ jobs:
           node-version: "24"
       - name: Validate data shape
         run: npm run validate:data
+      - name: Check text integrity
+        run: npm run check:text
       - name: Check data health
         run: npm run health:data

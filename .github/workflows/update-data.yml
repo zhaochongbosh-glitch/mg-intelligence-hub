@@ -42,6 +42,8 @@ jobs:
           OPENAI_SUMMARY_MODEL: gpt-4.1-mini
       - name: Validate generated data
         run: npm run validate:data
+      - name: Check text integrity
+        run: npm run check:text
       - name: Check data health
         run: npm run health:data
       - uses: stefanzweifel/git-auto-commit-action@v7
