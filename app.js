@@ -50,7 +50,7 @@ const trustDefaults = {
     sourceType: "PubMed Affiliation",
     evidenceLevel: "文献索引",
     reviewStatus: "自动更新",
-    reviewNote: "通过机构字段近似识别中国研究者/机构，仍需打开 PubMed 原文确认。"
+    reviewNote: "通过机构字段近似识别中国研究者/机构，仍需打开 PubMed 摘要确认。"
   },
   treatments: {
     sourceType: "标签/文献/监管文件",
@@ -257,7 +257,7 @@ function renderLatestCard(item) {
       </details>
       <div class="latest-actions">
         <span>${formatDate(item.date)}</span>
-        <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
+        <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 摘要</a>
       </div>
     </article>
   `;
@@ -303,10 +303,10 @@ function renderChinaCard(item) {
         ${renderTrustMeta(item, "china")}
         <h3>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.summary || item.authors || "")}</p>
-        <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 原文")}</p>
+        <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 摘要")}</p>
         <div class="china-card__footer">
           <div class="china-tags">${tags}</div>
-          <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 原文</a>
+          <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 摘要</a>
         </div>
       </div>
     </article>

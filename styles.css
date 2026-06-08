@@ -1972,6 +1972,10 @@ footer {
   display: block;
 }
 
+.footer-record span {
+  line-height: 1.5;
+}
+
 @media (max-width: 960px) {
   .overview,
   .portal-grid,
