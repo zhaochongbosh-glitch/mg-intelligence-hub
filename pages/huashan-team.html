@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="华山 MG 团队论文展示页，自动汇总 PubMed 中作者署名单位包含 Huashan Hospital Department of Neurology 的重症肌无力研究文章。" />
+    <title>华山 MG 团队论文 | 重症肌无力信息港</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="huashan-team">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">Huashan MG Team</p>
+        <h1>华山 MG 团队</h1>
+        <p>展示作者署名单位中包含 Huashan Hospital / Department of Neurology 的重症肌无力研究文章，按最新发表日期排列。</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav">
+        <a href="../index.html">首页</a>
+        <a href="research/">研究情报</a>
+        <a href="huashan-team.html" aria-current="page">华山MG团队</a>
+        <a href="therapy.html">治疗与证据</a>
+        <a href="safety.html">安全监测</a>
+        <a href="china-access.html">中国准入</a>
+        <a href="trials-market.html">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+        <a href="data-status.html">数据状态</a>
+      </nav>
+
+      <section class="huashan-identity">
+        <div>
+          <p class="section-kicker">Team Profile</p>
+          <h2>华山医院神经内科重症肌无力研究展示</h2>
+          <p>当前页面优先使用 PubMed 公开数据自动更新；Web of Science 通常需要机构订阅或 API 权限，先作为人工复核来源保留，后续可接入导出题录。</p>
+        </div>
+        <a class="ghost-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%28%22myasthenia+gravis%22%5BTitle%2FAbstract%5D+OR+%22Myasthenia+Gravis%22%5BMeSH+Terms%5D%29+AND+%28%22Huashan+Hospital%22%5BAffiliation%5D+OR+%22Hua+Shan+Hospital%22%5BAffiliation%5D+OR+%22Huashan+Hosp%22%5BAffiliation%5D%29+AND+%28Neurology%5BAffiliation%5D+OR+%22Department+of+Neurology%22%5BAffiliation%5D%29&sort=date" target="_blank" rel="noreferrer">打开 PubMed 检索</a>
+      </section>
+
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Publication Map</p>
+            <h2>团队发表文章</h2>
+            <p data-scope="huashan-team">正在读取华山团队论文数据。</p>
+          </div>
+          <p data-count="huashan-team">0 篇团队论文</p>
+        </div>
+        <div data-render="huashan-summary" class="huashan-summary"></div>
+        <div data-render="huashan-team" class="huashan-list"></div>
+      </section>
+    </main>
+    <footer><p>团队论文归属基于 PubMed 作者署名单位字段自动识别；正式团队成果、通讯作者、第一作者和 Web of Science 收录状态需人工复核。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>

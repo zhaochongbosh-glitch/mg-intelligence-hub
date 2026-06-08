@@ -1393,6 +1393,174 @@ select:focus {
   margin-bottom: 14px;
 }
 
+.huashan-identity,
+.huashan-overview article,
+.huashan-paper {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.huashan-identity {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 18px;
+  padding: 20px;
+}
+
+.huashan-identity h2 {
+  margin-bottom: 8px;
+  font-size: 1.45rem;
+}
+
+.huashan-identity p:last-child {
+  max-width: 780px;
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.huashan-summary {
+  margin-bottom: 14px;
+}
+
+.huashan-overview {
+  display: grid;
+  grid-template-columns: 180px 180px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.huashan-overview article {
+  min-height: 126px;
+  padding: 14px;
+  background: #fbfdfd;
+}
+
+.huashan-overview span {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.huashan-overview strong {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: 1.9rem;
+  line-height: 1.08;
+}
+
+.huashan-overview p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.huashan-list {
+  display: grid;
+  gap: 12px;
+}
+
+.huashan-paper {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px;
+  border-left: 5px solid var(--blue);
+}
+
+.huashan-paper__date {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.huashan-paper__date span {
+  color: var(--blue);
+  font-size: 1.8rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.huashan-paper__date strong {
+  font-size: 0.86rem;
+}
+
+.huashan-paper__body {
+  display: grid;
+  gap: 10px;
+}
+
+.huashan-paper__meta,
+.huashan-paper__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.huashan-paper__meta span {
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: #245b58;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.huashan-paper h3 {
+  margin-bottom: 0;
+  font-size: 1.16rem;
+  line-height: 1.42;
+}
+
+.huashan-authors {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.huashan-paper details {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.huashan-paper summary {
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 750;
+}
+
+.huashan-paper details p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.huashan-paper__footer {
+  justify-content: space-between;
+}
+
+.huashan-paper__footer a {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 0.86rem;
+}
+
 .access-overview {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1fr) 190px;
@@ -1987,6 +2155,9 @@ footer {
   .faers-grid,
   .monitoring-grid,
   .access-overview,
+  .huashan-identity,
+  .huashan-overview,
+  .huashan-paper,
   .china-access-grid,
   .access-checklist,
   .status-overview,
@@ -2002,6 +2173,10 @@ footer {
 
   .source-panel {
     position: static;
+  }
+
+  .huashan-identity {
+    display: grid;
   }
 }
 
@@ -2027,6 +2202,7 @@ footer {
 
   .china-tools,
   .china-card,
+  .huashan-paper__footer,
   .faers-bar,
   .latest-intel-grid,
   .treatment-grid {
@@ -2039,6 +2215,11 @@ footer {
 
   .faers-bar strong {
     text-align: left;
+  }
+
+  .huashan-paper__footer {
+    display: grid;
+    justify-content: stretch;
   }
 
   .china-card__date {

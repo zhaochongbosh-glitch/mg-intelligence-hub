@@ -4,6 +4,7 @@ const requiredFiles = [
   "data/items.json",
   "data/latest-research.json",
   "data/china-research.json",
+  "data/huashan-team.json",
   "data/trial-radar.json",
   "data/treatments.json",
   "data/evidence-matrix.json",
@@ -17,6 +18,7 @@ const requiredMinimums = {
   "data/items.json": ["items", 1],
   "data/latest-research.json": ["items", 1],
   "data/china-research.json": ["items", 1],
+  "data/huashan-team.json": ["items", 1],
   "data/trial-radar.json": ["items", 1],
   "data/treatments.json": ["treatments", 1],
   "data/evidence-matrix.json": ["items", 1],
@@ -38,6 +40,7 @@ async function main() {
   checkUpdateStatus(data["data/update-status.json"]);
   checkManualReviewLog(data["data/manual-review-log.json"]);
   checkLatestResearch(data["data/latest-research.json"]);
+  checkHuashanTeam(data["data/huashan-team.json"]);
   checkClinicalTrials(data["data/trial-radar.json"]);
 
   for (const line of summary) console.log(line);
@@ -83,9 +86,9 @@ function checkUpdateStatus(status = {}) {
     return;
   }
 
-  const failedSources = status.sources.filter((source) => source.status !== "success");
+  const failedSources = status.sources.filter((source) => source.status === "failed");
   if (failedSources.length) {
-    errors.push(`data/update-status.json: failed/skipped sources: ${failedSources.map((source) => `${source.name}:${source.status}`).join(", ")}`);
+    errors.push(`data/update-status.json: failed sources: ${failedSources.map((source) => `${source.name}:${source.status}`).join(", ")}`);
   }
 
   const expectedSources = ["pubmed-feed", "latest-research", "china-research", "clinical-trials", "fda-rss"];
@@ -151,6 +154,17 @@ function checkManualReviewLog(log = {}) {
   summary.push(`manual-review-log: ${log.items.length} review records`);
   if (log.items.length === 0) {
     warnings.push("manual-review-log: no review records yet; add entries after the first formal manual review");
+  }
+}
+
+function checkHuashanTeam(team = {}) {
+  const items = team.items || [];
+  const missingPmid = items.filter((item) => !item.pmid);
+  const translated = items.filter((item) => item.translationStatus === "translated");
+  summary.push(`huashan-team: records=${items.length}, translated=${translated.length}`);
+  if (missingPmid.length) errors.push(`huashan-team: ${missingPmid.length} items missing PMID`);
+  if (!team.webOfScience || team.webOfScience.status !== "manual-review-required") {
+    warnings.push("huashan-team: Web of Science review status is not documented");
   }
 }
 

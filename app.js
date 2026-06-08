@@ -25,6 +25,7 @@ const dataFiles = {
   feed: "items.json",
   latest: "latest-research.json",
   china: "china-research.json",
+  huashanTeam: "huashan-team.json",
   treatments: "treatments.json",
   market: "global-market.json",
   guidance: "guidance-pathways.json",
@@ -51,6 +52,12 @@ const trustDefaults = {
     evidenceLevel: "文献索引",
     reviewStatus: "自动更新",
     reviewNote: "通过机构字段近似识别中国研究者/机构，仍需打开 PubMed 摘要确认。"
+  },
+  huashanTeam: {
+    sourceType: "PubMed Affiliation / Web of Science manual review",
+    evidenceLevel: "团队论文索引",
+    reviewStatus: "PubMed 自动更新，WoS 待人工复核",
+    reviewNote: "作者署名单位由 PubMed Affiliation 字段近似识别；Web of Science 需机构订阅或导出文件后人工复核。"
   },
   treatments: {
     sourceType: "标签/文献/监管文件",
@@ -201,6 +208,7 @@ function bindControls() {
 function renderVisibleModules() {
   if (exists("latest")) renderLatest();
   if (exists("china")) renderChina();
+  if (exists("huashan-team")) renderHuashanTeam();
   if (exists("feed")) renderFeed();
   if (exists("matrix")) renderMatrix();
   if (exists("treatments")) renderTreatments();
@@ -305,6 +313,75 @@ function renderChinaCard(item) {
         <p>${escapeHtml(item.summary || item.authors || "")}</p>
         <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 摘要")}</p>
         <div class="china-card__footer">
+          <div class="china-tags">${tags}</div>
+          <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 摘要</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderHuashanTeam() {
+  const items = huashanTeamItems().sort(sortByDateDesc);
+  const data = state.data.huashanTeam || {};
+  setScope("huashan-team", data.scopeNote);
+  setCount("huashan-team", `${items.length} 篇团队论文`);
+  const summary = targetFor("huashan-summary", false);
+  if (summary) summary.innerHTML = renderHuashanSummary(items, data);
+  targetFor("huashan-team").innerHTML = items.length
+    ? items.map(renderHuashanArticle).join("")
+    : `<article class="huashan-paper"><h3>暂未抓取到团队论文</h3><p>请检查 PubMed 检索式或稍后重新运行数据更新。</p></article>`;
+}
+
+function renderHuashanSummary(items, data = {}) {
+  const years = items.map((item) => String(item.date || "").slice(0, 4)).filter(Boolean);
+  const latest = items[0];
+  return `
+    <div class="huashan-overview">
+      <article>
+        <span>PubMed records</span>
+        <strong>${items.length}</strong>
+        <p>按发表日期倒序</p>
+      </article>
+      <article>
+        <span>Latest year</span>
+        <strong>${escapeHtml(years[0] || "待更新")}</strong>
+        <p>${escapeHtml(latest?.journal || "最新论文期刊待读取")}</p>
+      </article>
+      <article>
+        <span>Source status</span>
+        <strong>PubMed</strong>
+        <p>${escapeHtml(data.webOfScience?.note || "Web of Science 需人工复核或 API 接入。")}</p>
+      </article>
+    </div>
+  `;
+}
+
+function renderHuashanArticle(item) {
+  const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+  const authors = item.authors ? item.authors.split(", ").slice(0, 8).join(", ") : "作者信息见 PubMed";
+  return `
+    <article class="huashan-paper">
+      <div class="huashan-paper__date">
+        <span>${escapeHtml(String(item.date || "").slice(0, 4) || "日期")}</span>
+        <strong>${formatDate(item.date)}</strong>
+      </div>
+      <div class="huashan-paper__body">
+        <div class="huashan-paper__meta">
+          <span>${escapeHtml(item.journal || "PubMed")}</span>
+          <span>PMID ${escapeHtml(item.pmid || "")}</span>
+          <span>${escapeHtml(item.webOfScienceStatus || "WoS 待复核")}</span>
+        </div>
+        ${renderTrustMeta(item, "huashanTeam")}
+        <h3>${escapeHtml(item.title || "未命名论文")}</h3>
+        <p class="huashan-authors">${escapeHtml(authors)}</p>
+        <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
+        ${item.sourceAffiliation ? `<p class="institution">${escapeHtml(item.sourceAffiliation)}</p>` : ""}
+        <details>
+          <summary>查看英文摘要</summary>
+          <p>${escapeHtml(item.abstract || "PubMed 暂未提供摘要。")}</p>
+        </details>
+        <div class="huashan-paper__footer">
           <div class="china-tags">${tags}</div>
           <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 摘要</a>
         </div>
@@ -1385,6 +1462,10 @@ function latestItems() {
 
 function chinaItems() {
   return state.data.china?.items || [];
+}
+
+function huashanTeamItems() {
+  return state.data.huashanTeam?.items || [];
 }
 
 function treatmentItems() {

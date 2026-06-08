@@ -20,6 +20,7 @@ node scripts/serve.mjs
 
 - `index.html`：首页仪表盘
 - `pages/research/index.html`：最新研究、中国研究者和信息流
+- `pages/huashan-team.html`：华山 MG 团队论文展示
 - `pages/therapy.html`：治疗图谱和药物证据矩阵
 - `pages/safety.html`：安全性与上市后监测
 - `pages/china-access.html`：中国准入与商业化
@@ -96,6 +97,12 @@ AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR T
 ```
 
 这个规则用机构字段透明识别“中国相关研究”，避免只凭作者姓名主观判断。
+
+## 华山 MG 团队论文
+
+`data/huashan-team.json` 保存华山医院神经内科相关 MG 论文。自动更新脚本使用 PubMed 检索作者署名单位中的 Huashan Hospital / Department of Neurology 与 myasthenia gravis 主题文章，并按发表日期倒序展示。
+
+Web of Science 通常需要机构订阅或 Clarivate API 权限，当前在页面中标注为“待人工复核”；后续可以通过 WoS 导出题录或 API 接入后补充收录状态。
 
 ## 全球批准与市场
 

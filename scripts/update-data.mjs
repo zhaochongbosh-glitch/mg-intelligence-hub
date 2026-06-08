@@ -4,6 +4,7 @@ import { dirname } from "node:path";
 const runStartedAt = new Date().toISOString();
 const updateScope = parseUpdateScope();
 const sourceRuns = [];
+let previousData = {};
 
 const KEYWORDS = [
   "myasthenia gravis",
@@ -171,6 +172,11 @@ const SOURCE_CONFIG = {
     frequency: "DAILY",
     fallbackPolicy: "失败时保留上一版中国研究列表。"
   },
+  "huashan-team": {
+    type: "automatic",
+    frequency: "DAILY",
+    fallbackPolicy: "失败时保留上一版华山 MG 团队论文列表。"
+  },
   "clinical-trials": {
     type: "automatic",
     frequency: "DAILY",
@@ -186,6 +192,7 @@ const SOURCE_CONFIG = {
 async function main() {
   console.log(`MG data update started: scope=${updateScope}`);
   const previous = await loadPreviousData();
+  previousData = previous;
   const writes = [];
 
   if (shouldUpdate("feed")) {
@@ -221,6 +228,15 @@ async function main() {
     recordSkipped("china-research", "范围未选择 china/literature/all");
   }
 
+  if (shouldUpdate("huashan")) {
+    await sleep(400);
+    const result = await runSource("huashan-team", fetchHuashanTeam);
+    const items = result.ok ? dedupe(result.data).sort(sortByDateDesc) : previous.huashan.items || [];
+    writes.push(["data/huashan-team.json", buildHuashanTeamData(items, result)]);
+  } else {
+    recordSkipped("huashan-team", "范围未选择 huashan/literature/all");
+  }
+
   if (shouldUpdate("trials")) {
     const result = await runSource("clinical-trials", fetchTrialRadar);
     const items = result.ok ? result.data : previous.trials.items || [];
@@ -247,6 +263,7 @@ async function loadPreviousData() {
     feed: await readJson("data/items.json", { items: [] }),
     latest: await readJson("data/latest-research.json", { items: [] }),
     china: await readJson("data/china-research.json", { items: [] }),
+    huashan: await readJson("data/huashan-team.json", { items: [] }),
     trials: await readJson("data/trial-radar.json", { items: [] })
   };
 }
@@ -346,6 +363,26 @@ function buildChinaData(items, result) {
   }, result);
 }
 
+function buildHuashanTeamData(items, result) {
+  return withUpdateMeta({
+    updatedAt: new Date().toISOString(),
+    provenance: trustMeta({
+      sourceType: "PubMed Affiliation / Web of Science manual review",
+      evidenceLevel: "团队论文索引",
+      reviewStatus: result.ok ? "PubMed 自动更新，WoS 待人工复核" : "沿用旧数据",
+      reviewNote: "PubMed 通过作者署名单位检索 Huashan Hospital / Department of Neurology 与 myasthenia gravis 相关论文；Web of Science 通常需要机构订阅或 API，当前保留为人工复核来源。"
+    }),
+    updatePolicy: updatePolicy("daily", "PubMed 检索失败时保留上一版华山团队论文列表；Web of Science 结果需人工导入或后续 API 接入。"),
+    scopeNote: "自动检索作者署名单位包含 Huashan Hospital / Department of Neurology 且主题为 myasthenia gravis 的 PubMed 论文，按发表日期倒序展示。Web of Science 结果需机构权限复核后补充。",
+    query: '("myasthenia gravis"[Title/Abstract] OR "Myasthenia Gravis"[MeSH Terms]) AND ("Huashan Hospital"[Affiliation] OR "Hua Shan Hospital"[Affiliation] OR "Huashan Hosp"[Affiliation]) AND (Neurology[Affiliation] OR "Department of Neurology"[Affiliation])',
+    webOfScience: {
+      status: "manual-review-required",
+      note: "Web of Science 检索和导出通常需要机构订阅权限；可导出题录后导入本文件，或后续接入 Clarivate API。"
+    },
+    items
+  }, result);
+}
+
 function buildTrialData(items, result) {
   const mergedItems = mergeManualTrials(items);
   return withUpdateMeta({
@@ -433,6 +470,7 @@ function validateDataShape(file, data) {
   if (file.endsWith("items.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
   if (file.endsWith("latest-research.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
   if (file.endsWith("china-research.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
+  if (file.endsWith("huashan-team.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
   if (file.endsWith("trial-radar.json") && !Array.isArray(data.items)) throw new Error(`${file}: items must be an array`);
 }
 
@@ -448,11 +486,12 @@ function mergeManualTrials(items) {
 
 function shouldUpdate(target) {
   const groups = {
-    all: ["feed", "latest", "china", "trials"],
-    literature: ["feed", "latest", "china"],
+    all: ["feed", "latest", "china", "huashan", "trials"],
+    literature: ["feed", "latest", "china", "huashan"],
     feed: ["feed"],
     latest: ["latest"],
     china: ["china"],
+    huashan: ["huashan"],
     trials: ["trials"]
   };
   return (groups[updateScope] || groups.all).includes(target);
@@ -461,7 +500,7 @@ function shouldUpdate(target) {
 function parseUpdateScope() {
   const cliScope = process.argv.find((arg) => arg.startsWith("--scope="))?.split("=")[1];
   const scope = cliScope || process.env.UPDATE_SCOPE || "all";
-  const allowed = new Set(["all", "literature", "feed", "latest", "china", "trials"]);
+  const allowed = new Set(["all", "literature", "feed", "latest", "china", "huashan", "trials"]);
   return allowed.has(scope) ? scope : "all";
 }
 
@@ -510,6 +549,94 @@ async function fetchChinaResearch() {
     }),
     tags: ["中国研究", "PubMed", classifyResearchTopic(item.title)]
   }));
+}
+
+async function fetchHuashanTeam() {
+  const term = encodeURIComponent(
+    '("myasthenia gravis"[Title/Abstract] OR "Myasthenia Gravis"[MeSH Terms]) AND ("Huashan Hospital"[Affiliation] OR "Hua Shan Hospital"[Affiliation] OR "Huashan Hosp"[Affiliation]) AND (Neurology[Affiliation] OR "Department of Neurology"[Affiliation])'
+  );
+  const ids = await searchPubMed(term, 100);
+  if (!ids.length) return [];
+
+  await sleep(350);
+  const xml = await getText(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&id=${ids.join(",")}`);
+  const articles = parsePubMedArticles(xml).map((article) => ({
+    ...article,
+    affiliations: extractAffiliations(xml, article.pmid)
+  }));
+  const enriched = [];
+  for (const article of articles) {
+    enriched.push(await enrichHuashanArticle(article));
+    await sleep(220);
+  }
+  return enriched;
+}
+
+async function enrichHuashanArticle(article) {
+  const previous = previousData.huashan?.items?.find((item) => item.pmid === article.pmid);
+  const sourceAffiliation = (article.affiliations || []).find((affiliation) =>
+    /huashan|hua shan/i.test(affiliation) && /neurology/i.test(affiliation)
+  ) || (article.affiliations || []).find((affiliation) => /huashan|hua shan/i.test(affiliation)) || "";
+  const base = {
+    id: `huashan-${article.pmid}`,
+    pmid: article.pmid,
+    title: article.title,
+    journal: article.journal,
+    date: article.date,
+    authors: article.authors,
+    abstract: article.abstract,
+    zhSummary: "",
+    translationStatus: "pending",
+    sourceAffiliation,
+    url: `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/`,
+    source: "PubMed",
+    webOfScienceStatus: "待人工复核",
+    trust: trustMeta({
+      sourceType: "PubMed Affiliation",
+      evidenceLevel: "团队论文索引",
+      reviewStatus: "自动更新",
+      reviewNote: "作者署名单位由 PubMed Affiliation 字段近似识别；团队归属和 Web of Science 收录状态需人工复核。"
+    }),
+    tags: ["华山 MG 团队", "PubMed", classifyResearchTopic(article.title)]
+  };
+
+  if (previous?.zhSummary && previous.translationStatus === "translated") {
+    return {
+      ...base,
+      zhSummary: previous.zhSummary,
+      translationStatus: "translated"
+    };
+  }
+
+  if (!article.abstract) {
+    return {
+      ...base,
+      zhSummary: "PubMed 记录暂未提供摘要；请打开 PubMed 页面或出版商页面查看全文信息。",
+      translationStatus: "no-abstract"
+    };
+  }
+
+  if (!process.env.OPENAI_API_KEY) {
+    return {
+      ...base,
+      zhSummary: previous?.zhSummary || "已抓取英文摘要；尚未在当前运行环境配置 OPENAI_API_KEY，因此中文摘要待 GitHub Actions 自动生成。",
+      translationStatus: previous?.translationStatus || "pending"
+    };
+  }
+
+  try {
+    return {
+      ...base,
+      zhSummary: await summarizeTeamArticleInChinese(article),
+      translationStatus: "translated"
+    };
+  } catch {
+    return {
+      ...base,
+      zhSummary: "中文摘要生成失败；已保留英文摘要和 PubMed 链接，建议人工复核。",
+      translationStatus: "error"
+    };
+  }
 }
 
 async function fetchTrialRadar() {
@@ -674,6 +801,31 @@ async function summarizeInChinese(article) {
   return JSON.parse(text);
 }
 
+async function summarizeTeamArticleInChinese(article) {
+  const response = await fetchWithRetry("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      model: process.env.OPENAI_SUMMARY_MODEL || "gpt-4.1-mini",
+      input: [
+        {
+          role: "system",
+          content: "你是重症肌无力领域的医学文献情报编辑。请只基于题目和英文摘要，写一段准确、克制的中文摘要，不添加摘要之外的信息。"
+        },
+        {
+          role: "user",
+          content: `题目：${article.title}\n期刊：${article.journal}\n英文摘要：${article.abstract}\n\n请输出 100-160 字中文摘要，说明研究问题、对象/方法、主要发现和需要复核的限制。不要使用 Markdown。`
+        }
+      ]
+    })
+  }, 3);
+  const data = await response.json();
+  return cleanAiField(data.output_text || data.output?.flatMap((item) => item.content || []).map((part) => part.text || "").join("") || "");
+}
+
 function normalizeLatestIntelligence(ai = {}, article = {}) {
   const source = ai.intelligence && typeof ai.intelligence === "object" ? ai.intelligence : {};
   return {
@@ -743,6 +895,16 @@ function parsePubMedArticle(xml) {
     authors,
     date: parsePubMedXmlDate(xml)
   };
+}
+
+function extractAffiliations(xml, pmid) {
+  const article = [...xml.matchAll(/<PubmedArticle\b[\s\S]*?<\/PubmedArticle>/g)]
+    .map((match) => match[0])
+    .find((block) => stripXml(readTag(block, "PMID")) === pmid);
+  if (!article) return [];
+  return [...new Set([...article.matchAll(/<Affiliation>([\s\S]*?)<\/Affiliation>/g)]
+    .map((match) => stripXml(match[1]))
+    .filter(Boolean))];
 }
 
 function parsePubMedXmlDate(xml) {
@@ -909,6 +1071,8 @@ function stripXml(value) {
 
 function decodeEntities(value) {
   return String(value)
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(Number.parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number.parseInt(code, 10)))
     .replaceAll("&amp;", "&")
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">")
