@@ -533,29 +533,35 @@ async function fetchChinaResearch() {
   const term = encodeURIComponent(
     '("myasthenia gravis"[Title/Abstract] OR "generalized myasthenia gravis"[Title/Abstract] OR "ocular myasthenia"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR "Hong Kong"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])'
   );
-  const ids = await searchPubMed(term, 18);
-  const summaries = await summarizePubMed(ids, "中国研究");
-  return summaries.map((item) => ({
-    ...item,
-    source: "PubMed China-affiliated",
-    topic: classifyResearchTopic(item.title),
-    institutionHint: "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。",
-    summary: item.summary,
-    trust: trustMeta({
-      sourceType: "PubMed Affiliation",
-      evidenceLevel: "文献索引",
-      reviewStatus: "自动更新",
-      reviewNote: "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-    }),
-    tags: ["中国研究", "PubMed", classifyResearchTopic(item.title)]
-  }));
+  const [recentIds, broadIds] = await Promise.all([
+    searchPubMed(term, 50, { datetype: "edat", reldate: 7 }),
+    searchPubMed(term, 100)
+  ]);
+  const ids = uniqueIds([...chinaCarryoverIds(), ...recentIds, ...broadIds]);
+  if (!ids.length) return [];
+
+  await sleep(350);
+  const xml = await getText(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&id=${ids.join(",")}`);
+  return parsePubMedArticles(xml)
+    .map((article) => ({
+      ...article,
+      affiliations: extractAffiliations(xml, article.pmid)
+    }))
+    .filter(hasChinaAffiliation)
+    .map(mapChinaArticle)
+    .sort(sortByDateDesc)
+    .slice(0, 100);
 }
 
 async function fetchHuashanTeam() {
   const term = encodeURIComponent(
     '("myasthenia gravis"[Title/Abstract] OR "Myasthenia Gravis"[MeSH Terms]) AND ("Huashan Hospital"[Affiliation] OR "Hua Shan Hospital"[Affiliation] OR "Huashan Hosp"[Affiliation]) AND (Neurology[Affiliation] OR "Department of Neurology"[Affiliation])'
   );
-  const ids = await searchPubMed(term, 100);
+  const [recentIds, broadIds] = await Promise.all([
+    searchPubMed(term, 50, { datetype: "edat", reldate: 7 }),
+    searchPubMed(term, 120)
+  ]);
+  const ids = uniqueIds([...recentIds, ...broadIds]);
   if (!ids.length) return [];
 
   await sleep(350);
@@ -572,6 +578,63 @@ async function fetchHuashanTeam() {
   return enriched;
 }
 
+function hasChinaAffiliation(article) {
+  return Boolean(findChinaAffiliation(article.affiliations));
+}
+
+function chinaCarryoverIds() {
+  const latest = previousData.latest?.items || [];
+  const huashan = previousData.huashan?.items || [];
+  return uniqueIds([...latest, ...huashan]
+    .filter((item) => item.pmid && matchesChinaText([
+      item.title,
+      item.abstract,
+      item.summary,
+      item.institutionHint,
+      item.sourceAffiliation,
+      item.authors
+    ].filter(Boolean).join(" ")))
+    .map((item) => item.pmid));
+}
+
+function findChinaAffiliation(affiliations = []) {
+  return affiliations.find((affiliation) => matchesChinaText(affiliation)) || "";
+}
+
+function matchesChinaText(value = "") {
+  return /\bChina\b|Chinese|Hong Kong|Taiwan|Macau|Shanghai|Beijing|Guangzhou|Nanjing|Hangzhou|Wuhan|Chengdu|Xi'an|Fudan|Peking|Tsinghua|Zhejiang|Sun Yat-sen|Huashan|Hua Shan/i.test(value);
+}
+
+function mapChinaArticle(article) {
+  const previous = previousData.china?.items?.find((item) => item.pmid === article.pmid);
+  const sourceAffiliation = findChinaAffiliation(article.affiliations);
+  const topic = classifyResearchTopic(article.title);
+  return {
+    id: `pubmed-${article.pmid}`,
+    pmid: article.pmid,
+    category: "中国研究",
+    source: "PubMed China-affiliated",
+    language: "en",
+    date: article.date,
+    indexedAt: article.indexedAt || article.date,
+    title: article.title,
+    authors: article.authors,
+    journal: article.journal,
+    abstract: article.abstract,
+    summary: previous?.summary || firstSentence(article.abstract) || [article.authors, article.journal].filter(Boolean).join(" | "),
+    url: `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/`,
+    trust: trustMeta({
+      sourceType: "PubMed Affiliation",
+      evidenceLevel: "文献索引",
+      reviewStatus: "自动更新",
+      reviewNote: "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+    }),
+    tags: ["中国研究", "PubMed", topic],
+    topic,
+    institutionHint: sourceAffiliation || "中国相关机构命中来自 PubMed Affiliation 字段；具体单位请查看原文记录。"
+  };
+}
+
 async function enrichHuashanArticle(article) {
   const previous = previousData.huashan?.items?.find((item) => item.pmid === article.pmid);
   const sourceAffiliation = (article.affiliations || []).find((affiliation) =>
@@ -583,6 +646,7 @@ async function enrichHuashanArticle(article) {
     title: article.title,
     journal: article.journal,
     date: article.date,
+    indexedAt: article.indexedAt || article.date,
     authors: article.authors,
     abstract: article.abstract,
     zhSummary: "",
@@ -936,9 +1000,24 @@ function fallbackKeyPoints(abstract = "") {
     .slice(0, 3);
 }
 
-async function searchPubMed(term, retmax) {
+async function searchPubMed(term, retmax, options = {}) {
   await sleep(350);
-  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&sort=pub+date&retmax=${retmax}&term=${term}`;
+  let queryTerm = term;
+  try {
+    queryTerm = decodeURIComponent(term);
+  } catch {
+    queryTerm = term;
+  }
+  const params = new URLSearchParams({
+    db: "pubmed",
+    retmode: "json",
+    sort: options.sort || "pub date",
+    retmax: String(retmax),
+    term: queryTerm
+  });
+  if (options.datetype) params.set("datetype", options.datetype);
+  if (options.reldate) params.set("reldate", String(options.reldate));
+  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?${params.toString()}`;
   const search = await getJson(searchUrl);
   return search?.esearchresult?.idlist || [];
 }
@@ -1042,6 +1121,10 @@ function dedupe(items) {
     seen.add(key);
     return true;
   });
+}
+
+function uniqueIds(ids) {
+  return [...new Set(ids.filter(Boolean))];
 }
 
 function sortByDateDesc(a, b) {

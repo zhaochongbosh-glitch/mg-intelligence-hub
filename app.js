@@ -401,10 +401,15 @@ function renderChina() {
 }
 
 function renderChinaCard(item) {
+  const indexedDate = item.indexedAt || item.date;
   const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
   return `
     <article class="china-card">
-      <div class="china-card__date">${formatDate(item.date)}</div>
+      <div class="china-card__date">
+        <span>PubMed 更新</span>
+        <strong>${formatDate(indexedDate)}</strong>
+        <small>发表 ${formatDate(item.date)}</small>
+      </div>
       <div>
         <div class="china-card__meta">
           <span>${escapeHtml(item.topic || "研究")}</span>
@@ -460,13 +465,15 @@ function renderHuashanSummary(items, data = {}) {
 }
 
 function renderHuashanArticle(item) {
+  const indexedDate = item.indexedAt || item.date;
   const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
   const authors = item.authors ? item.authors.split(", ").slice(0, 8).join(", ") : "作者信息见 PubMed";
   return `
     <article class="huashan-paper">
       <div class="huashan-paper__date">
-        <span>${escapeHtml(String(item.date || "").slice(0, 4) || "日期")}</span>
-        <strong>${formatDate(item.date)}</strong>
+        <span>PubMed 更新</span>
+        <strong>${formatDate(indexedDate)}</strong>
+        <small>发表 ${formatDate(item.date)}</small>
       </div>
       <div class="huashan-paper__body">
         <div class="huashan-paper__meta">
