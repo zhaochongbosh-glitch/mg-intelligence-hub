@@ -512,7 +512,7 @@ async function fetchPubMed() {
 
 async function fetchLatestResearch() {
   const term = encodeURIComponent('"myasthenia gravis" OR "ocular myasthenia" OR "generalized myasthenia gravis"');
-  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&sort=pub+date&retmax=25&datetype=edat&reldate=7&term=${term}`;
+  const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&sort=pub+date&retmax=40&datetype=edat&reldate=7&term=${term}`;
   await sleep(350);
   const search = await getJson(searchUrl);
   const ids = search?.esearchresult?.idlist || [];
@@ -706,6 +706,7 @@ async function enrichLatestArticle(article) {
     journal: article.journal,
     authors: article.authors,
     date: article.date,
+    indexedAt: article.indexedAt || article.date,
     abstract: article.abstract,
     zhSummary: "",
     keyPoints: [],
@@ -893,7 +894,8 @@ function parsePubMedArticle(xml) {
     journal,
     abstract,
     authors,
-    date: parsePubMedXmlDate(xml)
+    date: parsePubMedXmlDate(xml),
+    indexedAt: parsePubMedHistoryDate(xml, "entrez") || parsePubMedHistoryDate(xml, "pubmed") || parsePubMedXmlDate(xml)
   };
 }
 
@@ -913,6 +915,18 @@ function parsePubMedXmlDate(xml) {
   const month = stripXml(readTag(pubDate, "Month"));
   const day = stripXml(readTag(pubDate, "Day")) || "01";
   return `${year}-${month ? monthNumber(month.slice(0, 3)) : "01"}-${String(day).padStart(2, "0")}`;
+}
+
+function parsePubMedHistoryDate(xml, status) {
+  const entry = [...xml.matchAll(/<PubMedPubDate\b([^>]*)>([\s\S]*?)<\/PubMedPubDate>/g)]
+    .find((match) => new RegExp(`PubStatus=["']${status}["']`, "i").test(match[1]));
+  if (!entry) return "";
+  const block = entry[2];
+  const year = stripXml(readTag(block, "Year"));
+  if (!year) return "";
+  const month = stripXml(readTag(block, "Month")) || "01";
+  const day = stripXml(readTag(block, "Day")) || "01";
+  return `${year}-${monthNumber(month.slice(0, 3))}-${String(day).padStart(2, "0")}`;
 }
 
 function fallbackKeyPoints(abstract = "") {
@@ -1031,7 +1045,7 @@ function dedupe(items) {
 }
 
 function sortByDateDesc(a, b) {
-  return new Date(b.date || 0) - new Date(a.date || 0);
+  return new Date(b.indexedAt || b.date || 0) - new Date(a.indexedAt || a.date || 0);
 }
 
 async function getJson(url) {
@@ -1111,6 +1125,7 @@ function normalizeDate(value) {
 }
 
 function monthNumber(month) {
+  if (/^\d{1,2}$/.test(month)) return String(Math.min(Math.max(Number(month), 1), 12)).padStart(2, "0");
   const index = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"].indexOf(month.toLowerCase());
   return String(Math.max(index + 1, 1)).padStart(2, "0");
 }

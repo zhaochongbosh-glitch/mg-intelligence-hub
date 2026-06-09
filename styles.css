@@ -714,6 +714,12 @@ select:focus {
   font-size: 0.86rem;
 }
 
+.latest-actions__dates {
+  display: flex;
+  gap: 10px 14px;
+  flex-wrap: wrap;
+}
+
 .latest-actions a {
   min-height: 34px;
   display: inline-flex;

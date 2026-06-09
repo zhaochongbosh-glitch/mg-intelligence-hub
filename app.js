@@ -335,6 +335,7 @@ function renderLatest() {
 }
 
 function renderLatestCard(item) {
+  const indexedDate = item.indexedAt || item.date;
   const statusLabel = {
     translated: "中文摘要已生成",
     pending: "等待中文摘要",
@@ -362,7 +363,10 @@ function renderLatestCard(item) {
         <p>${escapeHtml(item.abstract || "PubMed 暂未提供摘要。")}</p>
       </details>
       <div class="latest-actions">
-        <span>${formatDate(item.date)}</span>
+        <div class="latest-actions__dates">
+          <span>PubMed 上线/更新：${formatDate(indexedDate)}</span>
+          <span>发表：${formatDate(item.date)}</span>
+        </div>
         <a href="${escapeAttribute(item.url)}" target="_blank" rel="noreferrer">PubMed 摘要</a>
       </div>
     </article>
@@ -1629,7 +1633,7 @@ function setAll(selector, value) {
 }
 
 function sortByDateDesc(a, b) {
-  return new Date(b.date || b.lastUpdate || 0).getTime() - new Date(a.date || a.lastUpdate || 0).getTime();
+  return new Date(b.indexedAt || b.date || b.lastUpdate || 0).getTime() - new Date(a.indexedAt || a.date || a.lastUpdate || 0).getTime();
 }
 
 function formatDate(value) {
