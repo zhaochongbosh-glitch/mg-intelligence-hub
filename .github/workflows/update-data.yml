@@ -46,9 +46,24 @@ jobs:
         run: npm run check:text
       - name: Check data health
         run: npm run health:data
-      - uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "Update MG intelligence data"
-          file_pattern: "data/*.json"
+      - name: Commit generated data
+        run: |
+          if git diff --quiet -- data/*.json; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/*.json
+          git commit -m "Update MG intelligence data"
+          git pull --rebase origin master
+          git push origin HEAD:master
       - name: Sync published branch
-        run: git push origin HEAD:gh-pages
+        run: |
+          git fetch origin master gh-pages
+          if git merge-base --is-ancestor origin/master HEAD; then
+            git push origin HEAD:gh-pages
+          else
+            echo "Remote master moved after this run; skip gh-pages sync to avoid publishing stale content."
+          fi
