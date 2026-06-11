@@ -10,6 +10,7 @@ const requiredFiles = [
   "data/evidence-matrix.json",
   "data/global-market.json",
   "data/guidance-pathways.json",
+  "data/journal-metrics.json",
   "data/manual-review-log.json",
   "data/update-status.json"
 ];
@@ -23,7 +24,8 @@ const requiredMinimums = {
   "data/treatments.json": ["treatments", 1],
   "data/evidence-matrix.json": ["items", 1],
   "data/global-market.json": ["products", 1],
-  "data/guidance-pathways.json": ["pathways", 1]
+  "data/guidance-pathways.json": ["pathways", 1],
+  "data/journal-metrics.json": ["records", 1]
 };
 
 const errors = [];
@@ -41,6 +43,7 @@ async function main() {
   checkManualReviewLog(data["data/manual-review-log.json"]);
   checkLatestResearch(data["data/latest-research.json"]);
   checkHuashanTeam(data["data/huashan-team.json"]);
+  checkJournalMetrics(data["data/journal-metrics.json"]);
   checkClinicalTrials(data["data/trial-radar.json"]);
 
   for (const line of summary) console.log(line);
@@ -52,6 +55,15 @@ async function main() {
   }
 
   console.log("health-check: ok");
+}
+
+function checkJournalMetrics(metrics = {}) {
+  const records = metrics.records || [];
+  const withImpactFactor = records.filter((record) => record.impactFactor);
+  summary.push(`journal-metrics: records=${records.length}, withJIF=${withImpactFactor.length}, metricYear=${metrics.metricYear || "unknown"}`);
+  if (records.length && withImpactFactor.length / records.length < 0.8) {
+    warnings.push("journal-metrics: fewer than 80% of records have JIF values");
+  }
 }
 
 async function readJson(file) {

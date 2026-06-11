@@ -533,6 +533,22 @@ select:focus {
   color: #80510f;
 }
 
+.journal-metric {
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  padding: 3px 8px;
+  border: 1px solid #c6e0d8;
+  border-radius: 999px;
+  background: #f3fbf7;
+  color: #1f6b57;
+  font-size: 0.76rem;
+  font-weight: 850;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .review-note {
   display: block;
   margin-top: 6px;

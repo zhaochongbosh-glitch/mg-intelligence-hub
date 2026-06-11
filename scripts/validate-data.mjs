@@ -10,6 +10,7 @@ const requiredFiles = [
   "data/evidence-matrix.json",
   "data/global-market.json",
   "data/guidance-pathways.json",
+  "data/journal-metrics.json",
   "data/manual-review-log.json"
 ];
 
@@ -23,6 +24,7 @@ const arrayKeys = {
   "data/evidence-matrix.json": "items",
   "data/global-market.json": "products",
   "data/guidance-pathways.json": "pathways",
+  "data/journal-metrics.json": "records",
   "data/manual-review-log.json": "items"
 };
 
@@ -44,6 +46,7 @@ function validateFile(file, data) {
   if (!data.provenance) throw new Error(`${file}: missing provenance`);
   const key = arrayKeys[file];
   if (!Array.isArray(data[key])) throw new Error(`${file}: ${key} must be an array`);
+  if (file === "data/journal-metrics.json") validateJournalMetrics(file, data);
   if (file === "data/manual-review-log.json") validateManualReviewLog(file, data);
 }
 
@@ -76,6 +79,12 @@ function validateManualReviewLog(file, data) {
     if (item.module && !modules.has(item.module)) throw new Error(`${file}: ${item.id} has unknown module ${item.module}`);
     if (!Array.isArray(item.sourceUrls)) throw new Error(`${file}: ${item.id} sourceUrls must be an array`);
   }
+}
+
+function validateJournalMetrics(file, data) {
+  if (!data.records.length) throw new Error(`${file}: records must not be empty`);
+  const sample = data.records.find((record) => record.journalName && record.impactFactor);
+  if (!sample) throw new Error(`${file}: expected at least one record with journalName and impactFactor`);
 }
 
 main().catch((error) => {

@@ -3,6 +3,7 @@ const DATA_ROOT = new URL("data/", APP_ROOT);
 
 const state = {
   data: {},
+  journalMetricIndex: null,
   filters: {
     feedQuery: "",
     feedCategory: "all",
@@ -31,7 +32,8 @@ const dataFiles = {
   guidance: "guidance-pathways.json",
   matrix: "evidence-matrix.json",
   trials: "trial-radar.json",
-  updateStatus: "update-status.json"
+  updateStatus: "update-status.json",
+  journalMetrics: "journal-metrics.json"
 };
 
 const trustDefaults = {
@@ -108,6 +110,7 @@ boot();
 async function boot() {
   try {
     state.data = await loadAllData();
+    state.journalMetricIndex = buildJournalMetricIndex(state.data.journalMetrics?.records || []);
     hydrateStats();
     hydrateControls();
     bindControls();
@@ -351,6 +354,7 @@ function renderLatestCard(item) {
           <p class="section-kicker">PMID ${escapeHtml(item.pmid || "")}</p>
           <h3>${escapeHtml(item.title || "未命名研究")}</h3>
           <p>${escapeHtml([item.journal, item.authors].filter(Boolean).join(" | "))}</p>
+          ${renderJournalMetric(item)}
         </div>
         <span>${escapeHtml(statusLabel)}</span>
       </div>
@@ -414,6 +418,7 @@ function renderChinaCard(item) {
         <div class="china-card__meta">
           <span>${escapeHtml(item.topic || "研究")}</span>
           <span>${escapeHtml(item.journal || "PubMed")}</span>
+          ${renderJournalMetric(item)}
         </div>
         ${renderTrustMeta(item, "china")}
         <h3>${escapeHtml(item.title)}</h3>
@@ -478,6 +483,7 @@ function renderHuashanArticle(item) {
       <div class="huashan-paper__body">
         <div class="huashan-paper__meta">
           <span>${escapeHtml(item.journal || "PubMed")}</span>
+          ${renderJournalMetric(item)}
           <span>PMID ${escapeHtml(item.pmid || "")}</span>
           <span>${escapeHtml(item.webOfScienceStatus || "WoS 待复核")}</span>
         </div>
@@ -515,6 +521,7 @@ function renderFeedItem(item) {
         <span class="pill">${escapeHtml(item.category || "信息")}</span>
         <span>${escapeHtml(item.source || "未知来源")}</span>
         <span>${formatDate(item.date)}</span>
+        ${renderJournalMetric(item)}
       </div>
       ${renderTrustMeta(item, "feed")}
       <h3>${escapeHtml(item.title || "未命名条目")}</h3>
@@ -1473,6 +1480,68 @@ function renderTrustMeta(item = {}, moduleName) {
     .map(([label, value]) => `<span class="trust-pill ${trustPillClass(label, value)}"${label === "复核" ? note : ""}>${label}: ${escapeHtml(value)}</span>`)
     .join("");
   return `<div class="trust-row" aria-label="数据来源与人工复核">${pills}</div>`;
+}
+
+function renderJournalMetric(item = {}) {
+  const metric = findJournalMetric(item);
+  if (!metric?.impactFactor) return "";
+  const year = state.data.journalMetrics?.metricYear ? ` ${state.data.journalMetrics.metricYear}` : "";
+  const category = metric.category ? metric.category.split("|")[0] : "";
+  const title = [
+    metric.journalName,
+    metric.abbreviatedJournal,
+    category,
+    metric.jifRank ? `JIF Rank ${metric.jifRank}` : "",
+    state.data.journalMetrics?.sourceFile || ""
+  ].filter(Boolean).join(" | ");
+  return `<span class="journal-metric" title="${escapeAttribute(title)}">JIF${escapeHtml(year)} ${escapeHtml(formatMetricNumber(metric.impactFactor))}${metric.quartile ? ` · ${escapeHtml(metric.quartile)}` : ""}</span>`;
+}
+
+function findJournalMetric(item = {}) {
+  const index = state.journalMetricIndex;
+  if (!index) return null;
+  for (const value of [item.issn, item.eissn]) {
+    const key = normalizeIssn(value);
+    if (key && index.issn.has(key)) return index.issn.get(key);
+  }
+  for (const value of [item.journal, item.journalName, item.abbreviatedJournal]) {
+    const key = normalizeJournalName(value);
+    if (key && index.name.has(key)) return index.name.get(key);
+  }
+  return null;
+}
+
+function buildJournalMetricIndex(records = []) {
+  const index = { name: new Map(), issn: new Map() };
+  for (const record of records) {
+    for (const value of [record.issn, record.eissn]) {
+      const key = normalizeIssn(value);
+      if (key && !index.issn.has(key)) index.issn.set(key, record);
+    }
+    for (const value of [record.journalName, record.abbreviatedJournal]) {
+      const key = normalizeJournalName(value);
+      if (key && !index.name.has(key)) index.name.set(key, record);
+    }
+  }
+  return index;
+}
+
+function normalizeIssn(value = "") {
+  return String(value || "").replace(/[^0-9X]/gi, "").toUpperCase();
+}
+
+function normalizeJournalName(value = "") {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/\bthe\b/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function formatMetricNumber(value) {
+  if (typeof value === "number") return value.toFixed(1).replace(/\.0$/, "");
+  return String(value || "");
 }
 
 function renderReviewNote(item = {}, moduleName) {

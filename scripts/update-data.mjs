@@ -620,6 +620,8 @@ function mapChinaArticle(article) {
     title: article.title,
     authors: article.authors,
     journal: article.journal,
+    issn: article.issn || "",
+    eissn: article.eissn || "",
     abstract: article.abstract,
     summary: previous?.summary || firstSentence(article.abstract) || [article.authors, article.journal].filter(Boolean).join(" | "),
     url: `https://pubmed.ncbi.nlm.nih.gov/${article.pmid}/`,
@@ -647,6 +649,8 @@ async function enrichHuashanArticle(article) {
     journal: article.journal,
     date: article.date,
     indexedAt: article.indexedAt || article.date,
+    issn: article.issn || "",
+    eissn: article.eissn || "",
     authors: article.authors,
     abstract: article.abstract,
     zhSummary: "",
@@ -771,6 +775,8 @@ async function enrichLatestArticle(article) {
     authors: article.authors,
     date: article.date,
     indexedAt: article.indexedAt || article.date,
+    issn: article.issn || "",
+    eissn: article.eissn || "",
     abstract: article.abstract,
     zhSummary: "",
     keyPoints: [],
@@ -939,6 +945,7 @@ function parsePubMedArticle(xml) {
   const pmid = stripXml(readTag(xml, "PMID"));
   const title = stripXml(readTag(xml, "ArticleTitle"));
   const journal = stripXml(readTag(xml, "Title"));
+  const journalIssns = parseJournalIssns(xml);
   const abstract = [...xml.matchAll(/<AbstractText\b[^>]*>([\s\S]*?)<\/AbstractText>/g)]
     .map((match) => stripXml(match[1]))
     .filter(Boolean)
@@ -956,10 +963,27 @@ function parsePubMedArticle(xml) {
     pmid,
     title,
     journal,
+    issn: journalIssns.issn,
+    eissn: journalIssns.eissn,
     abstract,
     authors,
     date: parsePubMedXmlDate(xml),
     indexedAt: parsePubMedHistoryDate(xml, "entrez") || parsePubMedHistoryDate(xml, "pubmed") || parsePubMedXmlDate(xml)
+  };
+}
+
+function parseJournalIssns(xml) {
+  const issns = [...xml.matchAll(/<ISSN\b([^>]*)>([\s\S]*?)<\/ISSN>/gi)]
+    .map((match) => ({
+      type: match[1] || "",
+      value: stripXml(match[2])
+    }))
+    .filter((item) => item.value);
+  const print = issns.find((item) => /Print/i.test(item.type))?.value || "";
+  const electronic = issns.find((item) => /Electronic/i.test(item.type))?.value || "";
+  return {
+    issn: print || issns[0]?.value || "",
+    eissn: electronic || issns.find((item) => item.value !== print)?.value || ""
   };
 }
 
@@ -1039,6 +1063,8 @@ async function summarizePubMed(ids, category) {
       title: article.title,
       authors: formatAuthors(article.authors),
       journal: article.fulljournalname || "",
+      issn: article.issn || "",
+      eissn: article.essn || "",
       summary: summarizeAuthors(article.authors, article.fulljournalname),
       url: `https://pubmed.ncbi.nlm.nih.gov/${article.uid}/`,
       trust: trustMeta({
