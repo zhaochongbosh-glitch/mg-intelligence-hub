@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "updatedAt": "2026-06-17T00:00:00.000+08:00",
   "provenance": {
     "sourceType": "RCT/OLE/RWE 文献",
     "evidenceLevel": "人工证据矩阵",
-    "reviewStatus": "部分核查",
-    "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-    "lastChecked": "2026-06-07"
+    "reviewStatus": "部分条目已人工复核",
+    "reviewNote": "6 个已上市生物制剂的中国准入字段已根据人工复核文档更新；RCT/OLE/RWE 证据仍需持续扩展。",
+    "lastChecked": "2026-06-17"
   },
   "scopeNote": "药物证据矩阵将已获批或重点关注的 MG/gMG 药物按机制、适用人群、关键 RCT、长期数据、真实世界证据、安全性和中国可及性横向比较。",
   "items": [
@@ -18,18 +18,22 @@
       "longTermEvidence": "ADAPT+ 开放标签延长期",
       "realWorldEvidence": "已有多国真实世界队列，重点关注快速起效、循环给药和激素减量",
       "safetyFocus": "感染、头痛、超敏反应、IgG 降低相关风险",
-      "chinaAccess": "中国已获批；需继续追踪医保、医院准入和真实世界使用",
+      "chinaAccess": "中国 NMPA 已批准卫伟迦/卫力迦；当前中国标签限 AChR 抗体阳性成人 gMG，商业化合作伙伴为再鼎医药。",
       "evidenceLevel": "RCT + OLE + RWE",
       "links": [
         "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+ADAPT+myasthenia+gravis",
-        "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+myasthenia+gravis+real+world"
+        "https://pubmed.ncbi.nlm.nih.gov/?term=efgartigimod+myasthenia+gravis+real+world",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9YWUyNWZiY2IzMWFiYmY2OTBiY2YzYTgzMWI1NGIyMGYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw/",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NTE4YTI4ZTVhODc1MThjOGMyYzViNDhiZGJjMzU5NzMmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20230704155106142.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "RCT/OLE/RWE 文献",
         "evidenceLevel": "人工证据矩阵",
-        "reviewStatus": "部分核查",
-        "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批和准入字段已于 2026-06-17 根据人工复核文档更新；证据矩阵其他字段仍需按文献持续复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -41,17 +45,20 @@
       "longTermEvidence": "开放标签延长期和上市后数据积累中",
       "realWorldEvidence": "上市时间较短，MuSK 阳性人群是重点观察对象",
       "safetyFocus": "头痛、感染、腹泻、无菌性脑膜炎信号",
-      "chinaAccess": "中国 NMPA 已批准，覆盖 AChR 或 MuSK 抗体阳性成人 gMG",
+      "chinaAccess": "中国 NMPA 已批准，覆盖 AChR 或 MuSK 抗体阳性成人 gMG。",
       "evidenceLevel": "RCT + 早期 RWE",
       "links": [
-        "https://pubmed.ncbi.nlm.nih.gov/?term=rozanolixizumab+MycarinG+myasthenia+gravis"
+        "https://pubmed.ncbi.nlm.nih.gov/?term=rozanolixizumab+MycarinG+myasthenia+gravis",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NjUwMWJkZGVjMzllNGFlMTJhMjY1MTM3MzY5MjZhOTYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250331143424124.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "RCT/OLE/RWE 文献",
         "evidenceLevel": "人工证据矩阵",
-        "reviewStatus": "部分核查",
-        "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批和准入字段已于 2026-06-17 根据人工复核文档更新；证据矩阵其他字段仍需按文献持续复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -63,18 +70,20 @@
       "longTermEvidence": "OLE 数据持续披露",
       "realWorldEvidence": "获批较新，真实世界证据待积累",
       "safetyFocus": "感染、外周水肿、超敏反应、IgG 降低相关风险",
-      "chinaAccess": "中国 NMPA 已批准，用于成人和 12 岁及以上青少年 gMG",
+      "chinaAccess": "中国 NMPA 已批准，用于 AChR 或 MuSK 抗体阳性的成人和 12 岁及以上青少年 gMG。",
       "evidenceLevel": "RCT + OLE 初期",
       "links": [
         "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshot-imaavy",
-        "https://pubmed.ncbi.nlm.nih.gov/?term=nipocalimab+VIVACITY-MG3"
+        "https://pubmed.ncbi.nlm.nih.gov/?term=nipocalimab+VIVACITY-MG3",
+        "https://www.nmpa.gov.cn/zhuanti/cxylqx/cxypxx/20260521165534114.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "RCT/OLE/RWE 文献",
         "evidenceLevel": "人工证据矩阵",
-        "reviewStatus": "部分核查",
-        "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批和准入字段已于 2026-06-17 根据人工复核文档更新；证据矩阵其他字段仍需按文献持续复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -109,17 +118,20 @@
       "longTermEvidence": "长期延伸和 eculizumab 转换数据",
       "realWorldEvidence": "重点关注给药间隔、转换治疗和长期感染风险",
       "safetyFocus": "脑膜炎球菌感染、严重感染、输注反应",
-      "chinaAccess": "中国 NMPA 已批准，与常规治疗联合用于 AChR 抗体阳性成人 gMG",
+      "chinaAccess": "中国 NMPA 已批准，与常规治疗联合用于 AChR 抗体阳性成人 gMG。",
       "evidenceLevel": "RCT + OLE/转换数据",
       "links": [
-        "https://pubmed.ncbi.nlm.nih.gov/?term=ravulizumab+CHAMPION-MG+myasthenia+gravis"
+        "https://pubmed.ncbi.nlm.nih.gov/?term=ravulizumab+CHAMPION-MG+myasthenia+gravis",
+        "https://www.astrazeneca.com.cn/zh/media/press-releases/2025/04-22-02.html",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250422153242166.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "RCT/OLE/RWE 文献",
         "evidenceLevel": "人工证据矩阵",
-        "reviewStatus": "部分核查",
-        "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批和准入字段已于 2026-06-17 根据人工复核文档更新；证据矩阵其他字段仍需按文献持续复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -131,17 +143,21 @@
       "longTermEvidence": "RAISE-XT 长期延伸数据持续披露",
       "realWorldEvidence": "上市后真实世界证据早期积累",
       "safetyFocus": "脑膜炎球菌感染、感染、注射部位反应、胰腺相关信号",
-      "chinaAccess": "中国 NMPA 已批准，与常规治疗联合用于 AChR 抗体阳性成人 gMG",
+      "chinaAccess": "中国 NMPA 已批准，与常规治疗药物联合用于 AChR 抗体阳性成人 gMG。",
       "evidenceLevel": "RCT + OLE 初期",
       "links": [
-        "https://pubmed.ncbi.nlm.nih.gov/?term=zilucoplan+RAISE+myasthenia+gravis"
+        "https://pubmed.ncbi.nlm.nih.gov/?term=zilucoplan+RAISE+myasthenia+gravis",
+        "https://www.vcbeathealth.com/article/1892",
+        "https://mp.weixin.qq.com/s/pW3liQocwHj-_uyWNXu3HA",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20251011164524159.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "RCT/OLE/RWE 文献",
         "evidenceLevel": "人工证据矩阵",
-        "reviewStatus": "部分核查",
-        "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批和准入字段已于 2026-06-17 根据人工复核文档更新；证据矩阵其他字段仍需按文献持续复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -153,17 +169,21 @@
       "longTermEvidence": "gMG 长期数据待进一步积累；可参考其他适应症安全性但需区分人群",
       "realWorldEvidence": "gMG 获批较新，RWE 待积累",
       "safetyFocus": "感染、输注反应、低免疫球蛋白、HBV 再激活、PML 风险提示",
-      "chinaAccess": "中国 NMPA 已批准，联合常规治疗用于 AChR 或 MuSK 抗体阳性成人 gMG",
+      "chinaAccess": "中国 NMPA 已批准，联合常规治疗用于 AChR 或 MuSK 抗体阳性成人 gMG；中国 MAH/商业化方为翰森制药，需与全球原研/持证商 Amgen 区分。",
       "evidenceLevel": "RCT + RWE 待积累",
       "links": [
-        "https://pubmed.ncbi.nlm.nih.gov/?term=inebilizumab+MINT+myasthenia+gravis"
+        "https://pubmed.ncbi.nlm.nih.gov/?term=inebilizumab+MINT+myasthenia+gravis",
+        "https://cn.hspharm.com/news/news-detail-513437.htm",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20260327152802181.html",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9MTk1MzhlYmM1ZTVhOWJkODA0MGJkYjA3OWQ0NDE4NGImaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "RCT/OLE/RWE 文献",
         "evidenceLevel": "人工证据矩阵",
-        "reviewStatus": "部分核查",
-        "reviewNote": "用于横向比较证据层级，不替代原始研究和正式指南。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批和准入字段已于 2026-06-17 根据人工复核文档更新；证据矩阵其他字段仍需按文献持续复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {

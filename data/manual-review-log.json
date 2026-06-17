@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "updatedAt": "2026-06-17T00:00:00.000+08:00",
   "provenance": {
     "sourceType": "Manual review",
     "evidenceLevel": "人工复核记录",
-    "reviewStatus": "模板已建立",
-    "lastChecked": "2026-06-07",
-    "reviewNote": "用于记录监管、市场、安全性、指南、试验和文献情报的人工复核过程；不直接作为临床结论。"
+    "reviewStatus": "已开始正式人工复核",
+    "lastChecked": "2026-06-17",
+    "reviewNote": "已录入 6 个已上市生物制剂中国获批信息的人工复核记录。"
   },
   "schemaVersion": 1,
   "scopeNote": "人工复核记录模板。正式复核后在 items 中追加记录，并同步更新被复核数据文件的 trust/provenance 字段。",
@@ -46,5 +46,142 @@
     "riskLevel": "medium",
     "notes": ""
   },
-  "items": []
+  "items": [
+    {
+      "id": "review-2026-06-17-china-access-vyvgart",
+      "date": "2026-06-17",
+      "reviewer": "用户人工复核",
+      "module": "china-access",
+      "itemId": "vyvgart",
+      "topic": "Efgartigimod 中国获批",
+      "sourceUrls": [
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9YWUyNWZiY2IzMWFiYmY2OTBiY2YzYTgzMWI1NGIyMGYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw/",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NTE4YTI4ZTVhODc1MThjOGMyYzViNDhiZGJjMzU5NzMmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20230704155106142.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
+      ],
+      "decision": "updated",
+      "summary": "Efgartigimod 中国获批：确认中国已获 NMPA 批准，批准时间 2023-06；适应症为与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）",
+      "changesMade": [
+        "补充中国商业化合作伙伴再鼎医药",
+        "明确中国标签为 AChR 抗体阳性成人 gMG",
+        "补充 NMPA 批件/送达来源链接"
+      ],
+      "nextReviewDate": "2026-09-17",
+      "riskLevel": "high",
+      "notes": "来源：Efgartigimod 中国获批 Word 核对文档；本次同步更新 global-market、treatments、evidence-matrix。"
+    },
+    {
+      "id": "review-2026-06-17-china-access-rystiggo",
+      "date": "2026-06-17",
+      "reviewer": "用户人工复核",
+      "module": "china-access",
+      "itemId": "rystiggo",
+      "topic": "Rozanolixizumab 中国获批",
+      "sourceUrls": [
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NjUwMWJkZGVjMzllNGFlMTJhMjY1MTM3MzY5MjZhOTYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250331143424124.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
+      ],
+      "decision": "no-change",
+      "summary": "Rozanolixizumab 中国获批：确认中国已获 NMPA 批准，批准时间 2025-03-31；适应症为与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性受体酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "changesMade": [
+        "确认中国获批日期、适应症和抗体分型",
+        "补充 NMPA 来源链接"
+      ],
+      "nextReviewDate": "2026-09-17",
+      "riskLevel": "medium",
+      "notes": "来源：Rozanolixizumab 中国获批 Word 核对文档；本次同步更新 global-market、treatments、evidence-matrix。"
+    },
+    {
+      "id": "review-2026-06-17-china-access-zilbrysq",
+      "date": "2026-06-17",
+      "reviewer": "用户人工复核",
+      "module": "china-access",
+      "itemId": "zilbrysq",
+      "topic": "Zilucoplan 中国获批",
+      "sourceUrls": [
+        "https://www.vcbeathealth.com/article/1892",
+        "https://mp.weixin.qq.com/s/pW3liQocwHj-_uyWNXu3HA",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20251011164524159.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
+      ],
+      "decision": "no-change",
+      "summary": "Zilucoplan 中国获批：确认中国已获 NMPA 批准，批准时间 2025-10-11；适应症为与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "changesMade": [
+        "确认中国获批日期、适应症和抗体分型",
+        "补充 NMPA 与企业公告来源链接"
+      ],
+      "nextReviewDate": "2026-09-17",
+      "riskLevel": "medium",
+      "notes": "来源：Zilucoplan 中国获批 Word 核对文档；本次同步更新 global-market、treatments、evidence-matrix。"
+    },
+    {
+      "id": "review-2026-06-17-china-access-ultomiris",
+      "date": "2026-06-17",
+      "reviewer": "用户人工复核",
+      "module": "china-access",
+      "itemId": "ultomiris",
+      "topic": "Ravulizumab 中国获批",
+      "sourceUrls": [
+        "https://www.astrazeneca.com.cn/zh/media/press-releases/2025/04-22-02.html",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250422153242166.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
+      ],
+      "decision": "no-change",
+      "summary": "Ravulizumab 中国获批：确认中国已获 NMPA 批准，批准时间 2025-04-22；适应症为与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "changesMade": [
+        "确认中国 gMG 标签限成人 AChR 抗体阳性",
+        "补充阿斯利康和 NMPA 来源链接"
+      ],
+      "nextReviewDate": "2026-09-17",
+      "riskLevel": "medium",
+      "notes": "来源：Ravulizumab 中国获批 Word 核对文档；本次同步更新 global-market、treatments、evidence-matrix。"
+    },
+    {
+      "id": "review-2026-06-17-china-access-imaavy",
+      "date": "2026-06-17",
+      "reviewer": "用户人工复核",
+      "module": "china-access",
+      "itemId": "imaavy",
+      "topic": "Nipocalimab 中国获批",
+      "sourceUrls": [
+        "https://www.nmpa.gov.cn/zhuanti/cxylqx/cxypxx/20260521165534114.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
+      ],
+      "decision": "no-change",
+      "summary": "Nipocalimab 中国获批：确认中国已获 NMPA 批准，批准时间 2026-05-21；适应症为与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人和 12 岁及以上青少年全身型重症肌无力（gMG）患者。",
+      "changesMade": [
+        "确认中国获批日期、适应症和 12 岁及以上青少年人群",
+        "补充 NMPA 来源链接"
+      ],
+      "nextReviewDate": "2026-09-17",
+      "riskLevel": "medium",
+      "notes": "来源：Nipocalimab 中国获批 Word 核对文档；本次同步更新 global-market、treatments、evidence-matrix。"
+    },
+    {
+      "id": "review-2026-06-17-china-access-uplizna",
+      "date": "2026-06-17",
+      "reviewer": "用户人工复核",
+      "module": "china-access",
+      "itemId": "uplizna",
+      "topic": "Inebilizumab 中国获批",
+      "sourceUrls": [
+        "https://cn.hspharm.com/news/news-detail-513437.htm",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20260327152802181.html",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9MTk1MzhlYmM1ZTVhOWJkODA0MGJkYjA3OWQ0NDE4NGImaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
+      ],
+      "decision": "updated",
+      "summary": "Inebilizumab 中国获批：确认中国已获 NMPA 批准，批准时间 2026-03-27；适应症为与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "changesMade": [
+        "将企业字段从单列 Amgen 修订为中国 MAH/商业化：翰森制药；全球持证商：Amgen",
+        "批准日期精确到 2026-03-27",
+        "补充 NMPA 和翰森公告来源链接"
+      ],
+      "nextReviewDate": "2026-09-17",
+      "riskLevel": "high",
+      "notes": "来源：Inebilizumab 中国获批 Word 核对文档；本次同步更新 global-market、treatments、evidence-matrix。"
+    }
+  ]
 }

@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "updatedAt": "2026-06-17T00:00:00.000+08:00",
   "provenance": {
     "sourceType": "监管/财报/公司公告",
     "evidenceLevel": "市场情报",
-    "reviewStatus": "需定期复核",
-    "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-    "lastChecked": "2026-06-07"
+    "reviewStatus": "部分条目已人工复核",
+    "reviewNote": "6 个已上市生物制剂的中国获批信息已根据用户提供的 Word 核对文档更新；销售额和其他国家批准信息仍需定期复核。",
+    "lastChecked": "2026-06-17"
   },
   "scopeNote": "覆盖 MG/gMG 领域可公开核验的核心获批靶向/生物制剂与主要监管市场，已重点纳入美国、欧盟、日本、中国等记录。批准状态和销售额会随监管决定、标签扩展和公司财报变化；销售额优先采用公司最新公开财报，若未披露 MG 单适应症，则标注为产品级或未单独披露。",
   "products": [
     {
       "id": "vyvgart",
-      "brand": "Vyvgart / Vyvgart Hytrulo",
-      "generic": "efgartigimod alfa / efgartigimod alfa + hyaluronidase",
-      "company": "argenx",
+      "brand": "Vyvgart / Vyvgart Hytrulo / 卫伟迦 / 卫力迦",
+      "generic": "efgartigimod alfa / efgartigimod alfa + hyaluronidase；艾加莫德α注射液 / 艾加莫德α注射液（皮下注射）",
+      "company": "全球 MAH/上市许可持有人：argenx BV；中国大中华区独家商业化合作伙伴：再鼎医药有限公司（Zai Lab）。中国进口药品上市许可持有人按 NMPA 注册证为准。",
       "class": "FcRn 阻断剂",
       "approvalCount": 4,
       "approvals": [
@@ -39,7 +39,7 @@
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2023-06",
-          "indication": "成人 gMG，作为标准治疗附加治疗；具体抗体分型按中国标签核对"
+          "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）"
         }
       ],
       "sales": {
@@ -52,21 +52,25 @@
       "sourceUrls": [
         "https://www.fda.gov/news-events/press-announcements/fda-approves-new-treatment-myasthenia-gravis",
         "https://www.ema.europa.eu/en/medicines/human/EPAR/vyvgart",
-        "https://reports.argenx.com/2025/"
+        "https://reports.argenx.com/2025/",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9YWUyNWZiY2IzMWFiYmY2OTBiY2YzYTgzMWI1NGIyMGYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw/",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NTE4YTI4ZTVhODc1MThjOGMyYzViNDhiZGJjMzU5NzMmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20230704155106142.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "监管/财报/公司公告",
         "evidenceLevel": "市场情报",
-        "reviewStatus": "需定期复核",
-        "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
       "id": "rystiggo",
-      "brand": "Rystiggo",
-      "generic": "rozanolixizumab-noli",
-      "company": "UCB",
+      "brand": "Rystiggo / 优迪革",
+      "generic": "rozanolixizumab-noli；罗泽利昔珠单抗注射液",
+      "company": "全球开发与持证商：UCB Pharma S.A.（比利时优时比）；中国上市许可持有人/进口商按 NMPA 注册证为准：优时比贸易（上海）有限公司。",
       "class": "FcRn 阻断剂",
       "approvalCount": 4,
       "approvals": [
@@ -91,8 +95,8 @@
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
-          "approvalDate": "2025-03",
-          "indication": "与常规治疗药物联合用于 AChR 或 MuSK 抗体阳性的成人 gMG 患者"
+          "approvalDate": "2025-03-31",
+          "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性受体酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。"
         }
       ],
       "sales": {
@@ -106,21 +110,24 @@
         "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-rystiggo",
         "https://www.ema.europa.eu/en/medicines/human/EPAR/rystiggo",
         "https://yp.gmw.cn/2025-03/31/content_37939943.htm",
-        "https://reports.ucb.com/IAR_2025_WEB.pdf"
+        "https://reports.ucb.com/IAR_2025_WEB.pdf",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NjUwMWJkZGVjMzllNGFlMTJhMjY1MTM3MzY5MjZhOTYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250331143424124.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "监管/财报/公司公告",
         "evidenceLevel": "市场情报",
-        "reviewStatus": "需定期复核",
-        "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
       "id": "zilbrysq",
-      "brand": "Zilbrysq",
-      "generic": "zilucoplan",
-      "company": "UCB",
+      "brand": "Zilbrysq / 卓倍可",
+      "generic": "zilucoplan；泽卢克布仑钠注射液",
+      "company": "全球开发与持证商：UCB Pharma S.A.（比利时优时比）；中国上市许可持有人/进口商按 NMPA 注册证为准：优时比贸易（上海）有限公司",
       "class": "补体 C5 抑制剂",
       "approvalCount": 5,
       "approvals": [
@@ -151,8 +158,8 @@
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
-          "approvalDate": "2025-10",
-          "indication": "与常规治疗药物联合用于 AChR 抗体阳性的成人 gMG 患者"
+          "approvalDate": "2025-10-11",
+          "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。"
         }
       ],
       "sales": {
@@ -166,21 +173,25 @@
         "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-zilbrysq",
         "https://www.ema.europa.eu/en/medicines/human/EPAR/zilbrysq",
         "https://www.vcbeatglobal.com/article/1892",
-        "https://reports.ucb.com/IAR_2025_WEB.pdf"
+        "https://reports.ucb.com/IAR_2025_WEB.pdf",
+        "https://www.vcbeathealth.com/article/1892",
+        "https://mp.weixin.qq.com/s/pW3liQocwHj-_uyWNXu3HA",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20251011164524159.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "监管/财报/公司公告",
         "evidenceLevel": "市场情报",
-        "reviewStatus": "需定期复核",
-        "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
       "id": "ultomiris",
-      "brand": "Ultomiris",
-      "generic": "ravulizumab-cwvz",
-      "company": "AstraZeneca / Alexion",
+      "brand": "Ultomiris / 伟立瑞",
+      "generic": "ravulizumab-cwvz；瑞利珠单抗注射液",
+      "company": "上市许可持有人英文名称：Alexion Europe SAS；中国上市许可持有人/进口商：阿斯利康制药有限公司",
       "class": "长效补体 C5 抑制剂",
       "approvalCount": 3,
       "approvals": [
@@ -199,8 +210,8 @@
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
-          "approvalDate": "2025-04",
-          "indication": "与常规治疗药物联合用于 AChR 抗体阳性的成人 gMG 患者"
+          "approvalDate": "2025-04-22",
+          "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。"
         }
       ],
       "sales": {
@@ -213,14 +224,17 @@
       "sourceUrls": [
         "https://www.ema.europa.eu/en/medicines/human/EPAR/ultomiris",
         "https://finance.sina.com.cn/jjxw/2025-04-22/doc-inetzraw0885347.shtml",
-        "https://www.businesswire.com/news/home/20260209280778/en/AstraZeneca-results-FY-and-Q4-2025"
+        "https://www.businesswire.com/news/home/20260209280778/en/AstraZeneca-results-FY-and-Q4-2025",
+        "https://www.astrazeneca.com.cn/zh/media/press-releases/2025/04-22-02.html",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250422153242166.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "监管/财报/公司公告",
         "evidenceLevel": "市场情报",
-        "reviewStatus": "需定期复核",
-        "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -273,9 +287,9 @@
     },
     {
       "id": "imaavy",
-      "brand": "Imaavy",
-      "generic": "nipocalimab-aahu",
-      "company": "Johnson & Johnson",
+      "brand": "Imaavy / 安力威",
+      "generic": "nipocalimab-aahu；尼卡利单抗注射液",
+      "company": "上市许可持有人英文名称：Janssen-Cilag International NV；中国上市许可持有人/进口商：强生制药有限公司，按 NMPA 注册证为准。",
       "class": "FcRn 阻断剂",
       "approvalCount": 3,
       "approvals": [
@@ -294,8 +308,8 @@
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
-          "approvalDate": "2026-05",
-          "indication": "与常规治疗药物联合用于 AChR 或 MuSK 抗体阳性的成人和 12 岁及以上青少年 gMG 患者"
+          "approvalDate": "2026-05-21",
+          "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人和 12 岁及以上青少年全身型重症肌无力（gMG）患者。"
         }
       ],
       "sales": {
@@ -308,21 +322,23 @@
       "sourceUrls": [
         "https://www.investor.jnj.com/investor-news/news-details/2025/Johnson--Johnson-receives-FDA-approval-for-IMAAVY-nipocalimab-aahu-a-new-FcRn-blocker-offering-long-lasting-disease-control-in-the-broadest-population-of-people-living-with-generalized-myasthenia-gravis-gMG/default.aspx",
         "https://www.globenewswire.com/news-release/2025/12/01/3196985/0/en/Johnson-Johnson-receives-European-Commission-approval-of-IMAAVY-nipocalimab-a-new-FcRn-blocker-offering-sustained-disease-control-in-a-broad-population-of-people-living-with-genera.html",
-        "https://m.cnpharm.com/c/2026-05-21/1097812.shtml"
+        "https://m.cnpharm.com/c/2026-05-21/1097812.shtml",
+        "https://www.nmpa.gov.cn/zhuanti/cxylqx/cxypxx/20260521165534114.html",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "监管/财报/公司公告",
         "evidenceLevel": "市场情报",
-        "reviewStatus": "需定期复核",
-        "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
       "id": "uplizna",
-      "brand": "Uplizna",
-      "generic": "inebilizumab-cdon",
-      "company": "Amgen",
+      "brand": "Uplizna / 昕越",
+      "generic": "inebilizumab-cdon；伊奈利珠单抗注射液",
+      "company": "中国上市许可持有人/商业化方：Horizon Therapeutics Ireland DAC【翰森制药集团有限公司（Hansoh Pharmaceutical，03692.HK），通过 2019 年与 Viela Bio 的独家许可协议获得在中国内地、香港、澳门的开发与商业化权益（Viela Bio 后被 Horizon Therapeutics 收购，Horizon 于 2023 年被 Amgen 收购）。】中国 NMPA 注册证境内责任人名称：常州恒邦药业有限公司",
       "class": "CD19 B 细胞耗竭抗体",
       "approvalCount": 3,
       "approvals": [
@@ -341,8 +357,8 @@
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
-          "approvalDate": "2026-03",
-          "indication": "与常规治疗药物联合用于 AChR 或 MuSK 抗体阳性的成人 gMG 患者"
+          "approvalDate": "2026-03-27",
+          "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。"
         }
       ],
       "sales": {
@@ -355,14 +371,17 @@
       "sourceUrls": [
         "https://www.amgen.com/newsroom/press-releases/2025/12/fda-approves-uplizna-for-adults-with-generalized-myasthenia-gravis",
         "https://wwwext.amgen.com/newsroom/press-releases/2026/02/european-commission-approves-amgens-uplizna-for-generalized-myasthenia-gravis",
-        "https://cn.hspharm.com/news/news-detail-513437.htm"
+        "https://cn.hspharm.com/news/news-detail-513437.htm",
+        "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20260327152802181.html",
+        "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9MTk1MzhlYmM1ZTVhOWJkODA0MGJkYjA3OWQ0NDE4NGImaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw",
+        "https://mg-intelligence-hub.huashanmuscle.com/"
       ],
       "trust": {
         "sourceType": "监管/财报/公司公告",
         "evidenceLevel": "市场情报",
-        "reviewStatus": "需定期复核",
-        "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
+        "lastChecked": "2026-06-17"
       }
     },
     {

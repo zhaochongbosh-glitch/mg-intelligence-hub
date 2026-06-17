@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-07T00:00:00.000Z",
+  "updatedAt": "2026-06-17T00:00:00.000+08:00",
   "provenance": {
     "sourceType": "标签/文献/监管文件",
     "evidenceLevel": "人工证据汇总",
-    "reviewStatus": "部分核查",
-    "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-    "lastChecked": "2026-06-07"
+    "reviewStatus": "部分条目已人工复核",
+    "reviewNote": "6 个已上市生物制剂的中国 NMPA 获批状态、适应症和抗体分型已根据人工复核文档更新；机制、证据和安全性仍需持续复核。",
+    "lastChecked": "2026-06-17"
   },
   "scopeNote": "第一版以 FDA 已批准用于 MG/gMG 的药物和制剂为核心；EMA、NMPA/CDE 批准状态预留字段，后续可继续扩展。",
   "treatments": [
@@ -107,13 +107,13 @@
       "class": "长效补体 C5 抑制剂",
       "target": "Complement C5",
       "mechanism": "长效 C5 抑制剂，抑制末端补体激活，给药间隔较 eculizumab 更长。",
-      "approvedUse": "成人全身型重症肌无力，AChR 抗体阳性。",
-      "biomarker": "AChR 抗体阳性",
+      "approvedUse": "中国：与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "biomarker": "成人 AChR 抗体阳性 gMG 患者，作为常规治疗附加治疗。静脉输注，长效给药。",
       "route": "静脉输注",
       "approval": {
         "fda": "2022",
         "ema": "已批准，需补充地区细节",
-        "nmpa": "需补充"
+        "nmpa": "2025-04-22，NMPA 已批准；成人 AChR 抗体阳性 gMG 患者，作为常规治疗附加治疗。静脉输注，长效给药。"
       },
       "pivotalEvidence": "CHAMPION-MG III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "真实世界证据正在积累，重点关注从 eculizumab 转换、长期维持和给药便利性。",
@@ -136,14 +136,26 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22ULTOMIRIS%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://www.astrazeneca.com.cn/zh/media/press-releases/2025/04-22-02.html"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250422153242166.html"
+        },
+        {
+          "label": "中国获批复核来源 3",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -154,13 +166,13 @@
       "class": "补体 C5 抑制剂",
       "target": "Complement C5",
       "mechanism": "皮下注射环肽 C5 抑制剂，阻断 C5 裂解和膜攻击复合物形成。",
-      "approvedUse": "成人全身型重症肌无力，AChR 抗体阳性。",
-      "biomarker": "AChR 抗体阳性",
+      "approvedUse": "中国：与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "biomarker": "成人 AChR 抗体阳性 gMG 患者",
       "route": "每日皮下注射",
       "approval": {
         "fda": "2023",
         "ema": "已批准，需补充地区细节",
-        "nmpa": "需补充"
+        "nmpa": "2025-10-11，NMPA 已批准；成人 AChR 抗体阳性 gMG 患者"
       },
       "pivotalEvidence": "RAISE III 期随机、双盲、安慰剂对照研究；FDA Drug Trials Snapshot 提到 174 例成人 gMG 患者。",
       "realWorldEvidence": "上市时间较短，真实世界证据仍在早期积累。",
@@ -183,14 +195,30 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22ZILBRYSQ%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://www.vcbeathealth.com/article/1892"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://mp.weixin.qq.com/s/pW3liQocwHj-_uyWNXu3HA"
+        },
+        {
+          "label": "中国获批复核来源 3",
+          "url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20251011164524159.html"
+        },
+        {
+          "label": "中国获批复核来源 4",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -201,13 +229,13 @@
       "class": "FcRn 阻断剂",
       "target": "Neonatal Fc receptor (FcRn)",
       "mechanism": "阻断 FcRn 介导的 IgG 回收，加速致病性 IgG 抗体降解，降低循环 IgG 水平。",
-      "approvedUse": "成人全身型重症肌无力；初始批准为 AChR 抗体阳性，2026 年美国标签扩展至所有成人 gMG 血清型。",
-      "biomarker": "成人 gMG；AChR/MuSK/LRP4/三阴性标签状态需按最新地区标签核对",
+      "approvedUse": "中国：与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）",
+      "biomarker": "乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者",
       "route": "静脉输注",
       "approval": {
         "fda": "2021；2026 标签扩展",
         "ema": "已批准，需补充地区细节",
-        "nmpa": "已在中国获批，需补充具体适应症文本"
+        "nmpa": "2023-06，NMPA 已批准；乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者"
       },
       "pivotalEvidence": "ADAPT III 期随机、双盲、安慰剂对照研究；ADAPT+ 开放标签延长期。",
       "realWorldEvidence": "已有多个真实世界队列，重点关注快速起效、循环给药、激素减量和转换治疗。",
@@ -230,14 +258,30 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22VYVGART%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9YWUyNWZiY2IzMWFiYmY2OTBiY2YzYTgzMWI1NGIyMGYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw/"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NTE4YTI4ZTVhODc1MThjOGMyYzViNDhiZGJjMzU5NzMmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw"
+        },
+        {
+          "label": "中国获批复核来源 3",
+          "url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20230704155106142.html"
+        },
+        {
+          "label": "中国获批复核来源 4",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -248,13 +292,13 @@
       "class": "FcRn 阻断剂皮下制剂",
       "target": "Neonatal Fc receptor (FcRn)",
       "mechanism": "与 IV efgartigimod 相同，通过 FcRn 阻断降低 IgG；透明质酸酶用于促进皮下给药吸收。",
-      "approvedUse": "成人全身型重症肌无力；美国标签于 2026 年扩展至所有成人 gMG 血清型。",
-      "biomarker": "成人 gMG；地区标签需核对",
+      "approvedUse": "中国：与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）",
+      "biomarker": "乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者",
       "route": "皮下注射",
       "approval": {
         "fda": "2023；2026 标签扩展",
         "ema": "需补充",
-        "nmpa": "需补充"
+        "nmpa": "2023-06，NMPA 已批准；乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者"
       },
       "pivotalEvidence": "ADAPT-SC 等研究支持皮下制剂批准；与 IV 制剂共同构成 FcRn 证据体系。",
       "realWorldEvidence": "真实世界证据正在积累，重点关注居家/门诊给药便利性和循环治疗体验。",
@@ -277,14 +321,30 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22VYVGART%20HYTRULO%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9YWUyNWZiY2IzMWFiYmY2OTBiY2YzYTgzMWI1NGIyMGYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw/"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NTE4YTI4ZTVhODc1MThjOGMyYzViNDhiZGJjMzU5NzMmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw"
+        },
+        {
+          "label": "中国获批复核来源 3",
+          "url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20230704155106142.html"
+        },
+        {
+          "label": "中国获批复核来源 4",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -295,13 +355,13 @@
       "class": "FcRn 阻断剂",
       "target": "Neonatal Fc receptor (FcRn)",
       "mechanism": "结合 FcRn，降低 IgG 回收并减少致病性 IgG 抗体水平。",
-      "approvedUse": "成人全身型重症肌无力，AChR 或 MuSK 抗体阳性。",
-      "biomarker": "AChR 抗体阳性或 MuSK 抗体阳性",
+      "approvedUse": "中国：与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性受体酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "biomarker": "成人 gMG 患者（AChR 阳性或 MuSK 阳性）",
       "route": "皮下输注，周期治疗",
       "approval": {
         "fda": "2023",
         "ema": "已批准，需补充地区细节",
-        "nmpa": "需补充"
+        "nmpa": "2025-03-31，NMPA 已批准；成人 gMG 患者（AChR 阳性或 MuSK 阳性）"
       },
       "pivotalEvidence": "MycarinG III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "上市时间较短，真实世界证据早期积累；MuSK 阳性人群值得单独追踪。",
@@ -324,31 +384,43 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22RYSTIGGO%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9NjUwMWJkZGVjMzllNGFlMTJhMjY1MTM3MzY5MjZhOTYmaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20250331143424124.html"
+        },
+        {
+          "label": "中国获批复核来源 3",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
       "id": "nipocalimab",
       "brand": "Imaavy",
       "generic": "nipocalimab-aahu",
-      "zhName": "尼泊卡利单抗",
+      "zhName": "尼卡利单抗",
       "class": "FcRn 阻断剂",
       "target": "Neonatal Fc receptor (FcRn)",
       "mechanism": "阻断 FcRn，降低循环 IgG 和致病性自身抗体水平。",
-      "approvedUse": "12 岁及以上成人和儿童全身型重症肌无力，AChR 或 MuSK 抗体阳性。",
-      "biomarker": "AChR 抗体阳性或 MuSK 抗体阳性",
+      "approvedUse": "中国：与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人和 12 岁及以上青少年全身型重症肌无力（gMG）患者。",
+      "biomarker": "成人及 12 岁及以上青少年 gMG 患者（AChR 阳性或 MuSK 阳性）",
       "route": "静脉输注，每 2 周",
       "approval": {
         "fda": "2025",
         "ema": "需补充",
-        "nmpa": "需补充"
+        "nmpa": "2026-05-21，NMPA 已批准；成人及 12 岁及以上青少年 gMG 患者（AChR 阳性或 MuSK 阳性）"
       },
       "pivotalEvidence": "VIVACITY-MG3 III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "获批较新，真实世界证据有限；需持续追踪长期维持、青少年使用和感染风险。",
@@ -371,14 +443,22 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22IMAAVY%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://www.nmpa.gov.cn/zhuanti/cxylqx/cxypxx/20260521165534114.html"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     },
     {
@@ -389,13 +469,13 @@
       "class": "CD19 B 细胞耗竭抗体",
       "target": "CD19",
       "mechanism": "靶向 CD19 阳性 B 细胞，包括浆母细胞，降低自身抗体产生相关免疫活动。",
-      "approvedUse": "成人全身型重症肌无力，AChR 或 MuSK 抗体阳性。",
-      "biomarker": "AChR 抗体阳性或 MuSK 抗体阳性",
+      "approvedUse": "中国：与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+      "biomarker": "成人 gMG 患者（AChR 阳性或 MuSK 阳性）",
       "route": "静脉输注，维持期约每 6 个月",
       "approval": {
         "fda": "2025",
         "ema": "需补充",
-        "nmpa": "需补充"
+        "nmpa": "2026-03-27，NMPA 已批准；成人 gMG 患者（AChR 阳性或 MuSK 阳性）"
       },
       "pivotalEvidence": "MINT III 期随机、双盲、安慰剂对照研究。",
       "realWorldEvidence": "gMG 获批较新，真实世界证据有限；可借鉴 NMOSD/IgG4-RD 长期安全性但需区分适应症。",
@@ -418,14 +498,30 @@
         {
           "label": "openFDA FAERS 查询",
           "url": "https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:%22UPLIZNA%22&limit=10"
+        },
+        {
+          "label": "中国获批复核来源",
+          "url": "https://cn.hspharm.com/news/news-detail-513437.htm"
+        },
+        {
+          "label": "中国获批复核来源 2",
+          "url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxyp/yppjfb/20260327152802181.html"
+        },
+        {
+          "label": "中国获批复核来源 3",
+          "url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9MTk1MzhlYmM1ZTVhOWJkODA0MGJkYjA3OWQ0NDE4NGImaXRlbUlkPWZmODA4MDgxODNjYWQ3NTAwMTg0MDg4NjY1NzExODAw"
+        },
+        {
+          "label": "中国获批复核来源 4",
+          "url": "https://mg-intelligence-hub.huashanmuscle.com/"
         }
       ],
       "trust": {
         "sourceType": "标签/文献/监管文件",
         "evidenceLevel": "人工证据汇总",
-        "reviewStatus": "部分核查",
-        "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
-        "lastChecked": "2026-06-07"
+        "reviewStatus": "已人工复核",
+        "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
+        "lastChecked": "2026-06-17"
       }
     }
   ],
