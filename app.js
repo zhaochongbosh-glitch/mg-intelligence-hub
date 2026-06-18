@@ -733,8 +733,11 @@ function renderLatestCard(item) {
     "no-abstract": "暂无摘要",
     error: "摘要生成失败"
   }[item.translationStatus] || "待处理";
-  const points = (item.keyPoints || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+  const points = (localizedList(item, "keyPoints") || item.keyPoints || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
   const intelligence = renderLatestIntelligence(item);
+  const primaryAbstract = state.language === "en" ? item.abstract || item.zhSummary : item.zhSummary || item.abstract;
+  const secondaryAbstract = state.language === "en" ? item.zhSummary || item.abstract : item.abstract || item.zhSummary;
+  const secondaryLabel = state.language === "en" ? "View Chinese summary" : "查看英文摘要";
   return `
     <article class="latest-card">
       <div class="latest-card__head">
@@ -747,12 +750,12 @@ function renderLatestCard(item) {
         <span>${escapeHtml(statusLabel)}</span>
       </div>
       ${renderTrustMeta(item, "latest")}
-      <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
+      <p class="zh-abstract">${escapeHtml(primaryAbstract || "中文摘要待生成。")}</p>
       ${intelligence}
       ${points ? `<ul class="latest-points">${points}</ul>` : ""}
       <details>
-        <summary>查看英文摘要</summary>
-        <p>${escapeHtml(item.abstract || "PubMed 暂未提供摘要。")}</p>
+        <summary>${escapeHtml(secondaryLabel)}</summary>
+        <p>${escapeHtml(secondaryAbstract || "PubMed 暂未提供摘要。")}</p>
       </details>
       <div class="latest-actions">
         <div class="latest-actions__dates">
@@ -766,7 +769,8 @@ function renderLatestCard(item) {
 }
 
 function renderLatestIntelligence(item = {}) {
-  const intelligence = item.intelligence || {};
+  if (state.language === "en" && !item.en?.intelligence) return "";
+  const intelligence = localizedObject(item, "intelligence") || item.intelligence || {};
   const rows = [
     ["研究类型", intelligence.studyType],
     ["研究对象", intelligence.population],
@@ -795,6 +799,7 @@ function renderChina() {
 function renderChinaCard(item) {
   const indexedDate = item.indexedAt || item.date;
   const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+  const summary = state.language === "en" ? item.abstract || item.summary || item.authors || "" : item.summary || item.authors || "";
   return `
     <article class="china-card">
       <div class="china-card__date">
@@ -810,7 +815,7 @@ function renderChinaCard(item) {
         </div>
         ${renderTrustMeta(item, "china")}
         <h3>${escapeHtml(item.title)}</h3>
-        <p>${escapeHtml(item.summary || item.authors || "")}</p>
+        <p>${escapeHtml(summary)}</p>
         <p class="institution">${escapeHtml(item.institutionHint || "机构信息见 PubMed 摘要")}</p>
         <div class="china-card__footer">
           <div class="china-tags">${tags}</div>
@@ -861,6 +866,9 @@ function renderHuashanArticle(item) {
   const indexedDate = item.indexedAt || item.date;
   const tags = (item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
   const authors = item.authors ? item.authors.split(", ").slice(0, 8).join(", ") : "作者信息见 PubMed";
+  const primaryAbstract = state.language === "en" ? item.abstract || item.zhSummary : item.zhSummary || item.abstract;
+  const secondaryAbstract = state.language === "en" ? item.zhSummary || item.abstract : item.abstract || item.zhSummary;
+  const secondaryLabel = state.language === "en" ? "View Chinese summary" : "查看英文摘要";
   return `
     <article class="huashan-paper">
       <div class="huashan-paper__date">
@@ -878,11 +886,11 @@ function renderHuashanArticle(item) {
         ${renderTrustMeta(item, "huashanTeam")}
         <h3>${escapeHtml(item.title || "未命名论文")}</h3>
         <p class="huashan-authors">${escapeHtml(authors)}</p>
-        <p class="zh-abstract">${escapeHtml(item.zhSummary || "中文摘要待生成。")}</p>
+        <p class="zh-abstract">${escapeHtml(primaryAbstract || "中文摘要待生成。")}</p>
         ${item.sourceAffiliation ? `<p class="institution">${escapeHtml(item.sourceAffiliation)}</p>` : ""}
         <details>
-          <summary>查看英文摘要</summary>
-          <p>${escapeHtml(item.abstract || "PubMed 暂未提供摘要。")}</p>
+          <summary>${escapeHtml(secondaryLabel)}</summary>
+          <p>${escapeHtml(secondaryAbstract || "PubMed 暂未提供摘要。")}</p>
         </details>
         <div class="huashan-paper__footer">
           <div class="china-tags">${tags}</div>
@@ -929,15 +937,15 @@ function renderMatrix() {
   const rows = items
     .map((item) => `
       <tr>
-        <th><strong>${escapeHtml(item.brand)}</strong><span>${escapeHtml(item.mechanism)}</span></th>
-        <td>${escapeHtml(item.population)}</td>
-        <td>${escapeHtml(item.pivotalTrial)}</td>
-        <td>${escapeHtml(item.longTermEvidence)}</td>
-        <td>${escapeHtml(item.realWorldEvidence)}</td>
-        <td>${escapeHtml(item.safetyFocus)}</td>
-        <td>${escapeHtml(item.chinaAccess)}</td>
+        <th><strong>${escapeHtml(localizedField(item, "brand"))}</strong><span>${escapeHtml(localizedField(item, "mechanism"))}</span></th>
+        <td>${escapeHtml(localizedField(item, "population"))}</td>
+        <td>${escapeHtml(localizedField(item, "pivotalTrial"))}</td>
+        <td>${escapeHtml(localizedField(item, "longTermEvidence"))}</td>
+        <td>${escapeHtml(localizedField(item, "realWorldEvidence"))}</td>
+        <td>${escapeHtml(localizedField(item, "safetyFocus"))}</td>
+        <td>${escapeHtml(localizedField(item, "chinaAccess"))}</td>
         <td>
-          <span class="evidence-badge">${escapeHtml(item.evidenceLevel)}</span>
+          <span class="evidence-badge">${escapeHtml(localizedField(item, "evidenceLevel"))}</span>
           ${renderReviewNote(item, "matrix")}
         </td>
       </tr>
@@ -965,7 +973,7 @@ function renderTreatments() {
 
 function renderTreatmentCard(item) {
   const approval = item.approval || {};
-  const signals = (item.safetySignals || []).map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
+  const signals = localizedList(item, "safetySignals").map((signal) => `<span>${escapeHtml(signal)}</span>`).join("");
   const links = (item.links || [])
     .map((link) => normalizeSourceLink(link, item))
     .map((link) => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
@@ -974,21 +982,21 @@ function renderTreatmentCard(item) {
     <article class="treatment-card">
       <div class="treatment-card__head">
         <div>
-          <p class="eyebrow-dark">${escapeHtml(item.class || "治疗")}</p>
-          <h3>${escapeHtml(item.brand)} <span>${escapeHtml(item.generic)}</span></h3>
-          <p>${escapeHtml(item.zhName || "")}</p>
+          <p class="eyebrow-dark">${escapeHtml(localizedField(item, "class") || "治疗")}</p>
+          <h3>${escapeHtml(localizedField(item, "brand"))} <span>${escapeHtml(localizedField(item, "generic"))}</span></h3>
+          <p>${escapeHtml(localizedField(item, "zhName") || "")}</p>
         </div>
-        <strong>${escapeHtml(item.evidenceGrade || "证据待补充")}</strong>
+        <strong>${escapeHtml(localizedField(item, "evidenceGrade") || "证据待补充")}</strong>
       </div>
       ${renderTrustMeta(item, "treatments")}
       <dl class="treatment-grid">
-        <div><dt>机制</dt><dd>${escapeHtml(item.mechanism)}</dd></div>
-        <div><dt>适用人群</dt><dd>${escapeHtml(item.approvedUse)}</dd></div>
-        <div><dt>抗体/标志物</dt><dd>${escapeHtml(item.biomarker)}</dd></div>
-        <div><dt>给药</dt><dd>${escapeHtml(item.route)}</dd></div>
-        <div><dt>关键证据</dt><dd>${escapeHtml(item.pivotalEvidence)}</dd></div>
-        <div><dt>真实世界证据</dt><dd>${escapeHtml(item.realWorldEvidence)}</dd></div>
-        <div><dt>上市后安全</dt><dd>${escapeHtml(item.postMarketing)}</dd></div>
+        <div><dt>机制</dt><dd>${escapeHtml(localizedField(item, "mechanism"))}</dd></div>
+        <div><dt>适用人群</dt><dd>${escapeHtml(localizedField(item, "approvedUse"))}</dd></div>
+        <div><dt>抗体/标志物</dt><dd>${escapeHtml(localizedField(item, "biomarker"))}</dd></div>
+        <div><dt>给药</dt><dd>${escapeHtml(localizedField(item, "route"))}</dd></div>
+        <div><dt>关键证据</dt><dd>${escapeHtml(localizedField(item, "pivotalEvidence"))}</dd></div>
+        <div><dt>真实世界证据</dt><dd>${escapeHtml(localizedField(item, "realWorldEvidence"))}</dd></div>
+        <div><dt>上市后安全</dt><dd>${escapeHtml(localizedField(item, "postMarketing"))}</dd></div>
         <div><dt>批准状态</dt><dd>FDA: ${escapeHtml(approval.fda || "需补充")}；EMA: ${escapeHtml(approval.ema || "需补充")}；NMPA: ${escapeHtml(approval.nmpa || "需补充")}</dd></div>
       </dl>
       <div class="safety-tags">${signals}</div>
@@ -999,7 +1007,7 @@ function renderTreatmentCard(item) {
 
 function renderSupportive() {
   targetFor("supportive").innerHTML = (state.data.treatments?.offLabelOrSupportive || [])
-    .map((item) => `<p><strong>${escapeHtml(item.name)}</strong>：${escapeHtml(item.note)}</p>`)
+    .map((item) => `<p><strong>${escapeHtml(localizedField(item, "name"))}</strong>：${escapeHtml(localizedField(item, "note"))}</p>`)
     .join("");
 }
 
@@ -1321,8 +1329,8 @@ function renderChinaAccess() {
 }
 
 function renderChinaAccessSummary(items) {
-  const classes = [...new Set(items.map((item) => item.product.class).filter(Boolean))];
-  const companies = [...new Set(items.map((item) => item.product.company).filter(Boolean))];
+  const classes = [...new Set(items.map((item) => localizedField(item.product, "class")).filter(Boolean))];
+  const companies = [...new Set(items.map((item) => localizedField(item.product, "company")).filter(Boolean))];
   const latest = items[0];
   return `
     <div class="access-overview">
@@ -1342,7 +1350,7 @@ function renderChinaAccessSummary(items) {
       <article>
         <p>最新记录</p>
         <strong>${escapeHtml(latest?.approval.approvalDate || "待补充")}</strong>
-        <span>${escapeHtml(latest?.product.brand || "")}</span>
+        <span>${escapeHtml(latest ? localizedField(latest.product, "brand") : "")}</span>
       </article>
     </div>
   `;
@@ -1359,22 +1367,22 @@ function renderChinaAccessCard(item) {
     <article class="china-access-card">
       <div class="china-access-card__head">
         <div>
-          <p class="eyebrow-dark">${escapeHtml(product.class || "治疗药物")}</p>
-          <h3>${escapeHtml(product.brand)} <span>${escapeHtml(product.generic || "")}</span></h3>
-          <p>${escapeHtml(product.company || "公司待补充")}</p>
+          <p class="eyebrow-dark">${escapeHtml(localizedField(product, "class") || "治疗药物")}</p>
+          <h3>${escapeHtml(localizedField(product, "brand"))} <span>${escapeHtml(localizedField(product, "generic") || "")}</span></h3>
+          <p>${escapeHtml(localizedField(product, "company") || "公司待补充")}</p>
         </div>
         <strong>${escapeHtml(approval.approvalDate || "日期待补充")}</strong>
       </div>
       ${renderTrustMeta(product, "china-access")}
       <div class="approval-highlight">
-        <span>${escapeHtml(approval.agency || "NMPA")}</span>
-        <p>${escapeHtml(approval.indication || "适应症文本待补充")}</p>
+        <span>${escapeHtml(localizedField(approval, "agency") || "NMPA")}</span>
+        <p>${escapeHtml(localizedField(approval, "indication") || "适应症文本待补充")}</p>
       </div>
       <dl class="china-access-grid">
-        <div><dt>中国可及性</dt><dd>${escapeHtml(matrix?.chinaAccess || "需补充医保、医院准入和真实世界使用信息。")}</dd></div>
-        <div><dt>证据层级</dt><dd>${escapeHtml(matrix?.evidenceLevel || "证据层级待补充")}</dd></div>
-        <div><dt>商业化口径</dt><dd>${escapeHtml(sales.scope || "销售口径待补充")}</dd></div>
-        <div><dt>公开销售额</dt><dd>${escapeHtml([sales.year, sales.value].filter(Boolean).join("：") || "未单独披露")} ${sales.trend ? `（${escapeHtml(sales.trend)}）` : ""}</dd></div>
+        <div><dt>中国可及性</dt><dd>${escapeHtml(localizedField(matrix, "chinaAccess") || "需补充医保、医院准入和真实世界使用信息。")}</dd></div>
+        <div><dt>证据层级</dt><dd>${escapeHtml(localizedField(matrix, "evidenceLevel") || "证据层级待补充")}</dd></div>
+        <div><dt>商业化口径</dt><dd>${escapeHtml(localizedField(sales, "scope") || "销售口径待补充")}</dd></div>
+        <div><dt>公开销售额</dt><dd>${escapeHtml([sales.year, localizedField(sales, "value")].filter(Boolean).join("：") || "未单独披露")} ${localizedField(sales, "trend") ? `（${escapeHtml(localizedField(sales, "trend"))}）` : ""}</dd></div>
       </dl>
       <div class="access-links">${sources}</div>
     </article>
@@ -1466,9 +1474,9 @@ function renderMarketCard(product) {
   const approvals = (product.approvals || [])
     .map((approval) => `
       <li>
-        <strong>${escapeHtml(approval.countryOrRegion)}</strong>
-        <span>${escapeHtml(approval.agency)} · ${escapeHtml(approval.approvalDate)}</span>
-        <em>${escapeHtml(approval.indication)}</em>
+        <strong>${escapeHtml(localizedField(approval, "countryOrRegion"))}</strong>
+        <span>${escapeHtml(localizedField(approval, "agency"))} · ${escapeHtml(approval.approvalDate)}</span>
+        <em>${escapeHtml(localizedField(approval, "indication"))}</em>
       </li>
     `)
     .join("");
@@ -1481,18 +1489,18 @@ function renderMarketCard(product) {
     <article class="market-card">
       <div class="market-card__head">
         <div>
-          <p class="eyebrow-dark">${escapeHtml(product.class || "治疗药物")}</p>
-          <h3>${escapeHtml(product.brand)} <span>${escapeHtml(product.generic || "")}</span></h3>
-          <p>${escapeHtml(product.company || "")}</p>
+          <p class="eyebrow-dark">${escapeHtml(localizedField(product, "class") || "治疗药物")}</p>
+          <h3>${escapeHtml(localizedField(product, "brand"))} <span>${escapeHtml(localizedField(product, "generic") || "")}</span></h3>
+          <p>${escapeHtml(localizedField(product, "company") || "")}</p>
         </div>
         <strong>${escapeHtml(String(product.approvalCount || (product.approvals || []).length))} 个市场</strong>
       </div>
       ${renderTrustMeta(product, "market")}
       <div class="sales-box">
         <span>${escapeHtml(sales.year || "最新")} 销售额</span>
-        <strong>${escapeHtml(sales.value || "未披露")}</strong>
-        <p>${escapeHtml(sales.scope || "")}</p>
-        <small>${escapeHtml(sales.trend || "")}</small>
+        <strong>${escapeHtml(localizedField(sales, "value") || "未披露")}</strong>
+        <p>${escapeHtml(localizedField(sales, "scope") || "")}</p>
+        <small>${escapeHtml(localizedField(sales, "trend") || "")}</small>
       </div>
       <ul class="approval-list">${approvals}</ul>
       <div class="market-links">${sources}</div>
@@ -1718,18 +1726,18 @@ function renderEvidenceChainCard(item = {}) {
   const sourceLinks = (item.sourceUrls || [])
     .map((url, index) => `<a href="${escapeAttribute(url)}" target="_blank" rel="noreferrer">来源 ${index + 1}</a>`)
     .join("");
-  const changes = (item.changesMade || []).map((change) => `<li>${escapeHtml(change)}</li>`).join("");
+  const changes = localizedList(item, "changesMade").map((change) => `<li>${escapeHtml(change)}</li>`).join("");
   const chain = evidenceChainFor(item);
   return `
     <article class="evidence-chain-card">
       <div class="evidence-chain-card__head">
         <div>
           <p class="section-kicker">${escapeHtml(item.module || "manual-review")}</p>
-          <h3>${escapeHtml(item.topic || item.itemId || "未命名复核记录")}</h3>
+          <h3>${escapeHtml(localizedField(item, "topic") || item.itemId || "未命名复核记录")}</h3>
         </div>
         <strong class="decision-badge decision-${escapeAttribute(item.decision || "needs-follow-up")}">${escapeHtml(formatDecisionLabel(item.decision))}</strong>
       </div>
-      <p>${escapeHtml(item.summary || "暂无复核摘要。")}</p>
+      <p>${escapeHtml(localizedField(item, "summary") || "暂无复核摘要。")}</p>
       <dl class="evidence-chain-meta">
         <div><dt>复核日期</dt><dd>${escapeHtml(formatDate(item.date))}</dd></div>
         <div><dt>复核人</dt><dd>${escapeHtml(item.reviewer || "未记录")}</dd></div>
@@ -1747,7 +1755,7 @@ function renderEvidenceChainCard(item = {}) {
         ${chain.map((entry) => `<span>${escapeHtml(entry)}</span>`).join("")}
       </div>
       ${sourceLinks ? `<div class="evidence-source-links">${sourceLinks}</div>` : ""}
-      ${item.notes ? `<p class="evidence-note">${escapeHtml(item.notes)}</p>` : ""}
+      ${localizedField(item, "notes") ? `<p class="evidence-note">${escapeHtml(localizedField(item, "notes"))}</p>` : ""}
     </article>
   `;
 }
@@ -2120,7 +2128,8 @@ function matchesTreatment(item) {
     item.pivotalEvidence,
     item.realWorldEvidence,
     item.postMarketing,
-    ...(item.safetySignals || [])
+    ...(item.safetySignals || []),
+    JSON.stringify(item.en || {})
   ]
     .join(" ")
     .toLowerCase();
@@ -2181,6 +2190,21 @@ function trialItems() {
 
 function manualReviewItems() {
   return state.data.manualReview?.items || [];
+}
+
+function localizedField(item = {}, key, fallback = "") {
+  if (state.language === "en" && item?.en && item.en[key] !== undefined && item.en[key] !== null) return item.en[key];
+  return item?.[key] ?? fallback;
+}
+
+function localizedList(item = {}, key) {
+  const value = localizedField(item, key);
+  return Array.isArray(value) ? value : [];
+}
+
+function localizedObject(item = {}, key) {
+  const value = localizedField(item, key);
+  return value && typeof value === "object" && !Array.isArray(value) ? value : null;
 }
 
 function fillSelect(name, values, labeler = (value) => value) {

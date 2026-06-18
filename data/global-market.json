@@ -21,25 +21,45 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2021-12",
-          "indication": "成人 gMG；初始为 AChR 抗体阳性，后续标签扩展需按最新 FDA 标签核对"
+          "indication": "成人 gMG；初始为 AChR 抗体阳性，后续标签扩展需按最新 FDA 标签核对",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "成人 gMG；初始为 AChR 抗体阳性，后续标签扩展需按最新 FDA 标签核对"
+          }
         },
         {
           "countryOrRegion": "日本",
           "agency": "MHLW/PMDA",
           "approvalDate": "2022-01",
-          "indication": "成人 gMG，对激素或非甾体免疫抑制治疗反应不足"
+          "indication": "成人 gMG，对激素或非甾体免疫抑制治疗反应不足",
+          "en": {
+            "countryOrRegion": "日本",
+            "agency": "MHLW/PMDA",
+            "indication": "成人 gMG，对激素或非甾体免疫抑制治疗反应不足"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2022-08",
-          "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗"
+          "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2023-06",
-          "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）"
+          "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。（注：2026 年起美国/欧盟标签已扩展至所有成人 gMG 血清型；中国大陆标签是否同步扩展需以最新 NMPA 说明书为准。）"
+          }
         }
       ],
       "sales": {
@@ -47,7 +67,12 @@
         "value": "约 42 亿美元",
         "currency": "USD",
         "scope": "VYVGART 全球产品净销售额，包含多个适应症/剂型，不等同于 MG 单适应症销售额",
-        "trend": "+90% YoY"
+        "trend": "+90% YoY",
+        "en": {
+          "value": "approximately USD 4.2 billion",
+          "scope": "VYVGART global net product sales across indications/formulations; not MG-specific sales",
+          "trend": "+90% YoY"
+        }
       },
       "sourceUrls": [
         "https://www.fda.gov/news-events/press-announcements/fda-approves-new-treatment-myasthenia-gravis",
@@ -64,6 +89,17 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "brand": "Vyvgart / Vyvgart Hytrulo",
+        "generic": "efgartigimod alfa / efgartigimod alfa + hyaluronidase",
+        "company": "Global MAH: argenx BV; China commercialization partner: Zai Lab. China import-drug MAH should be verified against NMPA registration certificates.",
+        "class": "FcRn blocker",
+        "sales": {
+          "value": "approximately USD 4.2 billion",
+          "scope": "VYVGART global net product sales across indications/formulations; not MG-specific sales",
+          "trend": "+90% YoY"
+        }
       }
     },
     {
@@ -78,25 +114,45 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2023-06",
-          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2024-01",
-          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "日本",
           "agency": "MHLW/PMDA",
           "approvalDate": "2024",
-          "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对"
+          "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对",
+          "en": {
+            "countryOrRegion": "日本",
+            "agency": "MHLW/PMDA",
+            "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2025-03-31",
-          "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性受体酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性受体酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性受体酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          }
         }
       ],
       "sales": {
@@ -104,7 +160,12 @@
         "value": "3.32 亿欧元",
         "currency": "EUR",
         "scope": "UCB 披露的 RYSTIGGO 产品净销售额",
-        "trend": "+65% YoY"
+        "trend": "+65% YoY",
+        "en": {
+          "value": "not separately disclosed",
+          "scope": "Public sales reporting may not isolate MG or China sales.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-rystiggo",
@@ -121,6 +182,17 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "brand": "Rystiggo",
+        "generic": "rozanolixizumab-noli",
+        "company": "UCB; China MAH/commercial information should be checked against NMPA and company announcements.",
+        "class": "FcRn blocker",
+        "sales": {
+          "value": "not separately disclosed",
+          "scope": "Public sales reporting may not isolate MG or China sales.",
+          "trend": "To be reviewed"
+        }
       }
     },
     {
@@ -135,31 +207,56 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2023-10",
-          "indication": "成人 gMG，AChR 抗体阳性"
+          "indication": "成人 gMG，AChR 抗体阳性",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "成人 gMG，AChR 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2023-12",
-          "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗"
+          "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "成人 gMG，AChR 抗体阳性，作为标准治疗附加治疗"
+          }
         },
         {
           "countryOrRegion": "日本",
           "agency": "MHLW/PMDA",
           "approvalDate": "2024",
-          "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对"
+          "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对",
+          "en": {
+            "countryOrRegion": "日本",
+            "agency": "MHLW/PMDA",
+            "indication": "gMG，对激素或其他免疫抑制剂反应不足；具体标签需核对"
+          }
         },
         {
           "countryOrRegion": "澳大利亚",
           "agency": "TGA",
           "approvalDate": "2024-07",
-          "indication": "gMG；具体标签需核对"
+          "indication": "gMG；具体标签需核对",
+          "en": {
+            "countryOrRegion": "澳大利亚",
+            "agency": "TGA",
+            "indication": "gMG；具体标签需核对"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2025-10-11",
-          "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "与常规治疗药物联合，用于乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          }
         }
       ],
       "sales": {
@@ -167,7 +264,12 @@
         "value": "2.17 亿欧元",
         "currency": "EUR",
         "scope": "UCB 披露的 ZILBRYSQ 产品净销售额",
-        "trend": ">100% YoY"
+        "trend": ">100% YoY",
+        "en": {
+          "value": "not separately disclosed",
+          "scope": "Public sales reporting may not isolate MG or China sales.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-zilbrysq",
@@ -185,6 +287,17 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "brand": "Zilbrysq",
+        "generic": "zilucoplan",
+        "company": "UCB; China MAH/commercial information should be checked against NMPA and company announcements.",
+        "class": "Complement C5 inhibitor",
+        "sales": {
+          "value": "not separately disclosed",
+          "scope": "Public sales reporting may not isolate MG or China sales.",
+          "trend": "To be reviewed"
+        }
       }
     },
     {
@@ -199,19 +312,34 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2022-04",
-          "indication": "成人 gMG，AChR 抗体阳性"
+          "indication": "成人 gMG，AChR 抗体阳性",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "成人 gMG，AChR 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2022",
-          "indication": "成人 gMG，AChR 抗体阳性，作为其他治疗附加治疗"
+          "indication": "成人 gMG，AChR 抗体阳性，作为其他治疗附加治疗",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "成人 gMG，AChR 抗体阳性，作为其他治疗附加治疗"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2025-04-22",
-          "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          }
         }
       ],
       "sales": {
@@ -219,7 +347,12 @@
         "value": "约 47.2 亿美元",
         "currency": "USD",
         "scope": "ULTOMIRIS 产品级销售额，覆盖 PNH、aHUS、gMG、NMOSD 等，不等同于 MG 单适应症销售额",
-        "trend": "+19% YoY"
+        "trend": "+19% YoY",
+        "en": {
+          "value": "reported within AstraZeneca/Alexion product disclosures",
+          "scope": "Global product-level sales; not MG-specific unless separately disclosed.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.ema.europa.eu/en/medicines/human/EPAR/ultomiris",
@@ -235,6 +368,17 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "brand": "Ultomiris",
+        "generic": "ravulizumab-cwvz",
+        "company": "Alexion/AstraZeneca; China information should be checked against NMPA and company announcements.",
+        "class": "Long-acting complement C5 inhibitor",
+        "sales": {
+          "value": "reported within AstraZeneca/Alexion product disclosures",
+          "scope": "Global product-level sales; not MG-specific unless separately disclosed.",
+          "trend": "To be reviewed"
+        }
       }
     },
     {
@@ -249,19 +393,34 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2017-10",
-          "indication": "成人 gMG，AChR 抗体阳性"
+          "indication": "成人 gMG，AChR 抗体阳性",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "成人 gMG，AChR 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2017",
-          "indication": "难治性 gMG，AChR 抗体阳性"
+          "indication": "难治性 gMG，AChR 抗体阳性",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "难治性 gMG，AChR 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2023-06；2026-01 儿童适应症扩展",
-          "indication": "成人难治性 gMG，AChR 抗体阳性；2026 年扩展至 6 岁及以上 AChR 抗体阳性难治性 gMG 儿童患者"
+          "indication": "成人难治性 gMG，AChR 抗体阳性；2026 年扩展至 6 岁及以上 AChR 抗体阳性难治性 gMG 儿童患者",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "成人难治性 gMG，AChR 抗体阳性；2026 年扩展至 6 岁及以上 AChR 抗体阳性难治性 gMG 儿童患者"
+          }
         }
       ],
       "sales": {
@@ -269,7 +428,12 @@
         "value": "未在本板块拆分全球总额；美国销售约 10.92 亿美元",
         "currency": "USD",
         "scope": "SOLIRIS 产品级销售额，覆盖多个适应症；受 Ultomiris 转换、竞争和生物类似药影响",
-        "trend": "下降"
+        "trend": "下降",
+        "en": {
+          "value": "reported within company product disclosures",
+          "scope": "Global product-level sales across indications; not MG-specific unless separately disclosed.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.ema.europa.eu/en/medicines/human/EPAR/soliris",
@@ -283,6 +447,17 @@
         "reviewStatus": "需定期复核",
         "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
         "lastChecked": "2026-06-07"
+      },
+      "en": {
+        "brand": "Soliris",
+        "generic": "eculizumab",
+        "company": "Alexion/AstraZeneca",
+        "class": "Complement C5 inhibitor",
+        "sales": {
+          "value": "reported within company product disclosures",
+          "scope": "Global product-level sales across indications; not MG-specific unless separately disclosed.",
+          "trend": "To be reviewed"
+        }
       }
     },
     {
@@ -297,19 +472,34 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2025-04",
-          "indication": "12 岁及以上 gMG，AChR 或 MuSK 抗体阳性"
+          "indication": "12 岁及以上 gMG，AChR 或 MuSK 抗体阳性",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "12 岁及以上 gMG，AChR 或 MuSK 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2025-12",
-          "indication": "gMG，作为标准治疗附加治疗；具体年龄和抗体分型按欧盟标签核对"
+          "indication": "gMG，作为标准治疗附加治疗；具体年龄和抗体分型按欧盟标签核对",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "gMG，作为标准治疗附加治疗；具体年龄和抗体分型按欧盟标签核对"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2026-05-21",
-          "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人和 12 岁及以上青少年全身型重症肌无力（gMG）患者。"
+          "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人和 12 岁及以上青少年全身型重症肌无力（gMG）患者。",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "与常规治疗药物联合，用于治疗抗乙酰胆碱受体（AChR）抗体阳性或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人和 12 岁及以上青少年全身型重症肌无力（gMG）患者。"
+          }
         }
       ],
       "sales": {
@@ -317,7 +507,12 @@
         "value": "未单独披露",
         "currency": "USD",
         "scope": "新近获批，J&J 未在公开财报中单独披露 Imaavy 销售额",
-        "trend": "上市早期"
+        "trend": "上市早期",
+        "en": {
+          "value": "not separately disclosed",
+          "scope": "New launch/early commercialization; MG- or China-specific sales may not be available.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.investor.jnj.com/investor-news/news-details/2025/Johnson--Johnson-receives-FDA-approval-for-IMAAVY-nipocalimab-aahu-a-new-FcRn-blocker-offering-long-lasting-disease-control-in-the-broadest-population-of-people-living-with-generalized-myasthenia-gravis-gMG/default.aspx",
@@ -332,6 +527,17 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "brand": "Imaavy",
+        "generic": "nipocalimab-aahu",
+        "company": "Johnson & Johnson / Janssen; China information should be checked against NMPA and company announcements.",
+        "class": "FcRn blocker",
+        "sales": {
+          "value": "not separately disclosed",
+          "scope": "New launch/early commercialization; MG- or China-specific sales may not be available.",
+          "trend": "To be reviewed"
+        }
       }
     },
     {
@@ -346,19 +552,34 @@
           "countryOrRegion": "美国",
           "agency": "FDA",
           "approvalDate": "2025-12",
-          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性",
+          "en": {
+            "countryOrRegion": "美国",
+            "agency": "FDA",
+            "indication": "成人 gMG，AChR 或 MuSK 抗体阳性"
+          }
         },
         {
           "countryOrRegion": "欧盟",
           "agency": "European Commission / EMA",
           "approvalDate": "2026-02",
-          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性，作为标准治疗附加治疗"
+          "indication": "成人 gMG，AChR 或 MuSK 抗体阳性，作为标准治疗附加治疗",
+          "en": {
+            "countryOrRegion": "欧盟",
+            "agency": "European Commission / EMA",
+            "indication": "成人 gMG，AChR 或 MuSK 抗体阳性，作为标准治疗附加治疗"
+          }
         },
         {
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2026-03-27",
-          "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "与常规治疗药物联合用于治疗抗乙酰胆碱受体（AChR）或抗肌肉特异性酪氨酸激酶（MuSK）抗体阳性的成人全身型重症肌无力（gMG）患者。"
+          }
         }
       ],
       "sales": {
@@ -366,7 +587,12 @@
         "value": "未披露 MG 适应症销售额",
         "currency": "USD",
         "scope": "Uplizna 已有 NMOSD/IgG4-RD 等适应症，gMG 为新近获批；MG 销售额尚未单独披露",
-        "trend": "上市早期"
+        "trend": "上市早期",
+        "en": {
+          "value": "not separately disclosed for MG",
+          "scope": "Product sales may cover multiple indications and regions.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.amgen.com/newsroom/press-releases/2025/12/fda-approves-uplizna-for-adults-with-generalized-myasthenia-gravis",
@@ -382,6 +608,17 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国获批信息已于 2026-06-17 根据人工复核文档更新；销售额和其他地区标签仍需定期复核。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "brand": "Uplizna",
+        "generic": "inebilizumab-cdon",
+        "company": "Amgen/Horizon; China information should be checked against NMPA and company announcements.",
+        "class": "CD19 B-cell-depleting antibody",
+        "sales": {
+          "value": "not separately disclosed for MG",
+          "scope": "Product sales may cover multiple indications and regions.",
+          "trend": "To be reviewed"
+        }
       }
     },
     {
@@ -396,7 +633,12 @@
           "countryOrRegion": "中国",
           "agency": "NMPA",
           "approvalDate": "2025-05",
-          "indication": "AChR 抗体阳性成人 gMG"
+          "indication": "AChR 抗体阳性成人 gMG",
+          "en": {
+            "countryOrRegion": "中国",
+            "agency": "NMPA",
+            "indication": "AChR 抗体阳性成人 gMG"
+          }
         }
       ],
       "sales": {
@@ -404,7 +646,12 @@
         "value": "泰它西普销量 225.5 万支；MG 单适应症销售额未单独披露",
         "currency": "CNY",
         "scope": "泰它西普产品覆盖 SLE、RA、MG；公司披露产品销量和商业化收入，但 MG 单适应症销售额需后续跟踪",
-        "trend": "销量 +47.92% YoY"
+        "trend": "销量 +47.92% YoY",
+        "en": {
+          "value": "not separately disclosed for MG",
+          "scope": "China product-level sales and MG-specific sales require manual review.",
+          "trend": "To be reviewed"
+        }
       },
       "sourceUrls": [
         "https://www.nasdaq.com/press-release/remegen-telitacicept-treatment-generalized-myasthenia-gravis-approved-china-2025-05",
@@ -416,6 +663,17 @@
         "reviewStatus": "需定期复核",
         "reviewNote": "批准国家和销售额会变动，建议按季度回看监管数据库、年报和公司公告。",
         "lastChecked": "2026-06-07"
+      },
+      "en": {
+        "brand": "Telitacicept",
+        "generic": "telitacicept",
+        "company": "RemeGen",
+        "class": "BLyS/APRIL dual-target fusion protein",
+        "sales": {
+          "value": "not separately disclosed for MG",
+          "scope": "China product-level sales and MG-specific sales require manual review.",
+          "trend": "To be reviewed"
+        }
       }
     }
   ]

@@ -50,6 +50,24 @@
         "reviewStatus": "部分核查",
         "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
         "lastChecked": "2026-06-07"
+      },
+      "en": {
+        "zhName": "Pyridostigmine bromide",
+        "class": "Symptomatic therapy",
+        "target": "Acetylcholinesterase",
+        "mechanism": "Inhibits acetylcholinesterase and prolongs acetylcholine activity at the neuromuscular junction, improving muscle strength symptoms.",
+        "approvedUse": "Myasthenia gravis; a long-established therapy used for symptomatic control.",
+        "biomarker": "Not antibody-subtype dependent",
+        "route": "Oral",
+        "pivotalEvidence": "Historical approval with limited modern phase 3 randomized trial evidence; long accumulated clinical experience.",
+        "realWorldEvidence": "Foundation therapy in routine practice; cohort studies and guideline references can be added in later reviews.",
+        "postMarketing": "Monitor cholinergic adverse effects, bradycardia, abdominal pain, diarrhea, increased secretions and overdose-related cholinergic crisis.",
+        "safetySignals": [
+          "Cholinergic effects",
+          "Gastrointestinal reactions",
+          "Bradycardia"
+        ],
+        "evidenceGrade": "Long-established clinical use"
       }
     },
     {
@@ -97,6 +115,24 @@
         "reviewStatus": "部分核查",
         "reviewNote": "药物机制、适应症、证据和安全性为人工整理，后续应逐条复核说明书、审评文件和文献。",
         "lastChecked": "2026-06-07"
+      },
+      "en": {
+        "zhName": "Eculizumab",
+        "class": "Complement C5 inhibitor",
+        "target": "Complement C5",
+        "mechanism": "Binds C5 and inhibits terminal complement activation and membrane attack complex formation, reducing AChR-antibody-mediated neuromuscular junction injury.",
+        "approvedUse": "AChR antibody-positive generalized myasthenia gravis in adults; exact label varies by region.",
+        "biomarker": "AChR antibody-positive gMG",
+        "route": "Intravenous infusion",
+        "pivotalEvidence": "REGAIN and open-label extension data support efficacy in refractory AChR-positive gMG.",
+        "realWorldEvidence": "Real-world cohorts support benefit in selected refractory patients, with attention to vaccination and infection prevention.",
+        "postMarketing": "Key risk is serious meningococcal infection; vaccination and risk mitigation are required according to local labels.",
+        "safetySignals": [
+          "Meningococcal infection",
+          "Serious infection",
+          "Infusion reaction"
+        ],
+        "evidenceGrade": "RCT + OLE + RWE"
       }
     },
     {
@@ -156,6 +192,24 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Ravulizumab",
+        "class": "Long-acting complement C5 inhibitor",
+        "target": "Complement C5",
+        "mechanism": "Long-acting C5 inhibition suppresses terminal complement activation with a longer dosing interval than eculizumab.",
+        "approvedUse": "Adult generalized myasthenia gravis; regional labels and antibody-subtype requirements should be checked locally.",
+        "biomarker": "Primarily AChR antibody-positive gMG by pivotal evidence/labels",
+        "route": "Intravenous infusion",
+        "pivotalEvidence": "CHAMPION MG demonstrated clinical benefit and supports regulatory approvals.",
+        "realWorldEvidence": "Emerging experience focuses on sustained response, switching from eculizumab and less frequent infusion burden.",
+        "postMarketing": "Monitor serious meningococcal and other infections; vaccination and risk mitigation are label-driven.",
+        "safetySignals": [
+          "Meningococcal infection",
+          "Serious infection",
+          "Headache"
+        ],
+        "evidenceGrade": "RCT + extension data"
       }
     },
     {
@@ -219,6 +273,24 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Zilucoplan",
+        "class": "Complement C5 inhibitor",
+        "target": "Complement C5",
+        "mechanism": "A subcutaneous macrocyclic peptide C5 inhibitor that blocks C5 cleavage and membrane attack complex formation.",
+        "approvedUse": "Generalized myasthenia gravis; pivotal evidence focuses on AChR antibody-positive adult gMG.",
+        "biomarker": "AChR antibody-positive gMG",
+        "route": "Subcutaneous injection",
+        "pivotalEvidence": "RAISE and extension studies support efficacy and safety.",
+        "realWorldEvidence": "Real-world evidence is still accumulating; monitoring should focus on adherence, injection burden and infection risk.",
+        "postMarketing": "Monitor meningococcal/serious infections, injection-site reactions and pancreatic enzyme abnormalities where label-relevant.",
+        "safetySignals": [
+          "Meningococcal infection",
+          "Injection-site reaction",
+          "Pancreatic enzyme elevation"
+        ],
+        "evidenceGrade": "RCT + extension data"
       }
     },
     {
@@ -282,6 +354,24 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Efgartigimod alfa",
+        "class": "FcRn blocker",
+        "target": "Neonatal Fc receptor (FcRn)",
+        "mechanism": "Blocks FcRn-mediated IgG recycling, accelerates degradation of pathogenic IgG antibodies and lowers circulating IgG.",
+        "approvedUse": "Generalized myasthenia gravis; regional labels differ by antibody subtype and line of therapy.",
+        "biomarker": "AChR antibody-positive in many initial labels; some regions have broader adult gMG labels",
+        "route": "Intravenous infusion",
+        "pivotalEvidence": "ADAPT demonstrated clinically meaningful improvement; additional extension and label-expansion evidence is evolving.",
+        "realWorldEvidence": "Multiple real-world cohorts describe rapid onset, cyclic dosing patterns and steroid-sparing potential.",
+        "postMarketing": "Monitor infections, headache, hypersensitivity and risks related to IgG reduction.",
+        "safetySignals": [
+          "Infection",
+          "Headache",
+          "Hypersensitivity"
+        ],
+        "evidenceGrade": "RCT + OLE + RWE"
       }
     },
     {
@@ -345,6 +435,24 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Efgartigimod alfa + hyaluronidase",
+        "class": "Subcutaneous FcRn blocker",
+        "target": "Neonatal Fc receptor (FcRn)",
+        "mechanism": "Uses the same FcRn-blocking mechanism as IV efgartigimod; hyaluronidase facilitates subcutaneous absorption.",
+        "approvedUse": "Generalized myasthenia gravis; regional labels should be checked for antibody-subtype requirements.",
+        "biomarker": "AChR antibody-positive in many initial labels; some regions have broader adult gMG labels",
+        "route": "Subcutaneous injection",
+        "pivotalEvidence": "ADAPT-SC supports comparable pharmacodynamic IgG reduction and clinical use of the subcutaneous formulation.",
+        "realWorldEvidence": "Real-world use is accumulating, with attention to convenience, injection reactions and treatment cycles.",
+        "postMarketing": "Monitor infections, injection-site reactions, hypersensitivity and IgG reduction-related risk.",
+        "safetySignals": [
+          "Infection",
+          "Injection-site reaction",
+          "Hypersensitivity"
+        ],
+        "evidenceGrade": "RCT/bridging + extension/RWE emerging"
       }
     },
     {
@@ -404,6 +512,24 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Rozanolixizumab-noli",
+        "class": "FcRn blocker",
+        "target": "Neonatal Fc receptor (FcRn)",
+        "mechanism": "Binds FcRn, reduces IgG recycling and lowers pathogenic IgG antibody levels.",
+        "approvedUse": "Generalized myasthenia gravis; pivotal and label information should be interpreted by antibody subtype and region.",
+        "biomarker": "AChR or MuSK antibody-positive gMG in key labels",
+        "route": "Subcutaneous infusion/injection",
+        "pivotalEvidence": "MycarinG supports efficacy in antibody-positive gMG.",
+        "realWorldEvidence": "Real-world evidence remains limited; follow-up should focus on treatment burden, headache and infection risk.",
+        "postMarketing": "Monitor headache, infections, hypersensitivity and aseptic meningitis signals where label-relevant.",
+        "safetySignals": [
+          "Headache",
+          "Infection",
+          "Hypersensitivity"
+        ],
+        "evidenceGrade": "RCT + post-approval evidence emerging"
       }
     },
     {
@@ -459,6 +585,24 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Nipocalimab-aahu",
+        "class": "FcRn blocker",
+        "target": "Neonatal Fc receptor (FcRn)",
+        "mechanism": "Blocks FcRn to reduce circulating IgG and pathogenic autoantibody levels.",
+        "approvedUse": "Generalized myasthenia gravis; regional label details and antibody requirements require ongoing review.",
+        "biomarker": "Antibody-positive gMG according to pivotal/label context",
+        "route": "Intravenous infusion",
+        "pivotalEvidence": "Phase 3 evidence supports regulatory approval; confirm details against official labels and review documents.",
+        "realWorldEvidence": "Post-approval real-world evidence is early and should be monitored as uptake grows.",
+        "postMarketing": "Monitor infections, hypersensitivity and IgG reduction-related risk.",
+        "safetySignals": [
+          "Infection",
+          "Hypersensitivity",
+          "IgG reduction"
+        ],
+        "evidenceGrade": "Phase 3 evidence + early post-approval monitoring"
       }
     },
     {
@@ -522,13 +666,35 @@
         "reviewStatus": "已人工复核",
         "reviewNote": "中国 NMPA 获批信息已于 2026-06-17 根据人工复核文档确认；证据、真实世界研究和上市后安全性仍需持续更新。",
         "lastChecked": "2026-06-17"
+      },
+      "en": {
+        "zhName": "Inebilizumab-cdon",
+        "class": "CD19 B-cell-depleting antibody",
+        "target": "CD19-positive B cells",
+        "mechanism": "Targets CD19-positive B cells, including plasmablasts, and reduces immune activity related to autoantibody production.",
+        "approvedUse": "Generalized myasthenia gravis; confirm regional label, antibody subgroup and dosing requirements from official sources.",
+        "biomarker": "gMG population per label; subgroup details require label review",
+        "route": "Intravenous infusion",
+        "pivotalEvidence": "Pivotal evidence supports approval; details should be anchored to official review documents and publications.",
+        "realWorldEvidence": "Real-world evidence in MG is still emerging; follow infection and hypogammaglobulinemia risk.",
+        "postMarketing": "Monitor infusion reactions, infections, hypogammaglobulinemia and B-cell depletion-related risks.",
+        "safetySignals": [
+          "Infusion reaction",
+          "Infection",
+          "Hypogammaglobulinemia"
+        ],
+        "evidenceGrade": "Pivotal evidence + post-approval monitoring"
       }
     }
   ],
   "offLabelOrSupportive": [
     {
       "name": "糖皮质激素、硫唑嘌呤、吗替麦考酚酯、环孢素、他克莫司、利妥昔单抗、IVIG、血浆置换等",
-      "note": "这些治疗在 MG 临床实践和指南中常见，但具体是否为 MG 适应症批准取决于国家/地区和制剂标签；建议单独做“指南推荐/标签外使用”页面，避免与正式获批适应症混淆。"
+      "note": "这些治疗在 MG 临床实践和指南中常见，但具体是否为 MG 适应症批准取决于国家/地区和制剂标签；建议单独做“指南推荐/标签外使用”页面，避免与正式获批适应症混淆。",
+      "en": {
+        "name": "Conventional/supportive therapies",
+        "note": "Supportive or conventional therapies remain important in MG management. Evidence, sequencing and safety should be reviewed according to guidelines and patient context."
+      }
     }
   ]
 }
