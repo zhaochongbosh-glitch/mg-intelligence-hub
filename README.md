@@ -24,6 +24,7 @@ node scripts/serve.mjs
 - `pages/therapy.html`：治疗图谱和药物证据矩阵
 - `pages/safety.html`：安全性与上市后监测
 - `pages/china-access.html`：中国准入与商业化
+- `pages/evidence-chain.html`: 人工复核与证据链
 - `pages/trials-market.html`：临床试验雷达、全球批准和市场
 - `pages/guidance.html`：指南与诊疗路径
 - `pages/data-status.html`：数据更新状态与人工复核队列

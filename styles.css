@@ -256,6 +256,192 @@ main {
   background: rgba(255, 255, 255, 0.9);
 }
 
+.evidence-chain-summary,
+.evidence-rule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.evidence-chain-summary article,
+.evidence-rule-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.evidence-chain-summary span,
+.evidence-rule-card span {
+  color: var(--teal);
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.evidence-chain-summary strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--text);
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.evidence-chain-summary p,
+.evidence-rule-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.evidence-rule-card h3 {
+  margin: 8px 0 0;
+  font-size: 1rem;
+}
+
+.evidence-chain-list {
+  display: grid;
+  gap: 16px;
+}
+
+.evidence-chain-card {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.evidence-chain-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+}
+
+.evidence-chain-card__head h3 {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.decision-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #edf6f1;
+  color: #26734d;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.decision-updated {
+  background: #e8f3f8;
+  color: #1c6075;
+}
+
+.decision-needs-follow-up {
+  background: #fff4df;
+  color: #8a5b0c;
+}
+
+.decision-no-change {
+  background: #f3f5f6;
+  color: var(--muted);
+}
+
+.evidence-chain-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.evidence-chain-meta div {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.evidence-chain-meta dt {
+  margin-bottom: 5px;
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.evidence-chain-meta dd {
+  margin: 0;
+  color: var(--text);
+  font-weight: 750;
+}
+
+.evidence-changes {
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.evidence-changes h4 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+.evidence-changes ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.evidence-chain-flow,
+.evidence-chain-data,
+.evidence-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.evidence-chain-flow span,
+.evidence-chain-data span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #eef5f5;
+  color: var(--teal-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.evidence-chain-data span {
+  background: #f6f7f8;
+  color: var(--muted);
+}
+
+.evidence-source-links a {
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--teal-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.evidence-source-links a:hover {
+  background: var(--soft);
+}
+
+.evidence-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
 .portal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -2335,6 +2521,9 @@ footer {
   .status-overview,
   .source-status-grid,
   .status-outputs,
+  .evidence-chain-summary,
+  .evidence-rule-grid,
+  .evidence-chain-meta,
   .review-principles,
   .disclaimer-grid,
   .workspace-grid,
@@ -2367,6 +2556,7 @@ footer {
   .latest-card__head,
   .safety-card__head,
   .china-access-card__head,
+  .evidence-chain-card__head,
   .review-card__head,
   .status-block__head,
   .treatment-card__head {

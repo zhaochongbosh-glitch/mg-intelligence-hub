@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="展示重症肌无力信息港的人工复核记录、原始来源链接、数据同步字段和证据链，提升监管、准入、治疗证据和市场信息的可追溯性。" />
+    <title>人工复核与证据链 | 重症肌无力信息港</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="canonical" href="https://mg-intelligence-hub.huashanmuscle.com/pages/evidence-chain.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="重症肌无力信息港" />
+    <meta property="og:title" content="人工复核与证据链 | 重症肌无力信息港" />
+    <meta property="og:description" content="查看本站已完成的人工复核记录、原始来源、改动内容、同步数据文件和下一次复核时间。" />
+    <meta property="og:url" content="https://mg-intelligence-hub.huashanmuscle.com/pages/evidence-chain.html" />
+    <meta property="og:image" content="https://mg-intelligence-hub.huashanmuscle.com/assets/hero-research-hub.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="https://tracking.huashanmuscle.com/api/script.js" data-site-id="5472948dff6d" defer></script>
+  </head>
+  <body data-page="evidence-chain">
+    <header class="page-hero">
+      <div>
+        <p class="eyebrow">Manual Review & Evidence Chain</p>
+        <h1>人工复核与证据链</h1>
+        <p>把专家复核、原始监管/企业来源、结构化数据文件和前台展示模块串起来，让每一次关键更新都可追溯。</p>
+      </div>
+    </header>
+    <main>
+      <nav class="section-nav" aria-label="页面导航">
+        <a href="../index.html">首页</a>
+        <a href="research/">研究情报</a>
+        <a href="huashan-team.html">华山MG团队</a>
+        <a href="therapy.html">治疗与证据</a>
+        <a href="safety.html">安全监测</a>
+        <a href="china-access.html">中国准入</a>
+        <a href="evidence-chain.html" aria-current="page">证据链</a>
+        <a href="trials-market.html">试验与市场</a>
+        <a href="guidance.html">指南路径</a>
+        <a href="disclaimer.html">使用说明</a>
+        <a href="data-status.html">数据状态</a>
+      </nav>
+
+      <section class="module-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Verified Records</p>
+            <h2>已完成复核</h2>
+            <p data-scope="evidence-chain">正在读取人工复核记录</p>
+          </div>
+          <p data-count="evidence-chain">0 条记录</p>
+        </div>
+        <div data-render="evidence-chain-summary" class="evidence-chain-summary"></div>
+        <div data-render="evidence-chain" class="evidence-chain-list"></div>
+      </section>
+
+      <section class="module-section">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">Review Rule</p>
+            <h2>证据链判定规则</h2>
+          </div>
+        </div>
+        <div class="evidence-rule-grid">
+          <article>
+            <span>01</span>
+            <h3>原始来源优先</h3>
+            <p>NMPA/CDE、药品注册证、企业正式公告、说明书、财报和 PubMed 原始记录优先于二次转载。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>人工结论留痕</h3>
+            <p>每条人工复核记录必须包含复核日期、复核人、来源链接、决策类型、改动内容和下次复核日期。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>结构化同步</h3>
+            <p>复核结论同步到对应 JSON 数据文件，前台页面只读取结构化数据，避免散落在文档或聊天记录里。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>定期再复核</h3>
+            <p>监管标签、医保准入、销售额、安全性信号和指南路径属于高变化字段，按月或按季度回看。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer><p>本站用于公开医学情报整理和科研参考；正式判断请回到原始来源并进行人工复核。</p></footer>
+    <script src="../app.js" type="module"></script>
+  </body>
+</html>

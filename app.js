@@ -33,6 +33,7 @@ const dataFiles = {
   matrix: "evidence-matrix.json",
   trials: "trial-radar.json",
   updateStatus: "update-status.json",
+  manualReview: "manual-review-log.json",
   journalMetrics: "journal-metrics.json"
 };
 
@@ -225,6 +226,7 @@ function renderVisibleModules() {
   if (exists("guidance")) renderGuidance();
   if (exists("update-status")) renderUpdateStatus();
   if (exists("review-queue")) renderReviewQueue();
+  if (exists("evidence-chain")) renderEvidenceChain();
   if (exists("faers")) renderFaersExplorer();
 }
 
@@ -1282,6 +1284,131 @@ function renderReviewQueueCard(item) {
   `;
 }
 
+function renderEvidenceChain() {
+  const log = state.data.manualReview || {};
+  const items = manualReviewItems().sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+  const highRisk = items.filter((item) => item.riskLevel === "high").length;
+  const changed = items.filter((item) => item.decision === "updated" || item.decision === "confirmed").length;
+  const nextReview = items
+    .map((item) => item.nextReviewDate)
+    .filter(Boolean)
+    .sort()[0];
+
+  setCount("evidence-chain", `${items.length} 条人工复核记录`);
+  setScope("evidence-chain", log.provenance?.reviewNote || log.scopeNote || "读取 manual-review-log.json，展示人工复核结论、来源链接和已同步的数据字段。");
+
+  const summary = targetFor("evidence-chain-summary", false);
+  if (summary) {
+    summary.innerHTML = `
+      <article>
+        <span>Review records</span>
+        <strong>${items.length}</strong>
+        <p>已录入的正式人工复核记录</p>
+      </article>
+      <article>
+        <span>Confirmed / updated</span>
+        <strong>${changed}</strong>
+        <p>已确认或已更新网站数据的条目</p>
+      </article>
+      <article>
+        <span>High priority</span>
+        <strong>${highRisk}</strong>
+        <p>需优先随访的高变化字段</p>
+      </article>
+      <article>
+        <span>Next review</span>
+        <strong>${escapeHtml(nextReview ? formatDate(nextReview) : "待安排")}</strong>
+        <p>最近一次计划复核日期</p>
+      </article>
+    `;
+  }
+
+  targetFor("evidence-chain").innerHTML = items.length
+    ? items.map(renderEvidenceChainCard).join("")
+    : `<article class="evidence-chain-card"><h3>暂无正式人工复核记录</h3><p>完成复核后，在 data/manual-review-log.json 中录入记录，即可在这里展示证据链。</p></article>`;
+}
+
+function renderEvidenceChainCard(item = {}) {
+  const sourceLinks = (item.sourceUrls || [])
+    .map((url, index) => `<a href="${escapeAttribute(url)}" target="_blank" rel="noreferrer">来源 ${index + 1}</a>`)
+    .join("");
+  const changes = (item.changesMade || []).map((change) => `<li>${escapeHtml(change)}</li>`).join("");
+  const chain = evidenceChainFor(item);
+  return `
+    <article class="evidence-chain-card">
+      <div class="evidence-chain-card__head">
+        <div>
+          <p class="section-kicker">${escapeHtml(item.module || "manual-review")}</p>
+          <h3>${escapeHtml(item.topic || item.itemId || "未命名复核记录")}</h3>
+        </div>
+        <strong class="decision-badge decision-${escapeAttribute(item.decision || "needs-follow-up")}">${escapeHtml(formatDecisionLabel(item.decision))}</strong>
+      </div>
+      <p>${escapeHtml(item.summary || "暂无复核摘要。")}</p>
+      <dl class="evidence-chain-meta">
+        <div><dt>复核日期</dt><dd>${escapeHtml(formatDate(item.date))}</dd></div>
+        <div><dt>复核人</dt><dd>${escapeHtml(item.reviewer || "未记录")}</dd></div>
+        <div><dt>关联条目</dt><dd>${escapeHtml(item.itemId || "未记录")}</dd></div>
+        <div><dt>下次复核</dt><dd>${escapeHtml(item.nextReviewDate ? formatDate(item.nextReviewDate) : "待安排")}</dd></div>
+      </dl>
+      ${changes ? `<div class="evidence-changes"><h4>本次改动</h4><ul>${changes}</ul></div>` : ""}
+      <div class="evidence-chain-flow" aria-label="证据链">
+        <span>原始来源</span>
+        <span>人工复核</span>
+        <span>结构化数据</span>
+        <span>前台展示</span>
+      </div>
+      <div class="evidence-chain-data">
+        ${chain.map((entry) => `<span>${escapeHtml(entry)}</span>`).join("")}
+      </div>
+      ${sourceLinks ? `<div class="evidence-source-links">${sourceLinks}</div>` : ""}
+      ${item.notes ? `<p class="evidence-note">${escapeHtml(item.notes)}</p>` : ""}
+    </article>
+  `;
+}
+
+function evidenceChainFor(item = {}) {
+  const chain = [];
+  if (marketItems().some((product) => product.id === item.itemId)) chain.push("global-market.json");
+  if (treatmentItems().some((treatment) => JSON.stringify(treatment).includes(item.itemId || "") || productTreatmentIds(item.itemId).includes(treatment.id))) {
+    chain.push("treatments.json");
+  }
+  if (matrixItems().some((entry) => productMatrixId(item.itemId) === entry.id)) chain.push("evidence-matrix.json");
+  chain.push("manual-review-log.json");
+  return [...new Set(chain)];
+}
+
+function productTreatmentIds(productId = "") {
+  const map = {
+    vyvgart: ["efgartigimod-iv", "efgartigimod-hytrulo"],
+    rystiggo: ["rozanolixizumab"],
+    zilbrysq: ["zilucoplan"],
+    ultomiris: ["ravulizumab"],
+    imaavy: ["nipocalimab"],
+    uplizna: ["inebilizumab"]
+  };
+  return map[productId] || [];
+}
+
+function productMatrixId(productId = "") {
+  return {
+    vyvgart: "efgartigimod",
+    rystiggo: "rozanolixizumab",
+    zilbrysq: "zilucoplan",
+    ultomiris: "ravulizumab",
+    imaavy: "nipocalimab",
+    uplizna: "inebilizumab"
+  }[productId] || "";
+}
+
+function formatDecisionLabel(value = "") {
+  return {
+    confirmed: "已确认",
+    updated: "已更新",
+    "needs-follow-up": "需随访",
+    "no-change": "无需改动"
+  }[value] || value || "待复核";
+}
+
 function reviewQueueItems() {
   const queue = [];
   const add = (item) => {
@@ -1664,6 +1791,10 @@ function matrixItems() {
 
 function trialItems() {
   return state.data.trials?.items || [];
+}
+
+function manualReviewItems() {
+  return state.data.manualReview?.items || [];
 }
 
 function fillSelect(name, values, labeler = (value) => value) {
