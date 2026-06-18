@@ -213,7 +213,7 @@ async function main() {
   if (shouldUpdate("latest")) {
     await sleep(400);
     const result = await runSource("latest-research", fetchLatestResearch);
-    const items = result.ok ? result.data.sort(sortByDateDesc) : previous.latest.items || [];
+    const items = result.ok ? preserveManualLiteratureItems(result.data, previous.latest.items).sort(sortByDateDesc) : previous.latest.items || [];
     writes.push(["data/latest-research.json", buildLatestData(items, result)]);
   } else {
     recordSkipped("latest-research", "范围未选择 latest/literature/all");
@@ -222,7 +222,7 @@ async function main() {
   if (shouldUpdate("china")) {
     await sleep(400);
     const result = await runSource("china-research", fetchChinaResearch);
-    const items = result.ok ? dedupe(result.data).sort(sortByDateDesc) : previous.china.items || [];
+    const items = result.ok ? preserveManualLiteratureItems(dedupe(result.data), previous.china.items).sort(sortByDateDesc) : previous.china.items || [];
     writes.push(["data/china-research.json", buildChinaData(items, result)]);
   } else {
     recordSkipped("china-research", "范围未选择 china/literature/all");
@@ -231,7 +231,7 @@ async function main() {
   if (shouldUpdate("huashan")) {
     await sleep(400);
     const result = await runSource("huashan-team", fetchHuashanTeam);
-    const items = result.ok ? dedupe(result.data).sort(sortByDateDesc) : previous.huashan.items || [];
+    const items = result.ok ? preserveManualLiteratureItems(dedupe(result.data), previous.huashan.items).sort(sortByDateDesc) : previous.huashan.items || [];
     writes.push(["data/huashan-team.json", buildHuashanTeamData(items, result)]);
   } else {
     recordSkipped("huashan-team", "范围未选择 huashan/literature/all");
@@ -1147,6 +1147,11 @@ function dedupe(items) {
     seen.add(key);
     return true;
   });
+}
+
+function preserveManualLiteratureItems(items = [], previousItems = []) {
+  const manualItems = previousItems.filter((item) => item.manualInclusion);
+  return dedupe([...items, ...manualItems]);
 }
 
 function uniqueIds(ids) {
