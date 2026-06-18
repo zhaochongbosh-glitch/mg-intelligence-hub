@@ -1,9 +1,11 @@
 const APP_ROOT = new URL(".", import.meta.url);
 const DATA_ROOT = new URL("data/", APP_ROOT);
+const LANGUAGE_STORAGE_KEY = "mgih-language";
 
 const state = {
   data: {},
   journalMetricIndex: null,
+  language: getInitialLanguage(),
   filters: {
     feedQuery: "",
     feedCategory: "all",
@@ -19,6 +21,234 @@ const state = {
     trialSource: "all"
   }
 };
+
+const pageMeta = {
+  home: {
+    zh: {
+      title: "重症肌无力信息港 | MG研究、治疗证据、临床试验与药物安全情报",
+      description: "重症肌无力信息港聚合近 7 天 PubMed 摘要、中国研究者成果、获批治疗药物、临床试验、全球批准、FAERS 安全监测和指南路径。"
+    },
+    en: {
+      title: "MG Intelligence Hub | Research, therapies, trials and safety intelligence",
+      description: "A bilingual intelligence hub for myasthenia gravis research, therapies, China access, clinical trials, safety monitoring and evidence provenance."
+    }
+  },
+  research: {
+    zh: { title: "研究情报 | 重症肌无力信息港", description: "近 7 天 MG 研究摘要、中国研究者成果和实时情报流。" },
+    en: { title: "Research Intelligence | MG Intelligence Hub", description: "Recent MG research digests, China scholar publications and live intelligence feeds." }
+  },
+  therapy: {
+    zh: { title: "治疗与证据 | 重症肌无力信息港", description: "重症肌无力获批治疗药物、作用机制、循证证据和真实世界研究证据。" },
+    en: { title: "Therapy and Evidence | MG Intelligence Hub", description: "Approved MG therapies, mechanisms of action, evidence matrix and real-world evidence." }
+  },
+  "china-access": {
+    zh: { title: "中国准入与商业化 | 重症肌无力信息港", description: "MG 治疗药物中国获批、适应症、批准机构、准入和商业化信息。" },
+    en: { title: "China Access and Commercialization | MG Intelligence Hub", description: "China approval, indication, access and commercialization intelligence for MG therapies." }
+  },
+  "huashan-team": {
+    zh: { title: "华山MG团队 | 重症肌无力信息港", description: "华山医院神经内科 MG 相关研究文章与 PubMed/WoS 线索。" },
+    en: { title: "Huashan MG Team | MG Intelligence Hub", description: "MG publications from Huashan Hospital Neurology and related PubMed/Web of Science signals." }
+  },
+  "evidence-chain": {
+    zh: { title: "人工复核与证据链 | 重症肌无力信息港", description: "展示人工复核记录、来源链接、结构化数据文件和前台同步状态。" },
+    en: { title: "Manual Review and Evidence Chain | MG Intelligence Hub", description: "Manual review records, source links, structured data files and front-end synchronization status." }
+  }
+};
+
+const translationMap = new Map([
+  ["首页", "Home"],
+  ["研究情报", "Research"],
+  ["华山MG团队", "Huashan MG Team"],
+  ["治疗与证据", "Therapy & Evidence"],
+  ["安全监测", "Safety"],
+  ["中国准入", "China Access"],
+  ["证据链", "Evidence Chain"],
+  ["试验与市场", "Trials & Market"],
+  ["指南路径", "Guidance"],
+  ["使用说明", "Notes"],
+  ["数据状态", "Data Status"],
+  ["文献", "Literature"],
+  ["研发动态", "R&D news"],
+  ["会议摘要", "Conference abstracts"],
+  ["监管动态", "Regulatory news"],
+  ["入口", "Source portal"],
+  ["中国研究", "China research"],
+  ["重症肌无力信息港", "MG Intelligence Hub"],
+  ["面向科研、医学事务和产业情报的 MG 专题工作台，聚合最新研究、治疗证据、临床试验、全球批准和指南路径。", "A focused MG intelligence workspace for research, medical affairs and industry teams, integrating recent studies, therapy evidence, trials, global approvals and guidance pathways."],
+  ["篇近 7 天文献", "articles in 7 days"],
+  ["项试验", "trials"],
+  ["个治疗项", "therapies"],
+  ["更新于", "Updated"],
+  ["读取中", "Loading"],
+  ["过去 7 天 PubMed 新上线或更新的 MG 研究摘要。", "MG PubMed records newly indexed or updated in the past 7 days."],
+  ["中国机构相关 MG 研究，按发表时间自动更新。", "MG studies linked to China-based institutions, updated by publication date."],
+  ["获批治疗药物、机制、循证证据和上市后安全监测。", "Approved therapies, mechanisms, evidence and post-marketing safety monitoring."],
+  ["全球 MG 临床试验雷达，按机制和状态持续追踪。", "Global MG trial radar tracked by mechanism and status."],
+  ["今日速览", "Today's Snapshot"],
+  ["首页只保留关键摘要和模块入口；深入内容已拆到独立页面。", "The home page keeps key summaries and module entry points; detailed content lives in dedicated pages."],
+  ["展示华山医院神经内科相关 MG 研究，按 PubMed 发表时间持续更新。", "Publications related to Huashan Hospital Neurology and MG, updated by PubMed publication date."],
+  ["获批治疗图谱、药物证据矩阵和真实世界证据。", "Approved therapy map, evidence matrix and real-world evidence."],
+  ["上市后风险信号、FAERS 入口、标签链接和人工复核状态。", "Post-marketing signals, FAERS access, label links and manual review status."],
+  ["NMPA 批准、适应症、企业、销售口径和后续准入复核。", "NMPA approvals, indications, companies, sales scope and access review."],
+  ["人工复核与证据链", "Manual Review & Evidence Chain"],
+  ["展示人工复核结论、原始来源、结构化数据文件和前台同步状态。", "Review conclusions, primary sources, structured data files and front-end sync status."],
+  ["ClinicalTrials.gov 试验雷达、全球批准和市场销售额。", "ClinicalTrials.gov radar, global approvals and market sales."],
+  ["指南、诊疗路径、危象救援和准入可及性对照。", "Guidelines, care pathways, crisis rescue and access considerations."],
+  ["数据状态与复核队列", "Data Status & Review Queue"],
+  ["查看自动更新状态、来源容错记录，以及需要人工核对的监管、市场、安全和证据事项。", "Monitor automated updates, source fallbacks and manual review needs for regulatory, market, safety and evidence items."],
+  ["近 7 天研究摘要", "Recent 7-Day Research Digest"],
+  ["正在读取最新研究摘要", "Loading recent research digests"],
+  ["中文摘要已生成", "Chinese summary ready"],
+  ["等待中文摘要", "Chinese summary pending"],
+  ["暂无摘要", "No abstract available"],
+  ["摘要生成失败", "Summary generation failed"],
+  ["待处理", "Pending"],
+  ["查看英文摘要", "View English abstract"],
+  ["PubMed 摘要", "PubMed abstract"],
+  ["研究类型", "Study type"],
+  ["研究对象", "Population"],
+  ["关键发现", "Key finding"],
+  ["情报意义", "Intelligence implication"],
+  ["复核重点", "Review focus"],
+  ["中国学者研究", "China Scholar Watch"],
+  ["正在读取中国研究数据", "Loading China scholar data"],
+  ["PubMed 更新", "PubMed update"],
+  ["发表", "Published"],
+  ["机构信息见 PubMed 摘要", "Affiliation details in PubMed abstract"],
+  ["华山MG团队发表文章", "Huashan MG Team Publications"],
+  ["正在读取华山团队论文数据。", "Loading Huashan team publication data."],
+  ["篇团队论文", "team publications"],
+  ["按发表日期倒序", "Sorted by publication date"],
+  ["最新论文期刊待读取", "Latest journal pending"],
+  ["Web of Science 需人工复核或 API 接入。", "Web of Science requires manual review or API access."],
+  ["作者信息见 PubMed", "Authors available in PubMed"],
+  ["中文摘要待生成。", "Chinese summary pending."],
+  ["PubMed 暂未提供摘要。", "PubMed abstract is not available."],
+  ["证据矩阵", "Evidence Matrix"],
+  ["正在读取证据矩阵", "Loading evidence matrix"],
+  ["药物/机制", "Drug / mechanism"],
+  ["适用人群", "Population"],
+  ["关键 RCT", "Key RCT"],
+  ["长期数据", "Long-term data"],
+  ["真实世界", "Real-world"],
+  ["安全性重点", "Safety focus"],
+  ["中国可及性", "China access"],
+  ["证据层级", "Evidence level"],
+  ["获批治疗图谱", "Approved Therapy Map"],
+  ["正在读取药物数据库", "Loading therapy database"],
+  ["机制", "Mechanism"],
+  ["抗体/标志物", "Antibody / biomarker"],
+  ["给药", "Administration"],
+  ["关键证据", "Key evidence"],
+  ["真实世界证据", "Real-world evidence"],
+  ["上市后安全", "Post-marketing safety"],
+  ["批准状态", "Approval status"],
+  ["证据待补充", "Evidence pending"],
+  ["需补充", "To be completed"],
+  ["中国获批产品", "China-approved products"],
+  ["NMPA 记录", "NMPA records"],
+  ["覆盖机制", "Mechanism coverage"],
+  ["涉及企业", "Companies"],
+  ["最新记录", "Latest record"],
+  ["日期待补充", "Date pending"],
+  ["公司待补充", "Company pending"],
+  ["适应症文本待补充", "Indication text pending"],
+  ["商业化口径", "Commercial scope"],
+  ["公开销售额", "Public sales"],
+  ["未单独披露", "Not separately disclosed"],
+  ["人工复核记录", "manual review records"],
+  ["已录入的正式人工复核记录", "Formal manual review records entered"],
+  ["已确认或已更新网站数据的条目", "Items confirmed or updated on the site"],
+  ["需优先随访的高变化字段", "High-priority fields for follow-up"],
+  ["最近一次计划复核日期", "Nearest planned review date"],
+  ["待安排", "To be scheduled"],
+  ["暂无正式人工复核记录", "No formal manual review records yet"],
+  ["完成复核后，在 data/manual-review-log.json 中录入记录，即可在这里展示证据链。", "After review, add records to data/manual-review-log.json to display the evidence chain here."],
+  ["已确认", "Confirmed"],
+  ["已更新", "Updated"],
+  ["需随访", "Follow-up needed"],
+  ["无需改动", "No change"],
+  ["待复核", "Pending review"],
+  ["复核日期", "Review date"],
+  ["复核人", "Reviewer"],
+  ["关联条目", "Linked item"],
+  ["下次复核", "Next review"],
+  ["本次改动", "Changes made"],
+  ["原始来源", "Primary sources"],
+  ["人工复核", "Manual review"],
+  ["结构化数据", "Structured data"],
+  ["前台展示", "Front-end display"],
+  ["证据链判定规则", "Evidence Chain Rules"],
+  ["每条人工复核记录必须能回到公开来源、结构化数据字段和前台展示位置。", "Each manual review record should connect public sources, structured data fields and front-end display."],
+  ["来源优先级", "Source priority"],
+  ["监管文件、说明书、企业正式公告、PubMed 原文优先；二手新闻仅作线索。", "Regulatory documents, labels, official company releases and PubMed records are prioritized; secondary news is only a lead."],
+  ["字段同步", "Field synchronization"],
+  ["复核结论需要同步到治疗、准入、市场或证据矩阵等对应 JSON 字段。", "Review conclusions should sync to the corresponding therapy, access, market or evidence JSON fields."],
+  ["风险分层", "Risk stratification"],
+  ["批准状态、适应症、安全警示、销售口径等高变化字段优先进入下次复核。", "High-change fields such as approval status, indication, safety warnings and sales scope receive priority follow-up."],
+  ["前台可解释", "Front-end explainability"],
+  ["读者应能看到来源链接、复核日期、改动内容和下一次复核安排。", "Readers should see source links, review date, changes and next scheduled review."],
+  ["追踪 MG 最新文献、中国研究者成果和多来源情报流。", "Track recent MG literature, China scholar outputs and multi-source intelligence feeds."],
+  ["中国研究者发表研究", "China Scholar Publications"],
+  ["信息流", "Intelligence Feed"],
+  ["正在读取数据", "Loading data"],
+  ["核心入口", "Core Links"],
+  ["仅用于科研与商业情报跟踪，不构成医疗建议。", "For research and intelligence tracking only; not medical advice."],
+  ["比较已获批治疗药物、关键临床证据、真实世界研究和上市后安全性。", "Compare approved therapies, pivotal clinical evidence, real-world evidence and post-marketing safety."],
+  ["药物证据矩阵", "Drug Evidence Matrix"],
+  ["个药物", "drugs"],
+  ["单独追踪 MG/gMG 治疗药物在中国的 NMPA 批准、适应症文本、企业、公开销售口径和后续准入复核事项。", "Track NMPA approvals, indication text, companies, public sales scope and follow-up access review for MG/gMG therapies in China."],
+  ["中国获批与商业化概览", "China Approval and Commercialization Overview"],
+  ["正在读取中国准入数据", "Loading China access data"],
+  ["个产品", "products"],
+  ["中国本土注册试验", "China-Registered Trials"],
+  ["ChiCTR 用于补足 ClinicalTrials.gov 对中国研究者发起研究和本土注册项目的覆盖不足；当前采用人工复核入口与重点条目方式接入。", "ChiCTR complements ClinicalTrials.gov coverage for investigator-initiated and locally registered China studies; this MVP uses manual review entry points and priority records."],
+  ["个 ChiCTR 入口/条目", "ChiCTR entries"],
+  ["后续准入复核清单", "Access Follow-up Checklist"],
+  ["核对 NMPA 批准日期、抗体分型、年龄范围、是否联合常规治疗和儿童/青少年扩展。", "Verify NMPA approval dates, antibody subtype, age range, combination with standard therapy and pediatric/adolescent extensions."],
+  ["持续追踪国家医保谈判、地方惠民保、商保目录、患者援助和院内支付路径。", "Track NRDL negotiations, local supplementary insurance, commercial insurance, patient assistance and hospital payment pathways."],
+  ["记录重点医院/省份准入、处方科室、药房路径、冷链/输注/皮下给药服务配置。", "Record access in key hospitals/provinces, prescribing departments, pharmacy pathways and service configuration."],
+  ["区分全球产品销售额、中国销售额和 MG 单适应症销售额，避免混用财报口径。", "Separate global product sales, China sales and MG-specific indication sales to avoid mixing reporting scopes."],
+  ["仅用于科研与商业情报跟踪，不构成医疗建议。中国准入状态请以 NMPA、医保局、企业公告和正式标签为准。", "For research and intelligence tracking only; not medical advice. China access status should be verified against NMPA, NHSA, company announcements and official labels."],
+  ["华山 MG 团队", "Huashan MG Team"],
+  ["展示作者署名单位中包含 Huashan Hospital / Department of Neurology 的重症肌无力研究文章，按最新发表日期排列。", "Display MG articles whose author affiliations include Huashan Hospital / Department of Neurology, sorted by latest publication date."],
+  ["华山医院神经内科重症肌无力研究展示", "Huashan Neurology MG Research Showcase"],
+  ["当前页面优先使用 PubMed 公开数据自动更新；Web of Science 通常需要机构订阅或 API 权限，先作为人工复核来源保留，后续可接入导出题录。", "This page currently prioritizes automated PubMed public data; Web of Science usually requires institutional subscription or API access and is kept as a manual review source."],
+  ["团队发表文章", "Team Publications"],
+  ["团队论文归属基于 PubMed 作者署名单位字段自动识别；正式团队成果、通讯作者、第一作者和 Web of Science 收录状态需人工复核。", "Team publication attribution is inferred from PubMed affiliation fields; official output status, corresponding/first authorship and WoS indexing require manual review."],
+  ["把专家复核、原始监管/企业来源、结构化数据文件和前台展示模块串起来，让每一次关键更新都可追溯。", "Connect expert review, primary regulatory/company sources, structured data files and front-end modules so every key update is traceable."],
+  ["已完成复核", "Completed Reviews"],
+  ["正在读取人工复核记录", "Loading manual review records"],
+  ["条记录", "records"],
+  ["NMPA/CDE、药品注册证、企业正式公告、说明书、财报和 PubMed 原始记录优先于二次转载。", "NMPA/CDE records, drug registration certificates, official company announcements, labels, financial reports and PubMed records take priority over secondary reposts."],
+  ["每条人工复核记录必须包含复核日期、复核人、来源链接、决策类型、改动内容和下次复核日期。", "Each manual review record must include review date, reviewer, source links, decision type, changes made and next review date."],
+  ["复核结论同步到对应 JSON 数据文件，前台页面只读取结构化数据，避免散落在文档或聊天记录里。", "Review conclusions are synchronized to the corresponding JSON data files; front-end pages read structured data instead of scattered documents or chat logs."],
+  ["监管标签、医保准入、销售额、安全性信号和指南路径属于高变化字段，按月或按季度回看。", "Regulatory labels, reimbursement access, sales, safety signals and guidance pathways are high-change fields reviewed monthly or quarterly."],
+  ["本站用于公开医学情报整理和科研参考；正式判断请回到原始来源并进行人工复核。", "This site is for public medical intelligence curation and research reference; formal judgments should return to primary sources and manual review."]
+]);
+
+const translationRules = [
+  [/^(\d+)\s*篇近\s*7\s*天文献$/, "$1 articles in 7 days"],
+  [/^(\d+)\s*项试验$/, "$1 trials"],
+  [/^(\d+)\s*个治疗项$/, "$1 therapies"],
+  [/^(\d+)\s*篇新研究$/, "$1 new studies"],
+  [/^(\d+)\s*篇团队论文$/, "$1 team publications"],
+  [/^(\d+)\s*条人工复核记录$/, "$1 manual review records"],
+  [/^(\d+)\s*个中国获批产品$/, "$1 China-approved products"],
+  [/^(\d+)\s*个药物$/, "$1 drugs"],
+  [/^(\d+)\s*个产品$/, "$1 products"],
+  [/^(\d+)\s*条记录$/, "$1 records"],
+  [/^(\d+)\s*个 ChiCTR 入口\/条目$/, "$1 ChiCTR entries"],
+  [/^(\d+)\s*个路径节点$/, "$1 pathway nodes"],
+  [/^(\d+)\s*\/\s*(\d+)\s*个治疗项$/, "$1 / $2 therapies"],
+  [/^发表\s+(.+)$/, "Published $1"],
+  [/^PubMed 上线\/更新：(.+)$/, "PubMed indexed/updated: $1"],
+  [/^发表：(.+)$/, "Published: $1"],
+  [/^来源\s+(\d+)$/, "Source $1"]
+];
+
+const textOriginals = new WeakMap();
+const attributeOriginals = new WeakMap();
 
 const categoryLabels = ["文献", "研发动态", "会议摘要", "监管动态", "入口", "中国研究"];
 
@@ -117,12 +347,27 @@ async function boot() {
     bindControls();
     renderVisibleModules();
     hydrateShareTools();
+    hydrateLanguageTools();
+    applyLanguage();
   } catch (error) {
     console.error(error);
     for (const target of document.querySelectorAll("[data-render]")) {
       target.innerHTML = `<article class="item"><h3>数据读取失败</h3><p>请稍后刷新页面，或检查 data 文件是否存在。</p></article>`;
     }
   }
+}
+
+function getInitialLanguage() {
+  const params = new URLSearchParams(window.location.search);
+  const urlLanguage = params.get("lang");
+  if (urlLanguage === "en" || urlLanguage === "zh") return urlLanguage;
+  try {
+    const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (saved === "en" || saved === "zh") return saved;
+  } catch {
+    // localStorage can be unavailable in strict privacy modes.
+  }
+  return "zh";
 }
 
 async function loadAllData() {
@@ -134,6 +379,147 @@ async function loadAllData() {
     })
   );
   return Object.fromEntries(entries);
+}
+
+function hydrateLanguageTools() {
+  for (const nav of document.querySelectorAll(".section-nav")) {
+    if (nav.querySelector(".language-toggle")) continue;
+    const group = document.createElement("div");
+    group.className = "language-toggle";
+    group.setAttribute("aria-label", "Language selector");
+    group.innerHTML = `
+      <button type="button" data-language-option="zh">中文</button>
+      <button type="button" data-language-option="en">English</button>
+    `;
+    group.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-language-option]");
+      if (button) setLanguage(button.dataset.languageOption);
+    });
+    nav.append(group);
+  }
+  syncLanguageToggle();
+  syncLanguageLinks();
+}
+
+function setLanguage(language) {
+  if (language !== "zh" && language !== "en") return;
+  state.language = language;
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {
+    // Ignore storage failures; the URL parameter still keeps the current view.
+  }
+  syncLanguageUrl();
+  hydrateStats();
+  renderVisibleModules();
+  hydrateShareTools();
+  hydrateLanguageTools();
+  applyLanguage();
+}
+
+function applyLanguage() {
+  document.documentElement.lang = state.language === "en" ? "en" : "zh-CN";
+  document.body?.setAttribute("data-language", state.language);
+  applyMetaLanguage();
+  translateTextNodes(document.body);
+  translateAttributes(document.body);
+  syncLanguageToggle();
+  syncLanguageLinks();
+}
+
+function applyMetaLanguage() {
+  const page = document.body?.dataset.page || "home";
+  const meta = pageMeta[page]?.[state.language] || pageMeta[page]?.zh;
+  if (!meta) return;
+  document.title = meta.title;
+  for (const selector of ["meta[name='description']", "meta[property='og:description']"]) {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute("content", meta.description);
+  }
+  for (const selector of ["meta[property='og:title']"]) {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute("content", meta.title);
+  }
+}
+
+function translateTextNodes(root) {
+  if (!root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const parent = node.parentElement;
+      if (!parent || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      if (parent.closest("script, style, noscript, code, pre, textarea")) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes) {
+    if (!textOriginals.has(node)) textOriginals.set(node, node.nodeValue);
+    const original = textOriginals.get(node);
+    node.nodeValue = state.language === "en" ? translateText(original) : original;
+  }
+}
+
+function translateAttributes(root) {
+  if (!root) return;
+  for (const element of root.querySelectorAll("[placeholder], [aria-label], [title]")) {
+    let originals = attributeOriginals.get(element);
+    if (!originals) {
+      originals = {};
+      attributeOriginals.set(element, originals);
+    }
+    for (const attr of ["placeholder", "aria-label", "title"]) {
+      if (!element.hasAttribute(attr)) continue;
+      if (!Object.prototype.hasOwnProperty.call(originals, attr)) originals[attr] = element.getAttribute(attr);
+      const original = originals[attr];
+      element.setAttribute(attr, state.language === "en" ? translateText(original) : original);
+    }
+  }
+}
+
+function translateText(raw = "") {
+  const leading = raw.match(/^\s*/)?.[0] || "";
+  const trailing = raw.match(/\s*$/)?.[0] || "";
+  const text = raw.trim();
+  if (!text) return raw;
+  if (translationMap.has(text)) return `${leading}${translationMap.get(text)}${trailing}`;
+  for (const [pattern, replacement] of translationRules) {
+    if (pattern.test(text)) return `${leading}${text.replace(pattern, replacement)}${trailing}`;
+  }
+  return raw;
+}
+
+function syncLanguageToggle() {
+  for (const button of document.querySelectorAll("[data-language-option]")) {
+    const active = button.dataset.languageOption === state.language;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  }
+}
+
+function syncLanguageUrl() {
+  const url = new URL(window.location.href);
+  if (state.language === "en") url.searchParams.set("lang", "en");
+  else url.searchParams.delete("lang");
+  window.history.replaceState({}, "", url);
+}
+
+function syncLanguageLinks() {
+  for (const link of document.querySelectorAll("a[href]")) {
+    const raw = link.getAttribute("href");
+    if (!raw || raw.startsWith("#") || raw.startsWith("mailto:") || raw.startsWith("tel:")) continue;
+    let url;
+    try {
+      url = new URL(raw, window.location.href);
+    } catch {
+      continue;
+    }
+    if (url.origin !== window.location.origin) continue;
+    if (state.language === "en") url.searchParams.set("lang", "en");
+    else url.searchParams.delete("lang");
+    link.setAttribute("href", url.pathname + url.search + url.hash);
+  }
 }
 
 function hydrateStats() {
@@ -920,7 +1306,7 @@ function formatFaersAgeUnit(value) {
 }
 
 function formatNumber(value) {
-  return new Intl.NumberFormat("zh-CN").format(Number(value) || 0);
+  return new Intl.NumberFormat(state.language === "en" ? "en-US" : "zh-CN").format(Number(value) || 0);
 }
 
 function renderChinaAccess() {
@@ -1807,12 +2193,22 @@ function fillSelect(name, values, labeler = (value) => value) {
 
 function onInput(name, handler) {
   const input = document.querySelector(`[data-control="${name}"]`);
-  if (input) input.addEventListener("input", (event) => handler(event.target.value.trim()));
+  if (input) {
+    input.addEventListener("input", (event) => {
+      handler(event.target.value.trim());
+      applyLanguage();
+    });
+  }
 }
 
 function onChange(name, handler) {
   const select = document.querySelector(`[data-control="${name}"]`);
-  if (select) select.addEventListener("change", (event) => handler(event.target.value));
+  if (select) {
+    select.addEventListener("change", (event) => {
+      handler(event.target.value);
+      applyLanguage();
+    });
+  }
 }
 
 function exists(name) {
@@ -1847,7 +2243,7 @@ function formatDate(value) {
   if (!value) return "未知";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat("zh-CN", {
+  return new Intl.DateTimeFormat(state.language === "en" ? "en-US" : "zh-CN", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit"
@@ -1858,7 +2254,7 @@ function formatDateTime(value) {
   if (!value) return "未知";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat("zh-CN", {
+  return new Intl.DateTimeFormat(state.language === "en" ? "en-US" : "zh-CN", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
@@ -1868,7 +2264,16 @@ function formatDateTime(value) {
 }
 
 function formatTrialStatus(status = "") {
-  const map = {
+  const map = state.language === "en" ? {
+    RECRUITING: "Recruiting",
+    NOT_YET_RECRUITING: "Not yet recruiting",
+    ACTIVE_NOT_RECRUITING: "Active, not recruiting",
+    COMPLETED: "Completed",
+    TERMINATED: "Terminated",
+    WITHDRAWN: "Withdrawn",
+    SUSPENDED: "Suspended",
+    MANUAL_REVIEW: "Manual review portal"
+  } : {
     RECRUITING: "招募中",
     NOT_YET_RECRUITING: "尚未招募",
     ACTIVE_NOT_RECRUITING: "进行中不招募",
@@ -1878,7 +2283,7 @@ function formatTrialStatus(status = "") {
     SUSPENDED: "暂停",
     MANUAL_REVIEW: "人工复核入口"
   };
-  return map[status] || status || "未知";
+  return map[status] || status || (state.language === "en" ? "Unknown" : "未知");
 }
 
 function escapeHtml(value) {

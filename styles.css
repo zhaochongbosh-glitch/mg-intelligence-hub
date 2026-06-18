@@ -32,6 +32,10 @@ body {
     Inter, "Segoe UI", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
 }
 
+body[data-language="en"] {
+  overflow-wrap: anywhere;
+}
+
 a {
   color: inherit;
 }
@@ -176,6 +180,39 @@ main {
   text-decoration: none;
   font-weight: 750;
   font-size: 0.9rem;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f6faf9;
+}
+
+.language-toggle button {
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--blue);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.language-toggle button.is-active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.language-toggle button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
 }
 
 .section-nav a[aria-current="page"] {
