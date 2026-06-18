@@ -2026,24 +2026,30 @@ select:focus {
 }
 
 .status-dashboard,
-.review-queue {
+.review-queue,
+.i18n-dashboard {
   display: grid;
   gap: 12px;
 }
 
 .status-overview,
+.i18n-overview,
 .source-status-grid,
+.i18n-grid,
 .status-block,
 .review-principles {
   display: grid;
   gap: 12px;
 }
 
-.status-overview {
+.status-overview,
+.i18n-overview {
   grid-template-columns: 1.1fr 1.2fr 0.8fr 1.4fr;
 }
 
 .status-overview article,
+.i18n-overview article,
+.i18n-card,
 .source-status-card,
 .status-empty,
 .status-outputs article,
@@ -2083,14 +2089,22 @@ select:focus {
   background: #fbfdfd;
 }
 
+.i18n-overview article {
+  min-height: 124px;
+  padding: 16px;
+  background: #fbfdfd;
+}
+
 .status-overview span,
+.i18n-overview span,
 .review-principles span {
   color: var(--teal);
   font-size: 0.78rem;
   font-weight: 850;
 }
 
-.status-overview strong {
+.status-overview strong,
+.i18n-overview strong {
   display: block;
   margin: 8px 0 6px;
   font-size: 1.3rem;
@@ -2098,6 +2112,8 @@ select:focus {
 }
 
 .status-overview p,
+.i18n-overview p,
+.i18n-card p,
 .source-status-card p,
 .status-empty p,
 .review-principles p,
@@ -2109,6 +2125,119 @@ select:focus {
 
 .source-status-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.i18n-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.i18n-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-left: 5px solid var(--green);
+}
+
+.i18n-card[data-status="warning"] {
+  border-left-color: var(--amber);
+}
+
+.i18n-card[data-status="attention"] {
+  border-left-color: var(--rose);
+}
+
+.i18n-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.i18n-card__head span {
+  color: var(--teal);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.i18n-card h4 {
+  margin: 4px 0 0;
+  font-size: 1rem;
+}
+
+.i18n-card__head strong {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: #e9f4f0;
+  color: var(--green);
+  font-size: 0.9rem;
+}
+
+.i18n-card[data-status="warning"] .i18n-card__head strong {
+  background: #fbf8f1;
+  color: #80510f;
+}
+
+.i18n-card[data-status="attention"] .i18n-card__head strong {
+  background: #fff8fa;
+  color: #8c3348;
+}
+
+.i18n-meter {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf2f3;
+}
+
+.i18n-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--teal), var(--green));
+}
+
+.terminology-status {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.terminology-status article {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.terminology-status h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.terminology-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.terminology-cloud span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #eef5f5;
+  color: var(--teal-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.terminology-cloud span.is-missing {
+  background: #fff8fa;
+  color: #8c3348;
+}
+
+.terminology-cloud span.is-present {
+  background: #edf6f1;
+  color: #26734d;
 }
 
 .source-status-card {
@@ -2556,7 +2685,10 @@ footer {
   .china-access-grid,
   .access-checklist,
   .status-overview,
+  .i18n-overview,
   .source-status-grid,
+  .i18n-grid,
+  .terminology-status,
   .status-outputs,
   .evidence-chain-summary,
   .evidence-rule-grid,

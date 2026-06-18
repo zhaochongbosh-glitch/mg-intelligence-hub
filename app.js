@@ -264,6 +264,7 @@ const dataFiles = {
   trials: "trial-radar.json",
   updateStatus: "update-status.json",
   manualReview: "manual-review-log.json",
+  terminology: "terminology.json",
   journalMetrics: "journal-metrics.json"
 };
 
@@ -611,6 +612,7 @@ function renderVisibleModules() {
   if (exists("market")) renderMarket();
   if (exists("guidance")) renderGuidance();
   if (exists("update-status")) renderUpdateStatus();
+  if (exists("i18n-status")) renderI18nStatus();
   if (exists("review-queue")) renderReviewQueue();
   if (exists("evidence-chain")) renderEvidenceChain();
   if (exists("faers")) renderFaersExplorer();
@@ -1606,6 +1608,248 @@ function renderUpdateStatus() {
       ${outputs}
     </section>
   `;
+}
+
+function renderI18nStatus() {
+  const structured = bilingualStructuredCoverage();
+  const literature = bilingualLiteratureCoverage();
+  const terminology = terminologyStatus();
+  const allChecks = [...structured, ...literature];
+  const avgCoverage = allChecks.length
+    ? Math.round(allChecks.reduce((sum, item) => sum + item.percent, 0) / allChecks.length)
+    : 0;
+  const missingCount = structured.reduce((sum, item) => sum + item.missing.length, 0);
+  const termCount = terminology.terms.length;
+  const categoryCount = terminology.categories.length;
+
+  setCount(
+    "i18n-status",
+    state.language === "en"
+      ? `${avgCoverage}% average coverage, ${termCount} terms`
+      : `平均覆盖率 ${avgCoverage}%，${termCount} 个术语`
+  );
+
+  const overview = `
+    <div class="i18n-overview">
+      <article>
+        <span>${state.language === "en" ? "Average coverage" : "平均覆盖率"}</span>
+        <strong>${avgCoverage}%</strong>
+        <p>${state.language === "en" ? "Structured fields and literature English availability" : "结构化字段和文献英文可用性的综合估算"}</p>
+      </article>
+      <article>
+        <span>${state.language === "en" ? "Structured gaps" : "结构化缺口"}</span>
+        <strong>${missingCount}</strong>
+        <p>${state.language === "en" ? "Missing English fields in core curated datasets" : "核心人工维护数据中缺少的英文字段"}</p>
+      </article>
+      <article>
+        <span>${state.language === "en" ? "Terminology" : "术语表"}</span>
+        <strong>${termCount}</strong>
+        <p>${state.language === "en" ? `${categoryCount} categories covered` : `覆盖 ${categoryCount} 个术语类别`}</p>
+      </article>
+    </div>
+  `;
+
+  const structuredCards = structured.map(renderI18nCoverageCard).join("");
+  const literatureCards = literature.map(renderI18nCoverageCard).join("");
+  const termCloud = terminology.categories.map((name) => `<span>${escapeHtml(name)}</span>`).join("");
+  const requiredTerms = terminology.required
+    .map((term) => `<span class="${term.present ? "is-present" : "is-missing"}">${escapeHtml(term.key)}</span>`)
+    .join("");
+
+  targetFor("i18n-status").innerHTML = `
+    ${overview}
+    <section class="status-block">
+      <div class="status-block__head">
+        <div>
+          <p class="section-kicker">Structured Data</p>
+          <h3>${state.language === "en" ? "Core bilingual fields" : "核心结构化字段"}</h3>
+        </div>
+        <span>${state.language === "en" ? `${structured.length} datasets` : `${structured.length} 个数据源`}</span>
+      </div>
+      <div class="i18n-grid">${structuredCards}</div>
+    </section>
+    <section class="status-block">
+      <div class="status-block__head">
+        <div>
+          <p class="section-kicker">Literature</p>
+          <h3>${state.language === "en" ? "Publication English availability" : "文献英文可用性"}</h3>
+        </div>
+        <span>${state.language === "en" ? `${literature.length} feeds` : `${literature.length} 个文献源`}</span>
+      </div>
+      <div class="i18n-grid">${literatureCards}</div>
+    </section>
+    <section class="status-block">
+      <div class="status-block__head">
+        <div>
+          <p class="section-kicker">Terminology</p>
+          <h3>${state.language === "en" ? "Terminology baseline" : "术语表基线"}</h3>
+        </div>
+        <span>${state.language === "en" ? `${termCount} terms` : `${termCount} 个术语`}</span>
+      </div>
+      <div class="terminology-status">
+        <article>
+          <h4>${state.language === "en" ? "Categories" : "术语类别"}</h4>
+          <div class="terminology-cloud">${termCloud}</div>
+        </article>
+        <article>
+          <h4>${state.language === "en" ? "Required terms" : "必备术语"}</h4>
+          <div class="terminology-cloud terminology-cloud--required">${requiredTerms}</div>
+        </article>
+      </div>
+    </section>
+  `;
+}
+
+function renderI18nCoverageCard(item) {
+  const tone = item.percent >= 90 ? "good" : item.percent >= 70 ? "warning" : "attention";
+  const missing = item.missing.length
+    ? `<p>${state.language === "en" ? "Missing: " : "缺口："}${escapeHtml(item.missing.slice(0, 4).join(", "))}${item.missing.length > 4 ? " ..." : ""}</p>`
+    : `<p>${state.language === "en" ? "No required gaps detected." : "未发现必备字段缺口。"}</p>`;
+  return `
+    <article class="i18n-card" data-status="${tone}">
+      <div class="i18n-card__head">
+        <div>
+          <span>${escapeHtml(item.group)}</span>
+          <h4>${escapeHtml(item.name)}</h4>
+        </div>
+        <strong>${item.percent}%</strong>
+      </div>
+      <div class="i18n-meter"><i style="width: ${item.percent}%"></i></div>
+      <p>${escapeHtml(item.covered)} / ${escapeHtml(item.total)} ${escapeHtml(item.unit)}</p>
+      ${missing}
+    </article>
+  `;
+}
+
+function bilingualStructuredCoverage() {
+  return [
+    structuredCoverage({
+      name: state.language === "en" ? "Treatments" : "治疗药物",
+      group: "treatments.json",
+      items: treatmentItems(),
+      fields: ["class", "target", "mechanism", "approvedUse", "biomarker", "route", "pivotalEvidence", "realWorldEvidence", "postMarketing", "evidenceGrade"],
+      lists: ["safetySignals"]
+    }),
+    structuredCoverage({
+      name: state.language === "en" ? "Evidence matrix" : "证据矩阵",
+      group: "evidence-matrix.json",
+      items: matrixItems(),
+      fields: ["mechanism", "population", "pivotalTrial", "longTermEvidence", "realWorldEvidence", "safetyFocus", "chinaAccess", "evidenceLevel"]
+    }),
+    structuredCoverage({
+      name: state.language === "en" ? "Global market" : "全球准入/市场",
+      group: "global-market.json",
+      items: marketItems(),
+      fields: ["brand", "generic", "company", "class"],
+      nested: [["sales", "value"], ["sales", "scope"], ["sales", "trend"]],
+      arrays: [{ key: "approvals", fields: ["countryOrRegion", "agency", "indication"] }]
+    }),
+    structuredCoverage({
+      name: state.language === "en" ? "Evidence chain" : "人工复核证据链",
+      group: "manual-review-log.json",
+      items: manualReviewItems(),
+      fields: ["topic", "summary", "notes"],
+      lists: ["changesMade"]
+    })
+  ];
+}
+
+function structuredCoverage({ name, group, items = [], fields = [], lists = [], nested = [], arrays = [] }) {
+  let covered = 0;
+  let total = 0;
+  const missing = [];
+  for (const item of items) {
+    const id = item.id || item.itemId || item.brand || "item";
+    for (const field of fields) {
+      total += 1;
+      if (hasEnglishValue(item, field)) covered += 1;
+      else missing.push(`${id}: en.${field}`);
+    }
+    for (const field of lists) {
+      total += 1;
+      if (Array.isArray(item.en?.[field]) && item.en[field].length) covered += 1;
+      else missing.push(`${id}: en.${field}`);
+    }
+    for (const [parent, field] of nested) {
+      total += 1;
+      if (item[parent]?.en?.[field]) covered += 1;
+      else missing.push(`${id}: ${parent}.en.${field}`);
+    }
+    for (const arrayCheck of arrays) {
+      for (const [index, row] of (item[arrayCheck.key] || []).entries()) {
+        for (const field of arrayCheck.fields) {
+          total += 1;
+          if (row.en?.[field]) covered += 1;
+          else missing.push(`${id}: ${arrayCheck.key}[${index}].en.${field}`);
+        }
+      }
+    }
+  }
+  return {
+    name,
+    group,
+    covered,
+    total,
+    unit: state.language === "en" ? "fields" : "字段",
+    percent: percentage(covered, total),
+    missing
+  };
+}
+
+function bilingualLiteratureCoverage() {
+  return [
+    literatureCoverage(state.language === "en" ? "Latest research" : "近 7 天研究", "latest-research.json", latestItems()),
+    literatureCoverage(state.language === "en" ? "China research" : "中国研究", "china-research.json", chinaItems()),
+    literatureCoverage(state.language === "en" ? "Huashan team" : "华山团队", "huashan-team.json", huashanTeamItems())
+  ];
+}
+
+function literatureCoverage(name, group, items = []) {
+  const titleCount = items.filter((item) => item.title && !looksMostlyChinese(item.title)).length;
+  const abstractCount = items.filter((item) => item.abstract && !looksMostlyChinese(item.abstract)).length;
+  const total = items.length * 2;
+  const covered = titleCount + abstractCount;
+  const missing = [];
+  if (titleCount < items.length) missing.push(`${items.length - titleCount} missing English titles`);
+  if (abstractCount < items.length) missing.push(`${items.length - abstractCount} missing English abstracts`);
+  return {
+    name,
+    group,
+    covered,
+    total,
+    unit: state.language === "en" ? "title/abstract fields" : "题名/摘要字段",
+    percent: percentage(covered, total),
+    missing
+  };
+}
+
+function terminologyStatus() {
+  const terms = state.data.terminology?.terms || [];
+  const categories = [...new Set(terms.map((term) => term.category).filter(Boolean))].sort();
+  const keys = new Set(terms.map((term) => term.key));
+  const requiredKeys = ["MG", "gMG", "AChR", "MuSK", "FcRn", "C5 inhibitor", "post-marketing safety", "real-world evidence", "China access"];
+  return {
+    terms,
+    categories,
+    required: requiredKeys.map((key) => ({ key, present: keys.has(key) }))
+  };
+}
+
+function hasEnglishValue(item = {}, field) {
+  const value = item.en?.[field];
+  if (Array.isArray(value)) return value.length > 0;
+  return typeof value === "string" ? value.trim().length > 0 : Boolean(value);
+}
+
+function percentage(covered, total) {
+  if (!total) return 0;
+  return Math.round((covered / total) * 100);
+}
+
+function looksMostlyChinese(value = "") {
+  const text = String(value);
+  const chinese = (text.match(/[\u3400-\u9fff]/g) || []).length;
+  return chinese > Math.max(8, text.length * 0.25);
 }
 
 function renderSourceStatusCard(source = {}, mode = "auto") {
