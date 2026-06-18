@@ -1,0 +1,141 @@
+{
+  "updatedAt": "2026-06-18",
+  "provenance": {
+    "sourceType": "manual-curated terminology",
+    "reviewStatus": "manual baseline",
+    "reviewNote": "Core bilingual terminology for MG Intelligence Hub. Use this file as the preferred wording source for page copy, structured data and manual review records.",
+    "lastChecked": "2026-06-18"
+  },
+  "schemaVersion": 1,
+  "scopeNote": "Bilingual terminology baseline for myasthenia gravis intelligence, therapy evidence, safety monitoring, China access and data operations.",
+  "terms": [
+    {
+      "key": "MG",
+      "zh": "重症肌无力",
+      "en": "myasthenia gravis",
+      "category": "disease",
+      "note": "Use MG as the abbreviation after first mention."
+    },
+    {
+      "key": "gMG",
+      "zh": "全身型重症肌无力",
+      "en": "generalized myasthenia gravis",
+      "category": "disease",
+      "note": "Use gMG as the abbreviation after first mention."
+    },
+    {
+      "key": "AChR",
+      "zh": "乙酰胆碱受体",
+      "en": "acetylcholine receptor",
+      "category": "biomarker"
+    },
+    {
+      "key": "MuSK",
+      "zh": "肌肉特异性酪氨酸激酶",
+      "en": "muscle-specific kinase",
+      "category": "biomarker"
+    },
+    {
+      "key": "LRP4",
+      "zh": "低密度脂蛋白受体相关蛋白 4",
+      "en": "low-density lipoprotein receptor-related protein 4",
+      "category": "biomarker"
+    },
+    {
+      "key": "FcRn",
+      "zh": "新生儿 Fc 受体",
+      "en": "neonatal Fc receptor",
+      "category": "target"
+    },
+    {
+      "key": "C5 inhibitor",
+      "zh": "补体 C5 抑制剂",
+      "en": "complement C5 inhibitor",
+      "category": "mechanism"
+    },
+    {
+      "key": "CD19 B-cell depletion",
+      "zh": "CD19 阳性 B 细胞耗竭",
+      "en": "CD19-positive B-cell depletion",
+      "category": "mechanism"
+    },
+    {
+      "key": "BLyS/APRIL",
+      "zh": "BLyS/APRIL 双靶点",
+      "en": "BLyS/APRIL dual targeting",
+      "category": "mechanism"
+    },
+    {
+      "key": "post-marketing safety",
+      "zh": "上市后安全性",
+      "en": "post-marketing safety",
+      "category": "safety"
+    },
+    {
+      "key": "pharmacovigilance",
+      "zh": "药物警戒",
+      "en": "pharmacovigilance",
+      "category": "safety"
+    },
+    {
+      "key": "FAERS",
+      "zh": "FDA 不良事件报告系统",
+      "en": "FDA Adverse Event Reporting System",
+      "category": "safety"
+    },
+    {
+      "key": "real-world evidence",
+      "zh": "真实世界证据",
+      "en": "real-world evidence",
+      "category": "evidence"
+    },
+    {
+      "key": "OLE",
+      "zh": "开放标签延长期",
+      "en": "open-label extension",
+      "category": "evidence"
+    },
+    {
+      "key": "RCT",
+      "zh": "随机对照试验",
+      "en": "randomized controlled trial",
+      "category": "evidence"
+    },
+    {
+      "key": "China access",
+      "zh": "中国准入",
+      "en": "China access",
+      "category": "market"
+    },
+    {
+      "key": "NMPA",
+      "zh": "国家药品监督管理局",
+      "en": "National Medical Products Administration",
+      "category": "regulatory"
+    },
+    {
+      "key": "CDE",
+      "zh": "药品审评中心",
+      "en": "Center for Drug Evaluation",
+      "category": "regulatory"
+    },
+    {
+      "key": "NHSA",
+      "zh": "国家医疗保障局",
+      "en": "National Healthcare Security Administration",
+      "category": "reimbursement"
+    },
+    {
+      "key": "manual review",
+      "zh": "人工复核",
+      "en": "manual review",
+      "category": "data-governance"
+    },
+    {
+      "key": "evidence chain",
+      "zh": "证据链",
+      "en": "evidence chain",
+      "category": "data-governance"
+    }
+  ]
+}

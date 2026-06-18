@@ -11,7 +11,8 @@ const requiredFiles = [
   "data/global-market.json",
   "data/guidance-pathways.json",
   "data/journal-metrics.json",
-  "data/manual-review-log.json"
+  "data/manual-review-log.json",
+  "data/terminology.json"
 ];
 
 const arrayKeys = {
@@ -25,7 +26,8 @@ const arrayKeys = {
   "data/global-market.json": "products",
   "data/guidance-pathways.json": "pathways",
   "data/journal-metrics.json": "records",
-  "data/manual-review-log.json": "items"
+  "data/manual-review-log.json": "items",
+  "data/terminology.json": "terms"
 };
 
 async function main() {
@@ -48,6 +50,7 @@ function validateFile(file, data) {
   if (!Array.isArray(data[key])) throw new Error(`${file}: ${key} must be an array`);
   if (file === "data/journal-metrics.json") validateJournalMetrics(file, data);
   if (file === "data/manual-review-log.json") validateManualReviewLog(file, data);
+  if (file === "data/terminology.json") validateTerminology(file, data);
 }
 
 function countRecords(file, data) {
@@ -85,6 +88,16 @@ function validateJournalMetrics(file, data) {
   if (!data.records.length) throw new Error(`${file}: records must not be empty`);
   const sample = data.records.find((record) => record.journalName && record.impactFactor);
   if (!sample) throw new Error(`${file}: expected at least one record with journalName and impactFactor`);
+}
+
+function validateTerminology(file, data) {
+  if (data.schemaVersion !== 1) throw new Error(`${file}: schemaVersion must be 1`);
+  if (!data.terms.length) throw new Error(`${file}: terms must not be empty`);
+  for (const term of data.terms) {
+    if (!term.key) throw new Error(`${file}: term missing key`);
+    if (!term.zh) throw new Error(`${file}: ${term.key} missing zh`);
+    if (!term.en) throw new Error(`${file}: ${term.key} missing en`);
+  }
 }
 
 main().catch((error) => {

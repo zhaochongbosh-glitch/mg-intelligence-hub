@@ -12,6 +12,7 @@ const requiredFiles = [
   "data/guidance-pathways.json",
   "data/journal-metrics.json",
   "data/manual-review-log.json",
+  "data/terminology.json",
   "data/update-status.json"
 ];
 
@@ -25,7 +26,8 @@ const requiredMinimums = {
   "data/evidence-matrix.json": ["items", 1],
   "data/global-market.json": ["products", 1],
   "data/guidance-pathways.json": ["pathways", 1],
-  "data/journal-metrics.json": ["records", 1]
+  "data/journal-metrics.json": ["records", 1],
+  "data/terminology.json": ["terms", 1]
 };
 
 const errors = [];
@@ -44,6 +46,7 @@ async function main() {
   checkLatestResearch(data["data/latest-research.json"]);
   checkHuashanTeam(data["data/huashan-team.json"]);
   checkJournalMetrics(data["data/journal-metrics.json"]);
+  checkTerminology(data["data/terminology.json"]);
   checkClinicalTrials(data["data/trial-radar.json"]);
 
   for (const line of summary) console.log(line);
@@ -64,6 +67,14 @@ function checkJournalMetrics(metrics = {}) {
   if (records.length && withImpactFactor.length / records.length < 0.8) {
     warnings.push("journal-metrics: fewer than 80% of records have JIF values");
   }
+}
+
+function checkTerminology(terminology = {}) {
+  const terms = terminology.terms || [];
+  const categories = new Set(terms.map((term) => term.category).filter(Boolean));
+  summary.push(`terminology: terms=${terms.length}, categories=${categories.size}`);
+  if (!categories.has("mechanism")) warnings.push("terminology: missing mechanism category");
+  if (!categories.has("data-governance")) warnings.push("terminology: missing data-governance category");
 }
 
 async function readJson(file) {

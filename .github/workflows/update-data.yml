@@ -44,6 +44,8 @@ jobs:
         run: npm run validate:data
       - name: Check text integrity
         run: npm run check:text
+      - name: Check bilingual coverage
+        run: npm run check:i18n
       - name: Check data health
         run: npm run health:data
       - name: Commit generated data

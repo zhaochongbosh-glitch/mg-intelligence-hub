@@ -8,6 +8,7 @@
     "update:data": "node scripts/update-data.mjs",
     "validate:data": "node scripts/validate-data.mjs",
     "health:data": "node scripts/health-check.mjs",
-    "check:text": "node scripts/check-text-integrity.mjs"
+    "check:text": "node scripts/check-text-integrity.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
   }
 }

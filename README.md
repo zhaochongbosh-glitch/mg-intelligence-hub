@@ -16,6 +16,14 @@ node scripts/serve.mjs
 
 网站支持中文为主、英文可切换的 MVP 视图。打开任意页面后可用导航栏里的 `中文 / English` 切换；英文视图也可通过 URL 参数 `?lang=en` 直接访问。
 
+双语维护相关检查：
+
+```powershell
+npm run check:i18n
+```
+
+核心术语表位于 `data/terminology.json`。新增药物、靶点、监管或证据字段时，优先把中英术语写入术语表，再同步到结构化数据的 `en` 字段。
+
 ## 页面结构
 
 网站已拆成多页面，便于后续维护：
