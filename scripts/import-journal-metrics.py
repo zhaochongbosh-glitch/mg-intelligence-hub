@@ -22,6 +22,59 @@ def clean_number(value):
         return clean_text(value)
 
 
+def first_value(row, names):
+    for name in names:
+        if name in row:
+            value = row.get(name)
+            if not pd.isna(value):
+                return value
+    return ""
+
+
+def normalize_issn(value):
+    return re.sub(r"[^0-9X]", "", clean_text(value).upper())
+
+
+def normalize_journal_name(value):
+    text = clean_text(value).lower().replace("&", " and ")
+    text = re.sub(r"\bthe\b", " ", text)
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    return text.strip()
+
+
+def load_existing_metric_index(output_path):
+    if not output_path.exists():
+        return {"issn": {}, "name": {}}
+    try:
+        payload = json.loads(output_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"issn": {}, "name": {}}
+
+    index = {"issn": {}, "name": {}}
+    for record in payload.get("records", []):
+        for value in [record.get("issn"), record.get("eissn")]:
+            key = normalize_issn(value)
+            if key and key not in index["issn"]:
+                index["issn"][key] = record
+        for value in [record.get("journalName"), record.get("abbreviatedJournal")]:
+            key = normalize_journal_name(value)
+            if key and key not in index["name"]:
+                index["name"][key] = record
+    return index
+
+
+def find_existing_metric(index, journal_name, abbreviated, issn, eissn):
+    for value in [issn, eissn]:
+        key = normalize_issn(value)
+        if key and key in index["issn"]:
+            return index["issn"][key]
+    for value in [journal_name, abbreviated]:
+        key = normalize_journal_name(value)
+        if key and key in index["name"]:
+            return index["name"][key]
+    return {}
+
+
 def infer_metric_year(path):
     match = re.search(r"(20\d{2})(?:[-_ ]?(\d{1,2}))?", path.name)
     if not match:
@@ -38,27 +91,44 @@ def main():
     input_path = Path(sys.argv[1])
     output_path = Path(sys.argv[2])
     df = pd.read_excel(input_path)
+    existing_index = load_existing_metric_index(output_path)
 
-    required = ["Journal Name", "Abbreviated Journal", "JIF", "JIF Quartile", "Category", "ISSN", "eISSN"]
-    missing = [column for column in required if column not in df.columns]
+    required_groups = {
+        "journal name": ["Journal Name", "Journal name"],
+        "abbreviated journal": ["Abbreviated Journal", "Abbreviated journal"],
+        "impact factor": ["JIF", "2025 JIF"],
+        "category": ["Category", "Categories"],
+        "ISSN": ["ISSN"],
+        "eISSN": ["eISSN"],
+    }
+    missing = [
+        label
+        for label, names in required_groups.items()
+        if not any(name in df.columns for name in names)
+    ]
     if missing:
         raise SystemExit(f"Missing columns: {', '.join(missing)}")
 
     records = []
     for _, row in df.iterrows():
-        journal_name = clean_text(row.get("Journal Name"))
-        abbreviated = clean_text(row.get("Abbreviated Journal"))
+        journal_name = clean_text(first_value(row, ["Journal Name", "Journal name"]))
+        abbreviated = clean_text(first_value(row, ["Abbreviated Journal", "Abbreviated journal"]))
         if not journal_name and not abbreviated:
             continue
+        issn = clean_text(first_value(row, ["ISSN"]))
+        eissn = clean_text(first_value(row, ["eISSN"]))
+        existing = find_existing_metric(existing_index, journal_name, abbreviated, issn, eissn)
         records.append({
             "journalName": journal_name,
             "abbreviatedJournal": abbreviated,
-            "impactFactor": clean_number(row.get("JIF")),
-            "quartile": clean_text(row.get("JIF Quartile")),
-            "category": clean_text(row.get("Category")),
-            "issn": clean_text(row.get("ISSN")),
-            "eissn": clean_text(row.get("eISSN")),
-            "jifRank": clean_text(row.get("JIF Rank")),
+            "impactFactor": clean_number(first_value(row, ["JIF", "2025 JIF"])),
+            "quartile": clean_text(first_value(row, ["JIF Quartile"])) or clean_text(existing.get("quartile")),
+            "category": clean_text(first_value(row, ["Category", "Categories"])),
+            "issn": issn,
+            "eissn": eissn,
+            "jifRank": clean_text(first_value(row, ["JIF Rank"])) or clean_text(existing.get("jifRank")),
+            "jcrRank": clean_text(first_value(row, ["Rank"])),
+            "fiveYearImpactFactor": clean_number(first_value(row, ["5-year JIF"])),
         })
 
     payload = {
@@ -69,7 +139,7 @@ def main():
             "sourceType": "JCR Impact Factor Excel",
             "evidenceLevel": "Journal metric reference",
             "reviewStatus": "Excel imported; journal-level metrics require annual refresh",
-            "reviewNote": "Impact Factor and quartile values are imported from the user-provided Excel file and matched to PubMed records by ISSN/eISSN or journal name."
+            "reviewNote": "Impact Factor values are imported from the user-provided Excel file and matched to PubMed records by ISSN/eISSN or journal name. Quartile values are imported when present; if absent in the source file, previously matched quartiles are preserved where available."
         },
         "records": records,
     }

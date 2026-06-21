@@ -2250,16 +2250,23 @@ function renderTrustMeta(item = {}, moduleName) {
 function renderJournalMetric(item = {}) {
   const metric = findJournalMetric(item);
   if (!metric?.impactFactor) return "";
-  const year = state.data.journalMetrics?.metricYear ? ` ${state.data.journalMetrics.metricYear}` : "";
+  const year = state.data.journalMetrics?.metricYear || "";
   const category = metric.category ? metric.category.split("|")[0] : "";
   const title = [
     metric.journalName,
     metric.abbreviatedJournal,
     category,
     metric.jifRank ? `JIF Rank ${metric.jifRank}` : "",
+    metric.jcrRank ? `JCR Rank ${metric.jcrRank}` : "",
+    metric.fiveYearImpactFactor ? `5-year IF ${formatMetricNumber(metric.fiveYearImpactFactor)}` : "",
     state.data.journalMetrics?.sourceFile || ""
   ].filter(Boolean).join(" | ");
-  return `<span class="journal-metric" title="${escapeAttribute(title)}">JIF${escapeHtml(year)} ${escapeHtml(formatMetricNumber(metric.impactFactor))}${metric.quartile ? ` · ${escapeHtml(metric.quartile)}` : ""}</span>`;
+  const label = [
+    year,
+    `IF ${formatMetricNumber(metric.impactFactor)}`,
+    metric.quartile || ""
+  ].filter(Boolean).join("\u00b7 ");
+  return `<span class="journal-metric" title="${escapeAttribute(title)}">${escapeHtml(label)}</span>`;
 }
 
 function findJournalMetric(item = {}) {
