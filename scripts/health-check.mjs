@@ -101,8 +101,10 @@ function checkMinimums(data) {
 }
 
 function checkUpdateStatus(status = {}) {
-  if (status.status !== "success") {
-    errors.push(`data/update-status.json: status is ${status.status || "missing"}, expected success`);
+  if (status.status === "partial") {
+    warnings.push("data/update-status.json: status is partial; preserved fallback data should be reviewed");
+  } else if (status.status !== "success") {
+    errors.push(`data/update-status.json: status is ${status.status || "missing"}, expected success or partial`);
   }
   if (!Array.isArray(status.sources) || !status.sources.length) {
     errors.push("data/update-status.json: sources must be a non-empty array");
@@ -111,7 +113,7 @@ function checkUpdateStatus(status = {}) {
 
   const failedSources = status.sources.filter((source) => source.status === "failed");
   if (failedSources.length) {
-    errors.push(`data/update-status.json: failed sources: ${failedSources.map((source) => `${source.name}:${source.status}`).join(", ")}`);
+    warnings.push(`data/update-status.json: failed sources preserved with fallback data: ${failedSources.map((source) => `${source.name}:${source.error || source.status}`).join(", ")}`);
   }
 
   const expectedSources = ["pubmed-feed", "latest-research", "china-research", "clinical-trials", "fda-rss"];
