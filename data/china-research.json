@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-24T11:56:11.147Z",
+  "updatedAt": "2026-06-25T11:31:51.395Z",
   "provenance": {
     "sourceType": "PubMed Affiliation",
     "evidenceLevel": "文献索引",
     "reviewStatus": "自动更新",
-    "lastChecked": "2026-06-24",
+    "lastChecked": "2026-06-25",
     "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
   },
   "updatePolicy": {
@@ -15,6 +15,68 @@
   "scopeNote": "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
   "query": "(\"myasthenia gravis\"[Title/Abstract] OR \"generalized myasthenia gravis\"[Title/Abstract] OR \"ocular myasthenia\"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR \"Hong Kong\"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])",
   "items": [
+    {
+      "id": "pubmed-42344535",
+      "pmid": "42344535",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-01-01",
+      "indexedAt": "2026-06-25",
+      "title": "Delayed diagnosis of ocular myasthenia gravis in a patient with aponeurotic ptosis: A case report.",
+      "authors": "Jiajun Xie, Huina Zhang, Juan Ye",
+      "journal": "SAGE open medical case reports",
+      "issn": "2050-313X",
+      "eissn": "",
+      "abstract": "Acquired ptosis may result from multiple etiologies, including aponeurotic, neurogenic, myogenic, traumatic, and mechanical causes. When structural eyelid abnormalities are prominent, the clinical signs of underlying neuromuscular disorders may be physically masked and difficult to recognize. A patient in her 70s presented with an acute onset of unilateral ptosis. Neuroimaging revealed an incidental aneurysm of the left middle cerebral artery that was anatomically independent of the oculomotor nerve. Ophthalmic examination suggested aponeurotic ptosis, and surgical repair restored eyelid height immediately. However, fluctuating ptosis with diurnal variation was observed 1 week postoperatively. Electromyography showed a postsynaptic neuromuscular junction disorder. Together with positive acetylcholine receptor antibodies, ocular myasthenia gravis was diagnosed. Treatment with oral pyridostigmine resulted in marked clinical improvement. Severe aponeurotic disinsertion can obscure the fatigability typical of ocular myasthenia gravis and delay recognition of the underlying disorder. In patients with atypical presentations such as acute-onset ptosis, additional evaluation, including electrophysiological testing, is essential to identify coexisting neuromuscular dysfunction.",
+      "summary": "Acquired ptosis may result from multiple etiologies, including aponeurotic, neurogenic, myogenic, traumatic, and mechanical causes.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42344535/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-25",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "诊断与评估"
+      ],
+      "topic": "诊断与评估",
+      "institutionHint": "Eye Center of Second Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou, China."
+    },
+    {
+      "id": "pubmed-42342167",
+      "pmid": "42342167",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-06-24",
+      "indexedAt": "2026-06-24",
+      "title": "HSP27 in autoimmune diseases: Context-dependent regulation and clinical potential.",
+      "authors": "Jianbin Li, Renhe Li, Wenwen Wang, Yuzhen Gesang, Wei Liu",
+      "journal": "Biochimica et biophysica acta. Molecular basis of disease",
+      "issn": "1879-260X",
+      "eissn": "1879-260X",
+      "abstract": "Heat shock protein 27 (HSP27) is a crucial member of the small heat shock protein family with a molecular weight of approximately 27 kDa, playing key roles in cellular stress response, protein homeostasis, and cell survival regulation. Recent studies have revealed that HSP27 plays a complex dual role in the pathogenesis of autoimmune diseases, which we define as the \"HSP27 Dual Regulatory Paradox.\" Aim To systematically review the bidirectional immunomodulatory mechanisms of HSP27 in autoimmune diseases and to evaluate its clinical potential as a disease biomarker and therapeutic target, based on a \"cell type-microenvironment-disease stage\" three-dimensional regulatory model. A comprehensive literature review was conducted using PubMed and other databases up to 2025, focusing on the structural characteristics, biological functions, and immunoregulatory roles of HSP27 in typical autoimmune diseases including Sjögren's syndrome, systemic lupus erythematosus, rheumatoid arthritis, multiple sclerosis, Behçet's disease, psoriasis, myasthenia gravis, systemic sclerosis, type 1 diabetes, and inflammatory bowel disease. HSP27 exhibits a context-dependent dual regulatory role: in structural cells such as synovial fibroblasts, it acts as an essential component of the TAK1-p38 MAPK-MK2 signaling pathway, promoting pro-inflammatory mediators (IL-6, IL-8); in the monocyte-macrophage system, it induces IL-10 secretion and limits IL-1β release. Anti-HSP27 antibody positivity reaches 72% in rheumatoid arthritis and 57% in Behçet's disease patients. HSP27 expression correlates with disease activity across multiple autoimmune conditions and shows disease-specific patterns: neuroprotective in multiple sclerosis, anti-apoptotic in lupus nephritis, and pro-inflammatory in rheumatoid synovium. HSP27-targeted therapeutic strategies, including small-molecule inhibitors (OGX-427, RP101, J2), antisense oligonucleotides, and HSP-based immune tolerance induction, are under preclinical and clinical evaluation. HSP27 represents a multifaceted molecular target in autoimmune diseases, with its function determined by the interplay of cell type, microenvironment, and disease stage. A thorough understanding of this three-dimensional regulatory model will provide an important theoretical basis for developing novel diagnostic markers and precision-targeted therapeutic strategies. Future studies integrating single-cell sequencing, spatial omics, and large-scale clinical cohorts are needed to translate HSP27 biology into clinical applications.",
+      "summary": "Heat shock protein 27 (HSP27) is a crucial member of the small heat shock protein family with a molecular weight of approximately 27 kDa, playing key roles in cellular stress response, protein homeostasis, and cell survival regulation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42342167/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-06-25",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "免疫机制"
+      ],
+      "topic": "免疫机制",
+      "institutionHint": "Department of Rheumatism and Immunity, First Teaching Hospital of Tianjin University of Traditional Chinese Medicine, Tianjin, China; National Clinical Research Center for Chinese Medicine, Tianjin, China."
+    },
     {
       "id": "pubmed-42338592",
       "pmid": "42338592",
@@ -35,7 +97,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -66,7 +128,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -97,7 +159,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -128,7 +190,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -159,7 +221,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -190,7 +252,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -221,7 +283,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -252,7 +314,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -283,7 +345,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -314,7 +376,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -345,7 +407,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -376,7 +438,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -407,7 +469,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -438,7 +500,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -469,7 +531,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -500,7 +562,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -531,7 +593,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -562,7 +624,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -593,7 +655,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -624,7 +686,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -655,7 +717,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -686,7 +748,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -717,7 +779,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -748,7 +810,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -779,7 +841,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -810,7 +872,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -841,7 +903,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -872,7 +934,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -903,7 +965,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -934,7 +996,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -965,7 +1027,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -996,7 +1058,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1027,7 +1089,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1058,7 +1120,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1089,7 +1151,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1120,7 +1182,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1151,7 +1213,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1182,7 +1244,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1213,7 +1275,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1244,7 +1306,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1275,7 +1337,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1306,7 +1368,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1337,7 +1399,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1368,7 +1430,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1399,7 +1461,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1430,7 +1492,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1461,7 +1523,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1492,7 +1554,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1523,7 +1585,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1554,7 +1616,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1585,7 +1647,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1616,7 +1678,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1647,7 +1709,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1678,7 +1740,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1709,7 +1771,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1740,7 +1802,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1771,7 +1833,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1802,7 +1864,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1833,7 +1895,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1864,7 +1926,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1895,7 +1957,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1926,7 +1988,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1957,7 +2019,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1988,7 +2050,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2019,7 +2081,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2050,7 +2112,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2081,7 +2143,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2112,7 +2174,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2143,7 +2205,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2174,7 +2236,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2184,37 +2246,6 @@
       ],
       "topic": "诊断与评估",
       "institutionHint": "Department of Thoracic Surgery, The Affiliated Hospital of Guizhou Medical University, Guiyang, China."
-    },
-    {
-      "id": "pubmed-41972167",
-      "pmid": "41972167",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-01-01",
-      "indexedAt": "2026-04-13",
-      "title": "Neurotoxicity of immune checkpoint inhibitors: a retrospective pharmacovigilance study using FAERS database.",
-      "authors": "Peng Dai, Xia Li",
-      "journal": "Frontiers in immunology",
-      "issn": "1664-3224",
-      "eissn": "1664-3224",
-      "abstract": "Immune checkpoint inhibitors (ICIs), an antitumor therapeutic strategy, have shown great potential for cancer treatment. With the widespread use of ICIs, immune-related adverse events (irAEs) have increased gradually. Neurotoxicity, as an irAE, has a low incidence rate, but high disability and mortality rates, warranting clinical attention. This study aimed to quantify the association between neurological adverse events and ICI treatment and describe the characteristics of ICI-related neurological complications in real-world practice. Data were sourced from the FDA Adverse Event Reporting System (FAERS) database from the first quarter of 2004 to the first quarter of 2025. Data mining was performed using the reporting odds ratio (ROR) method. Classification and statistics were conducted using the system organ class (SOC), high-level group term (HLGT), and preferred term (PT) from the Medical Dictionary for Regulatory Activities (MedDRA) terminology set (version 28.0). The entire FAERS database included 56,321,150 adverse event records, of which 26,629 records were identified as being related to neurological immune-related adverse events (n-irAEs) following ICI therapy. The main adverse events include encephalitis, encephalopathy, myasthenia gravis, paraneoplastic syndromes, and peripheral neuropathy. Among these reports, males (53.51%) outnumbered females (37.82%), and the median patient age was 67 years. The number of reports in 2024 was slightly higher than that in other years, but the difference was not significant. Physicians were the primary reporters (43.23%) and the United States had the highest number of reports (35.78%). The median time to the onset of adverse events was 30 days. Serious reports accounted for a high proportion of the patients (91.23%). Pharmacovigilance analysis indicated that neurological immune-related adverse events associated with ICIs mainly involved central nervous system inflammation and neuromuscular junction dysfunction. Different ICI immunotherapies are associated with distinct neurological disease characteristics, and combination therapies may influence the reporting patterns of neurotoxicity. In clinical practice, the early recognition and management of ICI-related n-irAEs are critical.",
-      "summary": "Immune checkpoint inhibitors (ICIs), an antitumor therapeutic strategy, have shown great potential for cancer treatment.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41972167/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "免疫机制"
-      ],
-      "topic": "免疫机制",
-      "institutionHint": "College of Traditional Chinese Medicine, Changchun University of Chinese Medicine, Jilin, Changchun, China."
     },
     {
       "id": "pubmed-41961712",
@@ -2236,7 +2267,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2246,37 +2277,6 @@
       ],
       "topic": "免疫机制",
       "institutionHint": "Department of Neurology and Stroke Center, The First Affiliated Hospital of Jinan University, Guangzhou, Guangdong, China."
-    },
-    {
-      "id": "pubmed-41960209",
-      "pmid": "41960209",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-01-01",
-      "indexedAt": "2026-04-10",
-      "title": "Surgical outcomes of thoracoscopic extended thymectomy via subxyphoid and left intercostal approach.",
-      "authors": "Zhenlin Jiang, Zuxin Dong, Junting Chen, Jianhua Yan",
-      "journal": "Frontiers in surgery",
-      "issn": "2296-875X",
-      "eissn": "",
-      "abstract": "Minimally invasive thymectomy is widely adopted for the management of thymic diseases and myasthenia gravis (MG). Among thoracoscopic techniques, the intercostal approach (ICA) is the most commonly used, whereas the subxiphoid approach (SA) has been proposed to reduce postoperative pain. However, comparative evidence remains heterogeneous. This single-center retrospective cohort study included consecutive patients who underwent minimally invasive thymectomy between January 2019 and December 2023. Patients were assigned to the ICA or SA group according to the surgical approach performed. The primary outcome was early postoperative pain assessed using the visual analog scale (VAS) within 48 h. Secondary outcomes included operative and perioperative parameters, postoperative complications, and short-term follow-up outcomes. Multivariable linear regression analysis was conducted to adjust for potential confounders. Of 168 patients assessed for eligibility, 90 were included in the final analysis (ICA, n = 48; SA, n = 42). Baseline characteristics were comparable between groups. Operative time, intraoperative blood loss, duration of chest drainage, length of hospital stay, and hospitalization costs did not differ significantly. Early postoperative pain was lower in the SA group, with significantly reduced VAS scores during the first 48 h. Postoperative complication rates were low and similar between approaches, with no perioperative mortality observed. Among patients with MG, short-term neurological improvement did not differ significantly. Multivariable analysis confirmed that the subxiphoid approach was independently associated with lower early postoperative pain. Intercostal and subxiphoid thoracoscopic thymectomy demonstrated comparable perioperative safety and short-term clinical outcomes in this cohort. The subxiphoid approach was associated with lower early postoperative pain, while other operative and recovery-related parameters were similar. These findings support individualized surgical decision-making rather than a universally superior approach.",
-      "summary": "Minimally invasive thymectomy is widely adopted for the management of thymic diseases and myasthenia gravis (MG).",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41960209/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "胸腺相关"
-      ],
-      "topic": "胸腺相关",
-      "institutionHint": "Department of Thoracic Surgery, Hunan Provincial People's Hospital (The First Affiliated Hospital of Hunan Normal University), Changsha City, Hunan, China."
     },
     {
       "id": "pubmed-41925081",
@@ -2298,7 +2298,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2329,7 +2329,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2360,7 +2360,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2391,7 +2391,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2422,7 +2422,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2453,7 +2453,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2484,7 +2484,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2515,7 +2515,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2546,7 +2546,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2577,7 +2577,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2608,7 +2608,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2639,7 +2639,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2670,7 +2670,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2701,7 +2701,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2732,7 +2732,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2763,7 +2763,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2794,7 +2794,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2825,7 +2825,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2856,7 +2856,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2887,7 +2887,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2918,7 +2918,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2949,7 +2949,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2980,7 +2980,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3011,7 +3011,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3042,7 +3042,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3073,7 +3073,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3104,7 +3104,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-06-24",
+        "lastChecked": "2026-06-25",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3117,8 +3117,8 @@
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-06-24T11:52:38.093Z",
-    "runFinishedAt": "2026-06-24T11:56:11.147Z",
+    "runStartedAt": "2026-06-25T11:28:03.447Z",
+    "runFinishedAt": "2026-06-25T11:31:51.395Z",
     "scope": "all",
     "status": "success",
     "failedSources": []
