@@ -355,6 +355,7 @@ async function boot() {
     renderVisibleModules();
     hydrateShareTools();
     hydrateLanguageTools();
+    hydrateMobileNavigation();
     applyLanguage();
   } catch (error) {
     console.error(error);
@@ -406,6 +407,52 @@ function hydrateLanguageTools() {
   }
   syncLanguageToggle();
   syncLanguageLinks();
+}
+
+function hydrateMobileNavigation() {
+  for (const nav of document.querySelectorAll(".section-nav")) {
+    if (nav.dataset.mobileNavHydrated === "true") continue;
+    nav.dataset.mobileNavHydrated = "true";
+    if (!nav.id) nav.id = `section-nav-${Math.random().toString(36).slice(2, 8)}`;
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "mobile-nav-toggle";
+    toggle.setAttribute("aria-controls", nav.id);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "导航";
+
+    const backdrop = document.createElement("button");
+    backdrop.type = "button";
+    backdrop.className = "mobile-nav-backdrop";
+    backdrop.setAttribute("aria-label", "关闭导航菜单");
+
+    const close = () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body?.classList.remove("mobile-nav-open");
+    };
+    const open = () => {
+      nav.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body?.classList.add("mobile-nav-open");
+    };
+
+    toggle.addEventListener("click", () => {
+      if (nav.classList.contains("is-open")) close();
+      else open();
+    });
+    backdrop.addEventListener("click", close);
+    nav.addEventListener("click", (event) => {
+      if (event.target.closest("a[href]")) close();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    });
+
+    nav.before(toggle);
+    nav.after(backdrop);
+  }
 }
 
 function setLanguage(language) {
