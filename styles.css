@@ -2876,19 +2876,31 @@ footer {
   min-height: 42px;
   margin-top: auto;
   padding: 10px 16px;
-  border: 1px solid var(--teal-dark);
+  border: 1px solid rgba(19, 122, 118, 0.48);
   border-radius: 8px;
-  background: var(--teal-dark);
-  color: #fff;
+  background: #e4f5f1;
+  color: var(--teal-dark);
   font-weight: 900;
   line-height: 1.2;
   text-decoration: none;
-  box-shadow: 0 10px 22px rgba(16, 105, 101, 0.18);
+  box-shadow: 0 8px 18px rgba(16, 105, 101, 0.12);
 }
 
-.conference-primary-link:hover {
-  background: var(--teal);
+.conference-primary-link:visited {
+  color: var(--teal-dark);
+}
+
+.conference-primary-link:hover,
+.conference-primary-link:focus-visible {
+  border-color: var(--teal-dark);
+  background: var(--teal-dark);
   color: #fff;
+  outline: 3px solid rgba(19, 122, 118, 0.18);
+  outline-offset: 2px;
+}
+
+.conference-primary-link:active {
+  transform: translateY(1px);
 }
 
 .conference-directory-brief,
