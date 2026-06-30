@@ -2759,3 +2759,258 @@ footer {
     place-items: start;
   }
 }
+
+/* Conference long-form page */
+.article-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid rgba(19, 122, 118, 0.24);
+  border-radius: 999px;
+  background: #eef7f4;
+  color: var(--teal-dark);
+  font-size: 0.86rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.conference-hero {
+  background:
+    linear-gradient(90deg, rgba(18, 28, 35, 0.82), rgba(18, 28, 35, 0.48)),
+    url("assets/hero-research-hub.png") center / cover;
+}
+
+.conference-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.conference-meta span {
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.conference-brief-grid,
+.takeaway-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.conference-brief-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.conference-brief-grid article,
+.takeaway-grid article,
+.article-title-block,
+.key-takeaways,
+.conference-section,
+.article-disclaimer {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.conference-brief-grid span {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.conference-brief-grid strong,
+.takeaway-grid strong {
+  display: block;
+  margin: 8px 0;
+  color: var(--ink);
+  font-size: 1.08rem;
+}
+
+.conference-brief-grid p,
+.takeaway-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(190px, 250px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.article-toc {
+  position: sticky;
+  top: 14px;
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.article-toc strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.article-toc a {
+  display: block;
+  padding: 8px 0;
+  border-top: 1px solid rgba(214, 224, 226, 0.75);
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.article-toc a:hover {
+  color: var(--teal-dark);
+}
+
+.conference-article {
+  display: grid;
+  gap: 18px;
+}
+
+.article-title-block h2,
+.key-takeaways h2,
+.conference-section h2 {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 1.46rem;
+  line-height: 1.3;
+}
+
+.article-title-block p,
+.conference-section p,
+.article-disclaimer p {
+  color: var(--text);
+  line-height: 1.85;
+}
+
+.takeaway-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.conference-subsection {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.conference-subsection h3 {
+  margin-bottom: 10px;
+  color: var(--teal-dark);
+  font-size: 1.16rem;
+  line-height: 1.45;
+}
+
+.trend-line {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: #fff9ed;
+  color: var(--ink);
+  font-weight: 780;
+}
+
+.conference-table-wrap {
+  overflow-x: auto;
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.conference-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.conference-table th,
+.conference-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  line-height: 1.55;
+}
+
+.conference-table th {
+  background: #eef5f5;
+  color: var(--teal-dark);
+  font-weight: 850;
+}
+
+.reference-section details {
+  margin-top: 12px;
+}
+
+.reference-section summary {
+  cursor: pointer;
+  color: var(--teal-dark);
+  font-weight: 850;
+}
+
+.reference-list {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0 18px;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.article-disclaimer {
+  border-color: rgba(181, 74, 62, 0.24);
+  background: #fff8f6;
+}
+
+.article-disclaimer strong {
+  color: #9d3e34;
+}
+
+@media (max-width: 960px) {
+  .article-layout,
+  .conference-brief-grid,
+  .takeaway-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-toc {
+    position: static;
+  }
+}
+
+@media (max-width: 680px) {
+  .conference-meta span {
+    width: 100%;
+  }
+
+  .article-title-block,
+  .key-takeaways,
+  .conference-section,
+  .article-disclaimer,
+  .conference-brief-grid article,
+  .takeaway-grid article {
+    padding: 16px;
+  }
+
+  .conference-section h2,
+  .article-title-block h2,
+  .key-takeaways h2 {
+    font-size: 1.24rem;
+  }
+}

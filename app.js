@@ -52,12 +52,18 @@ const pageMeta = {
   "evidence-chain": {
     zh: { title: "人工复核与证据链 | 重症肌无力信息港", description: "展示人工复核记录、来源链接、结构化数据文件和前台同步状态。" },
     en: { title: "Manual Review and Evidence Chain | MG Intelligence Hub", description: "Manual review records, source links, structured data files and front-end synchronization status." }
+  },
+  conferences: {
+    zh: { title: "会议资讯 | 会议撷英 | 重症肌无力信息港", description: "重症肌无力会议资讯、会议撷英、国际会议摘要解读和研究进展专题整理。" },
+    en: { title: "Conference Highlights | MG Intelligence Hub", description: "Conference highlights and curated MG congress intelligence for research tracking." }
   }
 };
 
 const translationMap = new Map([
   ["首页", "Home"],
   ["研究情报", "Research"],
+  ["会议资讯", "Conferences"],
+  ["会议撷英", "Conference Highlights"],
   ["华山MG团队", "Huashan MG Team"],
   ["治疗与证据", "Therapy & Evidence"],
   ["安全监测", "Safety"],
