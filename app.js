@@ -54,8 +54,8 @@ const pageMeta = {
     en: { title: "Manual Review and Evidence Chain | MG Intelligence Hub", description: "Manual review records, source links, structured data files and front-end synchronization status." }
   },
   conferences: {
-    zh: { title: "会议资讯 | 会议撷英 | 重症肌无力信息港", description: "重症肌无力会议资讯、会议撷英、国际会议摘要解读和研究进展专题整理。" },
-    en: { title: "Conference Highlights | MG Intelligence Hub", description: "Conference highlights and curated MG congress intelligence for research tracking." }
+    zh: { title: "重症肌无力相关会议资讯 | 会议撷英与学术动态 | 重症肌无力信息港", description: "重症肌无力相关会议资讯，汇总会议撷英、国际会议摘要解读、学术动态和研究进展专题整理。" },
+    en: { title: "MG Conference Intelligence | MG Intelligence Hub", description: "Conference highlights, congress abstract interpretation and curated MG meeting intelligence." }
   }
 };
 
