@@ -3070,7 +3070,15 @@ footer {
   background: #fff;
 }
 .meeting-calendar-table {
-  min-width: 1040px;
+  min-width: 1180px;
+}
+.meeting-year-select {
+  min-width: 96px;
+  padding: 8px 34px 8px 10px;
+  border-color: rgba(19, 122, 118, 0.32);
+  background-color: #f8fcfb;
+  color: var(--teal-dark);
+  font-weight: 850;
 }
 
 .conference-table th,
@@ -3381,7 +3389,7 @@ footer {
   }
 
   .meeting-calendar-table {
-    min-width: min(1040px, 280vw);
+    min-width: min(1180px, 310vw);
   }
 
   .conference-detail-media img,
