@@ -2868,6 +2868,38 @@ footer {
 .conference-card-link {
   margin-top: auto;
 }
+.conference-primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 10px 16px;
+  border: 1px solid var(--teal-dark);
+  border-radius: 8px;
+  background: var(--teal-dark);
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(16, 105, 101, 0.18);
+}
+
+.conference-primary-link:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.conference-directory-brief,
+.conference-feature-card {
+  border-color: rgba(19, 122, 118, 0.38);
+  background: #f2faf8;
+}
+
+.conference-feature-card {
+  grid-column: span 2;
+}
 
 .conference-note-card {
   justify-content: center;
@@ -3088,6 +3120,10 @@ footer {
 
   .article-toc {
     position: static;
+  }
+
+  .conference-feature-card {
+    grid-column: auto;
   }
 }
 
