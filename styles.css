@@ -19,11 +19,16 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
+  max-width: 100%;
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     linear-gradient(180deg, #eef6f5 0, var(--mist) 420px),
@@ -38,6 +43,30 @@ body[data-language="en"] {
 
 a {
   color: inherit;
+}
+
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+dd,
+dt,
+a,
+strong,
+span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 h1,
@@ -3179,5 +3208,174 @@ footer {
 
   .section-nav {
     max-height: min(72vh, 560px);
+  }
+}
+
+/* Mobile readability hardening: keep pages from being wider than the viewport in WeChat and small browsers. */
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.62;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  main > * {
+    min-width: 0;
+  }
+
+  .hero__content,
+  main,
+  footer,
+  .page-hero > div {
+    width: min(100% - 24px, 1200px);
+  }
+
+  h1,
+  .page-hero h1 {
+    max-width: 100%;
+    font-size: clamp(1.78rem, 9.2vw, 2.7rem);
+    line-height: 1.14;
+  }
+
+  h2,
+  .section-heading h2 {
+    font-size: clamp(1.32rem, 6.2vw, 1.8rem);
+    line-height: 1.24;
+  }
+
+  h3 {
+    line-height: 1.32;
+  }
+
+  p,
+  li,
+  dd,
+  dt,
+  .article-title-block p,
+  .conference-section p,
+  .article-disclaimer p,
+  .item p,
+  .latest-card details p,
+  .huashan-paper details p {
+    line-height: 1.78;
+  }
+
+  .module-section,
+  .feed-section,
+  .latest-section,
+  .guidance-section,
+  .matrix-section,
+  .trial-section,
+  .market-section,
+  .china-section,
+  .treatment-section,
+  .source-panel {
+    max-width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .portal-card,
+  .guidance-card,
+  .trial-card,
+  .latest-card,
+  .treatment-card,
+  .item,
+  .market-card,
+  .safety-card,
+  .china-access-card,
+  .evidence-chain-card,
+  .review-card,
+  .source-status-card,
+  .i18n-card,
+  .conference-highlight-card,
+  .article-title-block,
+  .key-takeaways,
+  .conference-section,
+  .article-disclaimer {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .latest-card__head span,
+  .trial-card__head strong,
+  .market-card__head strong,
+  .safety-card__head strong,
+  .china-access-card__head strong,
+  .treatment-card__head strong,
+  .i18n-card__head strong,
+  .source-status-card strong,
+  .pill,
+  .tags span {
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .matrix-table,
+  .table-scroll,
+  .conference-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .matrix-table table {
+    min-width: min(760px, 210vw);
+  }
+
+  .conference-table {
+    min-width: min(520px, 160vw);
+  }
+
+  .conference-detail-media img,
+  .conference-card-image {
+    height: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__content,
+  main,
+  footer,
+  .page-hero > div {
+    width: min(100% - 20px, 1200px);
+  }
+
+  h1,
+  .page-hero h1 {
+    font-size: clamp(1.62rem, 8.8vw, 2.25rem);
+  }
+
+  .module-section,
+  .feed-section,
+  .latest-section,
+  .guidance-section,
+  .matrix-section,
+  .trial-section,
+  .market-section,
+  .china-section,
+  .treatment-section,
+  .source-panel,
+  .article-title-block,
+  .key-takeaways,
+  .conference-section,
+  .article-disclaimer,
+  .conference-brief-grid article,
+  .takeaway-grid article {
+    padding: 14px;
   }
 }
