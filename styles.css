@@ -3013,6 +3013,13 @@ footer {
   display: grid;
   gap: 18px;
 }
+.conference-directory-page {
+  display: block;
+}
+
+.conference-directory-page .conference-article {
+  width: 100%;
+}
 
 .article-title-block h2,
 .key-takeaways h2,
