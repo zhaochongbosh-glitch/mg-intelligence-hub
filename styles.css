@@ -3069,6 +3069,9 @@ footer {
   border-collapse: collapse;
   background: #fff;
 }
+.meeting-calendar-table {
+  min-width: 1040px;
+}
 
 .conference-table th,
 .conference-table td {
@@ -3375,6 +3378,10 @@ footer {
 
   .conference-table {
     min-width: min(520px, 160vw);
+  }
+
+  .meeting-calendar-table {
+    min-width: min(1040px, 280vw);
   }
 
   .conference-detail-media img,
