@@ -348,6 +348,26 @@ const dataFiles = {
   journalMetrics: "journal-metrics.json"
 };
 
+const criticalDataFiles = {};
+for (const [key, file] of Object.entries(dataFiles)) {
+  if (key !== "journalMetrics") criticalDataFiles[key] = file;
+}
+
+const dataFallbacks = {
+  feed: { items: [] },
+  latest: { items: [] },
+  china: { items: [] },
+  huashanTeam: { items: [] },
+  treatments: { treatments: [], offLabelOrSupportive: [] },
+  market: { products: [] },
+  guidance: { pathways: [] },
+  matrix: { items: [] },
+  trials: { items: [] },
+  updateStatus: { sources: [], outputs: [] },
+  manualReview: { items: [] },
+  terminology: { terms: [] },
+  journalMetrics: { records: [] }
+};
 const trustDefaults = {
   feed: {
     sourceType: "聚合来源",
@@ -420,27 +440,53 @@ const trustDefaults = {
 boot();
 
 async function boot() {
+  initializeShell();
+
   try {
-    state.data = await loadAllData();
-    state.journalMetricIndex = buildJournalMetricIndex(state.data.journalMetrics?.records || []);
+    state.data = await loadDataFiles(criticalDataFiles, 12000);
+    state.journalMetricIndex = buildJournalMetricIndex([]);
     hydrateStats();
     hydrateControls();
     bindControls();
     renderVisibleModules();
     hydrateShareTools();
+    applyLanguage();
+    loadJournalMetricsInBackground();
+  } catch (error) {
+    console.error(error);
+    showDataReadFailure();
+    applyLanguage();
+  }
+}
+
+function initializeShell() {
+  try {
     hydrateLanguageTools();
     hydrateMobileNavigation();
     applyLanguage();
   } catch (error) {
-    console.error(error);
-    for (const target of document.querySelectorAll("[data-render]")) {
-      target.innerHTML = `<article class="item"><h3>数据读取失败</h3><p>请稍后刷新页面，或检查 data 文件是否存在。</p></article>`;
-    }
-    hydrateLanguageTools();
-    hydrateMobileNavigation();
-    applyLanguage();
+    console.error("Shell initialization failed", error);
   }
 }
+
+async function loadJournalMetricsInBackground() {
+  try {
+    const data = await loadDataFiles({ journalMetrics: dataFiles.journalMetrics }, 20000);
+    state.data.journalMetrics = data.journalMetrics;
+    state.journalMetricIndex = buildJournalMetricIndex(state.data.journalMetrics?.records || []);
+    renderVisibleModules();
+    applyLanguage();
+  } catch (error) {
+    console.warn("Journal metrics unavailable", error);
+  }
+}
+
+function showDataReadFailure() {
+  for (const target of document.querySelectorAll("[data-render]")) {
+    target.innerHTML = `<article class="item"><h3>数据读取失败</h3><p>请稍后刷新页面，或检查 data 文件是否存在。</p></article>`;
+  }
+}
+
 function getInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
   const urlLanguage = params.get("lang");
@@ -454,17 +500,44 @@ function getInitialLanguage() {
   return "zh";
 }
 
-async function loadAllData() {
+async function loadDataFiles(files, timeoutMs = 12000) {
   const entries = await Promise.all(
-    Object.entries(dataFiles).map(async ([key, file]) => {
-      const response = await fetch(new URL(`${file}?ts=${Date.now()}`, DATA_ROOT));
-      if (!response.ok) throw new Error(`${file} HTTP ${response.status}`);
-      return [key, await response.json()];
+    Object.entries(files).map(async ([key, file]) => {
+      try {
+        const response = await withTimeout(fetch(new URL(`${file}?ts=${Date.now()}`, DATA_ROOT)), timeoutMs, file);
+        if (!response.ok) throw new Error(`${file} HTTP ${response.status}`);
+        const payload = await withTimeout(response.json(), timeoutMs, `${file} JSON`);
+        return [key, payload];
+      } catch (error) {
+        console.warn(`Data file unavailable: ${file}`, error);
+        return [key, fallbackData(key)];
+      }
     })
   );
-  return Object.fromEntries(entries);
+  const output = {};
+  for (const [key, value] of entries) output[key] = value;
+  return output;
 }
 
+function withTimeout(promise, timeoutMs, label) {
+  return new Promise((resolve, reject) => {
+    const timer = window.setTimeout(() => reject(new Error(`${label} timeout`)), timeoutMs);
+    promise.then(
+      (value) => {
+        window.clearTimeout(timer);
+        resolve(value);
+      },
+      (error) => {
+        window.clearTimeout(timer);
+        reject(error);
+      }
+    );
+  });
+}
+
+function fallbackData(key) {
+  return JSON.parse(JSON.stringify(dataFallbacks[key] || {}));
+}
 function hydrateLanguageTools() {
   for (const nav of document.querySelectorAll(".section-nav")) {
     if (nav.querySelector(".language-toggle")) continue;
