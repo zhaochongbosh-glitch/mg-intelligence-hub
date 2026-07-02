@@ -420,6 +420,10 @@ const trustDefaults = {
 boot();
 
 async function boot() {
+  hydrateLanguageTools();
+  hydrateMobileNavigation();
+  applyLanguage();
+
   try {
     state.data = await loadAllData();
     state.journalMetricIndex = buildJournalMetricIndex(state.data.journalMetrics?.records || []);
@@ -428,16 +432,12 @@ async function boot() {
     bindControls();
     renderVisibleModules();
     hydrateShareTools();
-    hydrateLanguageTools();
-    hydrateMobileNavigation();
     applyLanguage();
   } catch (error) {
     console.error(error);
     for (const target of document.querySelectorAll("[data-render]")) {
       target.innerHTML = `<article class="item"><h3>数据读取失败</h3><p>请稍后刷新页面，或检查 data 文件是否存在。</p></article>`;
     }
-    hydrateLanguageTools();
-    hydrateMobileNavigation();
     applyLanguage();
   }
 }
