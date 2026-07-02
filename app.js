@@ -56,30 +56,6 @@ const pageMeta = {
   conferences: {
     zh: { title: "重症肌无力相关会议资讯 | 会议撷英与学术动态 | 重症肌无力信息港", description: "重症肌无力相关会议资讯，汇总会议撷英、国际会议摘要解读、学术动态和研究进展专题整理。" },
     en: { title: "MG Conference Intelligence | MG Intelligence Hub", description: "Conference highlights, congress abstract interpretation and curated MG meeting intelligence." }
-  },
-  safety: {
-    zh: { title: "重症肌无力药物安全监测 | FAERS、openFDA与上市后风险信号", description: "汇总重症肌无力治疗药物安全性重点、上市后监测、FAERS/openFDA可视化入口、标签链接和人工复核提示。" },
-    en: { title: "MG Drug Safety Monitoring | FAERS, openFDA and Post-Marketing Signals", description: "Safety priorities, post-marketing surveillance, FAERS/openFDA links, labels and manual review prompts for MG therapies." }
-  },
-  "trials-market": {
-    zh: { title: "重症肌无力临床试验与全球市场 | ClinicalTrials.gov、ChiCTR与销售线索", description: "追踪重症肌无力临床试验、试验机制、全球批准、市场销售额和中国本土注册研究入口。" },
-    en: { title: "MG Trials and Global Market | ClinicalTrials.gov, ChiCTR and Sales Signals", description: "Clinical trial radar, mechanisms, global approvals, market sales and China-registered study access for myasthenia gravis." }
-  },
-  guidance: {
-    zh: { title: "重症肌无力指南路径 | 诊疗流程、治疗升级与证据矩阵", description: "整理重症肌无力诊疗路径、治疗升级、危象救援、指南建议、证据矩阵和可及性决策要点。" },
-    en: { title: "MG Guidance Pathway | Care Flow, Treatment Escalation and Evidence Matrix", description: "Guidance pathways for MG care, escalation decisions, crisis rescue, evidence mapping and access considerations." }
-  },
-  disclaimer: {
-    zh: { title: "免责声明与数据使用说明 | 重症肌无力信息港", description: "说明重症肌无力信息港的数据来源、自动更新、人工复核、医学免责声明和引用边界。" },
-    en: { title: "Disclaimer and Data Use Notes | MG Intelligence Hub", description: "Data source notes, automated update boundaries, manual review status, medical disclaimer and citation guidance for MG Intelligence Hub." }
-  },
-  "data-status": {
-    zh: { title: "重症肌无力信息港数据更新状态 | 自动更新与人工复核队列", description: "展示重症肌无力信息港各数据源更新时间、自动更新结果、来源容错记录和人工复核队列。" },
-    en: { title: "MG Intelligence Hub Data Status | Updates and Manual Review Queue", description: "Update timestamps, automation status, source fallback records and manual review queues for MG Intelligence Hub data sources." }
-  },
-  faers: {
-    zh: { title: "重症肌无力药物FAERS可视化 | openFDA不良事件报告概览", description: "基于 openFDA/FAERS 汇总重症肌无力相关治疗药物不良事件报告概览和风险信号入口。" },
-    en: { title: "MG Therapy FAERS Visualization | openFDA Adverse Event Overview", description: "openFDA/FAERS adverse event overview and signal exploration entry points for MG-related therapies." }
   }
 };
 
@@ -255,57 +231,7 @@ const translationMap = new Map([
   ["复核结论同步到对应 JSON 数据文件，前台页面只读取结构化数据，避免散落在文档或聊天记录里。", "Review conclusions are synchronized to the corresponding JSON data files; front-end pages read structured data instead of scattered documents or chat logs."],
   ["监管标签、医保准入、销售额、安全性信号和指南路径属于高变化字段，按月或按季度回看。", "Regulatory labels, reimbursement access, sales, safety signals and guidance pathways are high-change fields reviewed monthly or quarterly."],
   ["本站用于公开医学情报整理和科研参考；正式判断请回到原始来源并进行人工复核。", "This site is for public medical intelligence curation and research reference; formal judgments should return to primary sources and manual review."]
-  ["安全性与上市后监测", "Safety & Post-Marketing Monitoring"],
-  ["把获批 MG/gMG 治疗药物的重点风险、上市后信号、标签与 FAERS 入口单独整理，便于持续复核。", "Key risks, post-marketing signals, labels and FAERS access points for approved MG/gMG therapies are organized for ongoing review."],
-  ["上市后安全信号地图", "Post-Marketing Safety Signal Map"],
-  ["正在读取安全性数据", "Loading safety data"],
-  ["复核工作流", "Review Workflow"],
-  ["原始标签", "Primary labels"],
-  ["优先核对 FDA/EMA/NMPA 标签、风险管理要求、黑框警告和禁忌证。", "Prioritize FDA/EMA/NMPA labels, risk management requirements, boxed warnings and contraindications."],
-  ["自发报告", "Spontaneous reports"],
-  ["FAERS 等数据库用于发现信号；报告数量不能直接代表发生率或因果关系。", "FAERS and similar databases help detect signals; report counts do not directly indicate incidence or causality."],
-  ["队列、登记研究和长期随访用于判断信号是否稳定、是否与人群或合并用药相关。", "Cohorts, registries and long-term follow-up help assess whether signals are stable or linked to populations and concomitant therapies."],
-  ["每次更新后记录核查日期、来源链接和需要继续跟踪的安全问题。", "After each update, record review dates, source links and safety issues requiring follow-up."],
-  ["安全性判断请以原始标签、监管文件和临床专业判断为准。", "Safety judgments should rely on primary labels, regulatory documents and professional clinical interpretation."],
-  ["指南与诊疗路径", "Guidance and Care Pathways"],
-  ["把指南共识、中国实践关注和情报用途组织成可比较的路径节点。", "Guideline consensus, China-practice considerations and intelligence use cases are organized as comparable pathway nodes."],
-  ["指南与诊疗路径对照", "Guidance and Care Pathway Comparison"],
-  ["正在读取诊疗路径数据", "Loading pathway data"],
-  ["数据更新状态与人工复核队列", "Data Update Status and Manual Review Queue"],
-  ["集中查看自动更新是否运行、外部来源是否异常，以及监管批准、销售额、安全性和证据矩阵中需要人工核对的事项。", "Review automation status, source failures and manual-check items for approvals, sales, safety and evidence matrix fields."],
-  ["自动更新状态", "Automated Update Status"],
-  ["读取 `data/update-status.json`，将每日自动抓取来源、人工复核来源和本次输出记录分开展示。", "Reads `data/update-status.json` and separates daily automated sources, manual-review sources and current output records."],
-  ["双语覆盖率与术语表", "Bilingual Coverage and Terminology"],
-  ["读取核心结构化数据和 `data/terminology.json`，展示英文结构字段、文献英文摘要和术语表维护状态。", "Reads core structured datasets and `data/terminology.json` to show English field coverage, English abstracts and terminology maintenance status."],
-  ["正在读取双语状态", "Loading bilingual status"],
-  ["人工复核队列", "Manual Review Queue"],
-  ["根据数据来源状态和各模块的复核标签自动生成，优先暴露不适合完全自动化的高风险字段。", "Generated from source status and module review labels, prioritizing high-risk fields that should not be fully automated."],
-  ["先监管后市场", "Regulatory before market"],
-  ["批准日期、适应症文本、抗体分型和年龄范围优先回到监管原始来源确认。", "Approval dates, indication wording, antibody subtype and age range should be verified first against primary regulatory sources."],
-  ["销售额看口径", "Check sales scope"],
-  ["区分全球产品级、中国市场和 MG 单适应症，避免把财报总销售额误解为 MG 销售额。", "Separate global product sales, China sales and MG-specific indication sales to avoid misreading financial-report totals."],
-  ["安全信号不等于发生率", "Safety signals are not incidence rates"],
-  ["FAERS、自发报告和上市后案例用于发现信号，结论必须结合标签、队列研究和临床判断。", "FAERS, spontaneous reports and post-marketing cases are signal-detection tools; conclusions require labels, cohort evidence and clinical judgment."],
-  ["免责声明与数据使用说明", "Disclaimer and Data Use Notes"],
-  ["说明本站信息边界、自动摘要限制、人工复核原则、FAERS 解读注意事项和访问统计用途。", "Explains information boundaries, automated-summary limits, manual review principles, FAERS interpretation cautions and analytics use."],
-  ["信息用途", "Information Use"],
-  ["本站面向科研、医学事务、产业情报和团队知识管理，用于快速发现和整理重症肌无力相关公开信息。", "This site supports research, medical affairs, industry intelligence and team knowledge management by organizing public MG information."],
-  ["不替代临床诊疗", "Not a substitute for clinical care"],
-  ["本站内容不构成个体化医疗建议、诊断意见、用药建议或治疗推荐。患者诊疗决策应由具备资质的临床医生结合具体病情完成。", "Site content is not individualized medical, diagnostic, prescribing or treatment advice. Patient care decisions should be made by qualified clinicians."],
-  ["回到原始来源", "Return to primary sources"],
-  ["自动摘要需复核", "Automated summaries require review"],
-  ["数据解释边界", "Data Interpretation Boundaries"],
-  ["FAERS 与上市后监测", "FAERS and post-marketing monitoring"],
-  ["临床试验登记", "Clinical trial registration"],
-  ["市场与准入信息", "Market and access information"],
-  ["团队论文归属", "Team publication attribution"],
-  ["访问统计与隐私", "Analytics and Privacy"],
-  ["相关国际会议", "Related International Meetings"],
-  ["相关国际会议基本信息", "Basic Information for Related International Meetings"],
-  ["会议摘要证据提醒", "Conference Abstract Evidence Note"],
-  ["阅读全文", "Read full article"],
-  ["返回会议资讯索引", "Back to conference index"],
-  ["返回相关国际会议频道", "Back to related international meetings"],]);
+]);
 
 const translationRules = [
   [/^(\d+)\s*篇近\s*7\s*天文献$/, "$1 articles in 7 days"],
@@ -420,10 +346,6 @@ const trustDefaults = {
 boot();
 
 async function boot() {
-  hydrateLanguageTools();
-  hydrateMobileNavigation();
-  applyLanguage();
-
   try {
     state.data = await loadAllData();
     state.journalMetricIndex = buildJournalMetricIndex(state.data.journalMetrics?.records || []);
@@ -432,15 +354,17 @@ async function boot() {
     bindControls();
     renderVisibleModules();
     hydrateShareTools();
+    hydrateLanguageTools();
+    hydrateMobileNavigation();
     applyLanguage();
   } catch (error) {
     console.error(error);
     for (const target of document.querySelectorAll("[data-render]")) {
       target.innerHTML = `<article class="item"><h3>数据读取失败</h3><p>请稍后刷新页面，或检查 data 文件是否存在。</p></article>`;
     }
-    applyLanguage();
   }
 }
+
 function getInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
   const urlLanguage = params.get("lang");
@@ -559,19 +483,7 @@ function applyLanguage() {
 
 function applyMetaLanguage() {
   const page = document.body?.dataset.page || "home";
-  const bodyMeta = {
-    zh: {
-      title: document.body?.dataset.titleZh,
-      description: document.body?.dataset.descriptionZh
-    },
-    en: {
-      title: document.body?.dataset.titleEn,
-      description: document.body?.dataset.descriptionEn
-    }
-  };
-  const meta = (bodyMeta[state.language]?.title && bodyMeta[state.language]?.description)
-    ? bodyMeta[state.language]
-    : pageMeta[page]?.[state.language] || pageMeta[page]?.zh;
+  const meta = pageMeta[page]?.[state.language] || pageMeta[page]?.zh;
   if (!meta) return;
   document.title = meta.title;
   for (const selector of ["meta[name='description']", "meta[property='og:description']"]) {
@@ -583,6 +495,7 @@ function applyMetaLanguage() {
     if (element) element.setAttribute("content", meta.title);
   }
 }
+
 function translateTextNodes(root) {
   if (!root) return;
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {

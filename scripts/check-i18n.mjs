@@ -57,11 +57,6 @@ const checks = [
     key: "items",
     fields: ["topic", "summary", "notes"],
     lists: ["changesMade"]
-  },
-  {
-    file: "data/conference-highlights.json",
-    key: "items",
-    fields: ["category", "conference", "location", "title", "summary"]
   }
 ];
 
