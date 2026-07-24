@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-23T04:34:39.429Z",
-  "runStartedAt": "2026-07-23T04:32:45.551Z",
-  "runFinishedAt": "2026-07-23T04:34:39.429Z",
+  "updatedAt": "2026-07-24T04:33:06.004Z",
+  "runStartedAt": "2026-07-24T04:31:10.327Z",
+  "runFinishedAt": "2026-07-24T04:33:06.004Z",
   "scope": "all",
   "status": "success",
   "sources": [
@@ -11,8 +11,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。",
       "status": "success",
-      "startedAt": "2026-07-23T04:32:45.562Z",
-      "finishedAt": "2026-07-23T04:32:45.689Z",
+      "startedAt": "2026-07-24T04:31:10.336Z",
+      "finishedAt": "2026-07-24T04:31:10.465Z",
       "count": 0
     },
     {
@@ -21,8 +21,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版 PubMed 文献信息流。",
       "status": "success",
-      "startedAt": "2026-07-23T04:32:45.562Z",
-      "finishedAt": "2026-07-23T04:32:46.575Z",
+      "startedAt": "2026-07-24T04:31:10.336Z",
+      "finishedAt": "2026-07-24T04:31:11.490Z",
       "count": 16
     },
     {
@@ -31,9 +31,9 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版近 7 天研究摘要。",
       "status": "success",
-      "startedAt": "2026-07-23T04:32:46.975Z",
-      "finishedAt": "2026-07-23T04:34:11.501Z",
-      "count": 13
+      "startedAt": "2026-07-24T04:31:11.891Z",
+      "finishedAt": "2026-07-24T04:32:38.348Z",
+      "count": 12
     },
     {
       "name": "china-research",
@@ -41,8 +41,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版中国研究列表。",
       "status": "success",
-      "startedAt": "2026-07-23T04:34:11.902Z",
-      "finishedAt": "2026-07-23T04:34:14.615Z",
+      "startedAt": "2026-07-24T04:32:38.748Z",
+      "finishedAt": "2026-07-24T04:32:41.366Z",
       "count": 100
     },
     {
@@ -51,8 +51,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版华山 MG 团队论文列表。",
       "status": "success",
-      "startedAt": "2026-07-23T04:34:15.016Z",
-      "finishedAt": "2026-07-23T04:34:39.198Z",
+      "startedAt": "2026-07-24T04:32:41.766Z",
+      "finishedAt": "2026-07-24T04:33:05.802Z",
       "count": 102
     },
     {
@@ -61,8 +61,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版临床试验雷达。",
       "status": "success",
-      "startedAt": "2026-07-23T04:34:39.199Z",
-      "finishedAt": "2026-07-23T04:34:39.411Z",
+      "startedAt": "2026-07-24T04:33:05.803Z",
+      "finishedAt": "2026-07-24T04:33:05.989Z",
       "count": 30
     }
   ],
@@ -74,7 +74,7 @@
     },
     {
       "file": "data/latest-research.json",
-      "count": 14,
+      "count": 13,
       "status": "success"
     },
     {
