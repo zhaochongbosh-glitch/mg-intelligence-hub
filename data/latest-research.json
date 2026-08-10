@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T03:09:42.272Z",
+  "updatedAt": "2026-08-10T03:20:12.316Z",
   "windowHours": 168,
   "windowDays": 7,
   "translationStatus": "translated",
@@ -7,7 +7,7 @@
     "sourceType": "PubMed",
     "evidenceLevel": "文献摘要",
     "reviewStatus": "自动更新",
-    "lastChecked": "2026-08-09",
+    "lastChecked": "2026-08-10",
     "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
   },
   "updatePolicy": {
@@ -28,19 +28,19 @@
       "issn": "1664-3224",
       "eissn": "1664-3224",
       "abstract": "Eculizumab, a humanized monoclonal antibody targeting the complement protein C5, is highly efficient in paroxysmal nocturnal hemoglobinuria, atypical hemolytic uremic syndrome, generalized myasthenia gravis, and neuromyelitis optica spectrum disorder. However, recent reports have highlighted a subset of patients who show inadequate treatment response, prompting dose escalation or interval shortening. The serum concentration required for sustained inhibition of the complement lytic pathway remains uncertain, and the commonly cited 50-100 µg/ml range is not grounded in robust pharmacokinetic-pharmacodynamic data. Using publicly available clinical data digitized from four rare indications, we trained machine-learning supervised classifiers to predict complete C5 inhibition as a function of serum eculizumab concentration, identifying logistic regression on log-transformed concentration as the best and mechanistically appropriate model on real data. We then examined whether augmenting the real training data with high-fidelity synthetic data improves the resulting estimate. Although augmentation did not significantly change balanced accuracy, it reduced the confidence interval for the effective concentration by roughly 12-fold (a 92% reduction). The augmentation-stabilized estimate of the concentration associated with complete C5 inhibition was approximately 310.8-335.2 µg/ml (real-data-only estimate 338 µg/ml, 95% CI 275-454). These data-driven, hypothesis-generating results indicate that current maintenance targets aimed at near-complete C5 suppression may be substantially underestimated and that faithful synthetic augmentation can improve the precision of model-based pharmacological estimates in rare diseases; prospective validation in independent cohorts is required before any clinical application.",
-      "zhSummary": "本研究利用公开的四种罕见疾病临床数据，通过机器学习模型预测依库珠单抗血清浓度对C5完全抑制的效果，确认以对数转化浓度进行逻辑回归为最优模型。通过合成高保真数据增强训练集，显著缩小了有效浓度估计的置信区间，提示当前常用的50-100 µg/ml维持浓度可能被低估，估计值约为311-335 µg/ml。研究基于数据驱动，需在独立队列中前瞻性验证，尚未直接用于临床。 ",
+      "zhSummary": "研究利用公开临床数据，基于四种罕见适应症，通过机器学习模型预测依库珠单抗血清浓度与C5补体完全抑制的关系。结果表明，当前维持治疗中通常引用的50-100 µg/ml浓度范围可能严重低估，经过合成数据增强后，有效浓度估计更准确，约为310.8-335.2 µg/ml。研究强调需在独立队列中前瞻验证，尚不能直接用于临床指导。",
       "keyPoints": [
-        "依库珠单抗针对补体蛋白C5，应用于多种补体介导疾病",
-        "机器学习模型识别完全抑制C5所需浓度优于传统经验值",
-        "数据增强显著缩小有效浓度区间，提升估计精度",
-        "估计维持血药浓度约311-335 µg/ml，高于常用50-100 µg/ml范围"
+        "依库珠单抗用于多种补体介导疾病，包括重症肌无力。",
+        "机器学习识别出血清浓度与完全C5抑制的关系模型。",
+        "合成数据增强显著缩小有效浓度置信区间。",
+        "估计的有效浓度集中在310-335 µg/ml，高于传统认知。"
       ],
       "intelligence": {
-        "studyType": "机制研究，基于机器学习模型",
-        "population": "四种罕见补体介导疾病患者，具体疾病未详述",
-        "keyFinding": "合成数据增强使依库珠单抗完全抑制C5所需浓度估计置信区间缩小约92%，估计浓度约311-335 µg/ml",
-        "clinicalImplication": "提示肌无力患者依库珠单抗的有效维持浓度可能被低估，需要谨慎调整剂量，仍需独立队列验证",
-        "reviewFocus": "关注机器学习方法的合成数据增强效果，药物血药浓度-效应关系建模及其临床应用潜力"
+        "studyType": "机制研究，应用机器学习建模",
+        "population": "包含阵发性睡眠性血红蛋白尿症、非典型溶血尿毒综合征、广泛性重症肌无力等四种罕见疾病患者",
+        "keyFinding": "通过真实与合成数据，机器学习模型估计完全C5抑制时的依库珠单抗浓度约为310.8-335.2 µg/ml，显著高于传统50-100 µg/ml区间",
+        "clinicalImplication": "提示当前重症肌无力依库珠单抗维持治疗目标浓度可能偏低，需进一步临床验证以支持剂量优化，间接影响MG治疗决策和药物监测",
+        "reviewFocus": "关注模型构建方法、合成数据的效果、有效浓度定义及其置信区间、不同疾病间适用性及未来临床验证需求"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42568413/",
@@ -48,7 +48,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -68,19 +68,19 @@
       "issn": "2589-9090",
       "eissn": "2589-9090",
       "abstract": "Acetylcholine receptor antibody-positive myasthenia gravis (AChR-MG) is a rare autoimmune disease in which AChR autoantibodies trigger complement activation and cause damage to the neuromuscular junction. This study evaluated the therapeutic potential of an anti-C2 antibody in the rat passive transfer model of myasthenia gravis (PTMG). Female Lewis rats (n = 36) were prophylactically treated with either an anti-rat C2 antibody or an IgG isotype control 2 h prior to subcutaneous injection of mAb35 (PTMG) or saline (non-MG). Serum samples were collected at several timepoints during the study and muscle weakness; body weight and clinical manifestations were assessed daily. The animals underwent electromyography prior to euthanasia. AChR content in the tibialis anterior was determined by radioimmunoassay. Anti-C2 antibody-treated animals maintained body weight, grip strength and muscle AChR content (both functional and total) at levels comparable to non-MG animals. Serum analyses confirmed reduced complement activity over the course of the experiment in anti-C2 treated animals. These findings indicate that anti-C2 treatment effectively prevents disease development in this model, supporting its potential as a therapeutic strategy for managing AChR-MG.",
-      "zhSummary": "本研究采用大鼠被动转移模型（PTMG）评估抗C2抗体对乙酰胆碱受体抗体阳性重症肌无力（AChR-MG）的治疗潜力。实验中36只雌性路易斯大鼠，预防性给予抗C2抗体或IgG对照后注射致病性单克隆抗体mAb35。结果显示，抗C2抗体组动物的体重、抓握力及肌肉中AChR含量维持于非病变水平，同时血清补体活性降低。该研究提示抗C2抗体可有效阻止该模型中疾病的发展，但摘要未提及长期疗效及安全性。",
+      "zhSummary": "本研究在大鼠被动转移重症肌无力模型中评估了抗C2抗体的治疗潜力。通过给予抗rat C2抗体或IgG对照，随后注射致病性抗体mAb35，比较了肌肉力量、体重和乙酰胆碱受体含量等指标。结果显示抗C2抗体处理组动物维持了体重、握力及肌肉AChR含量，且血清补体活性降低，提示抗C2治疗能有效预防该模型中的疾病发生。研究提供了抗C2作为AChR阳性重症肌无力治疗策略的初步证据，但仅限于动物模型，临床应用还需进一步验证。",
       "keyPoints": [
-        "抗C2抗体预防性给药能抑制补体活性",
-        "抗C2组动物体重及握力保持正常",
-        "肌肉中AChR含量保持，表明神经肌接头受保护",
-        "支持抗C2抗体作为AChR-MG潜在治疗策略"
+        "AChR阳性重症肌无力相关抗体激活补体导致神经肌肉损伤。",
+        "抗C2抗体预防大鼠PTMG模型中的肌无力和AChR丢失。",
+        "抗C2处理降低了受试动物的血清补体活性。",
+        "本研究提供抗C2抗体治疗重症肌无力的动物实验依据。"
       ],
       "intelligence": {
         "studyType": "机制研究",
-        "population": "乙酰胆碱受体抗体阳性重症肌无力大鼠被动转移模型",
-        "keyFinding": "抗C2抗体治疗显著减少补体介导的损伤，维持体重、肌力及肌肉AChR水平",
-        "clinicalImplication": "提示抗C2抗体可能成为AChR-MG的治疗新策略，需进一步临床验证",
-        "reviewFocus": "重点关注实验设计、补体活性评估、神经肌接头保护及模型相关性"
+        "population": "大鼠被动转移重症肌无力模型，AChR阳性MG环境",
+        "keyFinding": "抗C2抗体预防疾病发展，维持体重、握力和肌肉AChR含量，降低补体活性",
+        "clinicalImplication": "提示抗C2抗体可能成为AChR阳性MG的治疗策略，需临床进一步评估",
+        "reviewFocus": "研究设计、模型有效性、补体抑制效果及疾病进展评估"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42564559/",
@@ -88,7 +88,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -108,19 +108,19 @@
       "issn": "1535-6345",
       "eissn": "1535-6345",
       "abstract": "Thymomas, though rare, are the most common anterior mediastinal neoplasms in adults, with incidence of 0.13 per 100,000 person-years. Due to indolent nature and lack of randomized trials, treatment relies on retrospective data. Literature on outcomes of unresectable thymomas in India is limited. This retrospective study was conducted at a tertiary cancer centre in north India, analysing records of patients with advanced/unresectable thymic malignancies (stage III-IV) treated between January 2012 and December 2023. Clinicopathological features, response rates, progression-free survival (PFS), and overall survival (OS) were assessed. A total of 43 patients (median age 40 years [range 22-72]; 76.7% male) were included. Histology revealed thymoma in 36 (83.7%), thymic carcinoma in 4 (9.3%), and thymic neuroendocrine tumours in 3 (7%). Common symptoms were cough (60.5%), dyspnoea (60.5%), and chest pain (55.8%). Stage distribution was - III (20.9%), IVA (46.5%), and IVB (32.6%). Liver (14%) was the most common site of distant metastasis. Myasthenia gravis and pure red cell aplasia occurred in 7% each. Forty (93%) patients received systemic therapy, primarily Cyclophosphamide-Adriamycin-Cisplatin (75%). The objective response rate for first-line systemic therapy was 37.5% (all partial responses) with a clinical benefit rate of 87.5%. Twelve (30%) underwent surgery, with R0 resection in 6 (15%). Median PFS was 16.4 months, and OS was 56 months. Systemic therapy and surgery in selected cases provide meaningful outcomes in unresectable thymomas, emphasizing the need for prospective studies to refine treatment strategies.",
-      "zhSummary": "本回顾性研究分析了印度一三级癌症中心2012年至2023年间经治疗的晚期/不可切除胸腺肿瘤患者的临床病理特征和治疗结局。共纳入43例患者，主要为胸腺瘤，伴发重症肌无力及纯红细胞再生障碍各占7%。93%患者接受系统治疗，首线客观缓解率为37.5%，临床获益率87.5%。30%患者接受手术，R0切除率15%。中位无进展生存期16.4个月，中位总体生存期56个月。研究表明系统治疗及选择性手术可带来一定疗效，提示需前瞻性研究优化治疗策略。",
+      "zhSummary": "本研究回顾性分析了2012年至2023年印度一个三级癌症中心43例晚期不可切除胸腺肿瘤患者的临床病理特征及治疗结局。患者中83.7%为胸腺瘤，常见症状包括咳嗽、呼吸困难和胸痛。93%的患者接受系统治疗，主要为环磷酰胺-阿霉素-顺铂方案。初始系统治疗客观缓解率为37.5%，临床获益率87.5%。30%患者行手术，其中15%达到R0切除。中位无进展生存期16.4个月，中位总生存期56个月。结果提示系统治疗联合选择性手术对不可切除胸腺瘤具有一定效果，强调需前瞻性研究优化治疗方案。",
       "keyPoints": [
-        "晚期不可切除胸腺肿瘤患者以胸腺瘤为主，部分伴发重症肌无力",
-        "首线系统治疗客观缓解率为37.5%，临床获益率达87.5%",
-        "30%患者接受手术，15%实现R0切除",
+        "43例晚期不可切除胸腺肿瘤患者回顾分析",
+        "环磷酰胺-阿霉素-顺铂为主要系统治疗方案",
+        "初始治疗客观缓解率37.5%，临床获益率87.5%",
         "中位无进展生存16.4个月，总生存56个月"
       ],
       "intelligence": {
         "studyType": "回顾性队列研究",
-        "population": "晚期/不可切除（III-IV期）胸腺肿瘤患者，含胸腺瘤、胸腺癌及胸腺神经内分泌肿瘤",
-        "keyFinding": "系统治疗在高级胸腺肿瘤中具较高临床获益率，手术可在部分患者实施并获R0切除",
-        "clinicalImplication": "研究中少数患者伴重症肌无力，结果对MG患者的肿瘤管理具有间接参考价值，强调需要前瞻性研究以指导治疗",
-        "reviewFocus": "重点关注治疗反应、无进展及总体生存时间；MG相关免疫并发症发生率及其影响未详"
+        "population": "印度三级癌症中心晚期（Ⅲ-IV期）不可切除胸腺肿瘤患者",
+        "keyFinding": "系统治疗获得37.5%部分缓解，部分患者手术切除，生存结果中等",
+        "clinicalImplication": "补充了印度晚期不可切除胸腺肿瘤治疗数据，对MG临床管理间接相关",
+        "reviewFocus": "全文研究设计、治疗方案效果、手术比例及生存终点"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42567081/",
@@ -128,7 +128,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -148,19 +148,19 @@
       "issn": "1662-680X",
       "eissn": "",
       "abstract": "Myasthenia gravis (MG) is an autoimmune disorder characterized by fatigable muscle weakness. While symptoms typically worsen from afternoon to evening, morning-predominant dysphagia has not been well characterized, and standardized methods to assess diurnal changes and fatigability in dysphagia have not been established. We report two cases of MG presenting with an atypical diurnal pattern of morning-predominant dysphagia, in which maximum tongue pressure (MTP) measurement was useful for objective assessment. Case 1 was an 80-year-old woman without thymoma (anti-acetylcholine receptor [AChR] antibody 18.8 nmol/L, Myasthenia Gravis Foundation of America [MGFA] class IIIb, Myasthenia Gravis Activities of Daily Living [MG-ADL] score 10, percent vital capacity [%VC] 87.8%, Dysphagia Severity Scale [DSS] 3). Case 2 was a 75-year-old woman with thymoma (anti-AChR antibody 42.3 nmol/L, MGFA class IIIa, MG-ADL score 8, %VC 84.8%, DSS 7), who developed dysphagia after thymectomy (DSS 4). MTP demonstrated marked diurnal variation in both cases, with lower values in the morning compared with the afternoon (Case 1: 5.8 vs. 14.9 kPa; Case 2: 8.5 vs. 20.6 kPa). Early morning administration of acetylcholinesterase inhibitors and modification of breakfast texture effectively alleviated symptoms. With immunotherapy and swallowing rehabilitation, swallowing function improved in both cases (Case 1: DSS 6; Case 2: DSS 7). Morning-predominant dysphagia may represent an under-recognized pattern in MG. MTP provides a simple and objective method to quantify diurnal variation in swallowing function and may assist in optimizing medication timing and dietary management, potentially reducing the risk of aspiration and improving clinical outcomes.",
-      "zhSummary": "本文报道了两例具有晨间吞咽障碍表现的重症肌无力（MG）患者，探讨了最大舌压（MTP）测量在评估吞咽功能昼夜变化中的应用。两例患者晨间MTP明显低于下午，通过早晨服用乙酰胆碱酯酶抑制剂和调整早餐质地，症状得到缓解。经过免疫治疗和吞咽康复，患者吞咽功能均改善。研究提示晨间主导的吞咽障碍是MG中可能被忽视的表现，MTP可为该症状的客观量化及管理提供帮助。",
+      "zhSummary": "本报告描述两例重症肌无力患者表现为罕见的晨间吞咽困难，采用最大舌压（MTP）测量方法客观评估吞咽功能的昼夜变化。两例患者均在上午舌压显著低于下午，晨间应用乙酰胆碱酯酶抑制剂及调整饮食质地缓解症状。免疫治疗及吞咽康复后，吞咽功能有所改善。研究提示晨间优先出现吞咽困难可能被忽视，MTP为量化吞咽功能昼夜变化的简便客观工具。研究数据仅基于2例病例，限制了广泛推广。",
       "keyPoints": [
-        "重症肌无力患者可出现以晨间吞咽障碍为主的非典型昼夜症状",
-        "最大舌压测量显示晨间吞咽功能低于下午，反映疲劳特征",
-        "早晨调整药物服用时间及饮食质地有助缓解症状",
-        "免疫治疗和吞咽康复可改善患者吞咽功能"
+        "重症肌无力患者晨间吞咽困难表现罕见。",
+        "最大舌压测量显示吞咽功能存在明显的昼夜变化。",
+        "乙酰胆碱酯酶抑制剂晨间给药及饮食调整缓解症状。",
+        "免疫治疗和吞咽康复可改善患者吞咽功能。"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "两名老年女性重症肌无力患者，分别有无胸腺瘤",
-        "keyFinding": "两例MG患者晨间最大舌压明显低于下午（5.8 vs 14.9 kPa，8.5 vs 20.6 kPa），提示晨间吞咽疲劳",
-        "clinicalImplication": "最大舌压测量有助评估MG患者吞咽功能的昼夜变化，指导药物及饮食管理，可能降低误吸风险并改善临床结果",
-        "reviewFocus": "应关注病例中吞咽功能昼夜变化的评估方法及治疗干预的细节，验证MG患者晨间吞咽障碍的临床特征与治疗反应"
+        "population": "具有晨间吞咽困难表现的重症肌无力患者",
+        "keyFinding": "两例MG患者上午最大舌压显著低于下午（分别5.8对14.9 kPa和8.5对20.6 kPa），晨间应用乙酰胆碱酯酶抑制剂及饮食调整缓解症状",
+        "clinicalImplication": "最大舌压测量可帮助客观评估吞咽功能昼夜波动，指导药物给药时间及饮食管理，可能减少误吸风险，改善临床结局",
+        "reviewFocus": "病例特点、最大舌压测量方法、昼夜变化评估、治疗措施与效果评估"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559541/",
@@ -168,7 +168,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -188,19 +188,19 @@
       "issn": "1526-632X",
       "eissn": "1526-632X",
       "abstract": "Patients with myasthenia gravis (MG) are frequently associated with other autoimmune diseases. However, the temporal relationship between autoimmune diseases and MG remains unclear. This study aimed to evaluate the rates and temporal patterns of autoimmune diseases during the 10 years preceding MG diagnosis. This retrospective population-based cohort study analyzed claims data from the Korean National Health Insurance Service between 2010 and 2021 and included individuals aged ≥20 years. MG was defined using the International Classification of Diseases, 10th Revision (ICD-10) code (G70.0) and Rare Intractable Disease registration (V012). Each MG case was matched with 10 controls by age, sex, and index year. Outcomes were autoimmune thyroid disease (AITD), systemic lupus erythematosus (SLE), seropositive rheumatoid arthritis (SRA), Sjögren syndrome (SjS), psoriasis, type 1 diabetes mellitus (T1DM), Crohn disease, and ulcerative colitis occurring during the 10 years before the index year. Rate ratios (RRs) and 95% CIs were estimated using Poisson regression models for 0-2, 2-5, and 5-10 years before the index year. A total of 8,355 patients with MG and 83,550 matched controls were included. The mean age (SD) was 53.7 (16.0) years, and 44.1% were male. Patients with MG had a higher rate of any autoimmune disease during 10 years before diagnosis than controls (RR 2.12, 95% CI 1.97-2.28), with the highest rates in 0-2 years before diagnosis (RR 4.27, 95% CI 3.78-4.83). SLE (RR 4.87, 95% CI 2.71-8.77), SjS (RR 4.75, 95% CI 3.01-7.50), AITD (RR 3.66, 95% CI 3.29-4.07), and SRA (RR 2.45, 95% CI 1.89-3.19) showed the strongest associations. Psoriasis (RR 1.68, 95% CI 1.25-2.25) and T1DM (RR 2.03, 95% CI 1.52-2.71) were associated with MG only within 0-2 years before diagnosis, whereas Crohn disease and ulcerative colitis were not associated. Autoimmune diseases were more frequent in the years preceding MG diagnosis than in controls, particularly within 2 years before diagnosis. Strong associations were observed for SLE, SjS, AITD, and SRA. However, these findings should be interpreted with caution because of limitations of administrative claims data.",
-      "zhSummary": "本研究基于韩国国家医保服务数据库，回顾性队列分析了2010至2021年间8355例重症肌无力（MG）患者诊断前10年内自身免疫疾病的发生率及时间分布。结果显示MG患者诊断前10年内任一自身免疫疾病发生率高于对照组（RR 2.12），尤其诊断前0-2年间最高（RR 4.27）。系统性红斑狼疮、干燥综合征、自身免疫性甲状腺病和血清阳性类风湿性关节炎与MG关联较强。银屑病和1型糖尿病仅在0-2年前相关，克罗恩病和溃疡性结肠炎无关联。研究基于行政索赔数据，有一定局限性，结果解读需谨慎。",
+      "zhSummary": "本研究利用韩国国家医疗保险数据，回顾性队列分析了8355例重症肌无力（MG）患者及其匹配对照组，在MG诊断前10年内自身免疫病的发生率及时间分布。结果显示，MG患者在诊断前10年内自身免疫病发生率显著高于对照，尤其是在诊断前0-2年内差异最大。系统性红斑狼疮、Sjögren综合征、甲状腺自身免疫病和类风湿关节炎与MG关联最强，而银屑病和1型糖尿病仅在近诊断期相关。结肠病未见关联。研究受限于行政索赔数据的局限性，需谨慎解读。",
       "keyPoints": [
-        "MG患者诊断前10年自身免疫疾病发生率显著增高",
-        "诊断前0-2年自身免疫疾病发生率最高，RR达4.27",
-        "系统性红斑狼疮、干燥综合征等与MG关联较强",
-        "银屑病和1型糖尿病仅短期内与MG相关，肠炎类疾病无关联"
+        "MG患者诊断前10年自身免疫病发生率高于对照组",
+        "诊断前0-2年自身免疫病发生率显著升高",
+        "系统性红斑狼疮、Sjögren综合征等与MG关联强",
+        "肠道炎症性疾病与MG无显著关联"
       ],
       "intelligence": {
         "studyType": "回顾性队列研究",
-        "population": "韩国成人MG患者及匹配对照",
-        "keyFinding": "MG患者诊断前10年内自身免疫疾病发生率高于对照，尤其是诊断前2年，且系统性红斑狼疮、干燥综合征、自身免疫性甲状腺病关联显著",
-        "clinicalImplication": "提示MG患者可能伴随或前驱多种自身免疫疾病，有助于临床警惕MG早期相关自身免疫表现，促进早期识别和综合管理",
-        "reviewFocus": "需关注MG定义准确性、数据库数据的局限性及自身免疫疾病诊断时间的精确度"
+        "population": "韩国20岁及以上重症肌无力患者及匹配对照",
+        "keyFinding": "MG患者诊断前10年内任何自身免疫病风险增加，0-2年前风险最高（RR 4.27）",
+        "clinicalImplication": "提示MG患者诊断前存在多种自身免疫病，可能影响早期识别和管理，具有间接的临床和研发参考价值",
+        "reviewFocus": "需重点复核MG病例定义、对照匹配方法、自身免疫病诊断准确性及时间窗口划分"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42555884/",
@@ -208,7 +208,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -228,19 +228,19 @@
       "issn": "1664-2295",
       "eissn": "",
       "abstract": "Neurological disorders are associated with considerable morbidity and healthcare impact. Therapeutic plasma exchange (TPE) is an intervention that removes pathogenic antibodies, immune complexes, and other plasma constituents from circulation. Previous studies have suggested that TPE could be associated with improved outcomes in selected neurological disorders. To evaluate functional outcomes following therapeutic plasma exchange in patients with selected neurological disorders at National Guard Health Affairs (NGHA) in Jeddah, Saudi Arabia. This retrospective cohort study analyzes 133 patients diagnosed with various neurological disorders who received TPE between August 2015 and December 2022 at NGHA. Diagnoses included multiple sclerosis (MS), myasthenia gravis (MG), Guillain-Barré syndrome (GBS), neuromyelitis optica spectrum disorder (NMOSD), chronic inflammatory demyelinating polyneuropathy (CIDP), autoimmune encephalitis (AE), and other neurological conditions including amyotrophic lateral sclerosis (ALS), transverse myelitis, cerebellar ataxia, paraneoplastic neurologic syndrome, polymyositis, and central nervous system (CNS) infections. The effectiveness of TPE was assessed using the Modified Rankin Scale (mRS) before and 90 days following the final TPE session. Statistical analysis included Wilcoxon signed-rank tests and Mann-Whitney U test, with significance set at ( p < 0.05). Significant improvements in mRS scores were observed following TPE for MS, MG, and GBS (all p < 0.001), as well as for NMOSD ( p = 0.008), CIDP ( p = 0.007), and AE ( p = 0.018), but not in other neurological disorders ( p = 0.234). Overall mortality was 6.8%, with no TPE-related deaths. Comorbidities among deceased patients included hypertension, diabetes mellitus, malignancy, chronic kidney disease, and cardiovascular disease. TPE was associated with improved functional outcomes in selected neurological disorders. Comorbidities were common among patients with poorer outcomes. Due to the retrospective design and potential confounding factors, causal inferences cannot be established. Further prospective studies are warranted to evaluate the role of TPE and optimize patient selection.",
-      "zhSummary": "本回顾性队列研究分析了沙特阿拉伯杰达国家卫队医疗部门2015年至2022年间133例接受治疗性血浆置换（TPE）的神经系统疾病患者。研究评估了多发性硬化、重症肌无力、格林巴利综合征、视神经脊髓炎谱系障碍、慢性炎症性脱髓鞘性多发性神经病和自身免疫性脑炎患者TPE治疗前后90天的修订Rankin评分变化。结果显示上述部分疾病患者在功能状态上有显著改善，且无TPE相关死亡。研究存在回顾性设计及潜在混杂因素限制，无法确认因果关系，需进一步前瞻性研究验证。研究发现合并症多见于预后较差者。",
+      "zhSummary": "本回顾性队列研究回顾分析了2015至2022年期间沙特阿拉伯一中心接受治疗性血浆置换（TPE）的133例神经系统疾病患者，涵盖包括多发性硬化、重症肌无力、格林-巴利综合征等疾病。以治疗前后修订版Rankin评分评估功能状态，结果显示TPE治疗后MS、MG、GBS及部分自身免疫性神经疾病患者的功能评分显著改善。总体死亡率为6.8%，无TPE相关死亡。该研究因回顾性设计及可能混杂因素限制，无法确定因果关系，提示仍需前瞻性研究以优化治疗方案和患者筛选。",
       "keyPoints": [
-        "TPE治疗多种神经系统疾病患者功能有改善",
-        "MS、MG及GBS患者mRS评分显著改善（p<0.001）",
-        "TPE未改善其他神经疾病患者功能状态（p=0.234）",
-        "无TPE相关死亡，死亡患者多合并多种慢病"
+        "TPE治疗后MS、MG、GBS患者功能评分显著改善",
+        "NMOSD、CIDP及自身免疫性脑炎患者功能也有统计学改进",
+        "非上述疾病患者未见显著改善",
+        "死亡率6.8%，无与TPE相关的死亡发生"
       ],
       "intelligence": {
         "studyType": "回顾性队列研究",
-        "population": "多发性硬化、重症肌无力、格林巴利综合征等神经系统疾病患者",
-        "keyFinding": "TPE治疗与MS、MG、GBS、NMOSD、CIDP及AE患者功能改善相关（p均<0.05），无TPE相关死亡",
-        "clinicalImplication": "研究间接支持TPE在重症肌无力等神经免疫疾病的功能改善潜力，但因设计限制需谨慎解读",
-        "reviewFocus": "全文需关注研究设计局限、功能评估终点、重症肌无力亚组表现及安全性相关报告"
+        "population": "包括多发性硬化、重症肌无力、格林-巴利综合征等多种神经系统疾病患者",
+        "keyFinding": "TPE与部分神经系统疾病患者功能状态改善相关（MS、MG、GBS p<0.001），但非所有疾病均见效",
+        "clinicalImplication": "研究显示TPE可能改善MG患者功能状态，提示其作为治疗手段的潜在价值，需进一步前瞻性验证",
+        "reviewFocus": "重点关注研究回顾设计、mRS功能评分变化、不同疾病亚组疗效、死亡率及安全性事件"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42553257/",
@@ -248,7 +248,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -268,19 +268,19 @@
       "issn": "2214-3602",
       "eissn": "2214-3602",
       "abstract": "Background and objectivesTo evaluate the safety and clinical efficacy of efgartigimod in adults with severe generalized myasthenia gravis (MG) exacerbations requiring ventilatory or enteral support.MethodsProspective, single-arm, open-label study conducted between November 2024 and April 2025. Sixteen consecutive adults with AChR- or MuSK-antibody-positive generalized MG requiring invasive or non-invasive ventilatory support or enteral feeding were enrolled; all met 2016 MG Guidelines criteria for impending myasthenic crisis. MGFA classification included Class IIIb (n=14), IIIa (n=1), and IVb (n=1). The primary endpoint was clinically meaningful improvement (CMI) in MG Activities of Daily Living (MG-ADL), defined as ≥2-point reduction from baseline at weeks 4 and 8.ResultsAll 16 participants (mean age 58.5±17.4 years; 8 women) completed eight weeks of follow-up. At week 8, 12 patients (75%; 95% CI 47-91%) achieved the primary endpoint. Median MG-ADL decreased from 11 (IQR 9-13) to 7 (IQR 6-9) (median change -5 points; p=0.003). Median QMG decreased from 21 (IQR 19-23) to 13 (IQR 11-16) (median change -7.5 points; p<0.001), with 56% meeting QMG-CMI by week 1. Among 12 participants receiving corticosteroids (mean starting dose 21.2 mg/day), 50% reduced or discontinued by week 8. No treatment-related serious adverse events occurred.DiscussionEfgartigimod produced rapid, clinically meaningful improvement in severe MG exacerbations without safety concerns. FcRn blockade may represent a practical alternative to plasma exchange or IVIG in acute care settings. Findings are limited by the absence of a control arm, which precludes definitive attribution of clinical improvement to efgartigimod alone.Clinical trials registrationNCT06688253.",
-      "zhSummary": "本研究为一项前瞻性、单臂、开放标签设计，纳入16例抗AChR或MuSK阳性的重症广泛型重症肌无力患者，这些患者均符合2016年MG危象标准，需机械通气或肠内营养支持。治疗8周后，75%的患者在MG-ADL评分上实现≥2分的临床显著改善，中位数MG-ADL由11降至7，QMG评分也有统计学显著改善。12名使用皮质类固醇的患者中有一半在8周内减少或停用激素。无治疗相关严重不良事件。研究缺乏对照组，无法明确将疗效完全归因于efgartigimod。",
+      "zhSummary": "本研究前瞻性单臂开放标签，评估了efgartigimod在16例需呼吸机或肠内营养支持的严重广泛性重症肌无力（MG）恶化患者中的安全性和临床疗效。患者均符合2016年MG危象标准，随访8周后，75%患者MG-ADL评分显著改善。QMG评分亦快速下降，且半数接受糖皮质激素治疗者可减量或停用。未见治疗相关严重不良事件。研究缺乏对照组，临床改善不能完全归因于efgartigimod。",
       "keyPoints": [
-        "16例重症MG患者接受efgartigimod治疗，随访8周完成",
-        "75%患者MG-ADL评分达到临床意义改善（≥2分下降）",
-        "QMG评分中位数显著降低，提示快速改善",
-        "无治疗相关严重不良事件，半数患者成功减少或停用激素"
+        "16名重症MG患者接受efgartigimod治疗，无对照组",
+        "8周后75%患者MG-ADL评分下降≥2分达预设改善标准",
+        "QMG评分中位数显著降低，半数患者糖皮质激素减量或停用",
+        "未报告治疗相关严重不良事件，安全性良好"
       ],
       "intelligence": {
         "studyType": "前瞻性单臂开放标签研究",
-        "population": "抗AChR或MuSK抗体阳性重症广泛型MG患者，符合重症肌无力危象标准，需机械通气或肠内营养",
-        "keyFinding": "8周内75%患者MG-ADL≥2分改善，QMG评分显著降低，无严重治疗相关不良事件",
-        "clinicalImplication": "FcRn阻断剂efgartigimod在重症MG危象中可能作为血浆置换或IVIG的替代方案，有望改善急性期管理",
-        "reviewFocus": "重点关注单臂设计缺乏对照限制疗效归因，安全性数据，MG-ADL和QMG评分的变化及激素减量情况"
+        "population": "需呼吸机或肠内营养支持的严重广泛性重症肌无力成人患者",
+        "keyFinding": "75%患者8周达临床有意义改善，QMG评分中位数显著下降，治疗耐受良好无严重相关不良事件",
+        "clinicalImplication": "FcRn阻断剂efgartigimod可能为严重MG恶化患者急性期治疗提供替代方案，但缺乏对照限制其结论强度",
+        "reviewFocus": "研究设计无对照组，重点关注临床终点定义、安全性评估及糖皮质激素用药变化"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42551446/",
@@ -288,7 +288,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -323,7 +323,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -343,19 +343,19 @@
       "issn": "1664-3224",
       "eissn": "1664-3224",
       "abstract": "The coexistence of stiff person syndrome (SPS) and myasthenia gravis (MG) is exceptionally rare, with fewer than 20 cases reported to date. Thymoma has been identified in a substantial proportion of these patients, suggesting a potential shared autoimmune mechanism. We report a 43-year-old woman who initially presented with progressive limb stiffness, painful muscle spasms, and gait impairment. She was diagnosed with SPS based on positive anti-glutamic acid decarboxylase (GAD) antibodies and characteristic electromyographic findings. Her symptoms improved after immunotherapy but relapsed following corticosteroid withdrawal. Four years later, she developed fluctuating limb weakness and ptosis and was subsequently diagnosed with anti-acetylcholine receptor antibody-positive MG associated with type B2 thymoma. Following thymectomy and postoperative radiotherapy, COVID-19 infection precipitated a myasthenic crisis requiring intensive care support. Conventional treatments, including plasma exchange, intravenous immunoglobulin, corticosteroids, and rituximab, failed to achieve satisfactory clinical improvement. In contrast, treatment with efgartigimod resulted in marked recovery of respiratory and motor function. During follow-up through December 2025, no recurrence of SPS symptoms or MG exacerbation was observed. This case highlights the complex association among SPS, MG, and thymoma and supports the possibility that thymoma may contribute to the development of multiple autoimmune neurological disorders. Furthermore, efgartigimod may represent a promising therapeutic option for refractory thymoma-associated MG in patients with overlapping SPS and MG. Long-term surveillance for thymoma and additional autoimmune manifestations should be considered in patients with SPS.",
-      "zhSummary": "本文报道一例43岁女性患者，最初因肢体僵硬和肌痉挛诊断为硬皮症候群(SPS)，后经免疫治疗症状缓解但停用激素后复发。四年后出现波动性肢体无力和眼睑下垂，确诊为伴有B2型胸腺瘤的抗乙酰胆碱受体抗体阳性重症肌无力(MG)。患者经胸腺切除及放疗后因COVID-19感染诱发重症肌无力危象，常规治疗效果不佳，改用efgartigimod治疗取得明显呼吸及运动功能恢复，至2025年底无症状复发。该案例提示胸腺瘤可能与多种自身免疫神经病变相关，efgartigimod或为难治性胸腺瘤相关MG的潜在治疗选择，且SPS患者应注意胸腺瘤及其他自身免疫表现的长期监测。",
+      "zhSummary": "本病例报道一名43岁女性先表现为肢体进行性僵硬及肌肉痉挛，诊断为抗谷氨酸脱羧酶抗体阳性的硬皮综合征（SPS），后发展为抗乙酰胆碱受体抗体阳性的重症肌无力（MG），伴B2型胸腺瘤。常规免疫治疗效果不佳，使用efgartigimod治疗后呼吸及运动功能明显改善，随访未见症状复发。该病例提示胸腺瘤可能参与多重自身免疫神经系统疾病的发生，efgartigimod对重症及重叠疾病患者或有潜在治疗价值，需长期监测胸腺瘤及相关自身免疫表现。",
       "keyPoints": [
-        "SPS与MG同时存在极为罕见，少于20例报道",
-        "胸腺瘤可能促进多重自身免疫神经疾病发生",
-        "常规免疫治疗未能有效控制难治性MG危象",
-        "Efgartigimod治疗后呼吸及运动功能显著改善"
+        "SPS与MG合并病例极少，胸腺瘤占较高比例。",
+        "常规免疫治疗效果有限，COVID-19感染诱发重症肌无力危象。",
+        "efgartigimod治疗后呼吸及运动功能显著恢复。",
+        "胸腺瘤患者需警惕多发自身免疫神经病，重症肌无力监测重要。"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "同时合并胸腺瘤的硬皮症候群及重症肌无力患者",
-        "keyFinding": "Efgartigimod在一例难治性胸腺瘤相关MG患者中显著改善临床症状，且无SPS及MG复发",
-        "clinicalImplication": "提示efgartigimod可能为合并SPS与MG且常规治疗无效患者的新治疗选择，需长期监控胸腺瘤及自身免疫表现",
-        "reviewFocus": "聚焦于病例的诊断过程、胸腺瘤与自身免疫神经病变的关联、efgartigimod治疗效果及随访观察"
+        "population": "罕见SPS与MG重叠合并及胸腺瘤患者",
+        "keyFinding": "efgartigimod用于传统治疗失败的胸腺瘤相关重症肌无力合并SPS患者，症状明显缓解且无复发",
+        "clinicalImplication": "提示efgartigimod可能成为治疗复发难治及合并SPS的胸腺瘤相关重症肌无力的新选择，需关注胸腺瘤患者自身免疫多发风险",
+        "reviewFocus": "病例报告重点关注疾病的罕见共存、胸腺瘤介导机制、传统免疫治疗无效及efgartigimod的临床应用效果"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42548653/",
@@ -363,7 +363,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -383,19 +383,19 @@
       "issn": "1664-2295",
       "eissn": "",
       "abstract": "Experimental autoimmune myasthenia gravis (EAMG) is widely used to investigate the pathogenesis and treatment of myasthenia gravis. However, current evaluation strategies rely predominantly on isolated endpoints and do not fully capture the relationship between neuromuscular dysfunction, immune alterations, and whole-animal phenotypic changes. We established EAMG in C57BL/6J mice and implemented a two-tier analytical framework consisting of full-cohort core phenotyping and phenotype-enriched imaging analyses. Core assessments included longitudinal body weight, clinical scoring, electrophysiological testing, behavioral assays, serum anti-AChR levels, and peripheral blood Th17/Treg ratio. In a selectively assessed imaging subset, cardiac ultrasound, micro-CT, and 18F-FDG PET/CT were performed to explore selected imaging-derived cardiac, metabolic, and postural phenotypes. Associations between phenotypic readouts and disease severity were assessed using correlation analyses. EAMG mice developed consistent neuromuscular and immunological abnormalities, including significant electrophysiological decrement, reduced grip strength and endurance, elevated anti-AChR levels, and increased Th17/Treg ratio. Among these readouts, electrophysiological impairment showed the strongest association with disease severity (rho = -0.79, P < 0.001), whereas behavioral and immunological measures demonstrated limited stratification capacity within the EAMG group. In the phenotype-enriched imaging subset, EAMG mice showed reduced cardiac ejection fraction, reduced heart rate, decreased iliopsoas FDG uptake, and reduced sagittal spinal angle. Iliopsoas FDG uptake was negatively correlated with disease severity within this subset (rho = -0.89, P = 0.041). EAMG was associated with coordinated electrophysiological, functional, and immunological abnormalities in the full cohort. Exploratory imaging analyses in a phenotype-enriched subset further identified selected cardiac, metabolic, and postural phenotypes in animals with overt disease manifestations. This multi-dimensional framework may support more comprehensive assessment of disease progression in preclinical myasthenia gravis studies, while the imaging-derived findings require validation in unselected cohorts.",
-      "zhSummary": "本研究在C57BL/6J小鼠中建立了实验性自身免疫重症肌无力（EAMG）模型，采用包括体重、临床评分、电生理测试、行为学检测、血清抗乙酰胆碱受体抗体及外周血Th17/Treg比例的多维度核心表型评估，并在部分动物中进行心脏超声、微CT及18F-FDG PET/CT成像分析。结果显示EAMG小鼠呈现电生理减退、抓握力降低、抗AChR抗体升高和Th17/Treg比例增加。其中电生理指标与疾病严重度相关性最强，成像显示部分心脏功能、代谢及姿态异常。该多维框架可支持前临床MG疾病进展的综合评估，但影像发现尚需在更广泛群体中验证。",
+      "zhSummary": "本研究在C57BL/6J小鼠中建立实验性自身免疫性重症肌无力（EAMG）模型，采用多维表型分析框架，包括全队列核心表型检测（体重、临床评分、电生理、行为、血清抗AChR水平及Th17/Treg比例）和特选成像分析（心脏超声、微CT及18F-FDG PET/CT）。结果显示EAMG小鼠出现明显的电生理减退、握力及耐力下降、抗AChR升高和免疫细胞比例异常。电生理指标与疾病严重度相关性最强。表型富集成像分析发现心脏射血分数、心率、髂腰肌代谢活性及脊柱角度的改变，其中髂腰肌FDG摄取与疾病严重度负相关。该框架有助于更全面评估疾病进展，但成像结果需在无选择队列中验证。",
       "keyPoints": [
-        "EAMG模型表现为电生理和免疫学异常。",
-        "电生理减退与疾病严重度相关最显著。",
-        "影像分析揭示心脏、代谢及姿态改变。",
-        "成像结果需在未选择样本中进一步验证。"
+        "建立多维表型框架系统评估EAMG模型",
+        "电生理减退与疾病严重度相关性最强",
+        "成像发现心脏代谢及姿势表型变化",
+        "成像结果需在非选择队列中进一步验证"
       ],
       "intelligence": {
         "studyType": "机制研究",
-        "population": "C57BL/6J小鼠实验性自身免疫重症肌无力模型",
-        "keyFinding": "电生理减退与疾病严重度高度相关（rho=-0.79，P<0.001），影像中髂腰肌FDG摄取与疾病严重度负相关（rho=-0.89，P=0.041）。",
-        "clinicalImplication": "为MG前临床模型的多维度疾病评估提供框架，有助于理解电生理、免疫及影像表型的关联，推动疾病进展的综合监测。",
-        "reviewFocus": "关注多维表型评估方法、核心终点对疾病严重度的定量关联、影像学发现的验证需求及模型对MG机理的反映。"
+        "population": "C57BL/6J小鼠实验性自身免疫性重症肌无力模型",
+        "keyFinding": "电生理减退与疾病严重度显著负相关（rho = -0.79，P < 0.001）；髂腰肌FDG摄取在成像子集内与疾病严重度负相关（rho = -0.89，P = 0.041）",
+        "clinicalImplication": "该多维表型分析框架有助于前临床MG模型中疾病进展的全面评估，为MG病理机制和潜在治疗靶点研究提供支持，成像指标的临床相关性尚需进一步验证",
+        "reviewFocus": "重点关注研究设计的多层次表型评估方法及其与疾病严重度的相关性，成像技术在MG模型中的应用和验证方案"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42548578/",
@@ -403,7 +403,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -423,19 +423,19 @@
       "issn": "1756-2856",
       "eissn": "",
       "abstract": "This study compares age at death in patients with myasthenia gravis (MG) and multiple sclerosis (MS) with the general U.S. population and examines age at death patterns during a period preceding modern high-efficacy therapies. To compare age at death among individuals with MG and MS with the general population and assess differences in age at death between MG and MS. Retrospective population-based study using death certificate data from four U.S. states (Florida, Wisconsin, Texas, and New York) for 2000, 2005, 2010, and 2015. Individuals with MG or MS listed on death certificates were identified. Age at death was compared between MG and MS among four states and contemporaneously with U.S. population via Social Security life tables, adjusting for sex and geography. Because data were provided in different formats across states (individual-level, aggregated, and categorical), analyses were tailored to each dataset while addressing the same underlying question. During the study period, high-efficacy targeted therapies for both conditions were not yet available, allowing comparison of mortality patterns under standard-of-care treatment. Age at death of MS patients was significantly lower than the general population (-12.4 years, p < 0.001). In contrast, MG patients showed a higher mean age at time of death compared with the general population (+4.8 years, p < 0.0001) and died significantly later than MS patients (+15.5 years, p < 0.001, adjusted for sex and year). These patterns were consistent across datasets. Despite a higher reported burden of age-related comorbidities in MG populations, MG patients demonstrated higher mean age at death than both MS patients and the general population. MG was associated with significantly older age at death compared with both MS and the general population under historical standard-of-care conditions. These findings suggest that survival patterns in MG differ from those in MS and raise questions about the factors driving this difference. Further studies are needed to clarify the roles of disease biology, comorbidity, age at diagnosis, and healthcare utilization in shaping long-term outcomes. People with myasthenia gravis appear to live longer than people with multiple sclerosis in the United States What are mortality rates? Mortality rates describe how long people live and the age at which they die within a specific group. Looking at death certificate age at death helps researchers understand whether a disease is associated with a shorter or longer life compared with the general population. These comparisons do not explain why differences exist, but they can highlight important patterns. What did we look at? We examined death records from four US states in the years 2000, 2005, 2010, and 2015. We compared the age at death for people with myasthenia gravis (MG) and multiple sclerosis (MS) to life expectancy in the general US population. During this period, many of today’s newer high-efficacy treatments were not yet available, which allowed us to examine mortality patterns before the introduction of more recent therapies. Why is this important? MS is widely known to shorten life expectancy, but less is understood about long-term survival in MG. In clinical practice, we observed that many patients with MG were living into their 80s and 90s, while this was uncommon in MS. Understanding whether these observations reflect broader patterns can help clinicians, patients, and researchers better understand the long-term impact of these conditions. What is the takeaway? In this analysis, people with MS died, on average, more than a decade earlier than the general population. In contrast, people with MG had a higher average age at death than the general population. These findings suggest that the long-term outlook for MG may be more favorable than often assumed and raise important questions about why age at death differs between these two autoimmune conditions. Further research is needed to better understand the reasons for these differences.",
-      "zhSummary": "本研究回顾性分析了2000、2005、2010及2015年美国佛罗里达、威斯康星、德克萨斯和纽约四州死亡证数据，比较了重症肌无力（MG）和多发性硬化（MS）患者的死亡年龄与美国一般人口的差异。结果显示，MS患者死亡年龄显著低于一般人群（差-12.4岁），而MG患者死亡年龄显著高于一般人口（差+4.8岁），且明显晚于MS患者（差+15.5岁）。研究期间尚无现代高效治疗干预，反映标准治疗下的死亡模式。研究未涉及具体因果机制，需要进一步探讨疾病生物学及相关因素对长期结局的影响。",
+      "zhSummary": "本研究回顾性分析了美国四个州（佛罗里达、威斯康星、得克萨斯和纽约）2000、2005、2010及2015年死亡证明数据，比对了重症肌无力（MG）和多发性硬化（MS）患者的死亡年龄与普通人群。结果显示，在传统标准治疗条件下，MS患者平均死亡年龄低于普通人群12.4岁，而MG患者平均死亡年龄则高出普通人群4.8岁，且明显晚于MS患者。尽管MG患者伴有较多年龄相关合并症，但其存活时间优于MS和普通人群。研究提示MG与MS的生存模式存在差异，需进一步探究疾病生物学和其他因素对长期结局的影响。",
       "keyPoints": [
-        "MS患者平均死亡年龄显著低于美国一般人口",
-        "MG患者平均死亡年龄高于一般人口和MS患者",
-        "研究基于四州2000-2015年死亡证数据，尚无高效新疗法影响",
-        "MG长期存活率较MS更佳，但具体机制尚不明"
+        "MS患者平均死亡年龄显著早于普通人群12.4岁",
+        "MG患者平均死亡年龄高于普通人群4.8岁",
+        "MG患者死亡年龄显著晚于MS患者15.5岁",
+        "分析基于高效疗法普及前的美国四州死亡证明数据"
       ],
       "intelligence": {
         "studyType": "回顾性队列研究",
-        "population": "美国重症肌无力和多发性硬化患者",
-        "keyFinding": "MG患者死亡年龄比MS患者高15.5岁，比一般人群高4.8岁，MS患者死亡年龄低12.4岁",
-        "clinicalImplication": "提示MG在标准治疗条件下存活时间较长，可能影响临床长期管理和预后评估",
-        "reviewFocus": "关注研究设计、数据来源及比较方法，以及MG与MS死亡年龄差异的潜在影响因素"
+        "population": "重症肌无力和多发性硬化患者",
+        "keyFinding": "MG患者死亡年龄高于MS患者及普通人群，MS患者死亡年龄显著低于普通人群",
+        "clinicalImplication": "提示MG患者在传统治疗条件下的长期存活可能优于MS，对MG预后认识具有补充价值",
+        "reviewFocus": "关注死亡年龄比较、数据来源一致性及对传统治疗背景下生存差异的探讨"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42544113/",
@@ -443,7 +443,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -478,53 +478,13 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
         "latest",
         "PubMed",
         "免疫机制"
-      ]
-    },
-    {
-      "id": "latest-42538851",
-      "pmid": "42538851",
-      "title": "Long-Term Cancer and Mortality After Thymectomy.",
-      "journal": "European journal of neurology",
-      "authors": "Shahar Shelly, Mor Ani, Christopher Klein, Yuebing Li, Henry Kaminski, Gil I Wolfe",
-      "date": "2026-08-01",
-      "indexedAt": "2026-08-01",
-      "issn": "1468-1331",
-      "eissn": "1468-1331",
-      "abstract": "Long-term health effects of thymectomy in adults remain uncertain. Previous reports suggested associations with increased mortality, cancer incidence, and autoimmune disease, although these findings may reflect differences in patient selection, surgical indication, or follow-up duration. We aimed to examine long-term outcomes following adult thymectomy. We performed a propensity score-matched retrospective study of patients who underwent thymectomy or comparator cardiothoracic procedures, with follow-up extending to 10 years. Primary outcomes were all-cause mortality, new-onset malignancy, and autoimmune disease. Findings were compared with those reported in a recent study that has raised caution regarding thymic excision. We identified 425 patients who underwent thymectomy and 5401 controls who underwent coronary artery bypass or valve surgery. After matching, 398 patients remained in each group. Thymectomy was not associated with increased mortality at 5 years (HR = 0.63; 95% CI, 0.38-1.04) or 10 years (HR = 0.78; 95% CI, 0.54-1.13). Excluding reclassified thymic cancers, 5-year extrathymic malignancy incidence was 2.3% versus 1.8% (p = 0.54); no significant differences were observed in immune-related disease. Mortality was higher among patients with thymic malignancy. Among MG patients, only one event occurred, precluding reliable estimation. Thymectomy was not associated with excess mortality or malignancy at 10 years compared with matched cardiothoracic controls. Indication-stratified analyses within the thymectomy cohort showed higher mortality for thymic malignancy, with insufficient events to assess outcomes in MG patients. These findings do not support a generalized survival penalty from thymectomy, though caution is warranted for incidental thymic removal.",
-      "zhSummary": "本研究采用倾向性评分匹配的回顾性队列设计，比较了425例胸腺切除患者与5401例接受冠状动脉搭桥或瓣膜手术患者在长达10年的随访中的全因死亡率、新发恶性肿瘤及自身免疫病发生情况。匹配后两组各398例，结果显示胸腺切除术后5年及10年全因死亡率无显著增加，除去被重新分类的胸腺恶性肿瘤外，5年异位恶性肿瘤发生率和免疫相关疾病无显著差异。胸腺恶性肿瘤患者死亡率较高，重症肌无力患者事件过少难以评估风险。研究结论不支持胸腺切除导致的普遍生存率下降，但对偶发性胸腺切除需谨慎对待，研究存在重症肌无力亚组事件有限的限制。",
-      "keyPoints": [
-        "胸腺切除术后5年及10年死亡率无显著增加",
-        "除胸腺癌外异位恶性肿瘤发生率无差异",
-        "胸腺恶性肿瘤患者死亡率较高",
-        "重症肌无力患者事件少，难以评估风险"
-      ],
-      "intelligence": {
-        "studyType": "倾向性评分匹配的回顾性队列研究",
-        "population": "接受成人胸腺切除或心胸外科手术患者，部分为重症肌无力患者",
-        "keyFinding": "胸腺切除不增加10年全因死亡率和新发恶性肿瘤风险；胸腺癌患者预后较差",
-        "clinicalImplication": "对重症肌无力患者胸腺切除手术的长期安全性提示有限，偶发胸腺切除则需谨慎评估，提示对MG群体影响未明",
-        "reviewFocus": "重点复核研究设计、匹配方法、主要终点（死亡率、恶性肿瘤、自身免疫病）、胸腺癌及重症肌无力患者亚组分析"
-      },
-      "translationStatus": "translated",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42538851/",
-      "trust": {
-        "sourceType": "PubMed",
-        "evidenceLevel": "文献摘要",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
-        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
-      },
-      "tags": [
-        "latest",
-        "PubMed",
-        "胸腺相关"
       ]
     },
     {
@@ -538,19 +498,19 @@
       "issn": "1872-8421",
       "eissn": "1872-8421",
       "abstract": "Myasthenia Gravis (MG) is an autoimmune disease that damages the neuromuscular junction (NMJ), reduces the transmission of nerve impulses to muscles, and thus causes fluctuating muscle weakness and fatigue. The main types of MG are autoantibodies that target necessary components of the postsynaptic membrane, such as acetylcholine receptors (AChRs) and muscle-specific kinase (MuSK). The above immune-mediated alterations disrupt synaptic transmission and reduce muscle contraction. Study the molecular and cellular mechanisms of MG to find genes that regulate the immune system, cause inflammation, or affect NMJ homeostasis and may serve as biomarkers. These biomarkers can provide more information on the course of a disease and help to customise diagnosis and treatment according to this information. The transcriptomic data in this study were obtained from the Gene Expression Omnibus (GEO) database under accession number GSE85452 (GPL10558), which contains peripheral blood gene expression profiles of MG patients and healthy controls. Differential Expression Analysis was conducted to find genes in *M. fitumendi* related to MG. Preprocess and normalise the raw data before the following comparisons. Mendelian Randomisation (MR) was employed to investigate whether the candidate genes causally affected MG risk. PTGS2 was found to be a protective factor (OR < 1) and selected for further study. Gene set enrichment analysis (GSEA) was then carried out to identify related pathways, and single-sample gene set enrichment analysis (ssGSEA) was used to explore associations with the immune system. Single-cell RNA sequencing (scRNA-seq) was performed to find out which cells expressed PTGS2, how the proportions of different cell types in the MG microenvironment were changed, and what inter-cellular communication occurred. A network-based virtual PTGS2 overexpression analysis was also carried out in MG cells with scTenifoldNet. Single-cell gene regulatory networks were built from the raw count data and denoised by tensor decomposition. PTGS2 regulatory activity increased due to a doubling of the weight of the positive regulatory edge. Genes with an adjusted P-value <0.05 were regarded as significantly altered and subjected to KEGG and Gene Ontology enrichment analysis. Using a sensitive threshold of |log₂FC| > 0.38 for the initial screening of the MG transcriptome, a particular set of differentially expressed genes in patients was identified compared with healthy individuals. Mendelian Randomisation analysis also showed that PTGS2 is associated with a reduced risk of MG and has a negative causal association with the disease. Functional enrichment analysis linked PTGS2-associated molecular signatures to immune and inflammatory pathways. Immune infiltration analysis showed variations in the proportion of immune cells in MG, and PTGS2 expression was significantly correlated with several subsets of immune cells. Gene-disease association mapping links PTGS2 to multiple immune-related disorders. Single-cell RNA sequencing also showed cell-type-specific expression and different distributions of PTGS2 in MG patients and healthy controls. Overexpression of virtual PTGS2 mainly modified genes and pathways in the myeloid cell, such as IL-17 signalling, chemotaxis and neutrophil migration. Therefore, PTGS2 may be involved in the regulation of inflammatory myeloid responses in MG. Transcriptome and gene analysis identified PTGS2 as a protective gene for myasthenia gravis. PTGS2 is linked to immune-inflammatory signals, and single-cell data have identified specific cell types in the MG immune microenvironment that express it. Network-based virtual PTGS2 overexpression mainly altered myeloid-associated genes and pathways of IL-17 signalling, chemotaxis and neutrophil migration. PTGS2 may be a biomarker and a possible therapeutic target for MG.",
-      "zhSummary": "本研究利用GEO数据库MG患者外周血转录组数据，通过差异表达分析和孟德尔随机化方法筛选基因，发现PTGS2基因与MG风险负相关，可能发挥保护作用。通过基因富集分析，PTGS2主要关联免疫和炎症通路，且其表达与免疫细胞亚群显著相关。单细胞RNA测序揭示PTGS2在MG患者不同细胞类型中的特异表达，虚拟过表达分析表明PTGS2主要调控髓系细胞相关的IL-17信号、趋化和中性粒细胞迁移路径，提示其可能参与MG中炎症性髓系免疫反应调控。研究提供PTGS2作为MG潜在生物标志物和治疗靶点的初步分子证据，但未进一步验证其临床疗效和安全性。",
+      "zhSummary": "本研究基于公开转录组数据与孟德尔随机化分析，鉴定PTGS2基因与重症肌无力（MG）风险负相关，提示其可能作为保护因子。通过基因富集分析、免疫细胞浸润及单细胞RNA测序，发现PTGS2参与免疫炎症相关通路，主要在髓系细胞中表达，并可能调节IL-17信号、趋化和中性粒细胞迁移，从而影响MG免疫微环境。研究结果提示PTGS2可作为MG的潜在生物标志物和治疗靶点，但摘要未涉及临床验证及机制实验的具体限制。",
       "keyPoints": [
-        "PTGS2基因与MG风险负相关，具保护潜力",
-        "PTGS2关联免疫炎症通路及多种免疫细胞亚群",
-        "单细胞测序显示PTGS2在MG免疫微环境中差异表达",
-        "虚拟基因过表达揭示PTGS2调控髓系细胞炎症反应"
+        "PTGS2基因与MG风险负相关，具有保护作用",
+        "PTGS2相关基因富集于免疫炎症通路",
+        "单细胞测序显示PTGS2在髓系细胞中特异表达",
+        "虚拟过表达分析提示PTGS2影响IL-17信号和免疫细胞迁移"
       ],
       "intelligence": {
-        "studyType": "机制研究",
-        "population": "重症肌无力患者与健康对照的外周血样本及免疫细胞",
-        "keyFinding": "PTGS2基因通过调节髓系细胞炎症信号通路，可能降低MG发病风险",
-        "clinicalImplication": "PTGS2可作为MG的潜在保护性生物标志物和治疗靶点，有助于精准诊断和个体化治疗策略开发",
-        "reviewFocus": "关注PTGS2基因的因果关联分析、单细胞表达特征及其在MG免疫微环境中的功能角色"
+        "studyType": "机制研究，结合基因表达分析和单细胞测序",
+        "population": "重症肌无力患者及健康对照，来源于公共数据库外周血样本",
+        "keyFinding": "孟德尔随机化分析显示PTGS2与MG发病风险负相关，相关分子签名涉及免疫炎症通路",
+        "clinicalImplication": "PTGS2可能为MG的保护性生物标志物及潜在治疗靶点，提示调节髓系免疫反应的新方向",
+        "reviewFocus": "建议关注PTGS2基因的表达调控、细胞特异性分布及其在MG免疫调控中的具体功能验证"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42541991/",
@@ -558,7 +518,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -593,7 +553,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -613,19 +573,19 @@
       "issn": "1662-680X",
       "eissn": "",
       "abstract": "Seronegative myasthenia gravis is an under-recognized cause of acute neuromuscular respiratory failure, and its convergence with infection and targeted oncologic therapy, specifically anaplastic lymphoma kinase inhibition, is poorly characterized, underscoring the importance of vigilance in oncologic patients presenting with respiratory failure. A 51-year-old man with anaplastic lymphoma kinase-positive non-small-cell lung cancer on long-term alectinib presented with fever, cough, and progressive generalized weakness. He tested positive for influenza A and rapidly developed respiratory failure requiring intubation. Neurological examination demonstrated ptosis, oculobulbar involvement, and proximal weakness. Repetitive nerve stimulation showed a decremental response, while assays for acetylcholine receptor, anti-muscle-specific kinase, and anti-lipoprotein receptor-related protein 4 antibodies were negative. A diagnosis of seronegative myasthenia gravis was established. The patient received intravenous immunoglobulin, plasma exchange, pyridostigmine, corticosteroids, and azathioprine with gradual clinical improvement. Early recognition of myasthenia gravis in this population is critical to initiate appropriate immunotherapy and supportive management. This case illustrates the difficulty of distinguishing underlying disease and treatment-related effects from new-onset neurological syndromes. It highlights the importance of neurological considerations in cases of progressive respiratory difficulty and posits a putative link between chronic immunosuppression and subsequent susceptibility to autoimmune insult, as well as the need for more aggressive treatment in the setting of immunosuppression.",
-      "zhSummary": "报告一例51岁间变性淋巴瘤激酶阳性非小细胞肺癌患者，长期服用alectinib期间感染甲型流感后急性呼吸衰竭，诊断为血清阴性重症肌无力。患者具有眼睑下垂、眼球及咽喉肌受累及近端肌弱，相关抗体检测阴性，神经重复刺激试验显示递减反应。经过免疫球蛋白、血浆置换、吡啶斯的明、糖皮质激素及硫唑嘌呤治疗后症状逐渐改善。该病例强调在肿瘤患者出现呼吸困难时考虑神经肌肉疾病的重要性，并指出慢性免疫抑制可能增加自身免疫发病风险。研究为病例报告，尚无法确定因果关系。",
+      "zhSummary": "本文报道一例51岁携带间变性淋巴瘤激酶阳性非小细胞肺癌患者，长期使用阿来替尼治疗期间，因感染甲型流感引发血清学阴性的重症肌无力。患者出现发热、咳嗽及进行性全身无力，快速发展为呼吸衰竭。神经学检查和神经电生理提示重症肌无力，但自身抗体检测均为阴性。经过免疫球蛋白、血浆置换、吡啶斯的明、皮质类固醇和硫唑嘌呤综合治疗后，临床逐步改善。案例强调肿瘤患者出现呼吸衰竭时需警惕新发神经病变，及早识别有助于及时免疫治疗。文章指出慢性免疫抑制可能增加自身免疫损伤易感性。",
       "keyPoints": [
-        "血清阴性重症肌无力可导致急性神经肌肉性呼吸衰竭。",
-        "ALK阳性肺癌患者长期使用alectinib后感染流感触发MG。",
-        "神经重复刺激呈典型递减反应，抗体检测为阴性。",
-        "早期识别MG有助于及时免疫治疗和支持管理。"
+        "血清阴性重症肌无力可致急性神经肌肉呼吸衰竭。",
+        "慢性阿来替尼治疗肺癌患者流感后发生血清阴性重症肌无力。",
+        "及时识别并给予免疫治疗有助病情改善。",
+        "慢性免疫抑制可能增加自身免疫并发症风险。"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "ALK阳性非小细胞肺癌患者，伴血清阴性重症肌无力",
-        "keyFinding": "流感感染可触发正在使用ALK抑制剂的肿瘤患者发生血清阴性重症肌无力",
-        "clinicalImplication": "提示肿瘤患者出现呼吸衰竭时应警惕潜在重症肌无力，尤其是在免疫抑制背景下；支持免疫治疗的重要性",
-        "reviewFocus": "关注病例诊断依据、免疫状态对MG发生的潜在影响及治疗反应"
+        "population": "间变性淋巴瘤激酶阳性非小细胞肺癌患者，使用阿来替尼治疗期间",
+        "keyFinding": "流感感染触发的血清阴性重症肌无力导致急性呼吸衰竭，免疫治疗后逐步改善",
+        "clinicalImplication": "提示临床需关注肿瘤患者感染后呼吸衰竭的神经性病因，早期识别重症肌无力并开始免疫治疗",
+        "reviewFocus": "全文应重点复核病例诊断标准、抗体检测方法、治疗方案及其效果评估"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42541172/",
@@ -633,7 +593,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-09",
+        "lastChecked": "2026-08-10",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -688,8 +648,8 @@
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-08-09T03:07:54.575Z",
-    "runFinishedAt": "2026-08-09T03:09:42.272Z",
+    "runStartedAt": "2026-08-10T03:18:29.722Z",
+    "runFinishedAt": "2026-08-10T03:20:12.316Z",
     "scope": "all",
     "status": "success",
     "failedSources": []
