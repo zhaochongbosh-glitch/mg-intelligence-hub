@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-08-22T02:21:38.475Z",
+  "updatedAt": "2026-08-23T02:38:07.240Z",
   "provenance": {
     "sourceType": "PubMed Affiliation",
     "evidenceLevel": "文献索引",
     "reviewStatus": "自动更新",
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-08-23",
     "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
   },
   "updatePolicy": {
@@ -15,37 +15,6 @@
   "scopeNote": "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
   "query": "(\"myasthenia gravis\"[Title/Abstract] OR \"generalized myasthenia gravis\"[Title/Abstract] OR \"ocular myasthenia\"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR \"Hong Kong\"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])",
   "items": [
-    {
-      "id": "pubmed-42620730",
-      "pmid": "42620730",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-01-01",
-      "indexedAt": "2026-08-20",
-      "title": "Case Report: Anti-cavin-4-positive immune-mediated rippling muscle disease co-occurring with isolated ocular myasthenia gravis.",
-      "authors": "Mingshi Gao, Dongyue Yue, Wenhua Zhu, Zhiguo Lv, Jianying Xi",
-      "journal": "Frontiers in immunology",
-      "issn": "1664-3224",
-      "eissn": "1664-3224",
-      "abstract": "Immune-mediated rippling muscle disease (iRMD) is a rare autoimmune myopathy characterized by mechanically triggered, wave-like skeletal muscle contractions. Its coexistence with myasthenia gravis (MG) has been described, but detailed clinicopathological and longitudinal characterization of anti-cavin-4-positive iRMD coexisting with isolated ocular MG remains limited. Here, we report a 35-year-old man who developed painless, water-like rippling movements of the right thigh in 2023, followed by occasional palpitations and mild creatine kinase elevation in 2024. In July 2025, he developed fluctuating right ptosis without diplopia, bulbar symptoms, or limb weakness. Serology showed anti-acetylcholine receptor antibody positivity and high-titer anti-cavin-4 antibodies. Electromyography revealed mild myogenic changes with electrically silent rippling activity. Muscle biopsy showed mild myopathic changes and mosaic caveolin-3 expression. Chest CT showed no thymic hyperplasia or thymoma, and cardiac evaluation showed no structural heart disease or clinically significant arrhythmia. These findings supported anti-cavin-4-positive iRMD coexisting with isolated AChR-positive ocular MG. At follow-up, the patient reported reduced rippling activity, preserved limb strength, and persistent mild fatigue-related ptosis. Among the cases identified in our search, this was the youngest documented case with isolated ocular MG and the first anti-cavin-4-positive ocular-MG case with muscle-biopsy documentation. The case extends the documented age and mild-severity spectrum of iRMD associated with MG or AChR antibody positivity.",
-      "summary": "Immune-mediated rippling muscle disease (iRMD) is a rare autoimmune myopathy characterized by mechanically triggered, wave-like skeletal muscle contractions.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42620730/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "免疫机制"
-      ],
-      "topic": "免疫机制",
-      "institutionHint": "Department of Encephalopathy, The Affiliated Hospital to Changchun University of Chinese Medicine, Changchun, Jilin, China."
-    },
     {
       "id": "pubmed-42623951",
       "pmid": "42623951",
@@ -66,7 +35,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -76,6 +45,37 @@
       ],
       "topic": "免疫机制",
       "institutionHint": "The Affiliated Hospital of Changchun University of Chinese Medicine, No. 1478, Gongnong Avenue, Chaoyang District, Changchun, 130021, Jilin province, China."
+    },
+    {
+      "id": "pubmed-42620730",
+      "pmid": "42620730",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-01-01",
+      "indexedAt": "2026-08-20",
+      "title": "Case Report: Anti-cavin-4-positive immune-mediated rippling muscle disease co-occurring with isolated ocular myasthenia gravis.",
+      "authors": "Mingshi Gao, Dongyue Yue, Wenhua Zhu, Zhiguo Lv, Jianying Xi",
+      "journal": "Frontiers in immunology",
+      "issn": "1664-3224",
+      "eissn": "1664-3224",
+      "abstract": "Immune-mediated rippling muscle disease (iRMD) is a rare autoimmune myopathy characterized by mechanically triggered, wave-like skeletal muscle contractions. Its coexistence with myasthenia gravis (MG) has been described, but detailed clinicopathological and longitudinal characterization of anti-cavin-4-positive iRMD coexisting with isolated ocular MG remains limited. Here, we report a 35-year-old man who developed painless, water-like rippling movements of the right thigh in 2023, followed by occasional palpitations and mild creatine kinase elevation in 2024. In July 2025, he developed fluctuating right ptosis without diplopia, bulbar symptoms, or limb weakness. Serology showed anti-acetylcholine receptor antibody positivity and high-titer anti-cavin-4 antibodies. Electromyography revealed mild myogenic changes with electrically silent rippling activity. Muscle biopsy showed mild myopathic changes and mosaic caveolin-3 expression. Chest CT showed no thymic hyperplasia or thymoma, and cardiac evaluation showed no structural heart disease or clinically significant arrhythmia. These findings supported anti-cavin-4-positive iRMD coexisting with isolated AChR-positive ocular MG. At follow-up, the patient reported reduced rippling activity, preserved limb strength, and persistent mild fatigue-related ptosis. Among the cases identified in our search, this was the youngest documented case with isolated ocular MG and the first anti-cavin-4-positive ocular-MG case with muscle-biopsy documentation. The case extends the documented age and mild-severity spectrum of iRMD associated with MG or AChR antibody positivity.",
+      "summary": "Immune-mediated rippling muscle disease (iRMD) is a rare autoimmune myopathy characterized by mechanically triggered, wave-like skeletal muscle contractions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42620730/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-23",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "免疫机制"
+      ],
+      "topic": "免疫机制",
+      "institutionHint": "Department of Encephalopathy, The Affiliated Hospital to Changchun University of Chinese Medicine, Changchun, Jilin, China."
     },
     {
       "id": "pubmed-42620508",
@@ -97,7 +97,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -128,7 +128,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -159,7 +159,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -190,7 +190,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -221,7 +221,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -252,7 +252,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -283,7 +283,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -314,7 +314,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -345,7 +345,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -376,7 +376,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -407,7 +407,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -438,7 +438,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -469,7 +469,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -500,7 +500,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -531,7 +531,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -562,7 +562,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -581,19 +581,19 @@
       "language": "en",
       "date": "2026-07-27",
       "indexedAt": "2026-07-27",
-      "title": "CAR-based cellular therapies for autoimmune diseases: immune reset, clinical evidence, and translational boundaries.",
+      "title": "Chimeric Antigen Receptor-Based Cellular Therapies for Autoimmune Diseases: Immune Reset, Clinical Evidence, and Translational Boundaries.",
       "authors": "Miao Huang, Renjie Huang, Dongyan Wang",
       "journal": "Transplantation and cellular therapy",
       "issn": "2666-6367",
       "eissn": "2666-6367",
-      "abstract": "CAR-based cellular therapy is emerging as a time-limited strategy for severe autoimmune disease, but its clinical value depends on more than early response. We conducted a structured narrative review with a targeted update of PubMed/MEDLINE and ClinicalTrials.gov through July 11, 2026, with study-level extraction and explicit handling of overlapping cohorts. Autologous CD19 CAR-T has the most mature evidence, particularly in systemic lupus erythematosus and other systemic rheumatic diseases, while one randomized phase 2b trial has evaluated transient mRNA BCMA-directed CAR-T in myasthenia gravis. Early studies also support disease-specific development in systemic sclerosis, idiopathic inflammatory myopathy, rheumatoid arthritis, autoimmune cytopenias, and selected neurologic disorders. However, cohorts remain small and heterogeneous, and severe cytokine release syndrome, neurotoxicity, hematotoxicity, infection, viral reactivation, hypogammaglobulinemia, and prolonged organ dysfunction have been reported. Immune reset should therefore be treated as a testable multidomain state: durable disease control after the acute treatment phase, withdrawal of conventional immunosuppression, evolution or recovery of the targeted immune compartment without immediate pathogenic recurrence, and preservation of clinically acceptable immune competence. It is not synonymous with cure, continued aplasia, complete autoantibody eradication, or reversal of fixed organ damage. Future development requires disease-specific comparative trials, biomarker-guided platform selection, standardized clinical and immune-reconstitution endpoints, transparent reporting of manufacturing attrition and cohort overlap, experienced multidisciplinary delivery, and long-term registries capturing infection, fertility, neurologic outcomes, secondary malignancy, relapse, retreatment, and patient-centered value. Until these data mature, autoimmune CAR therapy should remain investigational and restricted to highly selected patients in prospective programs.",
+      "abstract": "Chimeric antigen receptor T cell (CAR-T)-based cellular therapy is emerging as a time-limited strategy for severe autoimmune disease, but its clinical value depends on more than early response. We conducted a structured narrative review with a targeted update of PubMed/MEDLINE and ClinicalTrials.gov through July 11, 2026, with study-level extraction and explicit handling of overlapping cohorts. Autologous CD19 CAR-T has the most mature evidence, particularly in systemic lupus erythematosus and other systemic rheumatic diseases, while one randomized phase 2b trial has evaluated transient messenger RNA B cell maturation antigen-directed CAR-T therapy in myasthenia gravis. Early studies also support disease-specific development in systemic sclerosis, idiopathic inflammatory myopathy, rheumatoid arthritis, autoimmune cytopenias, and selected neurologic disorders. However, cohorts remain small and heterogeneous, and severe cytokine release syndrome, neurotoxicity, hematotoxicity, infection, viral reactivation, hypogammaglobulinemia, and prolonged organ dysfunction have been reported. Thus, immune reset should be treated as a testable multidomain state: durable disease control after the acute treatment phase, withdrawal of conventional immunosuppression, evolution or recovery of the targeted immune compartment without immediate pathogenic recurrence, and preservation of clinically acceptable immune competence. It is not synonymous with cure, continued aplasia, complete autoantibody eradication, or reversal of fixed organ damage. Future development will require disease-specific comparative trials, biomarker-guided platform selection, standardized clinical and immune-reconstitution endpoints, transparent reporting of manufacturing attrition and cohort overlap, experienced multidisciplinary delivery, and long-term registries capturing infection, fertility, neurologic outcomes, secondary malignancy, relapse, retreatment, and patient-centered value. Until these data mature, autoimmune CAR-T therapy should remain investigational and restricted to highly selected patients in prospective programs.",
       "summary": "CAR-based cellular therapy is emerging as a time-limited strategy for severe autoimmune disease, but its clinical value depends on more than early response.",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42508642/",
       "trust": {
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -602,7 +602,7 @@
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "The Second Clinical Medical College, Heilongjiang University of Chinese Medicine, Harbin 150040, China."
+      "institutionHint": "The Second Clinical Medical College, Heilongjiang University of Chinese Medicine, Harbin, China."
     },
     {
       "id": "pubmed-42500674",
@@ -624,7 +624,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -655,7 +655,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -686,7 +686,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -717,7 +717,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -748,7 +748,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -779,7 +779,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -810,7 +810,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -841,7 +841,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -872,7 +872,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -903,7 +903,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -934,7 +934,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -965,7 +965,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -996,7 +996,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1027,7 +1027,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1058,7 +1058,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1089,7 +1089,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1120,7 +1120,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1151,7 +1151,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1182,7 +1182,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1213,7 +1213,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1244,7 +1244,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1275,7 +1275,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1306,7 +1306,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1337,7 +1337,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1368,7 +1368,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1399,7 +1399,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1430,7 +1430,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1461,7 +1461,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1492,7 +1492,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1523,7 +1523,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1554,7 +1554,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1585,7 +1585,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1616,7 +1616,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1647,7 +1647,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1678,7 +1678,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1709,7 +1709,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1740,7 +1740,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1771,7 +1771,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1802,7 +1802,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1833,7 +1833,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1864,7 +1864,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1895,7 +1895,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1926,7 +1926,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1957,7 +1957,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1988,7 +1988,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2019,7 +2019,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2050,7 +2050,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2081,7 +2081,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2112,7 +2112,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2143,7 +2143,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2174,7 +2174,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2205,7 +2205,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2236,7 +2236,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2267,7 +2267,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2298,7 +2298,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2329,7 +2329,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2360,7 +2360,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2391,7 +2391,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2422,7 +2422,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2453,7 +2453,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2484,7 +2484,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2515,7 +2515,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2546,7 +2546,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2577,7 +2577,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2608,7 +2608,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2639,7 +2639,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2670,7 +2670,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2701,7 +2701,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2732,7 +2732,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2763,7 +2763,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2794,7 +2794,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2825,7 +2825,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2856,7 +2856,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2887,7 +2887,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2918,7 +2918,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2949,7 +2949,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2980,7 +2980,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3011,7 +3011,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3042,7 +3042,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3073,7 +3073,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3104,7 +3104,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-22",
+        "lastChecked": "2026-08-23",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3117,8 +3117,8 @@
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-08-22T02:20:10.794Z",
-    "runFinishedAt": "2026-08-22T02:21:38.475Z",
+    "runStartedAt": "2026-08-23T02:36:38.015Z",
+    "runFinishedAt": "2026-08-23T02:38:07.240Z",
     "scope": "all",
     "status": "success",
     "failedSources": []
