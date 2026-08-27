@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-08-26T02:42:07.430Z",
+  "updatedAt": "2026-08-27T11:15:17.715Z",
   "provenance": {
     "sourceType": "ClinicalTrials.gov",
     "evidenceLevel": "试验登记",
     "reviewStatus": "自动更新",
-    "lastChecked": "2026-08-26",
+    "lastChecked": "2026-08-27",
     "reviewNote": "登记状态、入组地区和完成日期可能变化；疗效结论需等待结果披露或论文发表。"
   },
   "updatePolicy": {
@@ -37,12 +37,12 @@
       ],
       "startDate": "",
       "completionDate": "",
-      "lastUpdate": "2026-08-26",
+      "lastUpdate": "2026-08-27",
       "trust": {
         "sourceType": "ChiCTR",
         "evidenceLevel": "中国试验注册入口",
         "reviewStatus": "人工复核入口",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "ChiCTR 页面可能需要验证，当前作为人工检索入口；命中试验需逐条核对注册号、版本、研究状态和入排标准。"
       },
       "url": "https://www.chictr.org.cn/"
@@ -74,10 +74,71 @@
         "sourceType": "ChiCTR",
         "evidenceLevel": "中国试验注册",
         "reviewStatus": "待复核",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "来自 ChiCTR 公开索引线索；因官网可能触发访问验证，需人工打开原始记录核对版本和状态。"
       },
       "url": "https://www.chictr.org.cn/hvshowproject.html?id=156285&v=1.5"
+    },
+    {
+      "id": "NCT06149559",
+      "nctId": "NCT06149559",
+      "registry": "ClinicalTrials.gov",
+      "title": "A Study of Rozanolixizumab in Pediatric Study Participants With Moderate to Severe Generalized Myasthenia Gravis",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": "PHASE2, PHASE3",
+      "mechanism": "FcRn",
+      "sponsor": "UCB Biopharma SRL",
+      "interventions": [
+        "rozanolixizumab"
+      ],
+      "conditions": [
+        "Generalized Myasthenia Gravis"
+      ],
+      "countries": [
+        "Italy",
+        "Japan",
+        "Poland",
+        "Turkey (Türkiye)"
+      ],
+      "startDate": "2024-06-14",
+      "completionDate": "2026-10-05",
+      "lastUpdate": "2026-08-26",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT06149559"
+    },
+    {
+      "id": "NCT07787247",
+      "nctId": "NCT07787247",
+      "registry": "ClinicalTrials.gov",
+      "title": "Feasibility of Remote Monitoring of Patients With Myasthenia Gravis",
+      "status": "RECRUITING",
+      "phase": "Not specified",
+      "mechanism": "其他/观察性",
+      "sponsor": "George Washington University",
+      "interventions": [],
+      "conditions": [
+        "Myasthenia Gravis (MG)"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "startDate": "2026-08-19",
+      "completionDate": "2028-10",
+      "lastUpdate": "2026-08-26",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07787247"
     },
     {
       "id": "NCT07465289",
@@ -102,7 +163,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07465289"
@@ -135,127 +196,10 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07463521"
-    },
-    {
-      "id": "NCT07673627",
-      "nctId": "NCT07673627",
-      "registry": "ClinicalTrials.gov",
-      "title": "ADAPT Forward 2 - ISA2 - a Study to Evaluate the Safety, Tolerability and Efficacy of Empasiprubart IV Monotherapy in Participants With AChR-Ab Seropositive Generalized Myasthenia Gravis",
-      "status": "RECRUITING",
-      "phase": "PHASE2",
-      "mechanism": "FcRn",
-      "sponsor": "argenx",
-      "interventions": [
-        "Empasiprubart IV",
-        "Placebo IV",
-        "Efgartigimod PH20 SC PFS"
-      ],
-      "conditions": [
-        "AChR-Ab Seropositive Generalized Myasthenia Gravis",
-        "Myasthenia Gravis (MG)",
-        "MG - Myasthenia Gravis",
-        "gMG"
-      ],
-      "countries": [
-        "United States"
-      ],
-      "startDate": "2026-07-10",
-      "completionDate": "2028-04",
-      "lastUpdate": "2026-08-21",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT07673627"
-    },
-    {
-      "id": "NCT07284420",
-      "nctId": "NCT07284420",
-      "registry": "ClinicalTrials.gov",
-      "title": "ADAPT Forward 1 - ISA1 - a Study to Evaluate Empasiprubart IV as add-on Therapy to Efgartigimod IV in Participants With AChR-Ab Seropositive Generalized Myasthenia Gravis With a Partial Clinical Response to Efgartigimod",
-      "status": "RECRUITING",
-      "phase": "PHASE2",
-      "mechanism": "FcRn",
-      "sponsor": "argenx",
-      "interventions": [
-        "Efgartigimod IV",
-        "Empasiprubart IV"
-      ],
-      "conditions": [
-        "AChR-Ab Seropositive Generalized Myasthenia Gravis",
-        "Myasthenia Gravis",
-        "MG",
-        "gMG",
-        "Generalized Myasthenia Gravis",
-        "Generalized Myasthenia Gravis (gMG)"
-      ],
-      "countries": [
-        "United States",
-        "Belgium",
-        "Germany",
-        "Greece",
-        "Italy",
-        "Japan",
-        "Poland",
-        "Spain"
-      ],
-      "startDate": "2025-12-19",
-      "completionDate": "2028-03-07",
-      "lastUpdate": "2026-08-21",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT07284420"
-    },
-    {
-      "id": "NCT06414954",
-      "nctId": "NCT06414954",
-      "registry": "ClinicalTrials.gov",
-      "title": "Safety and Efficacy of 3 Dose Levels of NMD670 in Adult Patients With Myasthenia Gravis",
-      "status": "RECRUITING",
-      "phase": "PHASE2",
-      "mechanism": "其他/观察性",
-      "sponsor": "NMD Pharma A/S",
-      "interventions": [
-        "NMD670",
-        "Placebo"
-      ],
-      "conditions": [
-        "Myasthenia Gravis",
-        "Myasthenia Gravis, MuSK"
-      ],
-      "countries": [
-        "United States",
-        "Belgium",
-        "Denmark",
-        "France",
-        "Georgia",
-        "Italy",
-        "Netherlands",
-        "Poland"
-      ],
-      "startDate": "2024-05-16",
-      "completionDate": "2026-12",
-      "lastUpdate": "2026-08-21",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT06414954"
     },
     {
       "id": "NCT07294170",
@@ -297,7 +241,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07294170"
@@ -328,10 +272,127 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07673744"
+    },
+    {
+      "id": "NCT07284420",
+      "nctId": "NCT07284420",
+      "registry": "ClinicalTrials.gov",
+      "title": "ADAPT Forward 1 - ISA1 - a Study to Evaluate Empasiprubart IV as add-on Therapy to Efgartigimod IV in Participants With AChR-Ab Seropositive Generalized Myasthenia Gravis With a Partial Clinical Response to Efgartigimod",
+      "status": "RECRUITING",
+      "phase": "PHASE2",
+      "mechanism": "FcRn",
+      "sponsor": "argenx",
+      "interventions": [
+        "Efgartigimod IV",
+        "Empasiprubart IV"
+      ],
+      "conditions": [
+        "AChR-Ab Seropositive Generalized Myasthenia Gravis",
+        "Myasthenia Gravis",
+        "MG",
+        "gMG",
+        "Generalized Myasthenia Gravis",
+        "Generalized Myasthenia Gravis (gMG)"
+      ],
+      "countries": [
+        "United States",
+        "Belgium",
+        "Germany",
+        "Greece",
+        "Italy",
+        "Japan",
+        "Poland",
+        "Spain"
+      ],
+      "startDate": "2025-12-19",
+      "completionDate": "2028-03-07",
+      "lastUpdate": "2026-08-21",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07284420"
+    },
+    {
+      "id": "NCT07673627",
+      "nctId": "NCT07673627",
+      "registry": "ClinicalTrials.gov",
+      "title": "ADAPT Forward 2 - ISA2 - a Study to Evaluate the Safety, Tolerability and Efficacy of Empasiprubart IV Monotherapy in Participants With AChR-Ab Seropositive Generalized Myasthenia Gravis",
+      "status": "RECRUITING",
+      "phase": "PHASE2",
+      "mechanism": "FcRn",
+      "sponsor": "argenx",
+      "interventions": [
+        "Empasiprubart IV",
+        "Placebo IV",
+        "Efgartigimod PH20 SC PFS"
+      ],
+      "conditions": [
+        "AChR-Ab Seropositive Generalized Myasthenia Gravis",
+        "Myasthenia Gravis (MG)",
+        "MG - Myasthenia Gravis",
+        "gMG"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "startDate": "2026-07-10",
+      "completionDate": "2028-04",
+      "lastUpdate": "2026-08-21",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07673627"
+    },
+    {
+      "id": "NCT06414954",
+      "nctId": "NCT06414954",
+      "registry": "ClinicalTrials.gov",
+      "title": "Safety and Efficacy of 3 Dose Levels of NMD670 in Adult Patients With Myasthenia Gravis",
+      "status": "RECRUITING",
+      "phase": "PHASE2",
+      "mechanism": "其他/观察性",
+      "sponsor": "NMD Pharma A/S",
+      "interventions": [
+        "NMD670",
+        "Placebo"
+      ],
+      "conditions": [
+        "Myasthenia Gravis",
+        "Myasthenia Gravis, MuSK"
+      ],
+      "countries": [
+        "United States",
+        "Belgium",
+        "Denmark",
+        "France",
+        "Georgia",
+        "Italy",
+        "Netherlands",
+        "Poland"
+      ],
+      "startDate": "2024-05-16",
+      "completionDate": "2026-12",
+      "lastUpdate": "2026-08-21",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT06414954"
     },
     {
       "id": "NCT04124965",
@@ -365,7 +426,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT04124965"
@@ -403,7 +464,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT03971422"
@@ -440,7 +501,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT04650854"
@@ -473,7 +534,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06987539"
@@ -506,75 +567,10 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07761026"
-    },
-    {
-      "id": "NCT06540144",
-      "nctId": "NCT06540144",
-      "registry": "ClinicalTrials.gov",
-      "title": "An Extension Study Evaluating 6-week Treatment Cycles of Rozanolixizumab in Pediatric Study Participants With Generalized Myasthenia Gravis",
-      "status": "ENROLLING_BY_INVITATION",
-      "phase": "PHASE3",
-      "mechanism": "FcRn",
-      "sponsor": "UCB Biopharma SRL",
-      "interventions": [
-        "rozanolixizumab"
-      ],
-      "conditions": [
-        "Generalized Myasthenia Gravis"
-      ],
-      "countries": [
-        "Italy",
-        "Japan",
-        "Poland",
-        "Taiwan",
-        "Turkey (Türkiye)"
-      ],
-      "startDate": "2024-10-08",
-      "completionDate": "2027-08-17",
-      "lastUpdate": "2026-08-14",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT06540144"
-    },
-    {
-      "id": "NCT04146051",
-      "nctId": "NCT04146051",
-      "registry": "ClinicalTrials.gov",
-      "title": "Descartes-08 CAR-T Cells in Generalized Myasthenia Gravis (MG)",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "phase": "PHASE2",
-      "mechanism": "B细胞/细胞治疗",
-      "sponsor": "Cartesian Therapeutics",
-      "interventions": [
-        "Descartes-08"
-      ],
-      "conditions": [
-        "Myasthenia Gravis, Generalized"
-      ],
-      "countries": [
-        "United States",
-        "Canada"
-      ],
-      "startDate": "2019-12-04",
-      "completionDate": "2026-09-30",
-      "lastUpdate": "2026-08-14",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT04146051"
     },
     {
       "id": "NCT06909253",
@@ -601,7 +597,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06909253"
@@ -632,10 +628,75 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06447597"
+    },
+    {
+      "id": "NCT04146051",
+      "nctId": "NCT04146051",
+      "registry": "ClinicalTrials.gov",
+      "title": "Descartes-08 CAR-T Cells in Generalized Myasthenia Gravis (MG)",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": "PHASE2",
+      "mechanism": "B细胞/细胞治疗",
+      "sponsor": "Cartesian Therapeutics",
+      "interventions": [
+        "Descartes-08"
+      ],
+      "conditions": [
+        "Myasthenia Gravis, Generalized"
+      ],
+      "countries": [
+        "United States",
+        "Canada"
+      ],
+      "startDate": "2019-12-04",
+      "completionDate": "2026-09-30",
+      "lastUpdate": "2026-08-14",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT04146051"
+    },
+    {
+      "id": "NCT06540144",
+      "nctId": "NCT06540144",
+      "registry": "ClinicalTrials.gov",
+      "title": "An Extension Study Evaluating 6-week Treatment Cycles of Rozanolixizumab in Pediatric Study Participants With Generalized Myasthenia Gravis",
+      "status": "ENROLLING_BY_INVITATION",
+      "phase": "PHASE3",
+      "mechanism": "FcRn",
+      "sponsor": "UCB Biopharma SRL",
+      "interventions": [
+        "rozanolixizumab"
+      ],
+      "conditions": [
+        "Generalized Myasthenia Gravis"
+      ],
+      "countries": [
+        "Italy",
+        "Japan",
+        "Poland",
+        "Taiwan",
+        "Turkey (Türkiye)"
+      ],
+      "startDate": "2024-10-08",
+      "completionDate": "2027-08-17",
+      "lastUpdate": "2026-08-14",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT06540144"
     },
     {
       "id": "NCT07304154",
@@ -668,43 +729,10 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07304154"
-    },
-    {
-      "id": "NCT06149559",
-      "nctId": "NCT06149559",
-      "registry": "ClinicalTrials.gov",
-      "title": "A Study of Rozanolixizumab in Pediatric Study Participants With Moderate to Severe Generalized Myasthenia Gravis",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "phase": "PHASE2, PHASE3",
-      "mechanism": "FcRn",
-      "sponsor": "UCB Biopharma SRL",
-      "interventions": [
-        "rozanolixizumab"
-      ],
-      "conditions": [
-        "Generalized Myasthenia Gravis"
-      ],
-      "countries": [
-        "Italy",
-        "Japan",
-        "Poland",
-        "Turkey (Türkiye)"
-      ],
-      "startDate": "2024-06-14",
-      "completionDate": "2026-10-19",
-      "lastUpdate": "2026-08-14",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT06149559"
     },
     {
       "id": "NCT06359041",
@@ -732,10 +760,139 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06359041"
+    },
+    {
+      "id": "NCT07556120",
+      "nctId": "NCT07556120",
+      "registry": "ClinicalTrials.gov",
+      "title": "Efficacy and Safety of HN2301 in Patients With Generalized Myasthenia Gravis (MG)",
+      "status": "NOT_YET_RECRUITING",
+      "phase": "PHASE1",
+      "mechanism": "其他/观察性",
+      "sponsor": "Shenzhen MagicRNA Biotechnology Co., Ltd",
+      "interventions": [
+        "HN2301 injection"
+      ],
+      "conditions": [
+        "Generalized Myasthenia Gravis"
+      ],
+      "countries": [
+        "China"
+      ],
+      "startDate": "2026-12-31",
+      "completionDate": "2028-12-31",
+      "lastUpdate": "2026-08-12",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07556120"
+    },
+    {
+      "id": "NCT06688435",
+      "nctId": "NCT06688435",
+      "registry": "ClinicalTrials.gov",
+      "title": "A Study to Evaluate the Safety and Preliminary Efficacy of SYS6020 CAR T-cells in Patients With Refractory Generalized Myasthenia Gravis",
+      "status": "RECRUITING",
+      "phase": "PHASE1",
+      "mechanism": "其他/观察性",
+      "sponsor": "CSPC ZhongQi Pharmaceutical Technology Co., Ltd.",
+      "interventions": [
+        "SYS6020 injection",
+        "SYS6020 injection",
+        "SYS6020 injection"
+      ],
+      "conditions": [
+        "Myasthenia Gravis"
+      ],
+      "countries": [
+        "China"
+      ],
+      "startDate": "2025-03-04",
+      "completionDate": "2033-05-01",
+      "lastUpdate": "2026-08-12",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT06688435"
+    },
+    {
+      "id": "NCT06517758",
+      "nctId": "NCT06517758",
+      "registry": "ClinicalTrials.gov",
+      "title": "A Phase III Study to Investigate Efficacy, Safety and Tolerability of Iptacopan Compared With Placebo in Participants Aged 18 to 85 Years With gMG.",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": "PHASE3",
+      "mechanism": "其他/观察性",
+      "sponsor": "Novartis Pharmaceuticals",
+      "interventions": [
+        "Iptacopan",
+        "Matching Placebo"
+      ],
+      "conditions": [
+        "Generalized Myasthenia Gravis"
+      ],
+      "countries": [
+        "United States",
+        "Argentina",
+        "Australia",
+        "Brazil",
+        "China",
+        "Denmark",
+        "France",
+        "Germany"
+      ],
+      "startDate": "2024-07-31",
+      "completionDate": "2032-05-27",
+      "lastUpdate": "2026-08-12",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT06517758"
+    },
+    {
+      "id": "NCT07247279",
+      "nctId": "NCT07247279",
+      "registry": "ClinicalTrials.gov",
+      "title": "Epidemiological Study of Treatment Approaches in AChR-Antibody Positive Generalized Myasthenia Gravis in Russia",
+      "status": "RECRUITING",
+      "phase": "Not specified",
+      "mechanism": "其他/观察性",
+      "sponsor": "AstraZeneca",
+      "interventions": [],
+      "conditions": [
+        "Rare Diseases",
+        "Generalized Myasthenia Gravis (gMG)"
+      ],
+      "countries": [
+        "Russia"
+      ],
+      "startDate": "2025-12-23",
+      "completionDate": "2029-12-31",
+      "lastUpdate": "2026-08-12",
+      "trust": {
+        "sourceType": "ClinicalTrials.gov",
+        "evidenceLevel": "试验登记",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-08-27",
+        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
+      },
+      "url": "https://clinicaltrials.gov/study/NCT07247279"
     },
     {
       "id": "NCT04225871",
@@ -769,42 +926,10 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT04225871"
-    },
-    {
-      "id": "NCT06688435",
-      "nctId": "NCT06688435",
-      "registry": "ClinicalTrials.gov",
-      "title": "A Study to Evaluate the Safety and Preliminary Efficacy of SYS6020 CAR T-cells in Patients With Refractory Generalized Myasthenia Gravis",
-      "status": "RECRUITING",
-      "phase": "PHASE1",
-      "mechanism": "其他/观察性",
-      "sponsor": "CSPC ZhongQi Pharmaceutical Technology Co., Ltd.",
-      "interventions": [
-        "SYS6020 injection",
-        "SYS6020 injection",
-        "SYS6020 injection"
-      ],
-      "conditions": [
-        "Myasthenia Gravis"
-      ],
-      "countries": [
-        "China"
-      ],
-      "startDate": "2025-03-04",
-      "completionDate": "2033-05-01",
-      "lastUpdate": "2026-08-12",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT06688435"
     },
     {
       "id": "NCT06463587",
@@ -840,107 +965,10 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06463587"
-    },
-    {
-      "id": "NCT07556120",
-      "nctId": "NCT07556120",
-      "registry": "ClinicalTrials.gov",
-      "title": "Efficacy and Safety of HN2301 in Patients With Generalized Myasthenia Gravis (MG)",
-      "status": "NOT_YET_RECRUITING",
-      "phase": "PHASE1",
-      "mechanism": "其他/观察性",
-      "sponsor": "Shenzhen MagicRNA Biotechnology Co., Ltd",
-      "interventions": [
-        "HN2301 injection"
-      ],
-      "conditions": [
-        "Generalized Myasthenia Gravis"
-      ],
-      "countries": [
-        "China"
-      ],
-      "startDate": "2026-12-31",
-      "completionDate": "2028-12-31",
-      "lastUpdate": "2026-08-12",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT07556120"
-    },
-    {
-      "id": "NCT07247279",
-      "nctId": "NCT07247279",
-      "registry": "ClinicalTrials.gov",
-      "title": "Epidemiological Study of Treatment Approaches in AChR-Antibody Positive Generalized Myasthenia Gravis in Russia",
-      "status": "RECRUITING",
-      "phase": "Not specified",
-      "mechanism": "其他/观察性",
-      "sponsor": "AstraZeneca",
-      "interventions": [],
-      "conditions": [
-        "Rare Diseases",
-        "Generalized Myasthenia Gravis (gMG)"
-      ],
-      "countries": [
-        "Russia"
-      ],
-      "startDate": "2025-12-23",
-      "completionDate": "2029-12-31",
-      "lastUpdate": "2026-08-12",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT07247279"
-    },
-    {
-      "id": "NCT06517758",
-      "nctId": "NCT06517758",
-      "registry": "ClinicalTrials.gov",
-      "title": "A Phase III Study to Investigate Efficacy, Safety and Tolerability of Iptacopan Compared With Placebo in Participants Aged 18 to 85 Years With gMG.",
-      "status": "ACTIVE_NOT_RECRUITING",
-      "phase": "PHASE3",
-      "mechanism": "其他/观察性",
-      "sponsor": "Novartis Pharmaceuticals",
-      "interventions": [
-        "Iptacopan",
-        "Matching Placebo"
-      ],
-      "conditions": [
-        "Generalized Myasthenia Gravis"
-      ],
-      "countries": [
-        "United States",
-        "Argentina",
-        "Australia",
-        "Brazil",
-        "China",
-        "Denmark",
-        "France",
-        "Germany"
-      ],
-      "startDate": "2024-07-31",
-      "completionDate": "2032-05-27",
-      "lastUpdate": "2026-08-12",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT06517758"
     },
     {
       "id": "NCT06940323",
@@ -968,7 +996,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06940323"
@@ -1009,7 +1037,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06298552"
@@ -1039,7 +1067,7 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT06259071"
@@ -1068,46 +1096,15 @@
         "sourceType": "ClinicalTrials.gov",
         "evidenceLevel": "试验登记",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
+        "lastChecked": "2026-08-27",
         "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
       },
       "url": "https://clinicaltrials.gov/study/NCT07075627"
-    },
-    {
-      "id": "NCT07596901",
-      "nctId": "NCT07596901",
-      "registry": "ClinicalTrials.gov",
-      "title": "Study of Aritinercept in Patients With Generalized Myasthenia Gravis",
-      "status": "RECRUITING",
-      "phase": "PHASE1, PHASE2",
-      "mechanism": "其他/观察性",
-      "sponsor": "Aurinia Pharmaceuticals Inc.",
-      "interventions": [
-        "Aritinercept",
-        "Placebo"
-      ],
-      "conditions": [
-        "Myasthenia Gravis, Generalized"
-      ],
-      "countries": [
-        "United States"
-      ],
-      "startDate": "2026-04-22",
-      "completionDate": "2029-03-02",
-      "lastUpdate": "2026-08-03",
-      "trust": {
-        "sourceType": "ClinicalTrials.gov",
-        "evidenceLevel": "试验登记",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-08-26",
-        "reviewNote": "登记信息用于研发监测，不代表疗效或安全性已获证实。"
-      },
-      "url": "https://clinicaltrials.gov/study/NCT07596901"
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-08-26T02:38:52.141Z",
-    "runFinishedAt": "2026-08-26T02:42:07.430Z",
+    "runStartedAt": "2026-08-27T11:11:37.278Z",
+    "runFinishedAt": "2026-08-27T11:15:17.715Z",
     "scope": "all",
     "status": "success",
     "failedSources": []
