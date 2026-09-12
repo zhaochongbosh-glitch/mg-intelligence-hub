@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-11T06:00:12.168Z",
+  "updatedAt": "2026-09-12T05:48:08.101Z",
   "provenance": {
     "sourceType": "PubMed Affiliation",
     "evidenceLevel": "文献索引",
     "reviewStatus": "自动更新",
-    "lastChecked": "2026-09-11",
+    "lastChecked": "2026-09-12",
     "reviewNote": "中国研究者/机构通过 PubMed 机构字段近似识别，仍需人工查看原文记录确认。"
   },
   "updatePolicy": {
@@ -15,6 +15,130 @@
   "scopeNote": "自动检索 PubMed 中 MG 主题且作者机构字段命中 China、Chinese、Hong Kong、Taiwan 或 Macau 的论文；用于透明地近似识别中国研究者/中国机构相关研究。",
   "query": "(\"myasthenia gravis\"[Title/Abstract] OR \"generalized myasthenia gravis\"[Title/Abstract] OR \"ocular myasthenia\"[Title/Abstract]) AND (China[Affiliation] OR Chinese[Affiliation] OR \"Hong Kong\"[Affiliation] OR Taiwan[Affiliation] OR Macau[Affiliation])",
   "items": [
+    {
+      "id": "pubmed-42727063",
+      "pmid": "42727063",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-09-11",
+      "indexedAt": "2026-09-11",
+      "title": "Genetic Evidence Supports the Prioritization of CD40 Among Prespecified Immune-Related Candidate Drug Targets in Myasthenia Gravis.",
+      "authors": "Yue Xu, Xiaolei Li, Guangxian Nan",
+      "journal": "The International journal of neuroscience",
+      "issn": "1563-5279",
+      "eissn": "1563-5279",
+      "abstract": "To prioritize prespecified immune-related candidate drug targets in myasthenia gravis for further validation based on integrated genetic evidence. We integrated drug-target Mendelian randomization (MR) using cis-expression quantitative trait loci (cis-eQTLs), protein-level MR of plasma CD40 abundance using plasma protein quantitative trait loci (pQTLs), and colocalization analyses to evaluate genetically proxied associations with overall MG, early-onset myasthenia gravis (EOMG), and late-onset myasthenia gravis (LOMG). In this study, CD40 showed the most consistent genetic evidence among the six prespecified targets. Effect estimates are reported as odds ratios (ORs) with 95% confidence intervals (CIs). Higher CD40 expression proxied by cis-eQTLs was associated with increased risk of overall MG (OR = 1.14, 95% CI: 1.05-1.24, Bonferroni-adjusted P = 0.022) and EOMG (OR = 1.32, 95% CI: 1.12-1.56, Bonferroni-adjusted P = 0.015). Genetically predicted higher plasma CD40 protein abundance was associated with increased overall MG risk (OR = 1.31, 95% CI: 1.08-1.57, Bonferroni-adjusted P = 0.010), whereas the protein-level MR result for EOMG was directionally consistent but not statistically significant. Colocalization analysis provided suggestive but not definitive evidence of colocalization between CD40 expression and EOMG risk. FCGRT, IL2RA, and SYK showed additional exploratory MR signals requiring further validation. CD40 showed the most consistent genetic support among the prespecified targets, supporting its prioritization for functional validation and further therapeutic investigation in MG.",
+      "summary": "To prioritize prespecified immune-related candidate drug targets in myasthenia gravis for further validation based on integrated genetic evidence.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42727063/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-09-12",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "免疫机制"
+      ],
+      "topic": "免疫机制",
+      "institutionHint": "Department of Neurology, China-Japan Union Hospital of Jilin University, Changchun 130033, Jilin Province, China."
+    },
+    {
+      "id": "pubmed-42726141",
+      "pmid": "42726141",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-09-11",
+      "indexedAt": "2026-09-11",
+      "title": "Efficacy of efgartigimod in the treatment of autoimmune encephalitis: a systematic review.",
+      "authors": "Ping Tang, Kaiqiang Xiao, Yi He, Liang Wang",
+      "journal": "Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",
+      "issn": "1590-3478",
+      "eissn": "1590-3478",
+      "abstract": "Autoimmune encephalitis (AE) encompasses a group of inflammatory disorders of the brain parenchyma mediated by autoimmune mechanisms. Currently, first-line immunotherapy for AE typically involves corticosteroids, intravenous immunoglobulin, and plasma exchange or immune adsorption. However, a subset of patients shows an inadequate response to these treatments, which are also associated with an increased risk of infection and other potential adverse effects. Efgartigimod, a neonatal Fc receptor (FcRn) antagonist, is primarily approved for treating generalized myasthenia gravis. Preliminary observations suggest that efgartigimod may also exhibit therapeutic potential in AE. A comprehensive literature search was performed in the PubMed, Web of Science, Embase, and Cochrane Library databases to identify all relevant studies published up to October 30, 2025. The risk of bias in the included studies was evaluated using standardized tools tailored to each study design. Owing to substantial heterogeneity across study designs and outcome measures, a meta-analysis was not deemed feasible; consequently, the findings are synthesized and presented in narrative form. Twelve studies were included, comprising nine case reports or series, two case control studies, and one cross‑sectional study. A total of 77 patients with AE were enrolled. The majority (76/77) demonstrated significant clinical improvement following efgartigimod treatment, and no serious adverse events were observed. Efgartigimod holds potential as a safe and effective adjunctive therapy for AE patients, either as adjunctive treatment after inadequate responses to first-line or second-line therapies or as concomitant add-on therapy combined with first-line treatment.",
+      "summary": "Autoimmune encephalitis (AE) encompasses a group of inflammatory disorders of the brain parenchyma mediated by autoimmune mechanisms.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42726141/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-09-12",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "治疗与真实世界"
+      ],
+      "topic": "治疗与真实世界",
+      "institutionHint": "Department of Neurology, First Affiliated Hospital, Chongqing Medical University, Chongqing, China."
+    },
+    {
+      "id": "pubmed-42725686",
+      "pmid": "42725686",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-09-01",
+      "indexedAt": "2026-09-11",
+      "title": "Response Shift and Item Interpretation: Two Caveats for Using Minimal Symptom Expression as a Treatment Goal in Generalised Myasthenia Gravis.",
+      "authors": "Hai-Feng Li, Qi Li, Yu-Zhou Guan, Huan Yang",
+      "journal": "European journal of neurology",
+      "issn": "1468-1331",
+      "eissn": "1468-1331",
+      "abstract": "",
+      "summary": "Hai-Feng Li, Qi Li, Yu-Zhou Guan, Huan Yang | European journal of neurology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42725686/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-09-12",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "治疗与真实世界"
+      ],
+      "topic": "治疗与真实世界",
+      "institutionHint": "Department of Neurology, Xuanwu Hospital, Capital Medical University, Beijing, China."
+    },
+    {
+      "id": "pubmed-42724295",
+      "pmid": "42724295",
+      "category": "中国研究",
+      "source": "PubMed China-affiliated",
+      "language": "en",
+      "date": "2026-08-31",
+      "indexedAt": "2026-09-11",
+      "title": "Immune checkpoint inhibitors in thymic epithelial tumors: current evidence, immune-related toxicity, and perioperative considerations-a narrative review.",
+      "authors": "Hongsheng Liu",
+      "journal": "Journal of thoracic disease",
+      "issn": "2072-1439",
+      "eissn": "",
+      "abstract": "Thymic epithelial tumors (TETs) are rare mediastinal malignancies with unique immunobiological features related to thymic immune tolerance. Although immune checkpoint inhibitors (ICIs) have shown clinical activity, especially in thymic carcinoma, their use is limited by frequent and sometimes severe immune-related adverse events (irAEs), particularly in thymoma. This review summarizes current evidence on the efficacy, toxicity, biomarkers, and perioperative implications of ICIs in TETs. A narrative review was conducted using PubMed, Web of Science, and Embase for English-language studies on ICIs in TETs published from database inception to September 2025. Reference lists of relevant articles and guideline papers were also manually screened. Prospective trials, retrospective cohorts, guideline papers, and key mechanistic studies were prioritized, with emphasis on histology-specific efficacy, irAEs, biomarkers, and perioperative application. Current evidence suggests that ICIs have more consistent antitumor activity in thymic carcinoma than in thymoma. In contrast, thymoma carries a substantially higher risk of severe early irAEs, particularly myocarditis, myositis, and myasthenia gravis overlap syndromes. Biomarkers such as programmed death-ligand 1 (PD-L1) expression and immune-related signatures remain promising but are not yet sufficiently validated for routine patient selection. Perioperative immunotherapy is an emerging strategy, but current evidence remains limited and safety concerns are significant. ICIs represent a promising treatment option for selected patients with advanced TETs, particularly thymic carcinoma, but their clinical use remains restricted by toxicity and limited evidence. Future progress will depend on better risk stratification, biomarker-guided selection, and safer multidisciplinary integration.",
+      "summary": "Thymic epithelial tumors (TETs) are rare mediastinal malignancies with unique immunobiological features related to thymic immune tolerance.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42724295/",
+      "trust": {
+        "sourceType": "PubMed Affiliation",
+        "evidenceLevel": "文献索引",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-09-12",
+        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
+      },
+      "tags": [
+        "中国研究",
+        "PubMed",
+        "免疫机制"
+      ],
+      "topic": "免疫机制",
+      "institutionHint": "Department of Thoracic Surgery, Peking Union Medical College Hospital, Chinese Academy of Medical Sciences and Peking Union Medical College, Beijing, China."
+    },
     {
       "id": "pubmed-42722209",
       "pmid": "42722209",
@@ -35,7 +159,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -44,7 +168,7 @@
         "免疫机制"
       ],
       "topic": "免疫机制",
-      "institutionHint": "The First Clinical Medical College, Shandong University of Traditional Chinese Medicine, Jinan, Shandong 250013, China; Department of Neurology, The First Affiliated Hospital of Shandong First Medical University & Shandong Provincial Qianfoshan Hospital, Shandong Institute of Neuroimmunology, Shandong, Provincial Medicine and Health Key Laboratory of Neuroimmunology, Jinan 250013, China."
+      "institutionHint": "The First Clinical Medical College, Shandong University of Traditional Chinese Medicine, Jinan, Shandong 250013, China; Department of Neurology, The First Affiliated Hospital of Shandong First Medical University & Shandong Provincial Qianfoshan Hospital, Shandong Institute of Neuroimmunology, Shandong Provincial Medicine and Health Key Laboratory of Neuroimmunology, Jinan 250013, China."
     },
     {
       "id": "pubmed-42719737",
@@ -66,7 +190,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -97,7 +221,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -128,7 +252,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -159,7 +283,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -190,7 +314,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -221,7 +345,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -252,7 +376,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -283,7 +407,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -314,7 +438,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -345,7 +469,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -376,7 +500,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -393,21 +517,21 @@
       "category": "中国研究",
       "source": "PubMed China-affiliated",
       "language": "en",
-      "date": "2026-08-31",
+      "date": "2026-09-11",
       "indexedAt": "2026-09-01",
       "title": "Efficacy of nipocalimab in patients with moderate-to-severe ocular symptoms of generalized myasthenia gravis in the phase 3 Vivacity-MG3 study.",
       "authors": "Kristl G Claeys, Huan Yang, Kavita Gandhi, Ibrahim Turkoz, Marie Fitzgibbon, Sheryl Pease",
       "journal": "Expert opinion on biological therapy",
       "issn": "1744-7682",
       "eissn": "1744-7682",
-      "abstract": "In the global Vivacity-MG3 study, nipocalimab (30-mg/kg loading dose; 15-mg/kg every-2-weeks) demonstrated sustained disease control versus placebo plus standard-of-care for generalized myasthenia gravis (gMG); this post-hoc analysis evaluated nipocalimab efficacy for participants with moderate-to-severe ocular symptoms (baseline score of ≥2-points on either ocular-domain item of MG-Activities-of-Daily-Living [MG-ADL]). Mean MG-ADL and Quantitative Myasthenia Gravis total scores change-from-baseline (CFB) through Week (W)24 were assessed using ANCOVA. W24% of participants with ≥2-point improvement in MG-ADL total (meaningful-within-person-improvement) or ocular-domain scores were compared using odds ratios (OR). Longitudinal odds of ≥2-point ocular-domain improvement were evaluated using generalized-estimating-equations logistic models. Nipocalimab ( n = 54/77) and placebo-treated ( n = 51/76) participants with moderate-to-severe ocular symptoms had similar baseline (mean[SD]) MG-ADL total (10.1[2.8];9.4[1.9]); ocular-domain scores were 4.1 (1.2);3.5 (1.0). At W24, LS-mean(SE) CFB for nipocalimab versus placebo were -4.71 (0.50) versus -3.24 (0.50), p = 0.042 (MG-ADL total) and median (IQR) -2.00 (-3.0 to -0.5) versus -1.00 (-1.5 to 0.0), p = 0.024 (ocular-domain). W24 ≥ 2-point ocular-domain improvements were observed with nipocalimab (40.7%) versus placebo (19.6%; OR = 3.47 [95% CI = 1.34-8.97]; p = 0.010). Adverse events: 77.8% (nipocalimab); 76.5% (placebo). These hypothesis-generating results suggest nipocalimab may provide sustained disease control, reduce ocular symptoms, and improve activities-of-daily-living versus placebo in participants with gMG and moderate-to-severe ocular symptoms. www.clinicaltrials.govidentifier is NCT04951622;www.clinicaltrialsregister.euidentifier is 2020-005732-29. Generalized myasthenia gravis (gMG) is rare disease affecting the muscles, including muscles in eyes, arms and legs. Nipocalimab was shown to be a safe and effective treatment when added to standard-care for gMG in the 6-month clinical trial, Vivacity-MG3 in people with gMG. Symptoms were measured using the people-reported MG Activities-of-Daily-Living (MG-ADL) and doctor-measured Quantitative-Myasthenia-Gravis (QMG) scales.After study completion, we analyzed results in a group of people in Vivacity-MG3 with moderate-to-severe eye symptoms at the beginning of the study. People had to have a score of 2-points or more on eye-related symptoms (double-vision or droopy eyelids). We measured the effect of nipocalimab-plus-standard-care (nipocalimab) and compared to placebo-plus-standard-care (placebo) on the MG-ADL total score (all symptoms) and eye-related symptoms, and QMG scores. Score decreases indicate symptom improvement.At study start, 54 nipocalimab-treated and 51 placebo-treated people had moderate-to-severe eye symptoms. After 6-months, MG-ADL total scores improved by an average of 4.7-points for nipocalimab and 3.2-points for placebo. Eye-related scores improved by 2-points for nipocalimab and 1-point for placebo. At week 24, 41% of nipocalimab-treated and 20% of placebo-treated people improved by at least 2-points in eye-related symptoms. Greater improvements were also seen with nipocalimab on the QMG scale. Nipocalimab safety was similar to that in the main study.This study suggests that nipocalimab reduces eye-related symptoms and improves activities-of-daily-living in patients with moderate-to-severe eye-related MG symptoms.",
+      "abstract": "In the global Vivacity-MG3 study, nipocalimab (30-mg/kg loading dose; 15-mg/kg every-2-weeks) demonstrated sustained disease control versus placebo plus standard-of-care for generalized myasthenia gravis (gMG); this post-hoc analysis evaluated nipocalimab efficacy for participants with moderate-to-severe ocular symptoms (baseline score of ≥2 points on either ocular-domain item of MG-activities-of-daily-living [MG-ADL]). Mean MG-ADL and Quantitative Myasthenia Gravis total scores change-from-baseline (CFB) through Week (W)24 were assessed using ANCOVA. W24 percentages of participants with ≥2-point improvement in MG-ADL total (meaningful-within-person-improvement) or ocular-domain scores were compared using odds ratios (OR). Longitudinal odds of ≥2-point ocular-domain improvement were evaluated using generalized-estimating-equations logistic models. Nipocalimab ( n = 54/77) and placebo-treated ( n = 51/76) participants with moderate-to-severe ocular symptoms had similar baseline (mean [SD]) MG-ADL total (10.1 [2.8]; 9.4 [1.9]); ocular-domain scores were 4.1 (1.2); 3.5 (1.0). At W24, LS-mean (SE) CFB for nipocalimab versus placebo were -4.71 (0.50) versus -3.24 (0.50), p = 0.042 (MG-ADL total) and median (IQR) -2.00 (-3.0 to -0.5) versus -1.00 (-1.5 to 0.0), p = 0.024 (ocular-domain). W24 ≥ 2-point ocular-domain improvements were observed with nipocalimab (40.7%) versus placebo (19.6%; OR = 3.47 [95% CI = 1.34-8.97]; p = 0.010). Adverse events: 77.8% (nipocalimab) and 76.5% (placebo). These hypothesis-generating results suggest that nipocalimab may provide sustained disease control, reduce ocular symptoms, and improve activities-of-daily-living versus placebo in participants with gMG and moderate-to-severe ocular symptoms. www.clinicaltrials.govidentifier is NCT04951622; www.clinicaltrialsregister.euidentifier is 2020-005732-29. Generalized myasthenia gravis (gMG) is a rare disease affecting the muscles, including muscles in eyes, arms, and legs. Nipocalimab was shown to be a safe and effective treatment when added to standard-care for gMG in the 6-month clinical trial, Vivacity-MG3 in people with gMG. Symptoms were measured using the people-reported MG Activities-of-Daily-Living (MG-ADL) and doctor-measured Quantitative-Myasthenia-Gravis (QMG) scales. After study completion, we analyzed results in a group of people in Vivacity-MG3 with moderate-to-severe eye symptoms at the beginning of the study. People had to have a score of 2 points or more on eye-related symptoms (double-vision or droopy eyelids). We measured the effect of nipocalimab-plus-standard-care (nipocalimab) and compared to placebo-plus-standard-care (placebo) on the MG-ADL total score (all symptoms) and eye-related symptoms, and QMG scores. Score decreases indicate symptom improvement. At study start, 54 nipocalimab-treated and 51 placebo-treated people had moderate-to-severe eye symptoms. After 6 months, MG-ADL total scores improved by an average of 4.7 points for nipocalimab and 3.2 points for placebo. Eye-related scores improved by 2 points for nipocalimab and 1 point for placebo. At week 24, 41% of nipocalimab-treated and 20% of placebo-treated people improved by at least 2 points in eye-related symptoms. Greater improvements were also seen with nipocalimab on the QMG scale. Nipocalimab safety was similar to that in the main study. This study suggests that nipocalimab reduces eye-related symptoms and improves activities-of-daily-living in patients with moderate-to-severe eye-related MG symptoms.",
       "summary": "In the global Vivacity-MG3 study, nipocalimab (30-mg/kg loading dose; 15-mg/kg every-2-weeks) demonstrated sustained disease control versus placebo plus standard-of-care for generalized myasthenia gravis (gMG); this post-hoc analysis evaluated nipocalimab efficacy for participants with moderate-to-severe ocular symptoms (baseline score of ≥2-points on either ocular-domain item of MG-Activities-of-Daily-Living [MG-ADL]).",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42675831/",
       "trust": {
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -416,7 +540,7 @@
         "治疗与真实世界"
       ],
       "topic": "治疗与真实世界",
-      "institutionHint": "Department of Neurology, Xiangya Hospital, Central South University, Changsha City, China."
+      "institutionHint": "Xiangya Hospital, Central South University, Department of Neurology, Changsha City, China."
     },
     {
       "id": "pubmed-42670586",
@@ -438,7 +562,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -469,7 +593,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -500,7 +624,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -531,7 +655,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -562,7 +686,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -593,7 +717,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -624,7 +748,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -655,7 +779,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -686,7 +810,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -703,7 +827,7 @@
       "category": "中国研究",
       "source": "PubMed China-affiliated",
       "language": "en",
-      "date": "2026-08-24",
+      "date": "2026-09-01",
       "indexedAt": "2026-08-25",
       "title": "Clinical research on ocular myasthenia gravis and related neuromuscular disorders: A systematic review and overview.",
       "authors": "MengYu Wang, ZhaoYuan Sheng",
@@ -717,7 +841,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -748,7 +872,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -779,7 +903,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -810,7 +934,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -841,7 +965,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -872,7 +996,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -903,7 +1027,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -934,7 +1058,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -965,7 +1089,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -996,7 +1120,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1027,7 +1151,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1058,7 +1182,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1089,7 +1213,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1120,7 +1244,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1151,7 +1275,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1182,7 +1306,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1213,7 +1337,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1244,7 +1368,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1275,7 +1399,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1306,7 +1430,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1337,7 +1461,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1368,7 +1492,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1399,7 +1523,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1430,7 +1554,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1461,7 +1585,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1492,7 +1616,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1523,7 +1647,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1554,7 +1678,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1585,7 +1709,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1616,7 +1740,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1647,7 +1771,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1678,7 +1802,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1709,7 +1833,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1740,7 +1864,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1771,7 +1895,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1802,7 +1926,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1833,7 +1957,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1864,7 +1988,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1895,7 +2019,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1926,7 +2050,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1957,7 +2081,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -1988,7 +2112,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2019,7 +2143,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2050,7 +2174,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2081,7 +2205,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2112,7 +2236,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2143,7 +2267,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2174,7 +2298,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2205,7 +2329,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2236,7 +2360,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2267,7 +2391,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2277,37 +2401,6 @@
       ],
       "topic": "免疫机制",
       "institutionHint": "Department of Rheumatism and Immunity, First Teaching Hospital of Tianjin University of Traditional Chinese Medicine, Tianjin, China; National Clinical Research Center for Chinese Medicine, Tianjin, China."
-    },
-    {
-      "id": "pubmed-42338592",
-      "pmid": "42338592",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-01-01",
-      "indexedAt": "2026-06-24",
-      "title": "Telitacicept in refractory juvenile generalized myasthenia gravis: a case report and collective analysis.",
-      "authors": "Yanhong Sun, Guiling Liu, Hongwei Zhang, Kai Ma",
-      "journal": "Frontiers in immunology",
-      "issn": "1664-3224",
-      "eissn": "1664-3224",
-      "abstract": "Refractory or corticosteroid-dependent juvenile generalized myasthenia gravis (gMG) remains a clinical challenge, given the scarcity of available regimens and prominent corticosteroid-related adverse effects. Telitacicept, a dual inhibitor of B-cell activating factor (BAFF) and a proliferation-inducing ligand (APRIL), has demonstrated efficacy in adult gMG, whereas clinical data in pediatric patients remains limited. To evaluate the clinical response, tolerability, and potential corticosteroid-sparing benefit of telitacicept in juvenile refractory gMG. We report one new case of juvenile refractory gMG treated with telitacicept and review three previously reported pediatric gMG cases. Collective analysis was performed to evaluate key outcomes, including changes in Myasthenia Gravis Activities of Daily Living (MG-ADL) score, Quantitative Myasthenia Gravis (QMG) score, corticosteroid dose reduction, and adverse events. In the index case, telitacicept reduced the MG-ADL score from 3 to 0 and the QMG score from 10 to 3 by week 12. By week 32, the MG-ADL score remained at 0, while the QMG score further decreased to 2, accompanied by a 41.6% reduction in corticosteroid dose. The patient developed mild injection-site erythema and pruritus on only one occasion, which resolved spontaneously. She also had a mild upper respiratory tract infection that resolved within one week following symptomatic treatment. Collective analysis of the four included patients (age range: 7-17 years) showed that three cases (Cases 1, 2, and 4) achieved marked improvement (≥3-point reduction in the MG-ADL score) at 3 months. By 5-6 months, all patients presented sustained clinical improvement with a ≥2-point reduction in the MG-ADL score. No severe adverse events were reported. Telitacicept may be of clinical value and well-tolerated, and may exert a corticosteroid-sparing benefit in juvenile refractory gMG, providing preliminary real-world clinical observations for this understudied population. Further large-scale prospective studies are warranted to confirm these findings.",
-      "summary": "Refractory or corticosteroid-dependent juvenile generalized myasthenia gravis (gMG) remains a clinical challenge, given the scarcity of available regimens and prominent corticosteroid-related adverse effects.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42338592/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "综合研究"
-      ],
-      "topic": "综合研究",
-      "institutionHint": "Neurology Department, Children's Hospital Affiliated to Shandong University, Jinan, Shandong, China."
     },
     {
       "id": "pubmed-42334385",
@@ -2329,7 +2422,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2360,7 +2453,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2370,68 +2463,6 @@
       ],
       "topic": "治疗与真实世界",
       "institutionHint": "Department of Neurology, Tangdu Hospital, The Fourth Military Medical University, Xi'an, Shaanxi Province, China."
-    },
-    {
-      "id": "pubmed-42322065",
-      "pmid": "42322065",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-06-01",
-      "indexedAt": "2026-06-20",
-      "title": "Efgartigimod Versus Lymphoplasmapheresis as Preoperative Rapid Antibody-Clearing Therapies for Thymectomy in Generalized Myasthenia Gravis: Effectiveness, Safety and Cost Outcomes Compared to Conventional Preparation.",
-      "authors": "Qian Zhou, Ting He, Yuanda Cheng, Kangzhi Chen, Yuzhen Ouyang, Xiaohua Dong",
-      "journal": "CNS neuroscience & therapeutics",
-      "issn": "1755-5949",
-      "eissn": "1755-5949",
-      "abstract": "To compare the real-world effectiveness, surgical and economic outcomes of preoperative rapid antibody clearance therapy (RACT: lymphoplasmapheresis (LPE), efgartigimod (EFG)) versus oral immunosuppressants (Oral IS) in generalized myasthenia gravis (gMG) patients undergoing thymectomy. This retrospective study included 78 patients (36 Oral IS, 42 RACT: 25 LPE, 17 EFG). 3-month postoperative quantitative myasthenia gravis (QMG) score. 1-month postoperative exacerbation rate, 3- and 6-month MG activities of daily living (MG-ADL), 6-month QMG, surgical outcomes (operative time, blood loss, postoperative myasthenic crisis (POMC)), perioperative costs (pre- and post-reimbursement). Propensity score overlap weighting balanced covariates. Sensitivity analyses used propensity matching; multiple imputation handled missing data. After weighting, 3-month QMG scores showed no significant difference between RACT and Oral IS groups (mean difference (MD) -0.23, 95% CI: -2.99 to 2.54, p = 0.831) nor between the EFG and LPE subgroups (MD 1.15, 95% CI: -3.97 to 6.26, p = 0.567); similar for MG-ADL. All groups improved over time (p < 0.001). For EFG vs. LPE, 1-month exacerbation rate was 43.3% vs. 26.1% (p = 0.412). No significant between-group differences between EFG and LPE were found in 6-month QMG/MG-ADL scores and surgical outcomes. EFG had higher preoperative pre-reimbursement costs (MD 14,500 CNY, p = 0.026), but no cost differences remained after insurance. Sensitivity analyses confirmed robustness of the primary findings. Preoperative RACT effectively reduced QMG in gMG patients, with no significant postoperative medium-term effectiveness and safety differences between RACT and Oral IS. Similarly, no significant differences in postoperative medium-term effectiveness, safety, or post-reimbursement costs were observed between EFG and LPE.",
-      "summary": "To compare the real-world effectiveness, surgical and economic outcomes of preoperative rapid antibody clearance therapy (RACT: lymphoplasmapheresis (LPE), efgartigimod (EFG)) versus oral immunosuppressants (Oral IS) in generalized myasthenia gravis (gMG) patients undergoing thymectomy.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42322065/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "治疗与真实世界"
-      ],
-      "topic": "治疗与真实世界",
-      "institutionHint": "Department of Neurology, Xiangya Hospital, Central South University, Changsha, Hunan, People's Republic of China."
-    },
-    {
-      "id": "pubmed-42317322",
-      "pmid": "42317322",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-01-01",
-      "indexedAt": "2026-06-19",
-      "title": "A predictive model for low-dose rituximab response in anti-acetylcholine receptor antibody-positive myasthenia gravis: establishment and validation.",
-      "authors": "Yonglan Tang, Ting Gao, Baoli Tang, Ying Zhu, Zhe Ruan, Ting Chang",
-      "journal": "Frontiers in immunology",
-      "issn": "1664-3224",
-      "eissn": "1664-3224",
-      "abstract": "Rituximab (RTX) represents an established therapeutic option for myasthenia gravis refractory to conventional immunotherapy. However, its heterogeneous efficacy across populations creates a challenge in clinical application, necessitating the development of robust predictive models to better identify patients likely to derive meaningful benefit from this treatment. This study retrospectively reviewed the patients who visited the research center and received RTX treatment between August 2019 and January 2025. The primary outcome measure was minimal symptom expression (MSE). A predictive model was constructed using logistic regression and presented in a nomogram. The performance of the model was evaluated by calculating the area under the receiver operating characteristic curve (AUC), with internal validation performed via the bootstrap method. The study population was divided into high- and low- probability groups according to Youden index. Calibration curves with 1000 replications bootstrap resampling were plotted to visualize the calibration of the nomogram. Decision curve analyzes (DCA) with 1000 replications bootstrap resampling were per formed to evaluate the clinical usefulness of the model. A total of 117 patients were included. Five variables were screened including new-onset MG, baseline MG-ADL score, high CD19 + /CD27 + B lymphocyte proportion, high-dose prednisone, and early immunotherapy initiation. The model exhibited moderate discriminative ability with AUC value 0.777. Using a threshold probability of 0.534 derived from the Youden index, patients were stratified into high- and low-probability groups (sensitivity 72.7%, specificity 71.0%). The high-probability group showed a 6.52-fold higher likelihood of achieving MSE. The calibration plot showed that when the probability was between 0 and 0.7, the deviation calibration curve of the model was consistent with the ideal curve. This nomogram helps identify AChR-MG patients likely to attain MSE 6 months after low-dose rituximab, thereby supporting personalized therapeutic decision-making.",
-      "summary": "Rituximab (RTX) represents an established therapeutic option for myasthenia gravis refractory to conventional immunotherapy.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42317322/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "免疫机制"
-      ],
-      "topic": "免疫机制",
-      "institutionHint": "Department of Neurology, Tangdu Hospital, The Fourth Military Medical University, Xi'an, China."
     },
     {
       "id": "pubmed-42304385",
@@ -2453,7 +2484,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2484,7 +2515,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2515,7 +2546,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2546,7 +2577,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2577,7 +2608,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2608,7 +2639,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2639,7 +2670,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2670,7 +2701,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2701,7 +2732,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2732,7 +2763,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2763,7 +2794,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2794,7 +2825,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2825,7 +2856,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2856,7 +2887,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2887,7 +2918,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2918,7 +2949,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2949,7 +2980,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -2980,7 +3011,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3011,7 +3042,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3042,7 +3073,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3073,7 +3104,7 @@
         "sourceType": "PubMed Affiliation",
         "evidenceLevel": "文献索引",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
+        "lastChecked": "2026-09-12",
         "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
       },
       "tags": [
@@ -3083,42 +3114,11 @@
       ],
       "topic": "治疗与真实世界",
       "institutionHint": "Huashan Rare Disease Centre and Department of Neurology, Huashan Hospital, Shanghai Medical College, National Centre for Neurological Disorders, Fudan University, Shanghai, China."
-    },
-    {
-      "id": "pubmed-41809936",
-      "pmid": "41809936",
-      "category": "中国研究",
-      "source": "PubMed China-affiliated",
-      "language": "en",
-      "date": "2026-01-01",
-      "indexedAt": "2026-03-11",
-      "title": "Application of Droplet Digital PCR in Sputum Samples in Myasthenia Gravis Patients with Pneumonia.",
-      "authors": "Manqiqige Su, Yeting Luo, Xiao Huan, Caihua Xi, Lei Yang, Huahua Zhong",
-      "journal": "Infection and drug resistance",
-      "issn": "1178-6973",
-      "eissn": "",
-      "abstract": "Due to the rapid progression of the pneumonia in patients with Myasthenia gravis (MG), faster pathogen detection techniques are needed. The droplet digital polymerase chain reaction (ddPCR) has the ability to detect pathogens in about 3 h. Thus, this study focused on application of ddPCR in sputum samples in the MG patients with pneumonia and analyzed the association between ddPCR and other laboratory results. We prospectively enrolled 22 MG inpatients with pneumonia and collected 24 sputum samples. All samples were analyzed using traditional culture, ddPCR and metagenomic next-generation sequencing (mNGS) in parallel. Clinical outcomes during hospitalization were documented. Among the 24 sputum samples collected from 22 MG patients, ddPCR achieved a 100% positivity rate with the identification of bacteria in all 24 samples, while mNGS also demonstrated a high detection rate, identifying bacteria in 23 of 24 samples (95.8%), and additionally detecting viral and fungal pathogens across multiple cases. In 4 patients with negative sputum culture results, pathogens were identified by both ddPCR and mNGS. The ddPCR demonstrated rapid and sensitive identification of predefined bacterial targets and drug-resistance genes, making it suitable for initial diagnostic screening and timely clinical decision-making in MG patients with pneumonia. The speed of ddPCR detection is faster than mNGS and traditional culture, and the results are similar to mNGS and culture, with good consistency.",
-      "summary": "Due to the rapid progression of the pneumonia in patients with Myasthenia gravis (MG), faster pathogen detection techniques are needed.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41809936/",
-      "trust": {
-        "sourceType": "PubMed Affiliation",
-        "evidenceLevel": "文献索引",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-11",
-        "reviewNote": "中国研究者/机构由 PubMed 机构字段近似识别，需打开原文记录人工确认。"
-      },
-      "tags": [
-        "中国研究",
-        "PubMed",
-        "综合研究"
-      ],
-      "topic": "综合研究",
-      "institutionHint": "Department of Neurology and Huashan Rare Disease Centre, Huashan Hospital, Shanghai Medical College, National Centre for Neurological Disorders, Fudan University, Shanghai, People's Republic of China."
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-09-11T05:58:01.964Z",
-    "runFinishedAt": "2026-09-11T06:00:12.168Z",
+    "runStartedAt": "2026-09-12T05:46:03.859Z",
+    "runFinishedAt": "2026-09-12T05:48:08.102Z",
     "scope": "all",
     "status": "success",
     "failedSources": []
