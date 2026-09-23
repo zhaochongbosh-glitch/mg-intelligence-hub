@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T06:14:22.815Z",
+  "updatedAt": "2026-09-23T05:58:55.563Z",
   "windowHours": 168,
   "windowDays": 7,
   "translationStatus": "translated",
@@ -7,7 +7,7 @@
     "sourceType": "PubMed",
     "evidenceLevel": "文献摘要",
     "reviewStatus": "自动更新",
-    "lastChecked": "2026-09-22",
+    "lastChecked": "2026-09-23",
     "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
   },
   "updatePolicy": {
@@ -17,6 +17,86 @@
   },
   "scopeNote": "展示 PubMed 过去 7 天内新上线或更新的重症肌无力研究。配置 OPENAI_API_KEY 后，自动生成中文摘要。",
   "items": [
+    {
+      "id": "latest-42768708",
+      "pmid": "42768708",
+      "title": "A case report of sporadic Creutzfeldt-Jakob disease presenting with progressive opsoclonus-myoclonus-ataxia-Plus (OMAS-Plus) phenotype.",
+      "journal": "Prion",
+      "authors": "Richard Hulej, Pavol Skáčik, Dana Žáková, Monika Koprušáková-Turčanová, Milan Grofik, Egon Kurča",
+      "date": "2026-12-01",
+      "indexedAt": "2026-09-22",
+      "issn": "1933-690X",
+      "eissn": "1933-690X",
+      "abstract": "Sporadic Creutzfeldt-Jakob disease (sCJD) is a rapidly progressive prion disorder whose heterogeneous manifestations may overlap with potentially treatable neurological conditions. We report an atypical sCJD phenotype dominated by progressive dysarthria and an opsoclonus-myoclonus-ataxia-plus (OMAS-plus) phenotype, highlighting the diagnostic pitfalls relative to treatable mimics. A 63-year-old man presented with progressive dysarthria and bulbar symptoms suggesting myasthenia gravis, but did not improve on pyridostigmine and progressed to right-predominant hemiataxia, acral polymyoclonus, dystonia, pyramidal signs, facial palsy, and cognitive-behavioural decline. Video-oculography showed opsoclonus, upbeat nystagmus, and abnormal saccades, raising suspicion of an immune-mediated or paraneoplastic OMAS-plus; extensive autoimmune, paraneoplastic, infectious, metabolic, and neuromuscular work-up was unrevealing, and empirical corticosteroids produced no improvement. EEG lacked periodic sharp-wave complexes and CSF 14-3-3 was negative; PRNP sequencing showed a codon 129 methionine-homozygous genotype without pathogenic mutation. Brain MRI showed cortical and basal ganglia DWI/FLAIR hyperintensities, CSF RT-QuIC was positive, and neuropathological examination, together with a type 1 PrP^Sc Western blot profile, confirmed sCJD of the MM1 subtype. An OMAS-plus presentation may occur in sCJD and may initially direct diagnostic reasoning towards potentially treatable disorders. Rapid progression, absent support for alternative diagnoses, characteristic MRI abnormalities, and RT-QuIC positivity should prompt consideration of prion disease even when conventional supportive markers are non-diagnostic.",
+      "zhSummary": "本病例报告描述一例63岁男性散发性克雅二氏病（sCJD）非典型表现，患者初期主要为进行性构音障碍及眼球震颤-肌阵挛-共济失调综合征加型（OMAS-plus）表现，临床易误诊为重症肌无力等可治疗疾病。经过全面排查免疫、肿瘤、感染及代谢等病因无发现，经验性激素治疗无效。脑MRI显示皮层及基底节异常，脑脊液RT-QuIC阳性，最终病理及西方印迹确认MM1亚型sCJD。结果提示sCJD亦可呈OMAS-plus表型，需警惕误诊，尤其常规支持性标志物阴性时应结合影像及RT-QuIC进行鉴别诊断。",
+      "keyPoints": [
+        "sCJD可表现为进行性言语障碍及OMAS-plus表型",
+        "OMAS-plus表型易误诊为免疫介导或肿瘤相关综合征",
+        "MRI和RT-QuIC对诊断sCJD具有重要价值",
+        "常规生化和脑电标志物阴性不排除sCJD诊断"
+      ],
+      "intelligence": {
+        "studyType": "病例报告",
+        "population": "散发性克雅二氏病患者",
+        "keyFinding": "sCJD可出现OMAS-plus临床表现，MRI表现和RT-QuIC检测有助诊断",
+        "clinicalImplication": "本病例提示OMAS-plus临床表现时应考虑sCJD，避免误诊重症肌无力等可治疗疾病，强调RT-QuIC和影像检查诊断价值，对MG诊断有间接影响",
+        "reviewFocus": "重点关注病例表型描述、诊断流程及区分与类似免疫性疾病的鉴别诊断"
+      },
+      "translationStatus": "translated",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42768708/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献摘要",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-09-23",
+        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
+      },
+      "tags": [
+        "latest",
+        "PubMed",
+        "综合研究"
+      ]
+    },
+    {
+      "id": "latest-42768201",
+      "pmid": "42768201",
+      "title": "Regimen-stratified Bayesian model-based meta-analysis of targeted biologics in generalised myasthenia gravis: efficacy comparison, mechanism-level class contrast, and endpoint sensitivity with model-informed trial design.",
+      "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+      "authors": "Sayantan Shankar Roy, Biswa Mohan Padhy, Abhishek Anil, Debasish Hota, Anand Srinivasan, Apoorva Wasnik",
+      "date": "2026-09-22",
+      "indexedAt": "2026-09-22",
+      "issn": "1432-1912",
+      "eissn": "1432-1912",
+      "abstract": "Nine targeted biologics spanning four mechanisms have reached phase III development for generalised myasthenia gravis, yet no cross-programme comparison accounts for the distinct continuous versus cyclical dosing patterns or integrates both patient-reported (MG-ADL) and clinician-assessed (QMG) scales. We performed a regimen-stratified Bayesian model-based meta-analysis (MBMA) to compare efficacy, evaluate mechanism-level class differences, and inform trial design. Longitudinal MG-ADL and QMG data were extracted from nine placebo-controlled phase III trials. Six hierarchical nonlinear Emax models were fitted with inverse-variance weighting. Drug-specific maximum efficacy, net benefit over placebo, week 26 predictions, time to the minimum clinically important difference (MCID), cumulative efficacy, ranking probabilities, and mechanism-level class contrasts were derived. Robustness was assessed via model comparison, prior sensitivity, and Leave-one-study-out analyses on both scales. Endpoint-sensitivity simulation and a treatment-selection framework were appended. The study was registered with PROSPERO: CRD420261288549. On MG-ADL, zilucoplan led with the highest Emax (4.8 points; 95% CrI: 4.2-5.4) and largest net benefit (2.5; 2.0-3.1). On QMG, batoclimab led (Emax 5.9; 4.4-9.5; net benefit 4.1; 2.7-7.7). Efgartigimod achieved the fastest onset on both scales (≤ 1.6 weeks). At the mechanism class level, neonatal Fc receptor (FcRn) inhibitors demonstrated decisive superiority over complement inhibitors on QMG (mean Emax 5.28 vs 3.99; posterior probability 99.7%) while no class difference was observed on MG-ADL (52.5%), identifying a scale-dependent mechanism-efficacy dissociation. The regimen-stratified architecture was decisively favoured over a pooled model (Δ Expected log pointwise predictive density [ELPD] = + 19.8). Drug rankings were invariant across prior specifications and Leave-one-study-out permutations on both scales (maximum rank shift: 1 position). For rozanolixizumab on MG-ADL, snapshot week 26 endpoints were underpowered (65%); integrated endpoints recovered power to 94-95%. In the treatment-selection framework, batoclimab held the highest composite score in all eight priority profiles, while the identity of the runner-up varied with clinical priority. This analysis identifies a novel scale-dependent mechanism-level class effect - FcRn inhibitors outperform complement blockade on objective motor endpoints with near-certainty, while both classes improve patient-reported function equally. Across the multi dimensional treatment-selection framework integrating efficacy, safety, tolerability, and convenience, batoclimab emerged as the highest-ranked agent in all eight clinical priority profiles. These findings provide a pharmacodynamic evidence base for mechanism-guided treatment individualisation and endpoint optimisation in generalised myasthenia gravis.",
+      "zhSummary": "本研究采用多中心纳入的九项安慰剂对照Ⅲ期试验数据，基于贝叶斯模型进行方案分层的模型基础Meta分析，比较了针对重症肌无力靶向生物制剂的疗效，评估不同作用机制药物类别间的效能差异，并探讨评价量表敏感性及试验设计优化。结果显示，FcRn抑制剂在客观运动功能评分（QMG）上明显优于补体抑制剂，而两类药物在患者报告的功能评分（MG-ADL）上无显著差异，提示存在量表依赖的机制效应差异。此外，分析表明不同剂量方案和评价终点整合可提升统计效能，为个体化治疗与终点选择提供了动力学依据。",
+      "keyPoints": [
+        "采用贝叶斯模型Meta分析整合九项Ⅲ期试验数据",
+        "FcRn抑制剂在QMG评分上显著优于补体抑制剂",
+        "MG-ADL评分未见两机制类别差异，反映量表依赖性",
+        "模型指导的试验设计可增强统计效能和治疗选择"
+      ],
+      "intelligence": {
+        "studyType": "模型基础Meta分析",
+        "population": "广泛性重症肌无力患者，来源于安慰剂对照的Ⅲ期临床试验",
+        "keyFinding": "FcRn抑制剂在QMG评分的最大效应（Emax）为5.28，显著优于补体抑制剂的3.99（后验概率99.7%）；MG-ADL评分未见明显机制类别差异（概率52.5%）",
+        "clinicalImplication": "为重症肌无力中FcRn抑制剂与补体抑制剂的机制导向治疗提供动力学证据，有助于选择合适的终点和优化临床试验设计",
+        "reviewFocus": "重点复核贝叶斯模型架构、不同机制类别药物的效应比较、MG-ADL与QMG量表敏感性差异以及模型对试验设计的指导价值"
+      },
+      "translationStatus": "translated",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42768201/",
+      "trust": {
+        "sourceType": "PubMed",
+        "evidenceLevel": "文献摘要",
+        "reviewStatus": "自动更新",
+        "lastChecked": "2026-09-23",
+        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
+      },
+      "tags": [
+        "latest",
+        "PubMed",
+        "免疫机制"
+      ]
+    },
     {
       "id": "latest-42764579",
       "pmid": "42764579",
@@ -28,19 +108,19 @@
       "issn": "1098-1101",
       "eissn": "1098-1101",
       "abstract": "Myasthenia gravis (MG) is an autoimmune neuromuscular disorder characterized by fluctuating muscle weakness. Double-filtration plasmapheresis (DFPP) and efgartigimod are commonly used therapeutic strategies for patients with generalized MG (gMG). This single-center retrospective study aimed to evaluate and compare the efficacy and safety of DFPP and efgartigimod in the management of gMG. We retrospectively reviewed clinical records of gMG patients who received either DFPP or efgartigimod at our hospital. This was not a crossover study, and no patient received both treatments during the study period. Collected data included demographic and clinical characteristics, antibody titers, Myasthenia Gravis Activities of Daily Living (MG-ADL) scores, Quantitative Myasthenia Gravis (QMG) scores, and treatment-related adverse events. Immunoglobulin and antibody levels before and after therapy were analyzed to assess treatment responses. A total of 31 patients with gMG were included, comprising 17 who underwent DFPP and 14 who received efgartigimod. The participants ranged from 25 to 79 years of age, and 74.2% were female. Anti-acetylcholine receptor antibodies were detected in 25 patients. Both DFPP and efgartigimod significantly reduced immunoglobulin and pathogenic antibody levels and improved MG-ADL and QMG scores. Between-group differences in the observed short-term changes were not statistically significant. Mild adverse events, including catheter-site bleeding and transient limb weakness, occurred in the DFPP group, whereas no adverse events were reported among efgartigimod-treated patients. Both DFPP and efgartigimod effectively reduced antibody levels and improved clinical symptoms in patients with gMG after a single treatment course. Efgartigimod showed favorable tolerability in this cohort, although this finding should be interpreted cautiously given the small sample size and retrospective design.",
-      "zhSummary": "本研究为单中心回顾性研究，比较了双重过滤血浆置换（DFPP）与efgartigimod在重症肌无力（gMG）患者中的疗效与安全性。共纳入31例患者，分为DFPP组17例，efgartigimod组14例。两组均显著降低免疫球蛋白及致病抗体水平，改善MG-ADL和QMG评分，组间短期疗效差异无统计学意义。DFPP组出现轻微不良事件，efgartigimod组未报告不良反应。结果提示两者单疗程均有效，efgartigimod耐受性较好，但因样本量小及回顾性设计，结果需谨慎解读。",
+      "zhSummary": "本研究为单中心回顾性分析，比较了双重滤过血浆置换（DFPP）与efgartigimod在广泛性重症肌无力（gMG）患者中的疗效与安全性。共纳入31例患者，17例接受DFPP，14例接受efgartigimod，主要评估抗体水平、MG-ADL和QMG评分变化及不良事件。结果显示两组均显著降低免疫球蛋白和致病抗体水平，改善临床评分，短期疗效无显著差异。DFPP组出现少量轻度不良事件，efgartigimod组无不良事件报道。该研究因样本量较小及回顾性设计存在局限性。",
       "keyPoints": [
-        "DFPP与efgartigimod均能显著降低致病抗体水平",
-        "两组均改善患者临床量表评分，短期疗效相似",
-        "DFPP组出现轻微不良事件，efgartigimod组无不良报告",
-        "研究为回顾性分析，样本量较小，结果解释需谨慎"
+        "DFPP和efgartigimod均显著降低抗体水平",
+        "两种治疗均改善MG-ADL和QMG评分",
+        "短期疗效两组无统计学差异",
+        "DFPP组有轻微不良事件，efgartigimod组无"
       ],
       "intelligence": {
         "studyType": "单中心回顾性研究",
-        "population": "广泛型重症肌无力患者，年龄25至79岁，女性占74.2%",
-        "keyFinding": "单疗程DFPP和efgartigimod均能有效降低抗体水平并改善症状，组间短期疗效无显著差异，efgartigimod耐受性较好",
-        "clinicalImplication": "为gMG患者治疗方案提供对比数据，提示efgartigimod作为新兴治疗有良好耐受性和有效性，但需更多前瞻性研究验证",
-        "reviewFocus": "回顾性设计、非交叉治疗、短期疗效评价、安全事件记录及gMG诊断标准"
+        "population": "广泛性重症肌无力患者",
+        "keyFinding": "DFPP和efgartigimod均有效降低致病抗体，改善临床症状，短期疗效相似；efgartigimod耐受性较好",
+        "clinicalImplication": "为gMG的免疫调节治疗提供间接比较数据，有助于临床选择治疗方案及安全性评估",
+        "reviewFocus": "应关注研究设计的回顾性局限、样本量不足及非随机分配对疗效与安全性比较的影响"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42764579/",
@@ -48,7 +128,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -68,19 +148,19 @@
       "issn": "1878-5905",
       "eissn": "1878-5905",
       "abstract": "Cigarette smoking and nicotine exposure promote breast cancer progression and poor outcomes by aberrantly activating nicotinic acetylcholine receptors (nAChRs), with α9-nAChR serving as a key oncogenic driver, especially in triple-negative breast cancer (TNBC). However, effective therapeutic strategies that directly target α9-nAChR remain limited. In this study, we engineered an antigen comprising the extracellular loops of α9-nAChR (α9CLP) and used mouse immunization followed by phage display to isolate an α9CLP-specific single-chain variable fragment (scFv) antibody, mCLPS1. The dominant clone mCLPS1 showed specific binding to α9-nAChR and was further engineered into an Fc-fusion antibody (mCLPS1-Fc) and an anti-mPEG bi-specific antibody (mCLPS1/anti-mPEG BsAb) to improve its affinity and therapeutic potential. The mCLPS1/anti-mPEG BsAb significantly enhanced the therapeutic efficacy of mPEGylated liposomal doxorubicin (LD) in targeting α9-nAChR-positive breast cancer. In TNBC patient-derived xenograft (PDX) models, mCLPS1-Fc markedly inhibited tumor growth, mitigated nicotine-induced tumor acceleration, and enhanced docetaxel's antitumor efficacy. Preliminary tolerability assessments of mCLPS1/anti-mPEG BsAb and mCLPS1 Fc antibody administration in non-human primates, cynomolgus macaque (Macaca fascicularis). did not reveal neuromuscular toxicity, myasthenia gravis-like symptoms, hematologic abnormalities, or overt organ injury within the observation period, supporting a favorable short-term tolerability profile under the tested conditions. In summary, this study identifies α9-nAChR as a key molecular target in nicotine-induced tumor progression and highlights α9-nAChR-specific antibodies as promising targeted therapeutic candidates for TNBC, particularly in patients with a history of nicotine exposure.",
-      "zhSummary": "本研究聚焦尼古丁通过α9-nAChR促进三阴性乳腺癌（TNBC）进展的问题。研究者设计了α9-nAChR的细胞外环抗原，通过小鼠免疫和噬菌体展示技术获得特异单链抗体mCLPS1。进一步构建了Fc融合抗体和抗-mPEG双特异性抗体，提高亲和力和治疗潜力。在患者来源异种移植TNBC模型中，抗体显著抑制肿瘤增长并减缓尼古丁诱导的加速进展，同时增强多西他赛疗效。非人灵长类动物短期毒性评估未见明显神经肌肉毒性等不良反应，提示良好耐受性。研究基于动物和模型数据，短期安全性仍有待长期验证。",
+      "zhSummary": "本研究针对α9-nAChR在尼古丁促进的三阴性乳腺癌（TNBC）中的致癌作用，开发了特异性抗体mCLPS1及其工程改造形式。通过小鼠免疫和噬菌体展示技术获得该抗体，并进一步优化抗体亲和力。实验表明，改造后的抗体在TNBC患者来源异种移植模型中显著抑制肿瘤生长，减缓尼古丁诱导的肿瘤进展，并增强化疗药物多西他赛的抗肿瘤效果。非人灵长类动物短期安全性评价未见神经肌肉毒性及器官损伤，提示良好耐受性。研究未涉及长期安全性或临床试验验证。",
       "keyPoints": [
-        "尼古丁通过α9-nAChR促进TNBC肿瘤进展",
-        "mCLPS1抗体特异性结合α9-nAChR并构建多种工程抗体",
-        "抗体在TNBC患者异种移植模型中抑瘤且减缓尼古丁加速效应",
-        "非人灵长类短期给药无明显神经肌肉毒性等安全问题"
+        "α9-nAChR是尼古丁促进TNBC肿瘤进展的重要靶点",
+        "成功构建特异性单链抗体及其Fc融合和双特异性抗体",
+        "抗体在体内模型中抑制肿瘤生长且增强化疗效果",
+        "非人灵长类动物短期给药安全性评估未见明显毒性"
       ],
       "intelligence": {
         "studyType": "机制研究",
-        "population": "三阴性乳腺癌患者模型及非人灵长类动物（猴）",
-        "keyFinding": "α9-nAChR特异性抗体抑制尼古丁促进的TNBC肿瘤生长，且短期给药在猕猴中耐受良好",
-        "clinicalImplication": "为针对尼古丁诱导肿瘤进展的TNBC靶向治疗研发提供潜在抗体候选，提示需关注抗体的神经肌肉毒性安全性评估",
-        "reviewFocus": "建议关注抗体设计细节、动物模型的临床相关性及短期安全性评价指标，后续需补充长期安全性和临床验证"
+        "population": "三阴性乳腺癌及尼古丁暴露相关肿瘤模型，非人灵长类动物",
+        "keyFinding": "α9-nAChR特异性抗体显著抑制尼古丁加速的TNBC肿瘤生长并提高化疗药效，且短期安全性良好",
+        "clinicalImplication": "提示α9-nAChR抗体为针对尼古丁相关TNBC潜在靶向治疗策略，对重症肌无力无直接关联，仅涉及神经肌肉毒性初步安全评估",
+        "reviewFocus": "需要关注抗体的长期安全性、临床疗效及在不同患者群体中的适用性，安全事件及MG相关症状的监测"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42763996/",
@@ -88,7 +168,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -108,19 +188,19 @@
       "issn": "2168-8184",
       "eissn": "",
       "abstract": "Myasthenia gravis causes fluctuating, fatigable weakness, creating uncertainty about physical activity and exercise. This systematic review examined habitual physical activity and sedentary behaviour, barriers and facilitators to exercise, structured exercise, respiratory muscle training, and physical rehabilitation in autoimmune myasthenia gravis. PubMed, Scopus, and Web of Science Core Collection were searched from inception to 30 July 2026, without database date or language filters; backward citation searching was completed on 1 August 2026. Primary human studies published in English were eligible if they reported a relevant measure of physical activity, a defined physical intervention, or barriers, facilitators, or professional advice as an explicit primary focus. We included randomized trials, non-randomized intervention studies, observational and qualitative studies, and case series of at least two participants. Multiple reports from the same cohort or trial were linked before synthesis. Risk of bias was assessed with tools appropriate to each design, and certainty was rated by outcome domain. Of 2,767 database records imported into EndNote (Clarivate, Philadelphia, PA), 1,946 remained after deduplication. Across database and citation searching, 66 reports were assessed in full, and 47 reports representing 38 study units (whole studies or distinct study components) were included. In several observational datasets, greater activity was associated with less fatigue or lower disease burden; however, most analyses were cross-sectional and vulnerable to confounding and reverse causality. Intervention studies were small and heterogeneous. Some secondary outcomes and results measured after treatment favoured the intervention for respiratory muscle performance, functional capacity, strength, or patient-reported outcomes, and some measures improved within groups; however, several controlled primary outcomes were null. Evidence from perioperative care, recovery after crisis or hospitalization, and paediatric populations addressed distinct clinical contexts and was not generalized to stable community-dwelling adults. Some selected cohorts achieved high completion or attendance, but reporting of adverse events was incomplete, and certainty about safety was very low. Individually adapted activity and exercise appeared feasible for many selected participants with clinically stable, predominantly mild-to-moderate disease. However, efficacy remains very uncertain, and safety has not been established across the broader myasthenia gravis population.",
-      "zhSummary": "本系统综述评估自身免疫性重症肌无力患者的日常体育活动、静坐行为、运动障碍及促进因素、结构化运动、呼吸肌训练和物理康复。通过PubMed、Scopus和Web of Science等数据库检索共纳入38个研究单位。观察性研究显示较高活动水平与较少疲劳相关，但多为横断面设计，易受混杂影响。干预研究样本量小且异质，有些次要结局显示呼吸肌功能、功能能力、力量或患者报告结果改善，部分对照指标无显著差异。围手术期或危象恢复等特定情境研究不可直接推广至稳定患者。安全数据不充分，安全性评价可信度低。整体来看，个体化运动对稳定且多数为轻中度患者具可行性，但疗效和广泛安全性尚不确定。",
+      "zhSummary": "本系统综述针对自身免疫性重症肌无力患者的习惯性体育活动、运动、呼吸肌训练及康复进行了分析。检索了多个数据库至2026年7月，共纳入38项研究。观察性数据提示较多活动可能与疲劳减轻相关，但存在交叉分析限制和混杂因素。干预研究规模小且异质，部分次要结局显示治疗组呼吸肌功能和体能有所改善，但主要结局多无显著差异。围手术期、危机恢复和儿科人群研究不适用于稳定成人。个体化运动对选定轻中度患者可行，但疗效和安全性证据不足，无法推广至整个患者群体。",
       "keyPoints": [
-        "观察性研究多为横断面，活动多与疲劳减轻相关",
-        "干预研究样本小且异质，主要结局多无显著差异",
-        "围手术期和危象恢复数据不适用于稳定患者",
-        "运动个体化对部分稳定患者可行，安全性证据不足"
+        "观察性研究中体力活动与疲劳程度负相关",
+        "干预研究多样且样本量小，主要结局常无显著差异",
+        "围手术及危机后研究局限于特定人群，难以泛化",
+        "个体化运动对稳定轻中度患者可行，安全性证据不足"
       ],
       "intelligence": {
         "studyType": "系统综述",
-        "population": "自身免疫性重症肌无力患者，涵盖稳定及围手术期、危象恢复、儿科等不同临床情境",
-        "keyFinding": "高活动水平与疲劳减轻有关，运动干预对部分次要结局有益，但主要结局多无显著变化，安全性证据不足",
-        "clinicalImplication": "为MG患者运动康复提供循证信息，提示个体化运动对轻中度稳定患者可行，尚需更多研究验证疗效和安全性",
-        "reviewFocus": "侧重运动干预设计、终点指标分析、不同临床情境及安全性数据，纳入多种研究设计，风险偏倚与证据确定性均作评价"
+        "population": "自身免疫性重症肌无力患者，含稳定成年人及特定亚群（围手术期、危机恢复、儿科）",
+        "keyFinding": "多数干预研究主终点无显著改善，观察性研究活动量与疲劳负相关，但证据受限，安全性未确立",
+        "clinicalImplication": "现有证据不足支持普遍推荐运动疗法，应谨慎评估患者状态；安全性需进一步验证",
+        "reviewFocus": "全文系统检索与筛选，涵盖多种研究设计，重点关注运动干预效果、安全事件及不同临床情境的适用性"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42763723/",
@@ -128,7 +208,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -140,9 +220,9 @@
     {
       "id": "latest-42762847",
       "pmid": "42762847",
-      "title": "Clarifications to \"Isolated bilateral facial palsy as the initial presenting manifestation of generalized myasthenia gravis preceding myasthenic crisis\": The importance of not forgetting single-fiber electromyography.",
+      "title": "Clarifications to \"Isolated bilateral facial palsy as the initial presenting manifestation of generalized myasthenia gravis preceding myasthenic crisis\": the importance of not forgetting single-fiber electromyography.",
       "journal": "Neurologia",
-      "authors": "Moisés León-Ruiz, Ritwik Ghosh, Kunal Bole, Souvik Dubey, Julián Benito-León",
+      "authors": "M León-Ruiz, R Ghosh, K Bole, S Dubey, J Benito-León",
       "date": "2026-09-19",
       "indexedAt": "2026-09-19",
       "issn": "2173-5808",
@@ -163,7 +243,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -183,19 +263,19 @@
       "issn": "2234-943X",
       "eissn": "",
       "abstract": "Paraneoplastic syndromes (PNS) are frequently associated with thymoma. The unusual clustering of myasthenia gravis, dysgeusia, and AIPO during thymoma recurrence has been sparsely reported in the literature. We report the case of a man who developed pleural metastasis three years after thymoma resection and shortly thereafter experienced dysgeusia, ocular MG (diplopia and ophthalmoplegia), and AIPO. This triad has received limited documentation. Serum testing was positive for acetylcholine receptor antibody (AChR-Ab), anti-MURC antibody, and anti-recoverin antibody. After combined CAP chemotherapy and symptomatic pyridostigmine therapy, the pleural lesions regressed, and the ocular, taste, and gastrointestinal symptoms also resolved. This case illustrates that multisystem PNS can arise years after thymectomy and may cluster, emphasizing the need for early recognition and multidisciplinary, comprehensive management.",
-      "zhSummary": "本病例报告描述一名男性患者胸腺瘤切除后三年复发并发生胸膜转移，随后出现味觉障碍、眼肌型重症肌无力（复视和眼肌麻痹）及急性肠道假梗阻三种罕见并发的副肿瘤综合征。血清检测显示乙酰胆碱受体抗体、抗MURC抗体和抗恢复蛋白抗体阳性。采用联合CAP化疗及症状性吡啶斯的明治疗后，胸膜病灶缩小，眼部、味觉及胃肠症状均得到缓解。该病例提示胸腺瘤切除后多年仍可能出现多系统副肿瘤综合征，需早期识别并进行多学科综合管理。",
+      "zhSummary": "本文报告一例胸腺瘤患者术后三年出现胸膜转移，随后出现肌无力、味觉障碍及急性肠假梗阻三种伴发综合征。血清检测显示多种自身抗体阳性。经联合CAP方案化疗及吡啶斯的明对症治疗后，胸膜病灶缩小，相关系统症状缓解。结果提示胸腺瘤切除后多年仍可出现多系统并发的副肺肿瘤综合征，强调早期识别和多学科综合管理的重要性。摘要未提及本报告的限制或其他方法细节。",
       "keyPoints": [
-        "胸腺瘤复发后可出现多种副肿瘤综合征聚集",
-        "本病例出现重症肌无力、味觉障碍和急性肠道假梗阻三联征",
-        "相关抗体检测有助于诊断副肿瘤综合征",
-        "联合化疗及对症治疗可改善相关症状及病灶"
+        "胸腺瘤患者出现多种副肺肿瘤综合征较罕见",
+        "患者术后3年发生胸膜转移及多系统症状",
+        "血清多抗体阳性提示自身免疫机制参与",
+        "化疗联合对症治疗缓解胸膜病灶和症状"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "胸腺瘤复发患者，合并多种副肿瘤综合征",
-        "keyFinding": "胸腺瘤复发可多年后引发包括重症肌无力在内的多系统副肿瘤综合征，治疗后症状及病灶均改善",
-        "clinicalImplication": "强调MG患者中副肿瘤综合征的多系统表现及长期监测的重要性，提示需综合治疗方法",
-        "reviewFocus": "病例的多系统副肿瘤综合征表现及相关抗体检测对诊断价值，治疗方案及预后评价"
+        "population": "患有复发性转移性胸腺瘤及相关多发副肺肿瘤综合征的患者",
+        "keyFinding": "胸腺瘤复发可伴发多系统副肺肿瘤综合征，综合治疗可缓解肿瘤及神经、味觉、消化道症状",
+        "clinicalImplication": "提示临床对胸腺瘤患者长期监测副肺肿瘤综合征的必要，强调综合管理的重要性，间接关联肌无力",
+        "reviewFocus": "对病例的多系统症状识别、抗体检测及联合治疗效果的完整描述，需关注多学科管理策略"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42761102/",
@@ -203,7 +283,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -223,19 +303,19 @@
       "issn": "1662-680X",
       "eissn": "",
       "abstract": "Neonatal Fc receptor (FcRn) antagonists can improve autoimmune diseases such as myasthenia gravis by rapidly and selectively reducing serum IgG levels, and they hold potential for broader applications in other autoimmune disorders. We report a 32-year-old female admitted with psychiatric and behavioral abnormalities, who tested positive for anti-NMDA receptor antibodies indicative of autoimmune encephalitis. Despite first-line therapy with corticosteroids and intravenous immunoglobulin, her cognitive dysfunction progressively worsened, ultimately rendering her unable to communicate. Following four administrations of efgartigimod, the patient exhibited rapid and marked clinical improvement. This review highlights the potential of FcRn antagonists as an additional therapeutic option in clinical practice.",
-      "zhSummary": "本文报道一例32岁女性抗NMDA受体抗体阳性的自身免疫性脑炎患者，在接受糖皮质激素和静脉注射免疫球蛋白治疗无效后，经过四次依法替格莫德治疗，临床症状显著改善。文章总结了新型FcRn拮抗剂在自身免疫病治疗中的潜力，提示其可能成为治疗自身免疫性脑炎的补充选择。研究基于单病例报告，缺乏大规模临床数据支持。",
+      "zhSummary": "本文报道一例32岁女性抗NMDA受体脑炎患者，经过糖皮质激素和静脉免疫球蛋白一线治疗后认知功能恶化，无法交流。随后给予四次Efgartigimod治疗，患者临床症状迅速显著改善。文中 also 综述了新生儿Fc受体拮抗剂在自身免疫性疾病中的潜在应用，提示其可能成为自身免疫脑炎的补充治疗选择。研究为病例报告，证据有限，未涉及长期疗效和安全性。",
       "keyPoints": [
-        "FcRn拮抗剂可快速选择性降低血清IgG水平。",
-        "患者一线治疗无效，认知障碍持续加重。",
-        "依法替格莫德治疗后患者临床显著改善。",
-        "FcRn拮抗剂有望拓展自身免疫病治疗应用。"
+        "FcRn拮抗剂可快速降低IgG，改善自身免疫疾病",
+        "抗NMDA受体脑炎一线治疗无效后病情恶化",
+        "Efgartigimod四次给药后患者临床显著改善",
+        "FcRn拮抗剂或为自身免疫脑炎的潜在治疗手段"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "抗NMDA受体自身免疫性脑炎患者",
-        "keyFinding": "依法替格莫德治疗四次后，患者认知功能显著改善，沟通障碍得到缓解",
-        "clinicalImplication": "FcRn拮抗剂对自身免疫相关神经疾病可能有效，虽非直接针对重症肌无力但机制相关，提示其在自身免疫病治疗中具有潜在价值",
-        "reviewFocus": "关注FcRn拮抗剂在自身免疫脑炎治疗中的应用及效果评估，病例报道局限性明显"
+        "population": "32岁女性抗NMDA受体脑炎患者",
+        "keyFinding": "Efgartigimod使用四次后患者认知功能明显改善",
+        "clinicalImplication": "提示FcRn拮抗剂在自身免疫脑炎中可能有应用前景，与重症肌无力治疗机理相关，但需更多数据验证",
+        "reviewFocus": "聚焦FcRn抗体在自身免疫疾病中的应用，缺乏MG亚组分析及长期安全性数据"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42761715/",
@@ -243,7 +323,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -263,19 +343,19 @@
       "issn": "1664-3224",
       "eissn": "1664-3224",
       "abstract": "Myasthenia gravis (MG) is an antibody-mediated autoimmune disorder of the neuromuscular junction in which weakness fluctuates across symptom domains, daily activities, and treatment cycles. Established measures such as the Quantitative Myasthenia Gravis score, Myasthenia Gravis Composite, Myasthenia Gravis Activities of Daily Living scale, and MG-specific quality-of-life instruments remain the principal clinical anchors, but intermittent assessments may miss intraday variability, exertional fatigability, and changes across treatment cycles. This structured narrative review examines electronic patient-reported outcomes, smartphone-based active tasks, speech and video analysis, wearable sensing, telemedicine services, prediction models, and candidate digital endpoints. It also distinguishes the validation requirements of these modalities and critically appraises the MG-specific evidence. Most published studies demonstrate feasibility, adherence, acquisition reliability, or preliminary construct validity; most are small, short, and incompletely stratified by antibody subtype, and independent external validation and impact studies remain uncommon. Accordingly, subtype-specific digital trajectories should be regarded as a research hypothesis rather than as an established feature of AChR-, MuSK-, LRP4-associated, or seronegative MG. We present an MG digital phenotype and a five-stage closed-loop workflow as organizing frameworks, not as consensus standards or validated care pathways. Near-term value is most plausible in structured remote follow-up, treatment-cycle characterization, and exploratory trial measurement, provided that outputs remain domain-specific, respiratory safety is protected, and abnormal signals undergo human clinical review.",
-      "zhSummary": "本结构化叙述性综述探讨了数字化评估手段在重症肌无力（MG）中的应用，包括电子患者报告结果、智能手机任务、语音视频分析、可穿戴传感器和远程医疗等。大多数小规模短期研究证明了这些方法的可行性、依从性和初步构建效度，但缺少按抗体亚型分层的独立外部验证与影响研究。作者提出了MG数字表型和五阶段闭环工作流程框架，强调这仅为研究假说而非临床标准。数字工具在结构化远程随访、治疗周期特征描述和探索性试验测量中有近期应用潜力，前提是保持领域特异性、确保呼吸安全并由临床人员复核异常信号。",
+      "zhSummary": "本研究针对重症肌无力（MG）数字化评估的现状进行了结构性叙述性综述，涵盖电子患者报告结果、手机活跃任务、语音视频分析、可穿戴设备、远程医疗、预测模型及数字化终点指标。多数研究显示这些数字工具具备实施可行性和初步构建有效性，但多为样本小、时间短且未充分根据抗体亚型分层。缺乏独立外部验证和影响力研究。研究提出了MG数字表型和五阶段闭环工作流框架，强调近期价值可能在远程随访、治疗周期描述及探索性试验中。需确保数据领域特异性、呼吸安全及异常信号经人工复核。该框架为研究假设，非共识或验证的临床路径。",
       "keyPoints": [
-        "数字评估可捕捉MG症状日内变异和治疗周期变化",
-        "现有研究多为小样本，缺乏抗体亚型的充分分层验证",
-        "提出的数字表型和闭环工作流程为研究框架非临床指南",
-        "数字工具近期可用于远程随访和探索性临床试验测量"
+        "多数数字评估研究样本小、缺少亚型分层和外部验证",
+        "数字工具显示较好的依从性和初步构建有效性",
+        "提出MG数字表型及五阶段闭环工作流作为研究框架",
+        "数字化评估近期价值主要体现在远程监测和治疗周期管理"
       ],
       "intelligence": {
-        "studyType": "结构化叙述性综述",
-        "population": "重症肌无力患者",
-        "keyFinding": "数字化手段在MG中具备初步可行性和构建效度，但缺少亚型分层的独立验证，相关数字轨迹应视为研究假说",
-        "clinicalImplication": "数字评估工具有助于远程监测和试验终点探索，需确保呼吸安全和异常信号人工复核，尚未形成临床标准",
-        "reviewFocus": "重点评估数字评估方法的验证要求、抗体亚型分层及其在MG特异性证据中的应用局限"
+        "studyType": "结构性叙述性综述",
+        "population": "重症肌无力患者，涵盖AChR、MuSK、LRP4抗体相关和血清阴性MG",
+        "keyFinding": "现有数字评估方法大多验证有限，缺乏独立和分亚型验证，数字表型和闭环工作流为研究假设",
+        "clinicalImplication": "数字化评估有助于MG远程随访和治疗周期的监测，但需人工复核和呼吸安全保障，尚未形成临床共识路径",
+        "reviewFocus": "重点审查数字工具验证状况、抗体亚型分层的不足、安全性关注及框架作为研究假设的定位"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42756700/",
@@ -283,7 +363,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -303,19 +383,19 @@
       "issn": "1664-2295",
       "eissn": "1664-2295",
       "abstract": "Efgartigimod alfa, the first neonatal Fc receptor inhibitor approved for the treatment of acetylcholine receptor antibody (AChR)-positive generalized myasthenia gravis (MG), has demonstrated efficacy in randomized controlled trials. However, real-world data, particularly from Eastern Europe, remain limited. This prospective, multicenter study enrolled AChR-positive generalized MG patients treated with efgartigimod across six Romanian university hospitals between March 2024 and September 2025. Outcomes were assessed using the Myasthenia Gravis Activities of Daily Living (MG-ADL) scale, the Quantitative Myasthenia Gravis (QMG) score, and the Myasthenia Gravis Quality of Life 15-item revised scale (MG-QoL15r). Clinically meaningful improvement (CMI), minimal symptom expression (MSE), patient-acceptable symptom state (PASS), subdomain response, and corticosteroid sparing were evaluated. Thirty-nine patients completed at least one treatment cycle, receiving a total of 210 cycles. In cycle 1, CMI rates were 89.7% for MG-ADL and 74.4% for QMG, with a median MG-ADL reduction of 4.0 points ( p < 0.001); 69.2% achieved CMI after a single infusion. Composite PASS increased from 25.6% in cycle 1 to 54.5% in cycle 8. Subdomain analysis showed improvements across all domains for both the MG-ADL and the QMG, with the exception of QMG respiratory. Among patients on corticosteroids ( n = 29), median prednisone dose decreased from 20.0 to 10.0 mg/day ( p = 0.004), with 58.6% achieving reduction or discontinuation. This first Eastern European real-world efgartigimod-treated cohort confirms rapid and sustained improvement and corticosteroid sparing, consistent with prior evidence.",
-      "zhSummary": "本研究为一项前瞻性、多中心队列研究，评估了罗马尼亚6所大学医院中抗乙酰胆碱受体抗体阳性广义重症肌无力患者接受efgartigimod治疗的真实世界效果。共纳入39名患者，完成210个治疗周期。结果显示首个治疗周期中，MG-ADL评分中临床明显改善率达89.7%，QMG评分改善率为74.4%，多数患者在单次输注后获益。治疗过程中患者生活质量改善，且伴随皮质类固醇用量减少，提示该药物能够快速且持续改善症状并减轻类固醇负担。研究未提及安全性和长期随访限制。",
+      "zhSummary": "本研究为一项前瞻性、多中心、真实世界研究，纳入39例接受efgartigimod治疗的乙酰胆碱受体抗体阳性广泛性重症肌无力患者，时间跨度为2024年3月至2025年9月。通过MG-ADL、QMG及MG-QoL15r评分评价治疗效果。结果显示首个疗程MG-ADL的临床显著改善率达89.7%，QMG改善率74.4%，患者的可接受症状状态在第八疗程升至54.5%。29例使用糖皮质激素患者中，有58.6%实现了激素减量或停药。研究证实该药物在东欧真实世界环境中具有快速且持续的改善效果及激素节约作用。摘要未提及安全性数据及长期疗效。 ",
       "keyPoints": [
-        "首疗周期MG-ADL临床显著改善率为89.7%，QMG为74.4%。",
-        "69.2%患者单次输注即达到临床明显改善。",
-        "皮质类固醇剂量中位数从20mg降至10mg，超半数患者减少或停用。",
-        "生活质量和症状多领域均有改善，呼吸域QMG无明显变化。"
+        "39例患者共完成210个治疗周期，结局评估采用多项量表",
+        "首疗程MG-ADL临床显著改善率89.7%，QMG改善率74.4%",
+        "58.6%糖皮质激素使用患者实现减量或停药",
+        "真实世界东欧队列验证了efgartigimod的快速持续改善效果"
       ],
       "intelligence": {
-        "studyType": "前瞻性队列研究",
-        "population": "抗乙酰胆碱受体抗体阳性广义重症肌无力患者",
-        "keyFinding": "罗马尼亚真实世界中，efgartigimod治疗MG患者首疗程即显著改善日常生活和肌力评分，且减少类固醇用量。",
-        "clinicalImplication": "支持该FcRn抑制剂在MG治疗中快速且持续改善症状并减轻类固醇依赖，有助于东欧地区临床实践决策。",
-        "reviewFocus": "需重点关注病人选择标准、评估量表应用、皮质类固醇调整策略、安全性未详及长期疗效监测。"
+        "studyType": "前瞻性多中心真实世界研究",
+        "population": "乙酰胆碱受体抗体阳性广泛性重症肌无力患者",
+        "keyFinding": "首疗程MG-ADL临床显著改善89.7%，QMG改善74.4%，54.5%患者第八疗程达到可接受症状状态；58.6%糖皮质激素患者减少或停药",
+        "clinicalImplication": "支持efgartigimod在真实世界中用于乙酰胆碱受体阳性广泛性重症肌无力患者，具快速有效改善及减轻糖皮质激素负担的潜力",
+        "reviewFocus": "重点关注疗效量表变化、激素减量情况，以及东欧地区真实世界数据的补充，全文应关注安全性记录和长期效果"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42756311/",
@@ -323,7 +403,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -343,19 +423,19 @@
       "issn": "1664-3224",
       "eissn": "1664-3224",
       "abstract": "Refractory ocular myasthenia gravis (OMG) remains a significant therapeutic challenge with limited evidence-based biologic therapies. This study aimed to evaluate the effectiveness and safety of telitacicept, a recombinant B-lymphocyte stimulator receptor-antibody fusion protein, in refractory OMG. This retrospective, single-center observational study assessed clinical outcomes, immunological biomarkers, and safety following add-on telitacicept therapy in refractory OMG. Disease severity was evaluated using the Myasthenia Gravis Activities of Daily Living (MG-ADL), Quantitative Myasthenia Gravis (QMG), and Myasthenia Gravis Impairment Index (MGII) scales. Serum immunoglobulins, complement components, and CD19 + B-cell counts were measured, and adverse events were systematically recorded. Twelve patients with refractory OMG were included. Median baseline MG-ADL, QMG, and MGII scores were 5.5 (interquartile range [IQR] 5.0-6.0), 7.0 (IQR 5.3-8.0), and 16.0 (IQR 12.0-18.0), respectively. Statistically significant improvement was observed as early as week 1 (all p < 0.05). By week 12, MG-ADL scores decreased by a median of 3.0 (95% CI: 2.0-4.0; p < 0.001, r = 0.89), with consistent improvements in QMG and MGII scores (all p < 0.01, all r > 0.85). Minimal symptom expression (MSE) was achieved in 7 of 12 patients (58.3%) within the 12-week period. The median daily prednisone dose was reduced from 15.0 mg (IQR 10.0-22.5) to 9.0 mg (IQR 5.0-13.8) by week 12 (median decrease: 7.5 mg, 95% CI: 2.5-13.5; p = 0.031, r = 0.79), with 1 patient discontinuing corticosteroids by week 8. Telitacicept treatment was associated with reductions in serum IgG, IgA, and IgM levels, alongside increased levels of complement components. No serious adverse events, infections, or treatment discontinuations occurred. Telitacicept was associated with rapid, sustained clinical improvement and a favorable safety profile in refractory OMG, which supports its potential role as an add-on therapeutic option.",
-      "zhSummary": "本回顾性单中心观察研究评估了telitacicept对难治性眼肌型重症肌无力（OMG）患者的疗效与安全性。纳入12例患者，采用MG-ADL、QMG及MGII评分评估疾病严重度，治疗12周内显著改善临床评分，58.3%患者达到最轻症状表达，同时皮质类固醇剂量显著减少。血清免疫球蛋白降低，补体水平升高，无严重不良事件。研究支持telitacicept作为难治性OMG辅助治疗的潜在选择，但因样本量小及单中心设计，需谨慎解读。",
+      "zhSummary": "本研究回顾性观察了12例难治性眼肌型重症肌无力患者，评估通过加用重组B淋巴细胞刺激因子受体抗体融合蛋白telitacicept的临床疗效和安全性。采用MG-ADL、QMG和MGII评分评估病情严重度，结果显示治疗12周内各项评分显著改善，58.3%患者达到症状最轻表达，同时糖皮质激素用量显著减少。免疫指标方面，IgG、IgA、IgM水平下降，补体水平升高。无严重不良事件或感染发生。研究支持telitacicept作为难治性OMG辅助治疗的潜在价值，但样本量有限且为单中心回顾性设计，需进一步验证。",
       "keyPoints": [
-        "telitacicept治疗难治性OMG 12周内临床评分显著改善",
-        "58.3%患者达到最轻症状表达（MSE）",
-        "皮质类固醇用量显著减少，无严重不良事件",
-        "伴随免疫球蛋白下降及补体水平升高"
+        "12例难治性眼肌型重症肌无力患者接受telitacicept治疗",
+        "12周内MG-ADL等评分显著改善，58.3%达最低症状表达",
+        "糖皮质激素剂量显著减少，无严重不良事件报告",
+        "治疗伴随IgG、IgA、IgM下降和补体水平升高"
       ],
       "intelligence": {
-        "studyType": "回顾性观察研究",
+        "studyType": "回顾性单中心观察性研究",
         "population": "难治性眼肌型重症肌无力患者",
-        "keyFinding": "12周telitacicept治疗显著改善MG-ADL、QMG和MGII评分，58.3%患者达到最轻症状表达，且皮质类固醇剂量减少",
-        "clinicalImplication": "提示telitacicept可作为难治性OMG辅助治疗选项，具有较好安全性及免疫调节作用",
-        "reviewFocus": "需关注研究样本量、单中心局限及缺乏对照组等设计限制，进一步验证疗效和长期安全性"
+        "keyFinding": "telitacicept加用12周显著改善临床评分并减少糖皮质激素用量，安全性良好",
+        "clinicalImplication": "提示telitacicept可能为难治性眼肌型重症肌无力的辅助治疗选择，需进一步大样本前瞻性研究",
+        "reviewFocus": "应关注研究设计局限、症状评分的变化、免疫生物标志物和不良事件的详细记录及适用患者群体"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42756105/",
@@ -363,7 +443,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -383,19 +463,19 @@
       "issn": "1664-3224",
       "eissn": "1664-3224",
       "abstract": "Trible-seronegative myasthenia gravis (tSNMG) is defined as myasthenia gravis (MG) without detectable or low affinity antibodies to acetylcholine receptor (AChR), muscle-specific kinase (MuSK) andlipoprotein related protein 4(LRP-4). This article reports a case of a 39-year-old married female patient with thymoma-associated seronegative myasthenia gravis (tSNMG), which was accompanied by multiple positive autoantibodies and a benign mediastinal lesion. The primary manifestation was generalized muscle weakness, involving the limbs, bulbar muscles, and respiratory muscles. After admission, the patient showed poor responses to treatments including pyridostigmine bromide, human immunoglobulin, glucocorticoids, and tacrolimus. Ultimately, following therapy with efgartigimod followed by rituximab, significant symptomatic improvement was observed. By analyzing the diagnosis and treatment process of this case alongside relevant literature, this report explores the therapeutic value of efgartigimod followed by rituximab for tSNMG, key points for individualized regimen adjustments, and the challenges in diagnosis and treatment, thereby providing a reference for the clinical management of such refractory cases.",
-      "zhSummary": "本文报告一例伴有多个阳性自身抗体和良性纵隔病变的39岁女性胸腺相关三阴性肌无力（tSNMG）病例。该患者以泛肌无力为主，初步治疗效果不佳，最终采用efgartigimod联合利妥昔单抗治疗后症状明显改善。通过病例及文献分析，探讨此种治疗方案在tSNMG中的潜在疗效、个体化调整要点及诊疗挑战，为临床难治性tSNMG的管理提供参考。",
+      "zhSummary": "本文报道一例39岁女性胸腺瘤相关三阴性重症肌无力（tSNMG）病例，伴有多种自身抗体阳性和良性纵隔病变。患者主要表现为肢体、球麻及呼吸肌弥漫性肌无力，常规治疗效果不佳。先后使用efgartigimod及利妥昔单抗治疗后症状获得明显改善。结合文献分析，探讨了该联合用药对tSNMG的潜在治疗价值及个体化治疗调整要点，同时指出该病诊治中的挑战，为临床管理提供参考。",
       "keyPoints": [
-        "tSNMG指对AChR、MuSK和LRP-4抗体均阴性或低亲和力的肌无力。",
-        "患者对常规治疗响应差，表现为广泛肌无力。",
-        "efgartigimod与利妥昔单抗序贯治疗带来显著症状改善。",
-        "个体化治疗调节和诊疗难点需进一步关注和研究。"
+        "tSNMG患者存在多种自身抗体和纵隔病变。",
+        "常规药物治疗（溴吡斯的明、免疫球蛋白等）效果不理想。",
+        "efgartigimod联合利妥昔单抗治疗后症状明显改善。",
+        "该案例为tSNMG个体化方案调整和诊治挑战提供参考。"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "胸腺相关三阴性肌无力患者",
-        "keyFinding": "efgartigimod序贯利妥昔单抗治疗后，该tSNMG患者症状明显改善。",
-        "clinicalImplication": "为难治性tSNMG患者提供了一种可能的序贯治疗策略参考，有助于个体化用药方案设计。",
-        "reviewFocus": "关注tSNMG的诊断标准、治疗反应监测及序贯免疫治疗的应用效果。"
+        "population": "胸腺瘤相关三阴性重症肌无力患者",
+        "keyFinding": "efgartigimod加利妥昔单抗治疗后，患者肌无力症状明显改善",
+        "clinicalImplication": "提示efgartigimod后接利妥昔单抗或为tSNMG难治病例的治疗选项，助力临床个体化治疗探索",
+        "reviewFocus": "病例诊断流程和治疗策略，治疗反应及个体化调整方案"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42755762/",
@@ -403,7 +483,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -438,7 +518,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -458,19 +538,19 @@
       "issn": "2168-8184",
       "eissn": "",
       "abstract": "Lambert-Eaton myasthenic syndrome (LEMS) is a rare presynaptic neuromuscular junction disorder that may be mistaken for peripheral neuropathy, radiculopathy, inflammatory myopathy, or myasthenia gravis. We report a female in her early 40s with two months of progressive, predominantly proximal lower-limb weakness, areflexia, and dry mouth, without ocular or bulbar symptoms. Routine laboratory testing and creatine kinase were unremarkable, while spinal imaging showed degenerative abnormalities that did not explain the clinical pattern. Nerve conduction studies demonstrated low compound muscle action potential amplitudes with preserved sensory responses and no demyelinating features. Low-frequency repetitive nerve stimulation produced a decrement, whereas brief exercise caused a marked increase in compound muscle action potential amplitude. Serum P/Q-type voltage-gated calcium channel antibodies were positive, confirming LEMS. Pyridostigmine produced partial symptomatic improvement. Amifampridine was subsequently initiated, followed by intravenous immunoglobulin, after which the patient demonstrated marked improvement in lower-limb strength and walking ability. Initial malignancy screening was negative, and longitudinal surveillance was planned. This case emphasizes that a decrement on low-frequency stimulation is not specific for myasthenia gravis and that low resting motor amplitudes with marked post-exercise facilitation strongly indicate a presynaptic neuromuscular junction disorder.",
-      "zhSummary": "本文报道一例40多岁女性患者，表现为进行性近端下肢无力、无反射及口干，无眼球和球状麻痹症状。电生理检查显示复合肌肉动作电位幅度减低，低频率重复神经刺激呈现递减，短暂运动后动作电位幅度明显增强。血清P/Q型电压门控钙通道抗体检测阳性，确诊为Lambert-Eaton肌无力综合征（LEMS）。治疗包括吡啶斯的明、阿米法尼啡定及静脉免疫球蛋白，患者下肢力量和行走能力改善。恶性肿瘤筛查阴性，计划长期监测。结果提示低频率刺激递减不特异于重症肌无力，且运动后显著幅度改善提示突触前神经肌肉疾病。",
+      "zhSummary": "本文通过一例40多岁女性患者的病例报告，探讨低频重复神经刺激减低反应不等同于重症肌无力（MG）。患者表现为进展性近端下肢无力及腱反射消失，神经传导检查显示低肌肉复合动作电位振幅且感受性反应保留，低频刺激呈减低反应，短暂运动后振幅显著增加，血清P/Q型电压门控钙通道抗体阳性，诊断为Lambert-Eaton肌无力综合征（LEMS）。采用吡啶stigmine部分改善症状，后经阿非替丁和静脉免疫球蛋白治疗显著改善。研究强调低频刺激减低反应对MG诊断非特异性，运动后振幅增强提示突触前障碍。",
       "keyPoints": [
-        "LEMS可表现为近端无力并伴腱反射减退",
-        "低频率神经刺激递减不特异于重症肌无力",
-        "短暂运动后肌肉动作电位显著增加提示突触前病变",
-        "抗P/Q型钙通道抗体阳性有助诊断LEMS"
+        "LEMS可能被误诊为MG等神经肌肉疾病",
+        "低频重复神经刺激减低反应非MG特异性",
+        "运动后肌肉动作电位显著增强指示突触前病变",
+        "抗P/Q型钙通道抗体对LEMS诊断具有重要意义"
       ],
       "intelligence": {
         "studyType": "病例报告",
-        "population": "40多岁女性，Lambert-Eaton肌无力综合征患者",
-        "keyFinding": "低频重复神经刺激递减伴运动后动作电位幅度明显增加，血清抗P/Q型钙通道抗体阳性，支持LEMS诊断",
-        "clinicalImplication": "提示临床中低频神经刺激递减不应单独作为重症肌无力诊断依据，需重视运动后肌电变化和抗体检测以鉴别LEMS",
-        "reviewFocus": "人工复核应关注电生理参数变化、抗体检测及鉴别诊断过程"
+        "population": "40多岁女性，表现为近端下肢无力的患者",
+        "keyFinding": "低频重复神经刺激减低反应非MG特异性，运动后复合肌肉动作电位显著增加且P/Q型钙通道抗体阳性确诊LEMS",
+        "clinicalImplication": "提示临床诊断时应警惕低频刺激减低反应并非MG专有表现，应结合运动后振幅变化及钙通道抗体检测辨别LEMS",
+        "reviewFocus": "病例报告中低频重复刺激、运动后振幅变化、抗体检测及诊断鉴别过程"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42751417/",
@@ -478,7 +558,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -498,19 +578,19 @@
       "issn": "1097-4598",
       "eissn": "1097-4598",
       "abstract": "Early recognition and treatment are critical in juvenile myasthenia gravis (JMG), yet pediatric-specific evidence remains limited. We aimed to describe treatment patterns, remission rates, and predictors in a Canadian cohort. We conducted a retrospective study of patients under 18 years diagnosed with JMG at The Hospital for Sick Children, Toronto, between 2015 and 2025. Clinical, treatment, and outcome data were collected. Diagnosis was confirmed by antibody positivity or electrophysiology, and outcomes were classified using the Myasthenia Gravis Foundation of America postintervention status (MGFA-PIS). Kaplan-Meier and Cox regression analyses were used to evaluate remission and its predictors. Thirty-six patients were included, 16 with generalized MG (GMG) and 20 with ocular MG (OMG). Mean age at diagnosis was 8.7 years; 50% were female. Acetylcholine receptor-positive, muscle-specific kinase-positive, and seronegative MG accounted for 55.6%, 5.6%, and 38.9% of the cohort, respectively. Repetitive nerve stimulation was abnormal in 82.6% tested. Most patients received pyridostigmine and corticosteroids initially, with additional immunosuppressants in selected cases. Seven received rituximab, and seven underwent thymectomy, with most achieving complete stable remission (CSR). The estimated 3-year remission rate was 36.1%, and 66.7% achieved CSR at last follow-up (median 45.5 months). Older age at onset and early immunosuppression predicted remission, while GMG had a higher rate than OMG (56.2% vs. 20.6%, p = 0.044). Earlier immunosuppression was associated with a higher remission rate, whereas treatment tended to be initiated later and remission was less frequent in OMG. These findings support a timely treatment approach in JMG.",
-      "zhSummary": "本回顾性研究评估了2015至2025年在多伦多儿童医院诊断为少年型重症肌无力（JMG）的36名患者的临床结局和治疗效果。患者中一般型MG占16例，眼肌型20例，平均诊断年龄8.7岁。多数接受吡啶斯的治疗和糖皮质激素，部分患者使用免疫抑制剂、利妥昔单抗或行胸腺切除术。3年缓解率估计为36.1%，中位随访45.5个月时完全稳定缓解率为66.7%。年长发病和早期免疫抑制是缓解独立预测因子。眼肌型MG较一般型缓解率低且治疗启动相对滞后。结果提示早期治疗对JMG缓解有积极作用，但因样本量有限且为单中心回顾性研究，仍需进一步验证。",
+      "zhSummary": "本研究回顾性分析了2015至2025年间Toronto儿童医院诊断的36例18岁以下青少年重症肌无力（JMG）患者的临床及治疗数据，诊断依据抗体阳性或神经电生理。患者包括16例广泛型（GMG）和20例眼肌型（OMG），采用MGFA-PIS评估治疗结局。多数患者初治以吡啶斯的明及皮质类固醇为主，部分加用免疫抑制剂。7例使用利妥昔单抗，7例行胸腺切除，均多获得完全稳定缓解。三年缓解率36.1%，中位随访45.5月时66.7%实现完全稳定缓解。发病年龄大及早期免疫抑制治疗与缓解相关，GMG缓解率高于OMG。研究提示JMG应及早识别及适时治疗。",
       "keyPoints": [
-        "JMG患者中一般型缓解率高于眼肌型（56.2% vs 20.6%）",
-        "早期免疫抑制治疗与更高缓解率相关",
-        "70%以上患者采用吡啶斯的明初始治疗",
-        "单中心回顾性研究，样本量较小"
+        "JMG患者中14.3岁以下，发病平均年龄8.7岁。",
+        "抗乙酰胆碱受体抗体阳性占55.6%，神经电生理异常占82.6%。",
+        "三年缓解率36.1%，终末随访时完全稳定缓解率66.7%。",
+        "早期免疫抑制及GMG患者缓解率显著高于眼肌型患者。"
       ],
       "intelligence": {
         "studyType": "回顾性队列研究",
-        "population": "18岁以下少年型重症肌无力患者",
-        "keyFinding": "3年缓解率36.1%，随访中完全稳定缓解率66.7%，年长发病及早期免疫抑制预测缓解",
-        "clinicalImplication": "支持JMG患者早期免疫抑制治疗以提高缓解可能，提示眼肌型患者需关注治疗时机",
-        "reviewFocus": "研究采用MGFA-PIS评估缓解，关注治疗模式、免疫抑制时机及不同临床型结局差异"
+        "population": "加拿大18岁以下青少年重症肌无力患者",
+        "keyFinding": "早期免疫抑制治疗及发病年龄较大者缓解率较高，GMG缓解率优于OMG",
+        "clinicalImplication": "提示JMG临床应加强早期诊断和及时免疫抑制治疗以提高缓解率",
+        "reviewFocus": "关注研究设计及MGFA-PIS终点定义，免疫抑制治疗时机与缓解关系，亚组（GMG vs OMG）分析"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42749614/",
@@ -518,7 +598,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -538,19 +618,19 @@
       "issn": "1349-7235",
       "eissn": "1349-7235",
       "abstract": "Objective Although experimental studies suggest that diabetes mellitus (DM) exacerbates immune dysregulation in myasthenia gravis (MG), its precise impact on clinical outcomes remains unclear. Therefore, we investigated the influence of pre-existing glucose metabolism abnormalities in immunotherapy-naïve patients with MG.Methods Abnormal glucose metabolism was defined as receiving DM treatment or a glycated hemoglobin A1c level ≥ 6.0%. The prevalence of glucose metabolism abnormalities was compared with that of the general Japanese population, and MG outcomes were assessed between patients with and without these abnormalities.Patients or Materials We retrospectively studied 108 immunotherapy-naïve MG patients initially presenting to Chiba University Hospital between 2016 and 2020.Results Twenty-eight patients (25.9%) had abnormal glucose metabolism, similar to that of the general population. The prevalence in late-onset MG (LOMG) was 37.3%, which also showed no significant difference from the general population aged ≥ 50 years (34.2%). In LOMG, the abnormal glucose metabolism group had significantly higher MG Activities of Daily Living (MG-ADL) scores at 1-year follow-up (median [range]: 1 [0-5] vs. 0 [0-3], p = 0.017). In generalized LOMG, the abnormal glucose metabolism group showed significantly higher MG Foundation of America classes at peak severity within 1 year (3 [2-5] vs. 2 [2-4], p ＜0.001), higher MG-ADL scores at 1-year follow-up (1 [0-5] vs. 0 [0-2], p = 0.027), and required higher maximum daily prednisolone doses within 1 year (30.0 [0-50.0] vs. 10.0 [0-50.0] mg, p = 0.026) and at 1-year follow-up (9.0 [0-20.0] vs. 3.8 [0-10.0] mg, p = 0.029).Conclusion Abnormal glucose metabolism may negatively affect the clinical course of MG. In our evaluable LOMG cohort, this negative impact was most prominent in generalized cases, in which patients showed less satisfactory clinical improvement and required higher corticosteroid doses.",
-      "zhSummary": "本研究回顾分析了108例未接受免疫治疗的重症肌无力（MG）患者中异常糖代谢的流行率及其临床影响。异常糖代谢定义为接受糖尿病治疗或糖化血红蛋白≥6.0%。结果显示总MG患者中异常糖代谢的患病率为25.9%，与日本普通人群相似。晚发型MG（LOMG）患者中异常糖代谢率为37.3%，亦无显著差异。LOMG中异常糖代谢组患者1年随访时MG日常生活活跃度评分（MG-ADL）显著较高，广泛型LOMG患者异常组峰值严重度更高，使用更高剂量的泼尼松。提示异常糖代谢可能不利于MG临床进展，尤其是在广泛型LOMG中。研究限于回顾性设计与单中心样本。",
+      "zhSummary": "本研究回顾分析了108例初次诊断且未接受免疫治疗的重症肌无力患者中异常糖代谢的流行情况及其临床影响。异常糖代谢定义为糖尿病治疗中或糖化血红蛋白≥6.0%。结果显示异常糖代谢患者占25.9%，与日本一般人群相近。晚发型重症肌无力（LOMG）患者中异常糖代谢比例为37.3%，与50岁以上一般人群无显著差异。LOMG异常糖代谢组在1年随访时生活活动受限评分更高，广泛型LOMG患者异常组峰值病情更重、生活评分更高且需用更高剂量的糖皮质激素。结论为异常糖代谢可能不利于MG病程，尤其对LOMG全身型患者影响较明显。",
       "keyPoints": [
-        "MG患者中异常糖代谢的流行率与普通日本人群相当",
-        "晚发型MG异常糖代谢组临床活动度1年随访较高",
-        "广泛型LOMG异常糖代谢组严重度及激素用量均显著较高",
-        "异常糖代谢可能对MG临床病程产生不利影响"
+        "免疫治疗前MG患者中异常糖代谢比例为25.9%，类似一般人群。",
+        "LOMG组异常糖代谢比例37.3%，与同年龄一般人群无显著差异。",
+        "LOMG异常糖代谢患者1年随访生活评分较高，预后较差。",
+        "广泛型LOMG异常组用药强度更大，病情严重度更高。"
       ],
       "intelligence": {
         "studyType": "回顾性队列研究",
-        "population": "免疫治疗初诊的重症肌无力患者，特别是晚发型MG患者",
-        "keyFinding": "LOMG中异常糖代谢患者1年MG-ADL评分较非异常组高（中位数1 vs. 0，p=0.017），广泛型LOMG异常组峰值MGFA分级和最大泼尼松剂量均显著增高",
-        "clinicalImplication": "提示异常糖代谢状态可能影响MG临床转归，尤其需关注晚发型及广泛型患者的病情管理和激素治疗策略",
-        "reviewFocus": "关注糖代谢异常定义、MG临床评分变化、晚发型及广泛型MG亚组分析及激素用量关系"
+        "population": "免疫治疗前的重症肌无力患者，特别关注晚发型MG患者",
+        "keyFinding": "异常糖代谢患者在晚发型MG中更常见，且与更重病情、更高生活受限评分及更大激素用量相关",
+        "clinicalImplication": "糖代谢异常可能影响MG临床病程，提示在MG管理中应关注患者的糖代谢状态",
+        "reviewFocus": "研究设计为回顾性，主要评价糖代谢异常对LOMG临床结局的影响，包括MG重症程度、生活活动评分及激素剂量"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42749642/",
@@ -558,7 +638,7 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
@@ -578,19 +658,19 @@
       "issn": "1521-4184",
       "eissn": "1521-4184",
       "abstract": "The therapeutic significance of acetylcholinesterase (AChE) inhibition is most prominently observed in the management of various neurodegenerative and neuromuscular disorders, including Alzheimer's disease (AD), and myasthenia gravis (MG). The present review examines isatin-based compounds as a promising class of drugs for treating these conditions, focusing on their ability to inhibit AChE. While AD is characterized by a significant loss of cholinergic neurons leading to a deficiency in acetylcholine (ACh), MG is an autoimmune disease where the body produces antibodies that block or destroy ACh receptors at the neuromuscular junction. By inhibiting AChE, therapeutic agents increase the availability of ACh, thereby enhancing cholinergic neurotransmission and improving muscle strength or cognitive function. The underlying issue in MG is the reduced number of functional receptors rather than a primary decrease in AChE production. However, inhibition of the enzyme remains a vital strategy for symptom management. Accordingly, this review provides a systematic overview of the various synthetic strategies reported in the literature over the last decade for enhancing isatin-based AChE inhibitory activity. These strategies include modifications of the isatin nitrogen, such as N-alkylation, N-acylation, or N-arylation. Another strategy is aromatic ring substitution, where various substituents (e.g., halogens, nitro, amino, and alkyl groups) are introduced typically at the C 5 , C 6 , and/or C 7 positions. C 3 -carbonyl functionalization is also reported, exemplified by the formation of Schiff bases, hydrazones, or spirocyclic derivatives. Our findings highlight the exceptional potential and adaptability of isatin derivatives in medicinal chemistry, highlighting the major advances within the last 10 years and the future directions.",
-      "zhSummary": "本文综述了基于异靛（isatin）骨架的化合物在乙酰胆碱酯酶（AChE）抑制方面的研究进展，重点探讨其在阿尔茨海默病和重症肌无力中的潜在应用。文章系统总结了过去十年中通过异靛氮原子的N-烷基化、N-酰化、N-芳基化等结构修饰，以及芳香环上的多种取代策略和C3位羰基功能化提升AChE抑制活性的合成方法。研究指出，虽然重症肌无力的主要病理为胆碱受体功能减少，但AChE抑制仍是重要的症状控制策略。综述强调了异靛衍生物的药物化学潜力及未来研发方向，摘要未涉及具体临床数据和安全性信息。",
+      "zhSummary": "本综述聚焦基于异靛（isatin）骨架的化合物作为乙酰胆碱酯酶（AChE）抑制剂在阿尔茨海默病和重症肌无力（MG）中的潜在治疗应用。文中系统总结了过去十年中异靛衍生物通过氮原子修饰（如N-烷基化、N-酰化）、芳香环取代及C3位羰基功能化等合成策略，以增强其AChE抑制活性。由于MG主要病理特点为乙酰胆碱受体功能减少，而非AChE产量下降，AChE抑制仍是症状管理的重要途径。该综述强调异靛衍生物在药物设计中的多样性和潜力，但未详述具体临床评价数据和安全性证据。",
       "keyPoints": [
-        "异靛类化合物具有抑制乙酰胆碱酯酶的潜力",
-        "结构修饰集中在异靛氮原子和芳香环取代",
-        "重症肌无力的核心病因是胆碱受体减少，AChE抑制为辅助策略",
-        "综述总结了过去十年的合成改造方法和研究进展"
+        "异靛衍生物作为AChE抑制剂具有潜在治疗价值",
+        "通过多种化学修饰提升异靛的酶抑制活性",
+        "MG病理为受体减少，AChE抑制仍属重要治疗策略",
+        "综述涵盖近十年异靛衍生物的合成和活性改造"
       ],
       "intelligence": {
         "studyType": "综述",
-        "population": "阿尔茨海默病及重症肌无力患者相关的病理机制和治疗研究",
-        "keyFinding": "异靛衍生物通过多种结构修饰显示出显著的AChE抑制活性，具有药物开发潜力",
-        "clinicalImplication": "虽非针对重症肌无力一线治疗，异靛类AChE抑制剂有望作为辅助药物用于症状管理",
-        "reviewFocus": "重点评述了异靛衍生物的合成策略及其增强AChE抑制活性的结构修饰方向，未涉及临床终点或安全性数据"
+        "population": "阿尔茨海默病和重症肌无力患者相关的乙酰胆碱酯酶抑制治疗",
+        "keyFinding": "异靛基化合物通过多种结构修饰展现出增强AChE抑制活性的潜力",
+        "clinicalImplication": "强调AChE抑制作为MG症状管理手段的持续重要性，为药物开发提供化学修饰思路",
+        "reviewFocus": "系统总结异靛衍生物合成策略及其AChE抑制活性改造，未涉及临床安全性和效果验证细节"
       },
       "translationStatus": "translated",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42748401/",
@@ -598,173 +678,13 @@
         "sourceType": "PubMed",
         "evidenceLevel": "文献摘要",
         "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
+        "lastChecked": "2026-09-23",
         "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
       },
       "tags": [
         "latest",
         "PubMed",
         "综合研究"
-      ]
-    },
-    {
-      "id": "latest-42736463",
-      "pmid": "42736463",
-      "title": "Two-year outcomes after left-sided VATS extended thymectomy for nonthymomatous myasthenia gravis: a single-center retrospective cohort study.",
-      "journal": "Surgical endoscopy",
-      "authors": "Raneem Ahmad, Mohammad Alaa Aldakak, Mhd Adib Al Kudmani, Seba Ahmad, Lina Chaban, Hussain Chaban",
-      "date": "2026-09-14",
-      "indexedAt": "2026-09-15",
-      "issn": "1432-2218",
-      "eissn": "1432-2218",
-      "abstract": "Thymectomy is used in nonthymomatous myasthenia gravis (MG) to improve clinical status and reduce treatment burden. We evaluated 24-month outcomes after left-sided video-assisted thoracoscopic surgery (VATS) extended thymectomy. This retrospective cohort included patients treated at National University Hospital, Damascus, from January 2013 to January 2023, with follow-up through January 2025. Patients with thymoma or insufficient 24-month outcome ascertainment were excluded. The primary outcome was minimal manifestations or better (MM-or-better) at 24 months according to MGFA post-intervention status. Longitudinal changes were assessed using Friedman and Cochran's Q tests; baseline associations were explored using univariable analyses. Of 75 patients screened, 33 were included. Mean age was 31.7 years, and 69.7% were female. MGFA post-intervention status improved over time (p<0.001). MM-or-better was achieved by 60.6% at 12 months and 81.8% at 24 months, including complete stable remission in 33.3%. Median prednisone dose declined from 20 mg/day preoperatively to 0 mg/day by 6 months; prednisone-free status increased to 81.8% at 24 months (p<0.001). Median pyridostigmine dose declined from 180 to 0 mg/day at 24 months (p<0.001). Early postoperative complications occurred in 9.1%, and later neurological events in 6.1%. Univariable logistic regression identified no significant baseline associations. Left-sided VATS extended thymectomy was followed by neurological improvement and lower prednisone and pyridostigmine requirements. Interpretation is limited by the retrospective design, small sample, and absence of a comparison group.",
-      "zhSummary": "本研究回顾性分析了大马士革一中心2013至2023年行左侧胸腔镜（VATS）延长胸腺切除术的33例非胸腺瘤重症肌无力患者，随访至2025年。主要结局为术后24个月达到最小症状状态或更好（MM-or-better）的比例。结果显示，24个月时81.8%患者达到MM-or-better，33.3%达到完全稳定缓解，糖皮质激素与吡啶斯的明用药量显著减少。术后早期并发症9.1%，晚期神经事件6.1%。研究受限于回顾设计、小样本及无对照组，解释应谨慎。",
-      "keyPoints": [
-        "24个月时81.8%患者达到最小症状状态或更好",
-        "33.3%患者实现完全稳定缓解",
-        "糖皮质激素及吡啶斯的明用药明显减少",
-        "早期并发症发生率9.1%，晚期神经事件6.1%"
-      ],
-      "intelligence": {
-        "studyType": "回顾性队列研究",
-        "population": "非胸腺瘤重症肌无力患者，左侧VATS延长胸腺切除术后随访",
-        "keyFinding": "左侧VATS延长胸腺切除术后，81.8%患者24个月时达MM-or-better，药物需求显著降低",
-        "clinicalImplication": "该手术可能有助于改善非胸腺瘤MG患者神经功能及减少免疫抑制药物使用，提示其治疗潜力",
-        "reviewFocus": "研究设计（回顾、无对照）、主要终点（MGFA状态）、安全事件及用药变化的长期监测"
-      },
-      "translationStatus": "translated",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42736463/",
-      "trust": {
-        "sourceType": "PubMed",
-        "evidenceLevel": "文献摘要",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
-        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
-      },
-      "tags": [
-        "latest",
-        "PubMed",
-        "胸腺相关"
-      ]
-    },
-    {
-      "id": "latest-42743755",
-      "pmid": "42743755",
-      "title": "Gut microbiota composition across clinical subtype and antibody burden in myasthenia gravis.",
-      "journal": "Journal of neuroimmunology",
-      "authors": "Soo-Hyun Park, Do Young Jin, Suyeon Yoo, Jae Won Lee, Jun-Seob Kim, Nam-Hee Kim",
-      "date": "2026-09-13",
-      "indexedAt": "2026-09-15",
-      "issn": "1872-8421",
-      "eissn": "1872-8421",
-      "abstract": "Myasthenia gravis (MG) exhibits clinical heterogeneity ranging from ocular to generalized forms. Although gut microbiota has been implicated in autoimmune diseases, its relationship with clinical subtype and antibody burden in MG remains unclear. We conducted a cross-sectional study of fecal microbiota in 14 patients with MG (3 ocular and 11 generalized) and 10 healthy controls using 16S rRNA sequencing. Patients with MG were stratified according to acetylcholine receptor antibody (AChR-Ab) titers into low (n = 5), moderate (n = 5), and high (n = 4) groups. Alpha and beta diversity did not differ significantly between clinical subtypes or antibody-defined groups. Exploratory genus-level analyses identified nominal differences in the relative abundance of several bacterial genera across both clinical subtype and antibody-defined groups. SCFA-associated taxa, including Anaerostipes, Blautia, and Faecalibacterium, appeared relatively more abundant in ocular MG and lower antibody groups, whereas Streptococcus and Bacteroides appeared relatively more abundant in generalized MG and higher antibody groups. PICRUSt2-based analyses were used to explore variation in predicted metabolic pathways between groups; however, no pathway remained significant after correction for multiple testing. Descriptive genus-level microbiome patterns were observed across both clinical subtype and antibody-defined groups despite similar global diversity measures. These exploratory findings suggest that microbiome variation within MG may be associated with multiple aspects of disease heterogeneity. However, given the small sample size, particularly within the ocular MG subgroup, these observations should be considered hypothesis-generating and require validation in larger independent cohorts.",
-      "zhSummary": "本研究通过16S rRNA测序分析了14例重症肌无力（MG）患者（其中3例眼肌型，11例广泛型）及10例健康对照者的肠道菌群。患者按乙酰胆碱受体抗体（AChR-Ab）滴度分为低、中、高三组。结果显示不同临床亚型及抗体组间肠道菌群的α多样性和β多样性无显著差异，但在某些菌属相对丰度上存在名义性差异。短链脂肪酸相关菌属如Anaerostipes、Blautia与Faecalibacterium在眼肌型及低抗体组中较丰富，而Streptococcus和Bacteroides则在广泛型及高抗体组中相对较多。代谢路径预测分析未发现统计学显著差异。鉴于样本量有限，尤其是眼肌型组，结果需在更大样本中验证，仅具探索性意义。",
-      "keyPoints": [
-        "MG不同临床亚型和抗体水平群体的肠道菌多样性无显著差异",
-        "特定短链脂肪酸相关菌属在眼肌型和低抗体组中相对较多",
-        "广泛型和高抗体组肠道中Streptococcus和Bacteroides较丰富",
-        "代谢路径预测未见显著差异，结果需在更大样本验证"
-      ],
-      "intelligence": {
-        "studyType": "横断面研究",
-        "population": "14例MG患者（3眼肌型，11广泛型），10例健康对照",
-        "keyFinding": "肠道菌属组成在MG临床亚型和乙酰胆碱受体抗体水平呈现名义性差异，但多样性总体无显著变化",
-        "clinicalImplication": "提示肠道菌群可能与MG临床表现及抗体负荷相关，未来可能成为辅助病理机制研究和潜在治疗靶点，但当前证据尚不足以指导临床应用",
-        "reviewFocus": "全文需重点核查研究设计、样本量和亚组分布、菌群测序及分析方法、抗体分组标准和临床分型界定"
-      },
-      "translationStatus": "translated",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42743755/",
-      "trust": {
-        "sourceType": "PubMed",
-        "evidenceLevel": "文献摘要",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
-        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
-      },
-      "tags": [
-        "latest",
-        "PubMed",
-        "免疫机制"
-      ]
-    },
-    {
-      "id": "latest-42742550",
-      "pmid": "42742550",
-      "title": "[Incidence and patterns of urinary incontinence following endoscopic prostate enucleation: A 7-year single-center experience].",
-      "journal": "Urologiia (Moscow, Russia : 1999)",
-      "authors": "A Meshcheriakova E, Yu Nesterova O, A Strigunov A, A Khokhlov M, D Burlakov I, M Yusupov K",
-      "date": "2026-09-01",
-      "indexedAt": "2026-09-15",
-      "issn": "1728-2985",
-      "eissn": "",
-      "abstract": "Endoscopic enucleation of benign prostatic hyperplasia (BPH) is currently considered a treatment of choice for patients with BPH of any volume, including those in whom discontinuation of anticoagulant or antiplatelet therapy is not feasible. However, urinary incontinence remains one of the most common postoperative complications, significantly affecting patients quality of life. to evaluate the incidence and patterns of urinary incontinence following endoscopic enucleation, as well as to compare preoperative and intraoperative characteristics among patients with different types of incontinence. This single-center observational cohort study included patients with BPH who underwent endoscopic enucleation between March 2019 and December 2025. Data were collected prospectively and analyzed retrospectively. Urinary incontinence was defined as any involuntary leakage of urine. Statistical analysis was performed using the R programming language (RStudio version 2025.05.1+513). Among 1,094 patients, urinary incontinence (of any type) was observed in 13.7% of cases (150/1094). Of these, 48 patients (32.0%) had urge incontinence, 75 (50.0%) had stress incontinence, and 27 (18.0%) had mixed incontinence. In the majority of cases, incontinence was transient: 61 patients (40.7% of incontinent patients and 5.6% of the total cohort) experienced symptoms lasting up to 1 month, 80 patients (53.3% and 7.3%, respectively) between 1 and 3 months, and 9 patients (6.0% and 0.8%, respectively) for more than 3 months. Persistent incontinence beyond 12 months was observed in only one patient (0.091%) with myasthenia gravis. The time to continence recovery did not differ significantly between incontinence types (p = 0.95). Comparative analysis of preoperative, intraoperative, and postoperative parameters demonstrated that patients with stress urinary incontinence had a higher body mass index, less pronounced storage symptoms according to IPSS, less frequent use of antimuscarinics and beta-3-agonists prior to surgery, and a lower rate of early apical sphincter release during enucleation. Patients with mixed incontinence more commonly had cerebrovascular disease. Urinary incontinence following endoscopic prostate enucleation occurs in 13.7% of patients and is transient in the majority of cases, resolving within the first three postoperative months. The rate of continence recovery is comparable across different types of incontinence, indicating a favorable functional prognosis in this patient population.",
-      "zhSummary": "本研究为单中心队列研究，纳入2019年3月至2025年12月接受内镜前列腺剥离术治疗良性前列腺增生的1094名患者，观察术后尿失禁发生率及类型。结果显示，13.7%患者出现不同类型尿失禁，其中多数为暂时性，约94%患者术后3个月内恢复，持续超过12个月者极少（仅1例伴有重症肌无力）。不同尿失禁类型患者恢复时间无显著差异。压力性尿失禁患者体重指数较高，术前储尿症状较轻，术中早期切断外括约肌率较低。混合型尿失禁患者脑血管病较多。研究限于单中心及观察性设计，未探讨具体治疗措施的影响。",
-      "keyPoints": [
-        "术后尿失禁发生率为13.7%，多为暂时性",
-        "约94%患者3个月内尿控恢复，长期尿失禁极少",
-        "压力性尿失禁患者BMI较高，术前症状较轻",
-        "混合型尿失禁患者脑血管病史更常见"
-      ],
-      "intelligence": {
-        "studyType": "单中心观察队列研究",
-        "population": "接受内镜前列腺剥离术治疗良性前列腺增生患者",
-        "keyFinding": "术后尿失禁发生率13.7%，多为暂时性，恢复时间各类型间无显著差异，持续尿失禁极少",
-        "clinicalImplication": "结果间接提示伴有重症肌无力患者术后尿失禁可能更持久，对MG患者术后功能恢复观察有参考价值",
-        "reviewFocus": "关注尿失禁发生率及类型、恢复时长、患者术前特征及术中操作差异，重点评价MG患者尿失禁情况"
-      },
-      "translationStatus": "translated",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42742550/",
-      "trust": {
-        "sourceType": "PubMed",
-        "evidenceLevel": "文献摘要",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
-        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
-      },
-      "tags": [
-        "latest",
-        "PubMed",
-        "综合研究"
-      ]
-    },
-    {
-      "id": "latest-42741200",
-      "pmid": "42741200",
-      "title": "Case Report: Probable toripalimab-associated ocular myasthenia gravis-like presentation after chemoimmunotherapy.",
-      "journal": "Frontiers in neurology",
-      "authors": "Li Wang",
-      "date": "2026-01-01",
-      "indexedAt": "2026-09-15",
-      "issn": "1664-2295",
-      "eissn": "1664-2295",
-      "abstract": "Toripalimab, an anti-programmed cell death protein 1 (PD-1) monoclonal antibody developed in China, is increasingly used in the treatment of solid tumors. Although immune checkpoint inhibitors improve antitumor immunity, they may also cause immune-related adverse events involving the nervous system. We report a 60-year-old woman with triple-negative right breast cancer who developed bilateral ptosis and mild limitation of horizontal eye movements approximately 2 weeks after receiving nab-paclitaxel, carboplatin, and toripalimab. Serological testing showed positivity for anti-ryanodine receptor antibody (RYR-IgG, 1:100) and anti-titin antibody (Titin-IgG, 1:320), whereas acetylcholine receptor, muscle-specific kinase, and low-density lipoprotein receptor-related protein 4 antibodies were negative. The neostigmine test was negative. Routine nerve conduction studies were largely normal, and repetitive nerve stimulation showed no low-frequency decrement. After symptom onset, CK-MB mass was markedly elevated despite a normal hs-cTnI level, and AST and ALT were also increased. Because simultaneous total CK and myoglobin measurements were unavailable, the tissue source of the CK-MB elevation could not be determined, and the result was considered uninterpretable in isolation. Possible skeletal-muscle involvement, including ocular myositis, therefore remained in the differential diagnosis. Brain MRI showed chronic ischemic changes without an acute explanatory lesion. No bulbar, respiratory, limb, or cardiac symptoms were documented. After differential assessment, a probable toripalimab-associated ocular myasthenia gravis-like presentation was considered. Toripalimab was discontinued, and oral methylprednisolone 20 mg once daily was administered for 6 days from January 17 to January 22, 2026, beginning the day after discharge. Ptosis improved during early follow-up and remained improved at the subsequent visit. This case illustrates that ocular symptoms after PD-1 inhibitor therapy may represent a neuromuscular immune-related adverse event even when conventional myasthenia gravis antibodies and repetitive nerve stimulation are negative. The significance of RYR-IgG and Titin-IgG positivity in this patient remains uncertain because the assay platform and laboratory cut-offs were unavailable. Their detection should not be regarded as confirmation of ocular myasthenia gravis.",
-      "zhSummary": "报告一例60岁三阴性右乳腺癌女性患者，接受纳米白蛋白紫杉醇、卡铂及toripalimab治疗约两周后出现双侧眼睑下垂及轻度水平眼球运动受限。血清抗ryanodine受体和抗titin抗体阳性，常见重症肌无力抗体阴性，新斯的明试验及重复神经刺激无异常。脑MRI无急性病变，排除其他症状后，考虑toripalimab相关的眼部重症肌无力样表现。停药及短期糖皮质激素治疗后症状改善。抗体意义不确定，不应作为确诊依据。该病例提示PD-1抑制剂相关眼部神经肌肉免疫事件可能在传统检查阴性时出现。",
-      "keyPoints": [
-        "患者接受toripalimab治疗后出现眼睑下垂及眼球运动障碍",
-        "抗ryanodine受体和抗titin抗体阳性，典型MG抗体阴性",
-        "重复神经刺激及新斯的明试验未见异常",
-        "糖皮质激素治疗后症状有所缓解"
-      ],
-      "intelligence": {
-        "studyType": "病例报告",
-        "population": "三阴性乳腺癌患者接受toripalimab治疗后神经系统免疫相关不良事件",
-        "keyFinding": "toripalimab可能诱发眼部重症肌无力样症状，伴典型抗体及电生理检查阴性",
-        "clinicalImplication": "提示PD-1抑制剂治疗后眼部肌无力样病变需警惕，传统MG抗体及电生理可能阴性，关注免疫相关不良事件",
-        "reviewFocus": "应核实抗体检测平台和阈值，关注免疫检查点抑制剂相关神经肌肉症状的鉴别诊断和治疗反应"
-      },
-      "translationStatus": "translated",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42741200/",
-      "trust": {
-        "sourceType": "PubMed",
-        "evidenceLevel": "文献摘要",
-        "reviewStatus": "自动更新",
-        "lastChecked": "2026-09-22",
-        "reviewNote": "自动抓取 PubMed 记录；中文摘要或要点需结合英文摘要和全文复核。"
-      },
-      "tags": [
-        "latest",
-        "PubMed",
-        "治疗与真实世界"
       ]
     },
     {
@@ -813,8 +733,8 @@
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-09-22T06:12:33.103Z",
-    "runFinishedAt": "2026-09-22T06:14:22.815Z",
+    "runStartedAt": "2026-09-23T05:57:38.216Z",
+    "runFinishedAt": "2026-09-23T05:58:55.563Z",
     "scope": "all",
     "status": "success",
     "failedSources": []
