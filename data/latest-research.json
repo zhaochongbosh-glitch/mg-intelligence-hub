@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-11-04T07:30:42.445Z",
+  "updatedAt": "2026-11-05T07:54:41.799Z",
   "windowHours": 168,
   "windowDays": 7,
   "translationStatus": "translated",
   "provenance": {
     "sourceType": "PubMed",
     "evidenceLevel": "文献摘要",
-    "reviewStatus": "自动更新",
-    "lastChecked": "2026-11-04",
+    "reviewStatus": "沿用旧数据",
+    "lastChecked": "2026-11-05",
     "reviewNote": "中文摘要为阅读辅助，不能替代英文摘要、全文和同行评议结论。"
   },
   "updatePolicy": {
@@ -1008,10 +1008,12 @@
     }
   ],
   "updateRun": {
-    "runStartedAt": "2026-11-04T07:29:01.778Z",
-    "runFinishedAt": "2026-11-04T07:30:42.445Z",
+    "runStartedAt": "2026-11-05T07:54:03.574Z",
+    "runFinishedAt": "2026-11-05T07:54:41.799Z",
     "scope": "all",
-    "status": "success",
-    "failedSources": []
+    "status": "partial",
+    "failedSources": [
+      "latest-research"
+    ]
   }
 }
