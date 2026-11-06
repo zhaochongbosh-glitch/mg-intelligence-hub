@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-05T07:55:02.320Z",
-  "runStartedAt": "2026-11-05T07:54:03.574Z",
-  "runFinishedAt": "2026-11-05T07:55:02.320Z",
+  "updatedAt": "2026-11-06T08:00:06.219Z",
+  "runStartedAt": "2026-11-06T07:54:50.016Z",
+  "runFinishedAt": "2026-11-06T08:00:06.219Z",
   "scope": "all",
-  "status": "partial",
+  "status": "success",
   "sources": [
     {
       "name": "fda-rss",
@@ -11,8 +11,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版 FDA RSS 命中条目。",
       "status": "success",
-      "startedAt": "2026-11-05T07:54:03.585Z",
-      "finishedAt": "2026-11-05T07:54:03.765Z",
+      "startedAt": "2026-11-06T07:54:50.025Z",
+      "finishedAt": "2026-11-06T07:54:50.531Z",
       "count": 0
     },
     {
@@ -21,19 +21,19 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版 PubMed 文献信息流。",
       "status": "success",
-      "startedAt": "2026-11-05T07:54:03.584Z",
-      "finishedAt": "2026-11-05T07:54:15.772Z",
-      "count": 0
+      "startedAt": "2026-11-06T07:54:50.025Z",
+      "finishedAt": "2026-11-06T07:54:51.309Z",
+      "count": 16
     },
     {
       "name": "latest-research",
       "type": "automatic",
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版近 7 天研究摘要。",
-      "status": "failed",
-      "startedAt": "2026-11-05T07:54:16.172Z",
-      "finishedAt": "2026-11-05T07:54:41.799Z",
-      "error": "500 https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&sort=pub+date&retmax=40&datetype=edat&reldate=7&term=%22myasthenia%20gravis%22%20OR%20%22ocular%20myasthenia%22%20OR%20%22generalized%20myasthenia%20gravis%22"
+      "status": "success",
+      "startedAt": "2026-11-06T07:54:51.709Z",
+      "finishedAt": "2026-11-06T07:56:13.429Z",
+      "count": 23
     },
     {
       "name": "china-research",
@@ -41,8 +41,8 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版中国研究列表。",
       "status": "success",
-      "startedAt": "2026-11-05T07:54:42.198Z",
-      "finishedAt": "2026-11-05T07:54:52.921Z",
+      "startedAt": "2026-11-06T07:56:13.829Z",
+      "finishedAt": "2026-11-06T07:56:15.402Z",
       "count": 100
     },
     {
@@ -51,9 +51,9 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版华山 MG 团队论文列表。",
       "status": "success",
-      "startedAt": "2026-11-05T07:54:53.321Z",
-      "finishedAt": "2026-11-05T07:55:02.138Z",
-      "count": 0
+      "startedAt": "2026-11-06T07:56:15.802Z",
+      "finishedAt": "2026-11-06T08:00:05.959Z",
+      "count": 106
     },
     {
       "name": "clinical-trials",
@@ -61,21 +61,21 @@
       "frequency": "DAILY",
       "fallbackPolicy": "失败时保留上一版临床试验雷达。",
       "status": "success",
-      "startedAt": "2026-11-05T07:55:02.139Z",
-      "finishedAt": "2026-11-05T07:55:02.311Z",
+      "startedAt": "2026-11-06T08:00:05.960Z",
+      "finishedAt": "2026-11-06T08:00:06.207Z",
       "count": 30
     }
   ],
   "outputs": [
     {
       "file": "data/items.json",
-      "count": 4,
+      "count": 20,
       "status": "success"
     },
     {
       "file": "data/latest-research.json",
-      "count": 25,
-      "status": "partial"
+      "count": 24,
+      "status": "success"
     },
     {
       "file": "data/china-research.json",
@@ -84,7 +84,7 @@
     },
     {
       "file": "data/huashan-team.json",
-      "count": 1,
+      "count": 107,
       "status": "success"
     },
     {
